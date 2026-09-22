@@ -6,12 +6,13 @@
 
 | 路径 | 内容 | 隶属 |
 |---|---|---|
-| `/` | 产品宣传总览（五条产品线 + 仓库隶属关系） | insightmarketplac 项目生态 |
-| `/platform/` | insightmarketplac 平台产品页（AI 数字员工平台） | 主平台 · 源码仓私有 |
-| `/data/` | insightmarketplac data 产品页（30 数据源统一 API） | 平台数据层 · 源码仓私有 |
-| `/agent/` | insightmarketplac Agent 产品页（多智能体工作台） | 平台智能体层 · 源码仓私有 |
-| `/client/` | insightmarketplac 客户端产品页（安装即用） | 成品分发 · 源码仓 wenmai-agent 私有 |
+| `/` | 产品宣传总览（六条产品线 + 仓库隶属关系） | insightmarketplac 项目生态 |
+| `/platform.html` | insightmarketplac 平台产品页（AI 数字员工平台） | 主平台 · 源码仓私有 |
+| `/data.html` | insightmarketplac data 产品页（30 数据源统一 API） | 平台数据层 · 源码仓私有 |
+| `/agent.html` | insightmarketplac Agent 产品页（多智能体工作台） | 平台智能体层 · 源码仓私有 |
+| `/client.html` | insightmarketplac 客户端产品页（安装即用） | 成品分发 · 源码仓 wenmai-agent 私有 |
 | `/research/` | 数字员工团队营销站（19 智能体 / Skill 市场 / 案例 / Hub） | wenmai-research 总仓 · 营销页公开，应用源码私有 |
+| `/doubao/` | doubao · OEM 运营分销托管宣传站（货源 / 样品 / 货盘 / 渠道） | insightmarketplac 生态 · 分销托管线 |
 
 ## 仓库隶属关系
 

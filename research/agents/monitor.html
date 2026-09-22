@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>竞品监控哨兵 · Monitor Agent · 异动自动推送飞书钉钉 | insightmarketplac Agent</title>
+<meta name="description" content="竞品监控哨兵是 insightmarketplac Agent 的自研Agent：长期监控竞品价格、关键词排名与 Listing 变化，异动自动推送飞书/钉钉群，7×24 小时不眨眼。">
+<meta name="keywords" content="竞品监控, 监控Agent, 关键词排名跟踪, 价格异动, 促销雷达, 飞书推送, 钉钉推送, Keepa, 跨境电商监控, Agent">
+<meta property="og:type" content="website">
+<meta property="og:title" content="竞品监控哨兵 · 异动自动推送飞书钉钉">
+  <meta property="og:site_name" content="insightmarketplac">
+  <meta property="og:image" content="https://hdhaidong.github.io/insightmarketplac-promo/research/assets/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="insightmarketplac · 跨境电商 AI Agent平台">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="竞品监控哨兵 · 异动自动推送飞书钉钉">
+  <meta name="twitter:description" content="竞品、关键词、价格、促销，7×24 小时盯守，异动当天进群。">
+  <meta name="twitter:image" content="https://hdhaidong.github.io/insightmarketplac-promo/research/assets/og-cover.jpg">
+<meta property="og:description" content="竞品、关键词、价格、促销，7×24 小时盯守，异动当天进群。">
+<link rel="canonical" href="https://hdhaidong.github.io/insightmarketplac-promo/research/agents/monitor.html">
+<meta name="robots" content="index, follow">
+<style>
+:root{--bg:#000000;--bg-2:#0A0A0A;--bg-3:#111111;--ink:#F2EEE6;--ink-dim:#A7ADB8;--ink-faint:#6E7683;--accent:#E8A33D;--accent-hi:#F4BA60;--accent-dim:rgba(232,163,61,.12);--hairline:rgba(242,238,230,.12);--hairline-soft:rgba(242,238,230,.07);--sans:"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;--mono:"SF Mono","Cascadia Code",Consolas,"Courier New",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+.top{border-bottom:1px solid var(--hairline-soft);background:rgba(0,0,0,.92);position:sticky;top:0;z-index:40;backdrop-filter:blur(10px)}
+.top-in{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:baseline;gap:10px}
+.brand .mk{font-weight:700;font-size:1.1rem}
+.brand .mk em{font-style:normal;color:var(--accent)}
+.brand .bc{font-family:var(--mono);font-size:.68rem;color:var(--ink-faint);letter-spacing:.06em}
+nav.main-nav{display:flex;gap:22px;flex-wrap:wrap}
+nav.main-nav a{color:var(--ink-dim);font-size:.9rem}
+nav.main-nav a:hover{color:var(--accent);text-decoration:none}
+nav.main-nav a.hot{color:var(--accent);font-weight:600}
+.btn{display:inline-block;padding:12px 26px;border-radius:9px;font-weight:600;font-size:.92rem;transition:all .18s;cursor:pointer;border:none;font-family:var(--sans)}
+.btn-p{background:var(--accent);color:#141414}
+.btn-p:hover{background:var(--accent-hi);text-decoration:none;transform:translateY(-1px)}
+.btn-s{border:1px solid var(--hairline);color:var(--ink-dim);background:transparent}
+.btn-s:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.btn-lg{padding:15px 34px;font-size:1rem}
+.page-hero{padding:72px 0 52px;border-bottom:1px solid var(--hairline-soft);position:relative;overflow:hidden}
+.page-hero::before{content:"";position:absolute;top:-180px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(232,163,61,.09),transparent 65%);pointer-events:none}
+.crumbs{font-size:.82rem;color:var(--ink-faint);margin-bottom:24px}
+.crumbs a{color:var(--ink-dim)}
+.agent-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.avatar{width:84px;height:84px;border-radius:22px;background:var(--accent-dim);border:1px solid rgba(232,163,61,.35);display:flex;align-items:center;justify-content:center;font-size:2.4rem;margin-bottom:22px}
+.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+h1{font-size:clamp(1.9rem,4.6vw,2.8rem);line-height:1.2;letter-spacing:-.015em}
+.role-en{font-family:var(--mono);font-size:.82rem;color:var(--ink-faint);letter-spacing:.14em;margin-top:10px;text-transform:uppercase}
+.hero-sub{color:var(--ink-dim);max-width:560px;margin:18px 0 22px;font-size:1.02rem}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.chips span{border:1px solid var(--hairline-soft);border-radius:999px;padding:4px 14px;font-size:.76rem;color:var(--ink-dim);background:var(--bg-2)}
+.chips span.g{border-color:rgba(232,163,61,.4);color:var(--accent)}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.hero-side{border:1px solid var(--hairline);border-radius:16px;background:var(--bg-2);padding:26px}
+.hero-side .mt{font-family:var(--mono);font-size:.64rem;color:var(--accent);letter-spacing:.18em;margin-bottom:16px}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.kv .b{border:1px solid var(--hairline-soft);border-radius:12px;padding:16px;background:var(--bg)}
+.kv .v{font-size:1.45rem;font-weight:700;color:var(--accent);font-family:var(--mono)}
+.kv .k{font-size:.72rem;color:var(--ink-faint);margin-top:4px}
+section{padding:72px 0;border-bottom:1px solid var(--hairline-soft)}
+section:nth-of-type(even){background:var(--bg-2)}
+.sec-head{margin-bottom:40px;max-width:660px}
+.sec-head .eyebrow{margin-bottom:10px}
+h2{font-size:clamp(1.5rem,3.4vw,2.1rem);letter-spacing:-.01em;line-height:1.3}
+.sec-sub{color:var(--ink-dim);margin-top:12px;font-size:.98rem}
+.tpl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tpl{border:1px solid var(--hairline-soft);border-radius:14px;padding:26px 24px;background:var(--bg);display:flex;flex-direction:column;transition:all .16s}
+.tpl:hover{border-color:var(--accent);transform:translateY(-2px)}
+.tpl .tno{font-family:var(--mono);font-size:.64rem;color:var(--accent);letter-spacing:.18em}
+.tpl h3{font-size:1.04rem;margin:12px 0 8px;line-height:1.5}
+.tpl>p{font-size:.84rem;color:var(--ink-dim);flex:1}
+.tpl .tmeta{display:flex;gap:16px;margin-top:18px;padding-top:14px;border-top:1px dashed var(--hairline-soft);font-size:.72rem;color:var(--ink-faint)}
+.tpl .tmeta b{color:var(--accent);font-family:var(--mono);font-weight:600}
+.loop{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.lstep{border:1px solid var(--hairline-soft);border-radius:14px;padding:22px 18px;background:var(--bg)}
+.lstep .ln{font-family:var(--mono);font-size:.64rem;color:var(--accent);letter-spacing:.18em}
+.lstep h4{font-size:.94rem;margin:10px 0 8px}
+.lstep p{font-size:.76rem;color:var(--ink-dim)}
+.skill-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.skill{display:flex;align-items:center;gap:14px;border:1px solid var(--hairline-soft);border-radius:12px;padding:16px 18px;background:var(--bg)}
+.skill .sic{width:38px;height:38px;border-radius:10px;background:var(--accent-dim);border:1px solid rgba(232,163,61,.3);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0}
+.skill b{font-size:.9rem;font-weight:600;display:block}
+.skill i{font-style:normal;font-size:.72rem;color:var(--ink-faint)}
+.use-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.use{border:1px solid var(--hairline-soft);border-radius:14px;padding:24px;background:var(--bg)}
+.use .ic{font-size:1.4rem;display:block;margin-bottom:12px}
+.use h3{font-size:1rem;margin-bottom:8px}
+.use p{font-size:.83rem;color:var(--ink-dim)}
+.fam-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.fam{border:1px solid var(--hairline-soft);border-radius:12px;padding:18px;background:var(--bg);transition:all .16s;display:block;color:var(--ink)}
+.fam:hover{border-color:var(--accent);text-decoration:none;transform:translateY(-2px)}
+.fam .fi{font-size:1.3rem;display:block;margin-bottom:8px}
+.fam b{font-size:.9rem;display:block}
+.fam i{font-style:normal;font-size:.7rem;color:var(--ink-faint)}
+.fam.me{border-color:var(--accent);background:linear-gradient(180deg,rgba(232,163,61,.08),transparent 70%),var(--bg)}
+.fam.me i{color:var(--accent)}
+.cta-band{padding:88px 0;text-align:center;background:var(--bg-2)}
+.cta-band p{color:var(--ink-dim);margin:14px 0 30px}
+footer{padding:48px 0 36px;border-top:1px solid var(--hairline-soft)}
+.f-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.f-brand .mk{font-weight:700;font-size:1.05rem}
+.f-brand .mk em{font-style:normal;color:var(--accent)}
+.f-brand p{font-size:.8rem;color:var(--ink-faint);margin-top:10px;max-width:360px}
+.f-col h4{font-size:.8rem;color:var(--ink-faint);font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.f-col a{display:block;color:var(--ink-dim);font-size:.86rem;padding:4px 0}
+.f-col a:hover{color:var(--accent)}
+.f-bottom{margin-top:36px;padding-top:20px;border-top:1px solid var(--hairline-soft);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.74rem;color:var(--ink-faint)}
+@media(max-width:960px){.agent-hero{grid-template-columns:1fr}.tpl-grid{grid-template-columns:1fr}.loop{grid-template-columns:repeat(2,1fr)}.skill-list{grid-template-columns:1fr}.use-grid{grid-template-columns:1fr}.fam-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.top-in{flex-direction:column;gap:12px}.loop{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a href="../" class="brand" style="color:var(--ink)"><span class="mk">insight<em>marketplac</em></span><span class="bc">AGENT</span></a>
+    <nav class="main-nav">
+      <a href="../">首页</a>
+      <a href="../index.html#capabilities">产品</a>
+      <a href="../customers.html">客户案例</a>
+      <a href="../enterprise-ai.html">企业AI赋能</a>
+      <a href="../cases.html">选品调研报告</a>
+      <a href="../skills.html">Skill市场</a>      <a href="../hub/">社区</a>
+      <a href="../pricing.html">定价</a>
+    </nav>
+    <a href="../client.html" class="btn btn-p">下载客户端</a>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="../">首页</a> / <a href="../client.html">Agent</a> / 竞品监控哨兵</div>
+    <div class="agent-hero">
+      <div>
+        <div class="avatar">📡</div>
+        <div class="eyebrow">Agent Product · 03 / 20</div>
+        <h1>竞品监控哨兵</h1>
+        <div class="role-en">Monitor Agent</div>
+        <p class="hero-sub">长期监控竞品价格、关键词排名与 Listing 变化，异动自动推送飞书 / 钉钉群——7×24 小时不眨眼，运营不再逐个刷新后台。</p>
+        <div class="chips"><span class="g">竞品监控</span><span>关键词排名</span><span>价格异动</span><span>飞书/钉钉推送</span><span>7×24 盯守</span></div>
+        <div class="cta-row">
+          <a href="../client.html" class="btn btn-p btn-lg">让哨兵上岗</a>
+          <a href="../pricing.html" class="btn btn-s btn-lg">查看定价</a>
+        </div>
+      </div>
+      <div class="hero-side">
+        <div class="mt">AGENT PROFILE</div>
+        <div class="kv">
+          <div class="b"><div class="v">3</div><div class="k">任务模板</div></div>
+          <div class="b"><div class="v">4</div><div class="k">绑定数据 Skill</div></div>
+          <div class="b"><div class="v">免费</div><div class="k">个人版调用</div></div>
+          <div class="b"><div class="v">当天</div><div class="k">异动进群</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Task Templates</div>
+      <h2>核心任务模板 · 一键下达</h2>
+      <p class="sec-sub">建立监控任务一次，长期自动盯守。</p>
+    </div>
+    <div class="tpl-grid">
+      <div class="tpl">
+        <span class="tno">TEMPLATE 01</span>
+        <h3>竞品情报监控</h3>
+        <p>从站点和自有 ASIN 建立长期竞品、关键词排名与 Listing 变化监控，异动自动推送。</p>
+        <div class="tmeta"><span><b>免费</b> · 个人版</span><span><b>4</b> 步</span></div>
+      </div>
+      <div class="tpl">
+        <span class="tno">TEMPLATE 02</span>
+        <h3>关键词排名跟踪</h3>
+        <p>跟踪指定 ASIN 在关键词下的页面和位置变化，排名越界立即告警。</p>
+        <div class="tmeta"><span><b>免费</b> · 个人版</span><span><b>3</b> 步</span></div>
+      </div>
+      <div class="tpl">
+        <span class="tno">TEMPLATE 03</span>
+        <h3>促销异动雷达</h3>
+        <p>监控零售站点促销和商品动态，第一时间发现价格波动与活动机会。</p>
+        <div class="tmeta"><span><b>免费</b> · 个人版</span><span><b>3</b> 步</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">How It Works</div>
+      <h2>Agent 执行循环</h2>
+      <p class="sec-sub">按计划调度运行，监控结果双向回写企业协作平台。</p>
+    </div>
+    <div class="loop">
+      <div class="lstep"><span class="ln">01</span><h4>建立监控</h4><p>输入竞品 ASIN 与关键词清单。</p></div>
+      <div class="lstep"><span class="ln">02</span><h4>定时巡检</h4><p>按计划调起监控 Skill 巡检。</p></div>
+      <div class="lstep"><span class="ln">03</span><h4>变化检测</h4><p>对比历史快照，识别异动。</p></div>
+      <div class="lstep"><span class="ln">04</span><h4>阈值告警</h4><p>排名越界、价格跳水即触发。</p></div>
+      <div class="lstep"><span class="ln">05</span><h4>推送回写</h4><p>飞书/钉钉群推送 + 表格回写。</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Data Skills</div>
+      <h2>绑定的数据 Skill</h2>
+      <p class="sec-sub">开箱即绑 4 个监控数据技能，全部可在 <a href="../skills.html">Skill 市场</a> 查看。</p>
+    </div>
+    <div class="skill-list">
+      <div class="skill"><span class="sic">🕵️</span><div><b>Amazon 竞品情报监控</b><i>长期竞品与 Listing 变化监控</i></div></div>
+      <div class="skill"><span class="sic">📉</span><div><b>Amazon 关键词排名趋势</b><i>Sorftime · 页面与位置变化</i></div></div>
+      <div class="skill"><span class="sic">🔔</span><div><b>DealWatch 促销监控</b><i>零售站点促销动态雷达</i></div></div>
+      <div class="skill"><span class="sic">📈</span><div><b>Amazon Keepa 历史趋势</b><i>价格与销量历史曲线</i></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Use Cases</div>
+      <h2>什么时候用竞品监控哨兵</h2>
+    </div>
+    <div class="use-grid">
+      <div class="use"><span class="ic">🗡️</span><h3>大促价格战</h3><p>竞品秒杀、Coupon、直降自动进群，团队第一时间决定跟不跟。</p></div>
+      <div class="use"><span class="ic">🏅</span><h3>核心词卡位</h3><p>自然排名跌出首页立即告警，别等订单掉了才发现。</p></div>
+      <div class="use"><span class="ic">👀</span><h3>对手换 Listing</h3><p>对手改主图、换标题、上 A+ 的每一次动作都被记录在案。</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Digital Workforce</div>
+      <h2>20 个 Agent 产品 · 一个平台</h2>
+    </div>
+    <div class="fam-grid">
+      <a class="fam" href="research.html"><span class="fi">🔬</span><b>市场调研员</b><i>Research Agent</i></a>
+      <a class="fam" href="scout.html"><span class="fi">🎯</span><b>选品分析师</b><i>Product Scout Agent</i></a>
+      <a class="fam me" href="monitor.html"><span class="fi">📡</span><b>竞品监控哨兵</b><i>Monitor Agent · 当前页</i></a>
+      <a class="fam" href="../client.html"><span class="fi">📈</span><b>广告优化师</b><i>Ads Agent</i></a>
+      <a class="fam" href="docs.html"><span class="fi">📄</span><b>打单专员</b><i>Document Agent</i></a>
+      <a class="fam" href="listing.html"><span class="fi">✍️</span><b>Listing 工程师</b><i>Listing Agent</i></a>
+      <a class="fam" href="publish.html"><span class="fi">🚀</span><b>上架专员</b><i>Publishing Agent</i></a>
+      <a class="fam" href="images.html"><span class="fi">🎨</span><b>图片设计师</b><i>Image Factory Agent</i></a>
+      <a class="fam" href="ops.html"><span class="fi">📊</span><b>运营总监</b><i>Operations Agent</i></a>
+      <a class="fam" href="cs.html"><span class="fi">💬</span><b>客服专员</b><i>Customer Service Agent</i></a>
+      <a class="fam" href="trainer.html"><span class="fi">🎓</span><b>培训教练</b><i>Training Agent</i></a>
+      <a class="fam" href="sourcing.html" style="opacity:.72"><span class="fi">🏭</span><b>采购专员</b><i>Sourcing · 即将上架</i></a>
+      <a class="fam" href="inventory.html" style="opacity:.72"><span class="fi">📦</span><b>库存计划员</b><i>Inventory · 即将上架</i></a>
+      <a class="fam" href="analyst.html" style="opacity:.72"><span class="fi">📉</span><b>数据分析师</b><i>Data Analyst · 即将上架</i></a>
+      <a class="fam" href="compliance.html" style="opacity:.72"><span class="fi">🛡️</span><b>合规审查员</b><i>Compliance · 即将上架</i></a>
+      <a class="fam" href="localization.html" style="opacity:.72"><span class="fi">🌐</span><b>本地化翻译官</b><i>Localization · 即将上架</i></a>
+      <a class="fam" href="video.html" style="opacity:.72"><span class="fi">🎬</span><b>视频剪辑师</b><i>Video · 即将上架</i></a>
+      <a class="fam" href="content.html" style="opacity:.72"><span class="fi">📝</span><b>内容开发官</b><i>Content · 即将上架</i></a>
+      <a class="fam" href="influencer-ip.html" style="opacity:.72"><span class="fi">🎤</span><b>达人IP开发官</b><i>Influencer IP · 即将上架</i></a>
+      <a class="fam" href="kol.html" style="opacity:.72"><span class="fi">🤝</span><b>达人合作专员</b><i>KOL Outreach · 即将上架</i></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="eyebrow" style="margin-bottom:12px">Get Started</div>
+    <h2>对手的每一次异动，都该当天知道</h2>
+    <p>绑定飞书或钉钉，今天就让哨兵上岗。</p>
+    <div class="cta-row">
+      <a href="../client.html" class="btn btn-p btn-lg">下载客户端</a>
+      <a href="mailto:haidong.zhou@outlook.com" class="btn btn-s btn-lg">企业邮件咨询</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="mk">insight<em>marketplac</em> Agent</div>
+        <p>跨境电商企业的 AI Agent平台。调研 · 选品 · 监控 · 打单 · 上架 · 图片制造。</p>
+      </div>
+      <div class="f-col">
+        <h4>Agent</h4>
+        <a href="research.html">市场调研员</a>
+        <a href="scout.html">选品分析师</a>
+        <a href="monitor.html">竞品监控哨兵</a>
+        <a href="docs.html">打单专员</a>
+      </div>
+      <div class="f-col">
+        <h4>更多</h4>
+        <a href="listing.html">Listing 工程师</a>
+        <a href="publish.html">上架专员</a>
+        <a href="images.html">图片设计师</a>
+        <a href="../client.html">我的 Agent 客户端</a>
+      </div>
+      <div class="f-col">
+        <h4>站点</h4>
+        <a href="../skills.html">Skill 市场</a>
+        <a href="../cases.html">选品调研报告</a>
+        <a href="../pricing.html">定价</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 insightmarketplac · Agent平台</span>
+      <span>多智能体引擎 · 独立部署</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

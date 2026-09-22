@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>选品调研报告 · 5 分钟出一份证据驱动的调研 | insightmarketplac Agent</title>
+<meta name="description" content="insightmarketplac Agent 选品调研报告库：市场调研、竞品拆解与 VOC 分析三类报告样例。集成卖家精灵、Sorftime、SIF 等数据源，5 分钟产出可追溯的 Go/No-Go 选品判断。">
+<meta name="keywords" content="选品调研报告, 市场调研, 竞品拆解, VOC分析, Amazon选品, Walmart调研, 类目分析, Go/No-Go, 跨境电商选品">
+<meta property="og:type" content="website">
+<meta property="og:title" content="选品调研报告 · insightmarketplac Agent">
+  <meta property="og:site_name" content="insightmarketplac">
+  <meta property="og:image" content="https://hdhaidong.github.io/insightmarketplac-promo/research/assets/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="insightmarketplac · 跨境电商 AI Agent平台">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="选品调研报告 · insightmarketplac Agent">
+  <meta name="twitter:description" content="5 分钟出一份证据驱动的市场调研、竞品拆解与 VOC 分析报告。">
+  <meta name="twitter:image" content="https://hdhaidong.github.io/insightmarketplac-promo/research/assets/og-cover.jpg">
+<meta property="og:description" content="5 分钟出一份证据驱动的市场调研、竞品拆解与 VOC 分析报告。">
+<link rel="canonical" href="https://hdhaidong.github.io/insightmarketplac-promo/research/cases.html">
+<meta name="robots" content="index, follow">
+<style>
+:root{--bg:#000000;--bg-2:#0A0A0A;--bg-3:#111111;--ink:#F2EEE6;--ink-dim:#A7ADB8;--ink-faint:#6E7683;--accent:#E8A33D;--accent-hi:#F4BA60;--accent-dim:rgba(232,163,61,.12);--hairline:rgba(242,238,230,.12);--hairline-soft:rgba(242,238,230,.07);--sans:"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;--mono:"SF Mono","Cascadia Code",Consolas,"Courier New",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+.top{border-bottom:1px solid var(--hairline-soft);background:rgba(0,0,0,.92);position:sticky;top:0;z-index:40;backdrop-filter:blur(10px)}
+.top-in{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:baseline;gap:10px}
+.brand .mk{font-weight:700;font-size:1.1rem}
+.brand .mk em{font-style:normal;color:var(--accent)}
+.brand .bc{font-family:var(--mono);font-size:.68rem;color:var(--ink-faint);letter-spacing:.06em}
+nav.main-nav{display:flex;gap:22px;flex-wrap:wrap}
+nav.main-nav a{color:var(--ink-dim);font-size:.9rem}
+nav.main-nav a:hover{color:var(--accent);text-decoration:none}
+nav.main-nav a.hot{color:var(--accent);font-weight:600}
+.btn{display:inline-block;padding:12px 26px;border-radius:9px;font-weight:600;font-size:.92rem;transition:all .18s;cursor:pointer;border:none;font-family:var(--sans)}
+.btn-p{background:var(--accent);color:#141414}
+.btn-p:hover{background:var(--accent-hi);text-decoration:none;transform:translateY(-1px)}
+.btn-s{border:1px solid var(--hairline);color:var(--ink-dim);background:transparent}
+.btn-s:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.btn-lg{padding:15px 34px;font-size:1rem}
+.page-hero{padding:72px 0 48px;border-bottom:1px solid var(--hairline-soft);position:relative;overflow:hidden}
+.page-hero::before{content:"";position:absolute;top:-180px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(232,163,61,.09),transparent 65%);pointer-events:none}
+.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+h1{font-size:clamp(1.9rem,4.6vw,2.8rem);line-height:1.2;letter-spacing:-.015em}
+h1 .hl{color:var(--accent)}
+.hero-sub{color:var(--ink-dim);max-width:640px;margin:18px 0 28px;font-size:1.02rem}
+.hero-stats{display:flex;gap:34px;margin-top:8px;flex-wrap:wrap}
+.hstat .v{font-size:1.5rem;font-weight:700;color:var(--accent);font-family:var(--mono)}
+.hstat .k{font-size:.74rem;color:var(--ink-faint)}
+section{padding:64px 0;border-bottom:1px solid var(--hairline-soft)}
+section:nth-of-type(even){background:var(--bg-2)}
+.sec-head{margin-bottom:36px;max-width:660px}
+.sec-head .eyebrow{margin-bottom:10px}
+h2{font-size:clamp(1.4rem,3.2vw,2rem);letter-spacing:-.01em;line-height:1.3}
+.sec-sub{color:var(--ink-dim);margin-top:12px;font-size:.98rem}
+.report-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.rcard{border:1px solid var(--hairline-soft);border-radius:14px;padding:26px 24px;background:var(--bg);display:flex;flex-direction:column;transition:all .16s}
+.rcard:hover{border-color:var(--accent);transform:translateY(-2px)}
+.rcard .rhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}
+.rcard .rmeta{font-family:var(--mono);font-size:.62rem;color:var(--ink-faint);letter-spacing:.1em}
+.verdict{border-radius:999px;padding:3px 13px;font-size:.68rem;font-weight:700;white-space:nowrap}
+.verdict.go{background:rgba(88,166,110,.15);color:#6FBF87;border:1px solid rgba(88,166,110,.4)}
+.verdict.inv{background:var(--accent-dim);color:var(--accent);border:1px solid rgba(232,163,61,.4)}
+.verdict.pass{background:rgba(197,106,106,.12);color:#C56A6A;border:1px solid rgba(197,106,106,.35)}
+.rcard h3{font-size:1.08rem;margin-bottom:8px;line-height:1.45}
+.rcard>p{font-size:.84rem;color:var(--ink-dim);flex:1}
+.rkpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 4px;padding-top:16px;border-top:1px dashed var(--hairline-soft)}
+.rkpi b{font-family:var(--mono);color:var(--accent);font-size:1rem;display:block}
+.rkpi i{font-style:normal;font-size:.68rem;color:var(--ink-faint)}
+.cta-band{padding:84px 0;text-align:center;background:var(--bg-2)}
+.cta-band p{color:var(--ink-dim);margin:14px 0 30px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+footer{padding:48px 0 36px;border-top:1px solid var(--hairline-soft)}
+.f-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.f-brand .mk{font-weight:700;font-size:1.05rem}
+.f-brand .mk em{font-style:normal;color:var(--accent)}
+.f-brand p{font-size:.8rem;color:var(--ink-faint);margin-top:10px;max-width:360px}
+.f-col h4{font-size:.8rem;color:var(--ink-faint);font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.f-col a{display:block;color:var(--ink-dim);font-size:.86rem;padding:4px 0}
+.f-col a:hover{color:var(--accent)}
+.f-bottom{margin-top:36px;padding-top:20px;border-top:1px solid var(--hairline-soft);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.74rem;color:var(--ink-faint)}
+@media(max-width:960px){.report-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.top-in{flex-direction:column;gap:12px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a href="./" class="brand" style="color:var(--ink)"><span class="mk">insight<em>marketplac</em></span><span class="bc">AGENT</span></a>
+    <nav class="main-nav">
+      <a href="./">首页</a>
+      <a href="index.html#capabilities">产品</a>
+      <a href="customers.html">客户案例</a>
+      <a href="enterprise-ai.html">企业AI赋能</a>
+      <a href="cases.html" class="hot">选品调研报告</a>
+      <a href="skills.html">Skill市场</a>      <a href="clients.html">客户端</a>      <a href="hub/">社区</a>
+      <a href="pricing.html">定价</a>
+    </nav>
+    <a href="client.html" class="btn btn-p">下载客户端</a>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Research Reports</div>
+    <h1>选品调研报告，<br><span class="hl">5 分钟</span>出一份</h1>
+    <p class="hero-sub">市场调研员集成卖家精灵、Sorftime、SIF 等跨境数据源，每一份结论都可追溯到原始数据。以下是三类报告样例——你的类目，明天就能出现在这里。</p>
+    <div class="cta-row" style="justify-content:flex-start;margin-bottom:26px">
+      <a href="client.html" class="btn btn-p">免费注册使用</a>
+      <a href="mailto:haidong.zhou@outlook.com" class="btn btn-s">邮件咨询</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="v">3 类</div><div class="k">报告类型</div></div>
+      <div class="hstat"><div class="v">6 平台</div><div class="k">一次对比</div></div>
+      <div class="hstat"><div class="v">100%</div><div class="k">数据可追溯</div></div>
+      <div class="hstat"><div class="v">Go/No-Go</div><div class="k">明确结论</div></div>
+    </div>
+  </div>
+</div>
+
+<section id="category-market">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Category 01</div>
+      <h2>市场调研报告</h2>
+      <p class="sec-sub">类目容量、价格带、竞争结构与新品机会，一次跑通 Amazon / Walmart / Target / Best Buy / TikTok Shop / Temu 六平台对比。</p>
+    </div>
+    <div class="report-grid">
+      <div class="rcard">
+        <div class="rhead"><span class="rmeta">US · 6 PLATFORMS · 2026-08</span><span class="verdict go">GO</span></div>
+        <h3>车载手机支架类目 · 6 平台市场调研</h3>
+        <p>Amazon 月搜索量稳定，Temu/TikTok Shop 价格带下沉明显；磁吸新品类在 Walmart 渗透率仅 12%，切入窗口明确。</p>
+        <div class="rkpi"><div><b>$14-29</b><i>主成交价格带</i></div><div><b>12%</b><i>Walmart 磁吸渗透</i></div><div><b>41%</b><i>新品 90 天存活率</i></div></div>
+      </div>
+      <div class="rcard">
+        <div class="rhead"><span class="rmeta">US · AMAZON · 2026-08</span><span class="verdict inv">INVESTIGATE</span></div>
+        <h3>宠物烘干箱类目 · 市场结构与进入判断</h3>
+        <p>客单价高、复购低，头部品牌集中度上升；但差评集中在噪音与容量，改良型产品仍有差异化空间，建议小批量测试。</p>
+        <div class="rkpi"><div><b>$149+</b><i>均价</i></div><div><b>62%</b><i>头部 CR5</i></div><div><b>31%</b><i>噪音相关差评</i></div></div>
+      </div>
+      <div class="rcard">
+        <div class="rhead"><span class="rmeta">US · AMAZON + TIKTOK SHOP · 2026-07</span><span class="verdict go">GO</span></div>
+        <h3>便携榨汁杯类目 · 双平台机会对比</h3>
+        <p>夏季搜索趋势同比 +38%，TikTok Shop 达人内容带动明显；旅行场景配色与杯型创新是当前主要差异化方向。</p>
+        <div class="rkpi"><div><b>+38%</b><i>搜索同比</i></div><div><b>$16-25</b><i>甜蜜价格带</i></div><div><b>2.1万</b><i>月相关视频播放</i></div></div>
+      </div>
+      <div class="rcard">
+        <div class="rhead"><span class="rmeta">US · WALMART · 2026-07</span><span class="verdict pass">PASS</span></div>
+        <h3>普通硅胶折叠水杯类目 · 进入判断</h3>
+        <p>同质化严重，头部Listing价格战已持续 6 个月，广告 ACOS 中位数 47%；无供应链成本优势不建议进入。</p>
+        <div class="rkpi"><div><b>47%</b><i>ACOS 中位</i></div><div><b>6 个月</b><i>价格战持续</i></div><div><b>0.8%</b><i>差异化卖点占比</i></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="category-competitor">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Category 02</div>
+      <h2>竞品拆解报告</h2>
+      <p class="sec-sub">头部 ASIN 的流量结构、关键词布局、价格策略与评论武器，逐项拆解为可执行动作。</p>
+    </div>
+    <div class="report-grid">
+      <div class="rcard">
+        <div class="rhead"><span class="rmeta">US · ASIN TEARDOWN · 2026-08</span><span class="verdict inv">对标</span></div>
+        <h3>车载支架头部 ASIN 流量结构拆解</h3>
+        <p>自然流量占比 71%，核心 5 词贡献 58% 出单；A+ 模块以场景视频为主。给出了 30 天关键词卡位与内容追赶路径。</p>
+        <div class="rkpi"><div><b>71%</b><i>自然流量占比</i></div><div><b>5 词</b><i>贡献 58% 出单</i></div><div><b>4.6★</b><i>评分</i></div></div>
+      </div>
+      <div class="rcard">
+        <div class="rhead"><span class="rmeta">RU · OZON · 2026-08</span><span class="verdict inv">对标</span></div>
+        <h3>Ozon 家居收纳 TOP10 价格策略拆解</h3>
+        <p>头部卖家以组合装拉高客单，单件 SKU 主要承担引流；节日前 3 周集中提价 8-12% 的节奏被完整还原。</p>
+        <div class="rkpi"><div><b>TOP10</b><i>样本</i></div><div><b>+8-12%</b><i>节前提价节奏</i></div><div><b>组合装</b><i>客单策略</i></div></div>
+      </div>
+      <div class="rcard">
+        <div class="rhead"><span class="rmeta">US · AMAZON ADS · 2026-07</span><span class="verdict inv">对标</span></div>
+        <h3>筋膜枪类目广告打法拆解</h3>
+        <p>头部品牌 SP/SB/SD 三位一体，SB 视频素材复用 TikTok 爆款脚本；长尾词捡漏广告贡献 23% 订单。</p>
+        <div class="rkpi"><div><b>23%</b><i>长尾捡漏订单</i></div><div><b>3 类</b><i>广告组合</i></div><div><b>TikTok</b><i>素材复用</i></div></div>
+      </div>
+      <div class="rcard">
+        <div class="rhead"><span class="rmeta">US · WILDBERRIES · 2026-07</span><span class="verdict inv">对标</span></div>
+        <h3>野莓运动服饰 TOP 卖家评论武器拆解</h3>
+        <p>好评关键词集中在尺码准、物流快；差评中 44% 与尺码表相关。给出了尺码表本地化与详情页标注方案。</p>
+        <div class="rkpi"><div><b>44%</b><i>尺码相关差评</i></div><div><b>尺码准</b><i>好评第一关键词</i></div><div><b>TOP20</b><i>卖家样本</i></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="category-visual">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Category 03</div>
+      <h2>VOC 分析报告</h2>
+      <p class="sec-sub">从 ASIN 评论与 Reddit / TikTok 社媒内容里提炼真实需求、抱怨与产品改良线索。</p>
+    </div>
+    <div class="report-grid">
+      <div class="rcard">
+        <div class="rhead"><span class="rmeta">US · REVIEWS ×5,200 · 2026-08</span><span class="verdict go">改良机会</span></div>
+        <h3>宠物烘干箱评论 VOC 分析</h3>
+        <p>噪音（31%）、容量（22%）、清洁难度（15%）三大抱怨；降噪 + 可拆洗结构是明确的下一代产品方向。</p>
+        <div class="rkpi"><div><b>31%</b><i>噪音抱怨</i></div><div><b>22%</b><i>容量抱怨</i></div><div><b>5,200</b><i>样本评论</i></div></div>
+      </div>
+      <div class="rcard">
+        <div class="rhead"><span class="rmeta">US · REDDIT + TIKTOK · 2026-08</span><span class="verdict go">需求信号</span></div>
+        <h3>露营灯社媒需求雷达</h3>
+        <p>r/Camping 与 TikTok #campinglife 内容中，充电宝一体化、暖光模式、挂载方式是被反复提及的真实需求。</p>
+        <div class="rkpi"><div><b>3 大</b><i>未满足需求</i></div><div><b>1,800+</b><i>社媒帖子</i></div><div><b>12 条</b><i>机会线索</i></div></div>
+      </div>
+      <div class="rcard">
+        <div class="rhead"><span class="rmeta">US · REVIEWS ×8,600 · 2026-07</span><span class="verdict inv">改良机会</span></div>
+        <h3>便携榨汁杯差评根因分析</h3>
+        <p>冰块打不动、续航虚标、密封漏水是差评 TOP3；对应电机功率、电量显示与密封圈三项 BOM 改良建议。</p>
+        <div class="rkpi"><div><b>TOP3</b><i>差评根因</i></div><div><b>3 项</b><i>BOM 改良建议</i></div><div><b>8,600</b><i>样本评论</i></div></div>
+      </div>
+      <div class="rcard">
+        <div class="rhead"><span class="rmeta">US · YOUTUBE + REVIEWS · 2026-07</span><span class="verdict go">内容机会</span></div>
+        <h3>筋膜枪达人内容选题库</h3>
+        <p>从 200 条测评视频中提炼出程序员肩颈、健身热身、送礼场景三类高完播选题，直接输出短视频脚本框架。</p>
+        <div class="rkpi"><div><b>3 类</b><i>高完播场景</i></div><div><b>200 条</b><i>视频样本</i></div><div><b>9 支</b><i>脚本框架</i></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="eyebrow" style="margin-bottom:12px">Get Started</div>
+    <h2>你的类目，明天出报告</h2>
+    <p>免费注册下载客户端，输入类目词，5 分钟拿到第一份可追溯的调研报告。团队协作与私有化需求，邮件咨询。</p>
+    <div class="cta-row">
+      <a href="client.html" class="btn btn-p btn-lg">免费注册 · 下载客户端</a>
+      <a href="skills.html" class="btn btn-s btn-lg">浏览调研 Skill</a>
+      <a href="mailto:haidong.zhou@outlook.com" class="btn btn-s btn-lg">邮件咨询</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="mk">insight<em>marketplac</em> Agent</div>
+        <p>跨境电商企业的 AI Agent平台。调研 · 选品 · 监控 · 打单 · 上架 · 图片制造。</p>
+      </div>
+      <div class="f-col">
+        <h4>产品</h4>
+        <a href="index.html#capabilities">核心能力</a>
+        <a href="client.html">我的 Agent 客户端</a>
+        <a href="skills.html">Skill 市场</a>
+        <a href="cases.html">选品调研报告</a>
+      </div>
+      <div class="f-col">
+        <h4>服务</h4>
+        <a href="enterprise-ai.html">企业 AI 赋能</a>
+        <a href="customers.html">客户案例</a>
+        <a href="pricing.html">定价</a>
+        <a href="mailto:haidong.zhou@outlook.com">客服邮箱</a>
+      </div>
+      <div class="f-col">
+        <h4>案例</h4>
+        <a href="case-customs.html">报关单自动化</a>
+        <a href="cases.html#category-market">市场调研</a>
+        <a href="cases.html#category-competitor">竞品拆解</a>
+        <a href="cases.html#category-visual">VOC 分析</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 insightmarketplac · Agent平台</span>
+      <span>多智能体引擎 · 独立部署</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

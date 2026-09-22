@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>客户端产品矩阵 · 73 个业务客户端 | insightmarketplac Agent</title>
+<meta name="description" content="insightmarketplac 客户端产品矩阵：73 个业务客户端覆盖 9 大产品线（选品类/广告类/发布管理类/内容定制管理类/学习类/独立站客服类/数据接入类/获客销售类/履约管理类），统一 Agent 客户端内核，安装包公开发布、可自行下载，源码私有，支持按业务定制。">
+<meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hdhaidong.github.io/insightmarketplac-promo/research/clients.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="客户端产品矩阵 · 73 个业务客户端">
+  <meta property="og:description" content="73 个业务客户端统一基于 insightmarketplac Agent 客户端内核：安装包公开下载，源码私有，支持定制。">
+  <meta property="og:site_name" content="insightmarketplac">
+  <meta property="og:image" content="https://hdhaidong.github.io/insightmarketplac-promo/research/assets/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="insightmarketplac · 跨境电商 AI Agent平台">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="客户端产品矩阵 · 73 个业务客户端">
+  <meta name="twitter:description" content="73 个业务客户端统一基于 insightmarketplac Agent 客户端内核：安装包公开下载，源码私有，支持定制。">
+  <meta name="twitter:image" content="https://hdhaidong.github.io/insightmarketplac-promo/research/assets/og-cover.jpg">
+<style>
+:root{--bg:#000;--bg-2:#0A0A0A;--ink:#F2EEE6;--ink-dim:#A7ADB8;--ink-faint:#6E7683;--accent:#E8A33D;--accent-dim:rgba(232,163,61,.12);--hairline:rgba(242,238,230,.12);--hairline-soft:rgba(242,238,230,.07);--sans:"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;--mono:"SF Mono",Consolas,monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.top{border-bottom:1px solid var(--hairline-soft);background:rgba(0,0,0,.92);position:sticky;top:0;z-index:40;backdrop-filter:blur(10px)}
+.top-in{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand .mk{font-weight:700;font-size:1.1rem}.brand .mk em{font-style:normal;color:var(--accent)}
+nav{display:flex;gap:20px;flex-wrap:wrap}nav a{color:var(--ink-dim);font-size:.9rem}nav a:hover{color:var(--accent);text-decoration:none}nav a.hot{color:var(--accent);font-weight:600}nav a.cur{color:var(--ink);font-weight:600}
+.btn{display:inline-block;padding:11px 24px;border-radius:9px;font-weight:600;font-size:.9rem;cursor:pointer;border:none}
+.btn-p{background:var(--accent);color:#141414}.btn-p:hover{text-decoration:none;background:#F4BA60}
+.btn-s{border:1px solid var(--hairline);color:var(--ink-dim)}
+.hero{padding:64px 0 44px}.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+h1{font-size:clamp(1.9rem,4.6vw,2.7rem);line-height:1.2}h1 .hl{color:var(--accent)}
+.hero-sub{color:var(--ink-dim);max-width:560px;margin:16px 0 26px}
+section{padding:48px 0;border-bottom:1px solid var(--hairline-soft)}section:nth-of-type(even){background:var(--bg-2)}
+h2{font-size:1.5rem}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.scard{border:1px solid var(--hairline-soft);border-radius:14px;padding:22px;background:var(--bg);text-align:center}
+.scard .n{font-family:var(--mono);font-size:1.8rem;color:var(--accent);font-weight:700}
+.scard .l{font-size:.8rem;color:var(--ink-dim);margin-top:6px}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.fcard{border:1px solid var(--hairline-soft);border-radius:14px;padding:24px;background:var(--bg)}
+.fcard .top-tag{font-family:var(--mono);font-size:.66rem;color:var(--accent);letter-spacing:.18em}
+.fcard h3{font-size:1.02rem;margin:10px 0 8px}.fcard p{font-size:.82rem;color:var(--ink-dim)}
+.fcard .tags{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap}
+.fcard .tags span{font-size:.68rem;border:1px solid rgba(232,163,61,.4);border-radius:999px;padding:2px 10px;color:var(--accent)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:20px}
+.filters button{border:1px solid var(--hairline-soft);background:var(--bg);color:var(--ink-dim);padding:7px 16px;border-radius:999px;font-size:.82rem;cursor:pointer;font-family:var(--sans)}
+.filters button.on{border-color:var(--accent);background:var(--accent-dim);color:var(--accent)}
+.filters input{flex:1;min-width:220px;padding:9px 14px;border-radius:9px;border:1px solid var(--hairline);background:var(--bg);color:var(--ink);font-size:.88rem;font-family:var(--sans)}
+#count{font-size:.78rem;color:var(--ink-faint);margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{border:1px solid var(--hairline-soft);border-radius:12px;padding:18px 20px;background:var(--bg)}
+.card .inner{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.card .t{font-weight:600;font-size:.94rem}.card .d{font-size:.78rem;color:var(--ink-dim);margin-top:4px}
+.card .cats{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.card .cats span{font-size:.64rem;border:1px solid var(--hairline-soft);border-radius:999px;padding:2px 10px;color:var(--ink-faint)}
+.card .acts{flex-shrink:0;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.card a.dl{font-size:.74rem;border:1px solid rgba(232,163,61,.4);color:var(--accent);border-radius:8px;padding:7px 14px;white-space:nowrap}
+.card a.cz{font-size:.74rem;color:var(--ink-faint);white-space:nowrap}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step{border:1px solid var(--hairline-soft);border-radius:14px;padding:22px;background:var(--bg)}
+.step .sn{font-family:var(--mono);font-size:1.5rem;color:var(--accent);font-weight:700}
+.step h3{font-size:.95rem;margin:8px 0 6px}.step p{font-size:.78rem;color:var(--ink-dim)}
+footer{padding:40px 0;border-top:1px solid var(--hairline-soft);font-size:.76rem;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media(max-width:960px){.feat,.grid,.steps,.strip{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in">
+<a href="./" class="brand"><span class="mk">insight<em>marketplac</em></span> <span style="font-family:var(--mono);font-size:.66rem;color:var(--ink-faint)">AGENT · PI KERNEL</span></a>
+<nav><a href="./">首页</a><a href="index.html#capabilities">产品</a><a href="customers.html">客户案例</a><a href="enterprise-ai.html">企业AI赋能</a><a href="cases.html">选品调研报告</a><a href="skills.html">Skill市场</a><a href="clients.html" class="hot cur">客户端</a><a href="hub/">社区</a><a href="pricing.html">定价</a></nav>
+<a href="client.html" class="btn btn-p">打开控制台</a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+<div class="eyebrow">客户端产品矩阵</div>
+<h1>一个客户端内核，<span class="hl">73 个业务产品</span></h1>
+<p class="hero-sub">全部客户端统一基于 insightmarketplac Agent 桌面端内核封装：一句话派活，一次性出完整报告，安装即用、无需配置。安装包公开发布、可自行下载；客户端源码私有，支持按你的业务定制。</p>
+<a href="https://github.com/Hdhaidong/insightmarketplac-promo/releases" class="btn btn-p">下载安装包</a>&nbsp;&nbsp;<a href="mailto:haidong.zhou@outlook.com" class="btn btn-s">定制联系</a>&nbsp;&nbsp;<a href="client.html" class="btn btn-s">打开控制台演示</a>
+</div></section>
+
+<section><div class="wrap">
+<div class="strip">
+<div class="scard"><div class="n">73</div><div class="l">业务客户端产品</div></div>
+<div class="scard"><div class="n">9</div><div class="l">大产品线</div></div>
+<div class="scard"><div class="n">公开</div><div class="l">安装包自行下载</div></div>
+<div class="scard"><div class="n">私有</div><div class="l">客户端源码不开放</div></div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="eyebrow">Featured · 热门客户端</div><h2 style="margin-bottom:24px">TOP 精选客户端</h2>
+<div class="feat">
+<div class="fcard"><div class="top-tag">TOP 1</div><h3>市场调研报告</h3><p>选定品类后从市场规模、竞争格局、价格带、消费者反馈到进入策略的完整调研，一次性出结构化报告。</p><div class="tags"><span>选品类</span><span>报告</span></div></div>
+<div class="fcard"><div class="top-tag">TOP 2</div><h3>竞品持续监控</h3><p>竞品价格、规格、关键词排名与 BSR 变化 7×24 盯守，本期快照与异动预警一次送达。</p><div class="tags"><span>选品类</span><span>竞品监控</span></div></div>
+<div class="fcard"><div class="top-tag">TOP 3</div><h3>Amazon 平台上架</h3><p>类目、标题、五点、A+ 素材与合规校验一次备齐，校验后经你批准执行上架。</p><div class="tags"><span>发布管理类</span><span>Amazon</span></div></div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="eyebrow">Explore</div><h2 style="margin-bottom:24px">全部 <span id="total">73</span> 个客户端</h2>
+<div class="filters" id="filters">
+<button class="on" data-c="全部">全部</button>
+<button data-c="选品类">选品类</button>
+<button data-c="广告类">广告类</button>
+<button data-c="发布管理类">发布管理类</button>
+<button data-c="内容定制管理类">内容定制管理类</button>
+<button data-c="学习类">学习类</button>
+<button data-c="独立站客服类">独立站客服类</button>
+<button data-c="数据接入类">数据接入类</button>
+<button data-c="获客销售类">获客销售类</button>
+<button data-c="履约管理类">履约管理类</button>
+<input id="q" placeholder="搜索客户端名称 / 描述…">
+</div>
+<p id="count"></p>
+<div class="grid" id="list"></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="eyebrow">Install · 三步获取</div><h2 style="margin-bottom:24px">公开下载，三步即用</h2>
+<div class="steps">
+<div class="step"><div class="sn">01</div><h3>下载安装包</h3><p>进入 GitHub Releases 页面，下载最新 insightmarketplac-Setup-*.exe 安装包。</p></div>
+<div class="step"><div class="sn">02</div><h3>安装即用</h3><p>双击安装，打开客户端一句话派活，无需任何配置。</p></div>
+<div class="step"><div class="sn">03</div><h3>按需定制</h3><p>安装包公开下载即用；如需按你的业务定制（专属品类、平台、报告格式），邮件联系我们。</p></div>
+</div>
+</div></section>
+
+<footer><div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+<span>© 2026 insightmarketplac · Agent平台</span><span>客服邮箱 <a href="mailto:haidong.zhou@outlook.com">haidong.zhou@outlook.com</a></span><span>安装包公开下载 · 客户端源码私有</span>
+</div></footer>
+
+<script src="clients-data.js"></script>
+<script>
+var RELEASES='https://github.com/Hdhaidong/insightmarketplac-promo/releases',MAIL='mailto:haidong.zhou@outlook.com';
+var list=document.getElementById('list'),count=document.getElementById('count'),cat='全部',q='';
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function render(){
+  var items=CLIENTS.filter(function(s){
+    if(cat!=='全部'&&s.cat!==cat)return false;
+    if(q&&(s.name+s.desc).toLowerCase().indexOf(q.toLowerCase())<0)return false;
+    return true;
+  });
+  count.textContent='命中 '+items.length+' 个客户端';
+  list.innerHTML=items.map(function(s){
+    return '<div class="card"><div class="inner"><div><div class="t">'+esc(s.name)+'</div><div class="d">'+esc(s.desc)+'</div><div class="cats"><span>'+esc(s.cat)+'</span><span>安装包公开</span><span>源码私有</span></div></div><div class="acts"><a class="dl" href="'+RELEASES+'">下载安装包</a><a class="cz" href="'+MAIL+'">定制联系 →</a></div></div></div>';
+  }).join('')||'<p style="color:var(--ink-faint);padding:30px 0">'+(cat==='独立站客服类'?'该产品线即将推出，如需提前定制请联系 haidong.zhou@outlook.com。':'没有命中的客户端，换个关键词试试。')+'</p>';
+}
+document.getElementById('filters').addEventListener('click',function(e){
+  if(e.target.tagName==='BUTTON'){document.querySelectorAll('#filters button').forEach(function(b){b.classList.remove('on')});e.target.classList.add('on');cat=e.target.dataset.c;render()}
+});
+document.getElementById('q').addEventListener('input',function(e){q=e.target.value;render()});
+document.getElementById('total').textContent=CLIENTS.length;
+render();
+</script>
+</body>
+</html>

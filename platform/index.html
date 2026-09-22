@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>insightmarketplac · AI 数字员工平台：CRM 底座 × 记忆引擎 × 多智能体编排 × 本地交付，闭源可定制</title>
+<meta name="description" content="insightmarketplac 是闭源 AI 数字员工平台，以 CRM 为业务底座，完整覆盖记忆引擎、多智能体编排、本地交付与治理审计四大能力域。数据可本地、人工审批门控，接受定制。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b7d55'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='700' fill='white' text-anchor='middle' font-family='Arial'%3Ei%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0A1628; --bg2:#0E1D33; --bg3:#132743; --bg4:#1B3150;
+  --ink:#e6f5ec; --muted:#9bb8a8; --dim:#64809a;
+  --accent:#0b7d55; --accent2:#8de1bc; --gold:#e8c468;
+  --rule:#1d2d48;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;
+  font-size:16px; line-height:1.6; overflow-x:hidden;
+}
+::selection{background:rgba(11,125,85,.55);color:#fff}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+/* ---------- header ---------- */
+header{
+  position:fixed; top:0; left:0; right:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 40px;
+  background:linear-gradient(180deg, rgba(10,22,40,.92), rgba(10,22,40,0));
+  backdrop-filter:blur(6px);
+}
+.wordmark{
+  font-size:17px; font-weight:800; letter-spacing:.06em; color:var(--ink);
+  display:flex; align-items:center; gap:10px;
+}
+.wordmark .dot{width:9px;height:9px;border-radius:50%;background:var(--accent2);box-shadow:0 0 12px rgba(141,225,188,.8)}
+nav{display:flex;gap:28px;font-size:13.5px;color:var(--muted)}
+nav a{transition:color .2s}
+nav a:hover{color:var(--accent2)}
+.hd-cta{
+  font-size:13px; padding:8px 18px; border-radius:8px;
+  border:1px solid rgba(141,225,188,.4); color:var(--accent2);
+  transition:background .2s,color .2s;
+}
+.hd-cta:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+@media(max-width:860px){nav{display:none}}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative; min-height:100svh;
+  display:flex; align-items:flex-end;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute; inset:-12% 0; z-index:0;
+  background:
+    radial-gradient(1200px 600px at 70% 20%, rgba(11,125,85,.28), transparent 60%),
+    linear-gradient(160deg,#0E1D33 0%, #0A1628 55%, #081220 100%);
+  background-size:cover; background-position:center;
+  will-change:transform;
+}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero-shade{
+  position:absolute; inset:0; z-index:1;
+  background:linear-gradient(180deg, rgba(10,22,40,.55) 0%, rgba(10,22,40,.25) 40%, rgba(10,22,40,.94) 88%, var(--bg) 100%);
+}
+.hero-inner{
+  position:relative; z-index:2;
+  width:100%; max-width:1160px; margin:0 auto;
+  padding:140px 40px 96px;
+}
+.hero-brand{
+  font-size:clamp(44px,7.5vw,92px); font-weight:800; letter-spacing:-.015em; line-height:1.04;
+  color:#fff;
+  text-shadow:0 4px 40px rgba(4,10,20,.6);
+  animation:rise .9s cubic-bezier(.2,.7,.2,1) both;
+}
+.hero-brand em{font-style:normal;color:var(--accent2)}
+.hero-sub{
+  margin-top:22px; max-width:660px;
+  font-size:clamp(16px,2vw,19px); color:#cfe6d8;
+  animation:rise .9s .15s cubic-bezier(.2,.7,.2,1) both;
+}
+.hero-sub b{color:var(--gold);font-weight:600}
+.hero-actions{margin-top:36px;display:flex;gap:16px;flex-wrap:wrap;animation:rise .9s .3s cubic-bezier(.2,.7,.2,1) both}
+.btn{
+  display:inline-block; padding:13px 30px; border-radius:10px; font-size:15px; font-weight:600;
+  transition:transform .2s, box-shadow .2s, background .2s;
+}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 30px rgba(11,125,85,.4)}
+.btn-primary:hover{background:#0d9163;transform:translateY(-2px)}
+.btn-ghost{border:1px solid rgba(230,245,236,.3);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--accent2);color:var(--accent2);transform:translateY(-2px)}
+.hero-note{margin-top:26px;font-size:12.5px;color:var(--dim);animation:rise .9s .42s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+
+/* ---------- sections ---------- */
+section{position:relative}
+.wrap{max-width:1160px;margin:0 auto;padding:110px 40px}
+.kicker{
+  font-size:12px; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--gold); font-weight:700; margin-bottom:18px;
+}
+h2{font-size:clamp(28px,4vw,44px);font-weight:800;line-height:1.18;letter-spacing:-.01em}
+.lede{margin-top:18px;max-width:720px;color:var(--muted);font-size:16.5px}
+
+/* capability domains */
+.dom-grid{margin-top:64px;display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--rule)}
+.dom{padding:44px 36px;border-bottom:1px solid var(--rule)}
+.dom:nth-child(even){border-left:1px solid var(--rule);padding-left:44px}
+.dom .tag{font-size:11.5px;letter-spacing:.18em;color:var(--dim);text-transform:uppercase;font-weight:700}
+.dom h3{margin-top:10px;font-size:22px;font-weight:700;color:var(--accent2)}
+.dom ul{margin-top:18px;list-style:none}
+.dom li{
+  font-size:13.5px;color:var(--ink);padding:9px 0 9px 20px;position:relative;
+  border-top:1px dashed rgba(29,45,72,.7);
+}
+.dom li:first-child{border-top:none}
+.dom li::before{content:'';position:absolute;left:0;top:16px;width:7px;height:7px;border-radius:2px;background:var(--accent);transform:rotate(45deg)}
+.dom li span{color:var(--dim);font-size:12.5px;display:block}
+@media(max-width:900px){
+  .dom-grid{grid-template-columns:1fr}
+  .dom{padding:36px 0!important;border-left:none!important}
+}
+
+/* capability loop */
+.loop-sec{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%)}
+.loop{margin-top:60px;display:flex;align-items:stretch;gap:0;flex-wrap:wrap}
+.loop-step{
+  flex:1;min-width:220px;padding:34px 30px;
+  border-left:1px solid var(--rule);position:relative;
+  transition:background .25s;
+}
+.loop-step:first-child{border-left:none}
+.loop-step:hover{background:rgba(11,125,85,.08)}
+.loop-step .num{font-size:13px;font-weight:800;color:var(--gold);letter-spacing:.1em}
+.loop-step h4{margin-top:12px;font-size:18px;font-weight:700}
+.loop-step p{margin-top:10px;font-size:13.5px;color:var(--muted)}
+.loop-step::after{
+  content:'→';position:absolute;right:-9px;top:44%;color:var(--accent2);font-size:16px;z-index:2;
+}
+.loop-step:last-child::after{content:''}
+@media(max-width:900px){
+  .loop-step{border-left:none;border-top:1px solid var(--rule);min-width:100%}
+  .loop-step:first-child{border-top:none}
+  .loop-step::after{content:'↓';right:auto;left:46%;top:auto;bottom:-11px}
+}
+
+/* orchestration + delivery */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:60px}
+@media(max-width:900px){.duo{grid-template-columns:1fr}}
+.duo h3{font-size:21px;font-weight:700;color:var(--accent2)}
+.duo .from{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);font-weight:700;margin-bottom:10px;display:block}
+.duo p{margin-top:12px;font-size:14.5px;color:var(--muted)}
+.chips{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+.chip{
+  font-size:12.5px;color:var(--ink);padding:7px 14px;border-radius:999px;
+  border:1px solid var(--rule);background:rgba(19,39,67,.5);
+  transition:border-color .2s, transform .2s;
+}
+.chip:hover{border-color:var(--accent2);transform:translateY(-2px)}
+
+/* ---------- architecture stack ---------- */
+.arch{margin-top:60px;display:grid;grid-template-columns:1fr 158px;gap:18px}
+.arch-stack{display:flex;flex-direction:column;gap:12px}
+.arch-layer{
+  border:1px solid var(--rule);border-radius:14px;
+  padding:26px 30px;background:rgba(14,29,51,.55);
+  transition:border-color .25s, background .25s, transform .25s;
+}
+.arch-layer:hover{border-color:rgba(141,225,188,.5);background:rgba(11,125,85,.1);transform:translateX(6px)}
+.arch-layer .lv{font-size:11px;letter-spacing:.2em;color:var(--gold);font-weight:800;text-transform:uppercase}
+.arch-layer h4{margin-top:8px;font-size:19px;font-weight:700}
+.arch-layer h4 em{font-style:normal;color:var(--accent2);font-size:13.5px;margin-left:10px;font-weight:600}
+.arch-layer p{margin-top:8px;font-size:13.5px;color:var(--muted);max-width:660px}
+.arch-layer .chips{margin-top:14px}
+.arch-rail{
+  border:1px solid rgba(232,196,104,.35);border-radius:14px;
+  background:linear-gradient(180deg, rgba(232,196,104,.09), rgba(232,196,104,.02));
+  padding:26px 18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;
+}
+.arch-rail .lv{font-size:11px;letter-spacing:.2em;color:var(--gold);font-weight:800;text-transform:uppercase}
+.arch-rail h4{font-size:16.5px}
+.arch-rail p{font-size:12px;color:var(--muted);line-height:1.7}
+@media(max-width:860px){
+  .arch{grid-template-columns:1fr}
+  .arch-rail{flex-direction:row;flex-wrap:wrap;justify-content:flex-start;text-align:left}
+}
+
+/* crm base */
+.crm-sec{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%)}
+.pipe{margin-top:56px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.pipe-stage{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:10px 18px;border-radius:999px;font-size:13.5px;color:var(--ink);
+  border:1px solid var(--rule);background:rgba(19,39,67,.5);
+  transition:border-color .2s, transform .2s;
+}
+.pipe-stage:hover{border-color:rgba(141,225,188,.5);transform:translateY(-2px)}
+.pipe-stage .sd{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.pipe-arrow{color:var(--dim);font-size:13px}
+.pipe-side{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+.pipe-side .pipe-stage{opacity:.85}
+.pipe-note{margin-top:16px;font-size:12px;color:var(--dim)}
+.crm-feats{margin-top:52px}
+
+/* scenario */
+.scenario-sec{background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%)}
+.loop.five .loop-step{min-width:0;flex:1}
+.sc-list{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule)}
+.sc-item{padding:26px 28px 30px 0;border-bottom:1px solid var(--rule);font-size:14px}
+.sc-item:not(:nth-child(3n+1)){padding-left:28px;border-left:1px solid var(--rule)}
+.sc-item b{display:block;color:var(--ink);font-weight:600}
+.sc-item span{font-size:12.5px;color:var(--dim)}
+.sc-item::before{content:'✓';color:var(--accent2);font-weight:700;margin-right:9px}
+@media(max-width:900px){.sc-list{grid-template-columns:1fr}.sc-item{padding:22px 0!important;border-left:none!important}}
+.sc-cards{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule)}
+.sc-card{padding:30px 28px 34px 0;border-bottom:1px solid var(--rule)}
+.sc-card:not(:nth-child(3n+1)){padding-left:28px;border-left:1px solid var(--rule)}
+.sc-card .sc-no{font-size:11.5px;font-weight:800;color:var(--gold);letter-spacing:.16em;text-transform:uppercase}
+.sc-card h4{margin-top:9px;font-size:17px;font-weight:700}
+.sc-card p{margin-top:8px;font-size:13.5px;color:var(--muted)}
+@media(max-width:900px){.sc-cards{grid-template-columns:1fr}.sc-card{padding:26px 0!important;border-left:none!important}}
+
+/* differentiators */
+.diff-sec{background:var(--bg2)}
+.diff{margin-top:56px;display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--rule)}
+.diff-item{padding:36px 40px 40px 0;border-bottom:1px solid var(--rule)}
+.diff-item:nth-child(even){padding-left:40px;border-left:1px solid var(--rule)}
+.diff-item .no{font-size:13px;font-weight:800;color:var(--gold);letter-spacing:.12em}
+.diff-item h4{margin-top:10px;font-size:19px;font-weight:700}
+.diff-item p{margin-top:10px;font-size:14px;color:var(--muted)}
+@media(max-width:800px){
+  .diff{grid-template-columns:1fr}
+  .diff-item{padding:32px 0!important;border-left:none!important}
+}
+
+/* coverage panorama */
+.cov-grid{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule)}
+.cov{padding:32px 28px 40px 0;border-bottom:1px solid var(--rule)}
+.cov:not(:first-child){padding-left:28px;border-left:1px solid var(--rule)}
+.cov h4{font-size:15px;color:var(--accent2);margin-bottom:14px;font-weight:700}
+.cov ul{list-style:none}
+.cov li{font-size:13.5px;padding:8px 0 8px 22px;position:relative;border-top:1px dashed rgba(29,45,72,.7)}
+.cov li:first-child{border-top:none}
+.cov li::before{content:'✓';position:absolute;left:0;color:var(--accent2);font-weight:700}
+.cov-note{margin-top:16px;font-size:12px;color:var(--dim)}
+@media(max-width:900px){
+  .cov-grid{grid-template-columns:1fr 1fr}
+  .cov{padding:28px 20px!important;border-left:none!important}
+  .cov:nth-child(even){border-left:1px solid var(--rule)!important;padding-left:28px!important}
+}
+@media(max-width:560px){
+  .cov-grid{grid-template-columns:1fr}
+  .cov{border-left:none!important;padding:24px 0!important}
+}
+
+/* customization */
+.custom-sec{background:linear-gradient(180deg,var(--bg) 0%,#081220 100%)}
+.steps{margin-top:56px;counter-reset:step;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule)}
+.step{padding:36px 28px 40px 0;border-bottom:1px solid var(--rule);position:relative}
+.step:not(:first-child){padding-left:28px;border-left:1px solid var(--rule)}
+.step::before{
+  counter-increment:step;content:"0" counter(step);
+  font-size:30px;font-weight:800;color:transparent;
+  -webkit-text-stroke:1px var(--accent2);
+  display:block;margin-bottom:14px;
+}
+.step h4{font-size:16.5px;font-weight:700}
+.step p{margin-top:8px;font-size:13px;color:var(--muted)}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}.step{padding:28px 20px!important;border-left:none!important}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+
+/* final cta */
+.cta-sec{text-align:center;padding:130px 40px 120px}
+.cta-sec h2{font-size:clamp(30px,4.6vw,52px)}
+.cta-sec .lede{margin:20px auto 0}
+.cta-actions{margin-top:40px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.contact-row{margin-top:34px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.contact-item{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:11px 22px;border-radius:10px;font-size:13.5px;
+  border:1px solid var(--rule);background:rgba(19,39,67,.5);color:var(--ink);
+  transition:border-color .2s, transform .2s;
+}
+.contact-item:hover{border-color:var(--gold);transform:translateY(-2px)}
+.contact-item .k{color:var(--gold);font-weight:700;font-size:12px;letter-spacing:.06em}
+.contact-item svg{width:15px;height:15px;fill:none;stroke:var(--accent2);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* footer */
+footer{border-top:1px solid var(--rule);padding:44px 40px;max-width:1160px;margin:0 auto}
+footer .fm{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer p{font-size:12px;color:var(--dim);max-width:820px;line-height:1.8}
+footer .brand{font-size:14px;font-weight:800;letter-spacing:.06em;color:var(--muted)}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wordmark"><span class="dot"></span>insightmarketplac</div>
+  <nav>
+    <a href="../">总览</a><a href="#domains">能力域</a>
+    <a href="#engine">记忆引擎</a>
+    <a href="#architecture">平台架构</a>
+    <a href="#crm">CRM 底座</a>
+    <a href="#scenario">业务场景</a>
+    <a href="#edge">差异优势</a>
+    <a href="#coverage">能力全景</a>
+    <a href="#custom">定制服务</a>
+  </nav>
+  <a class="hd-cta" href="#custom">洽谈定制</a>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg" id="heroBg">
+    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Cinematic%20wide%20shot%20of%20a%20dark%20navy%20AI%20operations%20command%20center%2C%20a%20single%20operator%20silhouette%20facing%20a%20panoramic%20wall%20of%20glowing%20holographic%20dashboards%20and%20workflow%20graphs%2C%20deep%20navy%20blue%20environment%20%230A1628%20with%20emerald%20green%20%230b7d55%20data%20glow%20and%20subtle%20gold%20%23e8c468%20accents%2C%20soft%20volumetric%20light%2C%20premium%20minimal%20futuristic%20aesthetic%2C%20no%20readable%20text%2C%20no%20watermark&image_size=landscape_16_9" alt="insightmarketplac 数字员工指挥舱">
+  </div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <h1 class="hero-brand">insight<em>marketplac</em></h1>
+    <p class="hero-sub">一套 <b>AI 数字员工平台</b>，以 <b>CRM</b> 为业务底座，完整覆盖<b>记忆引擎、多智能体编排、本地交付、治理审计</b>四大能力域——闭源交付，接受定制，数据握在你自己手里。</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#custom">洽谈定制</a>
+      <a class="btn btn-ghost" href="#coverage">查看能力全景</a>
+    </div>
+    <p class="hero-note">闭源交付 · 数据可本地 · 人工审批门控 · 仅接受定制合作，不提供源码</p>
+  </div>
+</section>
+
+<!-- ============ CAPABILITY DOMAINS ============ -->
+<section id="domains">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Capability Domains · 能力覆盖</div>
+      <h2>四大能力域，一个平台</h2>
+      <p class="lede">数字员工需要的能力域，这里全部齐备：从记忆到编排，从交付到治理。每一域都可以按你的业务裁剪、组合、定制。</p>
+    </div>
+    <div class="dom-grid">
+      <div class="dom reveal">
+        <span class="tag">Domain 01 · 记忆与洞察</span>
+        <h3>AI 记忆引擎</h3>
+        <ul>
+          <li>沟通数据自动捕获<span>每一次互动自动沉淀，零手工录入</span></li>
+          <li>客户全景档案<span>动态更新的结构化客户画像</span></li>
+          <li>每日简报与战术预警<span>讲清楚下一步该做什么</span></li>
+          <li>上下文跟进内容生成<span>基于历史沟通自动起草</span></li>
+        </ul>
+      </div>
+      <div class="dom reveal">
+        <span class="tag">Domain 02 · 编排与护栏</span>
+        <h3>多智能体编排</h3>
+        <ul>
+          <li>多智能体任务编排<span>复杂任务拆解、分派与协同</span></li>
+          <li>护栏与输出校验<span>行为约束、结果验证、错误恢复</span></li>
+          <li>可视化工作流编排<span>拖拽式编排，低代码 / 零代码双模式</span></li>
+          <li>多类节点资产<span>LLM / 知识检索 / 代码执行 / 条件 / 循环 / HTTP</span></li>
+        </ul>
+      </div>
+      <div class="dom reveal">
+        <span class="tag">Domain 03 · 本地与交付</span>
+        <h3>本地交付体系</h3>
+        <ul>
+          <li>本地设备操控<span>读写文件、运行命令、处理本地项目</span></li>
+          <li>真实成果交付<span>文档 / 表格 / 报告 / 网页直接落盘</span></li>
+          <li>连接器生态<span>消息、日历、项目、邮箱等系统联动</span></li>
+          <li>后台自动化<span>定时任务、异步派发、多角色协作</span></li>
+        </ul>
+      </div>
+      <div class="dom reveal">
+        <span class="tag">Domain 04 · 治理与审计</span>
+        <h3>可控执行治理</h3>
+        <ul>
+          <li>人工审批门控<span>AI 产物一律先进待审批队列</span></li>
+          <li>全量审计留痕<span>每一次写操作可追溯</span></li>
+          <li>证据链留档<span>执行身份、结果、时间可查</span></li>
+          <li>数据本地化<span>数据库落在你自己的环境，不出域</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEMORY ENGINE LOOP ============ -->
+<section id="engine" class="loop-sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Memory Engine · 记忆引擎闭环</div>
+      <h2>捕获 → 记忆 → 洞察 → 行动</h2>
+      <p class="lede">平台的数据主干是一条完整价值链：每一次沟通都变成记忆，每一次记忆都喂给洞察，每一条洞察都落成可审批的行动。</p>
+    </div>
+    <div class="loop reveal">
+      <div class="loop-step">
+        <span class="num">STEP 1</span>
+        <h4>数据捕获</h4>
+        <p>沟通、审批、阶段变更等动作自动沉淀进客户时间线，零手工录入。</p>
+      </div>
+      <div class="loop-step">
+        <span class="num">STEP 2</span>
+        <h4>记忆构建</h4>
+        <p>客户全景档案动态更新：阶段、互动频次、在途商机、标签画像一屏读完。</p>
+      </div>
+      <div class="loop-step">
+        <span class="num">STEP 3</span>
+        <h4>洞察提炼</h4>
+        <p>每日简报 + 战术预警：沉默客户、临期商机、到期任务自动浮出。</p>
+      </div>
+      <div class="loop-step">
+        <span class="num">STEP 4</span>
+        <h4>行动执行</h4>
+        <p>基于最近跟进、商机与标签生成跟进内容，进入待审批队列。</p>
+      </div>
+    </div>
+    <div class="duo reveal">
+      <div>
+        <span class="from">Orchestration · 编排与护栏</span>
+        <h3>编排层：多 Agent 协同 + 全程护栏</h3>
+        <p>Planner 生成候选动作、Executor 产出待审工件、Verifier 回查留证——三段式执行链贯彻护栏哲学：输出要校验，失败可恢复，过程可追溯。</p>
+        <div class="chips">
+          <span class="chip">任务拆解</span><span class="chip">输出校验</span><span class="chip">错误恢复</span><span class="chip">流程编排</span><span class="chip">证据留档</span>
+        </div>
+      </div>
+      <div>
+        <span class="from">Delivery · 本地与交付</span>
+        <h3>交付层：给成果，不只给回复</h3>
+        <p>数字员工的产出直接落盘为可用文件：报表、方案、清单、页面。本地设备可控、连接器可扩展，后台任务按时自动派发，人只在关键节点拍板。</p>
+        <div class="chips">
+          <span class="chip">文件落盘</span><span class="chip">本地操控</span><span class="chip">连接器扩展</span><span class="chip">定时任务</span><span class="chip">多角色分工</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARCHITECTURE ============ -->
+<section id="architecture">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Platform Architecture · 平台架构</div>
+      <h2>企业级四层平台架构</h2>
+      <p class="lede">用本体语义层统一业务语义，用执行层做有门控的回写，用协同层让 AI 提案、人拍板，治理贯穿每一层。</p>
+    </div>
+    <div class="arch reveal">
+      <div class="arch-stack">
+        <div class="arch-layer">
+          <span class="lv">Layer 4 · 人机协同</span>
+          <h4>智能协同层<em>AI 提案 · 人拍板</em></h4>
+          <p>跟进内容、每日简报、战术预警由引擎生成，但一律进入人工决策流——护栏内置，没有自动发送，最后一步永远在人手里。</p>
+          <div class="chips">
+            <span class="chip">内容生成</span><span class="chip">每日简报</span><span class="chip">战术预警</span><span class="chip">审批门控</span>
+          </div>
+        </div>
+        <div class="arch-layer">
+          <span class="lv">Layer 3 · 回写执行</span>
+          <h4>执行回写层<em>P-E-V 三段式执行链</em></h4>
+          <p>Planner 提出候选动作 → Executor 产出待审工件 → Verifier 回查留证。人工批准后执行回写，动作同步沉淀进客户时间线。</p>
+          <div class="chips">
+            <span class="chip">Planner</span><span class="chip">Executor</span><span class="chip">Verifier</span><span class="chip">证据留档</span>
+          </div>
+        </div>
+        <div class="arch-layer">
+          <span class="lv">Layer 2 · 业务语义</span>
+          <h4>本体语义层<em>对象 · 属性 · 关系链接</em></h4>
+          <p>客户、联系人、线索、商机、任务被建模为对象与关系，属性动态更新——每一次沟通、阶段变更、官网变化都映射进同一张语义网。</p>
+          <div class="chips">
+            <span class="chip">客户对象</span><span class="chip">关系链接</span><span class="chip">动态属性</span><span class="chip">全景档案</span>
+          </div>
+        </div>
+        <div class="arch-layer">
+          <span class="lv">Layer 1 · 数据接入</span>
+          <h4>数据连接层<em>本地优先 · 多源接入</em></h4>
+          <p>Excel 导入、连接器扩展、本地文件读取；数据落在你自己的环境，不出域、不依赖第三方云端。</p>
+          <div class="chips">
+            <span class="chip">Excel 导入</span><span class="chip">连接器扩展</span><span class="chip">本地存储</span><span class="chip">定时任务</span>
+          </div>
+        </div>
+      </div>
+      <div class="arch-rail">
+        <span class="lv">Cross-cutting</span>
+        <h4>治理贯穿</h4>
+        <p>权限控制 · 全量审计 · 证据链可回溯 · 系统身份留证——每一层的每一次写操作都查得到。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRM BASE ============ -->
+<section id="crm" class="crm-sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">CRM Foundation · 业务底座</div>
+      <h2>数字员工不是空中楼阁，它长在 CRM 上</h2>
+      <p class="lede">记忆、编排、交付、治理，全部围绕同一份客户资产展开。平台自带完整 CRM 底座：管线、时间线、审批、简报，开箱即用——数字员工的每一次行动都有客户上下文。</p>
+    </div>
+    <div class="pipe reveal">
+      <span class="pipe-stage"><span class="sd" style="background:#8C857E"></span>待联系</span>
+      <span class="pipe-arrow">→</span>
+      <span class="pipe-stage"><span class="sd" style="background:#6C87A8"></span>已联系</span>
+      <span class="pipe-arrow">→</span>
+      <span class="pipe-stage"><span class="sd" style="background:#8B7DA8"></span>已确认</span>
+      <span class="pipe-arrow">→</span>
+      <span class="pipe-stage"><span class="sd" style="background:#9C6B2F"></span>方案演示</span>
+      <span class="pipe-arrow">→</span>
+      <span class="pipe-stage"><span class="sd" style="background:#4E7D91"></span>谈判中</span>
+      <span class="pipe-arrow">→</span>
+      <span class="pipe-stage"><span class="sd" style="background:#5A7D5F"></span>已成交</span>
+      <span class="pipe-arrow">→</span>
+      <span class="pipe-stage"><span class="sd" style="background:#8B5E3C"></span>合作伙伴</span>
+    </div>
+    <div class="pipe-side reveal">
+      <span class="pipe-stage"><span class="sd" style="background:#C45C4A"></span>已流失 · 单独管理</span>
+      <span class="pipe-stage"><span class="sd" style="background:#8C857E"></span>未入线 · 待清理</span>
+    </div>
+    <p class="pipe-note reveal">九阶段客户管线：从首次接触到成为伙伴，每一步流转都留痕，流失与未入线单独归口，管线口径可按业务定制。</p>
+    <div class="sc-list crm-feats reveal">
+      <div class="sc-item"><b>客户时间线</b><span>沟通、审批、治理动作自动沉淀，系统记录专属标识、不可删除</span></div>
+      <div class="sc-item"><b>审批中心</b><span>邮件草稿先进待审批队列，批准后才可发送，发送权在人手里</span></div>
+      <div class="sc-item"><b>客户全景摘要卡</b><span>阶段、互动频次、在途商机、标签画像，一屏读完</span></div>
+      <div class="sc-item"><b>每日简报与战术预警</b><span>沉默客户、临期商机、到期任务自动浮出，讲清楚下一步做什么</span></div>
+      <div class="sc-item"><b>本地数据库</b><span>数据落在你自己的机器，不出域、不依赖第三方云端</span></div>
+      <div class="sc-item"><b>Excel 批量导入</b><span>存量客户资产一次导入，直接进管线开跑</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCENARIO: CUSTOMER SERVICE ============ -->
+<section id="scenario" class="scenario-sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Business Scenarios · 业务场景</div>
+      <h2>从询盘接待到成交跟进，一条链路全覆盖</h2>
+      <p class="lede">一条询盘或客户咨询进来，谁来接、谁来写回复、谁来拍板、数据落在哪——这套链路每一步都有明确答案。AI 做准备，人拍板。</p>
+    </div>
+    <div class="loop five reveal">
+      <div class="loop-step">
+        <span class="num">STEP 1</span>
+        <h4>询盘接入</h4>
+        <p>连接器接收来自邮箱 / IM / 网页的询盘与咨询，进入统一队列。</p>
+      </div>
+      <div class="loop-step">
+        <span class="num">STEP 2</span>
+        <h4>上下文组装</h4>
+        <p>自动调出客户全景：阶段、跟进历史、在途商机、标签画像。</p>
+      </div>
+      <div class="loop-step">
+        <span class="num">STEP 3</span>
+        <h4>AI 起草</h4>
+        <p>基于上下文生成回复草稿，一律进入待审批状态。</p>
+      </div>
+      <div class="loop-step">
+        <span class="num">STEP 4</span>
+        <h4>人工审批</h4>
+        <p>客服 / 负责人批准或驳回，发送权永远在人手里。</p>
+      </div>
+      <div class="loop-step">
+        <span class="num">STEP 5</span>
+        <h4>发送沉淀</h4>
+        <p>发送后自动沉淀进客户时间线，全程审计可查。</p>
+      </div>
+    </div>
+    <div class="sc-cards reveal">
+      <div class="sc-card">
+        <span class="sc-no">Scene 01 · 外贸询盘跟进</span>
+        <h4>7×24 接待，跟单到成交</h4>
+        <p>询盘自动接待，企业与产品介绍随问随答，跟进节奏不断档，把每一条商机一路跟到成交。</p>
+      </div>
+      <div class="sc-card">
+        <span class="sc-no">Scene 02 · 长周期复杂交易</span>
+        <h4>多角色、多轮次，不漏节点</h4>
+        <p>出口与工业类长周期交易：多联系人角色、多轮方案沟通，关键节点与决策链全程留痕。</p>
+      </div>
+      <div class="sc-card">
+        <span class="sc-no">Scene 03 · 高节奏项目型服务</span>
+        <h4>需求变得快，响应跟得上</h4>
+        <p>机构与工作室型客户：需求快速变化，响应要及时，成果直接落盘为文件，过程可查。</p>
+      </div>
+      <div class="sc-card">
+        <span class="sc-no">Scene 04 · 咨询型 B2B 交付</span>
+        <h4>高价值交易，记录要完整</h4>
+        <p>复杂交易、高价值交付：沟通记录完整沉淀，客户档案动态更新，交接看得懂。</p>
+      </div>
+      <div class="sc-card">
+        <span class="sc-no">Scene 05 · 客服对接</span>
+        <h4>多渠道咨询，统一队列</h4>
+        <p>邮箱 / IM / 网页咨询进同一队列，上下文自动组装，回复草稿批准后才发送。</p>
+      </div>
+      <div class="sc-card">
+        <span class="sc-no">Scene 06 · 存量客户激活</span>
+        <h4>沉默客户，主动浮出</h4>
+        <p>沉默客户与临期商机自动预警，基于历史沟通脉络生成跟进内容，先审批再发出。</p>
+      </div>
+    </div>
+    <div class="sc-list reveal">
+      <div class="sc-item"><b>多渠道统一接入</b><span>邮箱 / IM / 网页咨询进同一队列</span></div>
+      <div class="sc-item"><b>客户上下文自动组装</b><span>全景档案 + 跟进历史即调即用</span></div>
+      <div class="sc-item"><b>记忆驱动回复起草</b><span>草稿引用真实沟通脉络</span></div>
+      <div class="sc-item"><b>人工审批门控</b><span>批准 / 驳回后才可发送</span></div>
+      <div class="sc-item"><b>时间线自动沉淀</b><span>每次回复都进客户档案</span></div>
+      <div class="sc-item"><b>客户数据不出域</b><span>全程本地，审计可查</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIFFERENTIATORS ============ -->
+<section id="edge" class="diff-sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Why Us · 差异优势</div>
+      <h2>能力齐备之外，我们多给的四件事</h2>
+      <p class="lede">市面上的方案各有边界：云端产品数据出域，全自动执行不可控，开源产品交付即止。insightmarketplac 在能力覆盖之外，补上的是商业交付层面的确定性。</p>
+    </div>
+    <div class="diff reveal">
+      <div class="diff-item">
+        <span class="no">01</span>
+        <h4>闭源交付，接受定制</h4>
+        <p>产品以闭源形式交付，能力按行业与场景定制：工作流、连接器、角色分工、报表口径都可以按你的业务重做一遍。</p>
+      </div>
+      <div class="diff-item">
+        <span class="no">02</span>
+        <h4>数据归属可控</h4>
+        <p>支持本地部署形态：数据库落在你自己的机器或内网，客户资产与沟通记录不出域，不依赖第三方云端。</p>
+      </div>
+      <div class="diff-item">
+        <span class="no">03</span>
+        <h4>人工审批门控</h4>
+        <p>自动化产物一律先进待审批队列，发送权与执行权保留在人手里。AI 负责把活干到 95%，最后 5% 由你拍板。</p>
+      </div>
+      <div class="diff-item">
+        <span class="no">04</span>
+        <h4>全链路审计留痕</h4>
+        <p>每一次写操作、每一次 AI 执行都有审计记录，身份、时间、结果可回溯，出问题查得到，交接看得懂。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COVERAGE PANORAMA ============ -->
+<section id="coverage">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Full Coverage · 能力全景</div>
+      <h2>20 项能力，全部就位</h2>
+      <p class="lede">不是单点能力，而是完整能力面：记忆洞察、编排执行、交付连接、治理部署，一项不缺。</p>
+    </div>
+    <div class="cov-grid reveal">
+      <div class="cov">
+        <h4>记忆与洞察</h4>
+        <ul>
+          <li>沟通数据自动捕获</li>
+          <li>客户全景档案</li>
+          <li>每日简报</li>
+          <li>战术预警</li>
+          <li>上下文跟进生成</li>
+        </ul>
+      </div>
+      <div class="cov">
+        <h4>编排与执行</h4>
+        <ul>
+          <li>多智能体编排</li>
+          <li>输出校验护栏</li>
+          <li>错误恢复</li>
+          <li>可视化工作流</li>
+          <li>多类节点资产</li>
+        </ul>
+      </div>
+      <div class="cov">
+        <h4>交付与连接</h4>
+        <ul>
+          <li>多渠道咨询接入</li>
+          <li>本地设备操控</li>
+          <li>成果落盘交付</li>
+          <li>连接器生态</li>
+          <li>后台定时任务</li>
+        </ul>
+      </div>
+      <div class="cov">
+        <h4>治理与部署</h4>
+        <ul>
+          <li>人工审批门控</li>
+          <li>全量审计留痕</li>
+          <li>证据链留档</li>
+          <li>数据本地部署</li>
+          <li>行业定制交付</li>
+        </ul>
+      </div>
+    </div>
+    <p class="cov-note reveal">* 以上能力面均支持按业务裁剪与定制组合，交付形态以方案确认为准。</p>
+  </div>
+</section>
+
+<!-- ============ CUSTOMIZATION ============ -->
+<section id="custom" class="custom-sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Customization · 定制服务</div>
+      <h2>不接受「将就」，只做贴合业务的交付</h2>
+      <p class="lede">insightmarketplac 不开放源码、不做通用订阅，只以定制项目形式合作。你带着业务场景来，我们交付一套跑得起来的数字员工。</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <h4>需求沟通</h4>
+        <p>梳理业务流程、角色分工与数据现状，明确要替代的人工环节。</p>
+      </div>
+      <div class="step">
+        <h4>方案设计</h4>
+        <p>输出能力清单与工作流设计：记忆引擎、编排链、连接器、审批门控逐项确认。</p>
+      </div>
+      <div class="step">
+        <h4>定制交付</h4>
+        <p>闭源打包交付，支持本地部署；数据落在你指定的环境。</p>
+      </div>
+      <div class="step">
+        <h4>持续支持</h4>
+        <p>上线陪跑与迭代支持，新场景按约定扩展。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="cta-sec">
+  <div class="reveal">
+    <div class="kicker">Get Started</div>
+    <h2>一个平台，全部能力。</h2>
+    <p class="lede">如果你想要一个能接管跟进、编排任务、交付成果，且数据握在自己手里的 AI 数字员工——从一次定制咨询开始。</p>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="https://github.com/Hdhaidong/insightmarketplac-promo/issues/new?title=%E5%AE%9A%E5%88%B6%E5%92%A8%E8%AF%A2" target="_blank" rel="noopener">发起定制咨询</a>
+      <a class="btn btn-ghost" href="https://github.com/Hdhaidong/insightmarketplac-promo" target="_blank" rel="noopener">GitHub 仓库</a>
+    </div>
+    <div class="contact-row">
+      <a class="contact-item" href="mailto:haidong.zhou@outlook.com">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <span class="k">邮箱</span> haidong.zhou@outlook.com
+      </a>
+      <span class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.6 0-3.1-.4-4.4-1.2L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+        <span class="k">微信</span> 请通过邮箱或 Issue 获取对接微信
+      </span>
+      <a class="contact-item" href="https://github.com/Hdhaidong/insightmarketplac-promo/issues/new?title=%E5%AE%9A%E5%88%B6%E5%92%A8%E8%AF%A2" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.2-.4-1.2.1-2.6 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.6.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg>
+        <span class="k">GitHub</span> Issue 留言
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fm">
+    <span class="brand">insightmarketplac</span>
+    <p>
+      © 2026 insightmarketplac · 保留所有权利。本产品为闭源软件，本仓库仅含介绍页面，不含任何产品源码，禁止反向工程与再分发。
+    </p>
+  </div>
+</footer>
+
+<script>
+// scroll reveal
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// hero parallax
+const heroBg = document.getElementById('heroBg');
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (ticking) return;
+  ticking = true;
+  requestAnimationFrame(() => {
+    const y = window.scrollY;
+    if (y < window.innerHeight * 1.2) heroBg.style.transform = 'translateY(' + (y * 0.28) + 'px)';
+    ticking = false;
+  });
+}, { passive: true });
+</script>
+</body>
+</html>

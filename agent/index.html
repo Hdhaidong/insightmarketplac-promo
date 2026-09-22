@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>insightmarketplac Agent · 跨境电商多智能体工作台 | 隶属 insightmarketplac 平台</title>
+<meta name="description" content="insightmarketplac Agent 产品站：全球 41 个零售平台覆盖（Amazon · 沃尔玛 · Ozon · 美客多 · eBay · 野莓 · Kogan · Shopee · Coupang…），多平台市场调研、多平台产品发布、文案视觉与数据分析，19 个跨境电商 AI Agent 一个工作台调度，写操作人工审批，全程可追溯。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hdhaidong.github.io/insightmarketplac-promo/agent/">
+<style>
+:root{--bg:#000;--bg-2:#0A0A0A;--ink:#F2EEE6;--ink-dim:#A7ADB8;--ink-faint:#6E7683;--accent:#E8A33D;--accent-dim:rgba(232,163,61,.12);--hairline:rgba(242,238,230,.12);--hairline-soft:rgba(242,238,230,.07);--sans:"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;--mono:"SF Mono",Consolas,monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.75}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.top{border-bottom:1px solid var(--hairline-soft);background:rgba(0,0,0,.92);position:sticky;top:0;z-index:40;backdrop-filter:blur(10px)}
+.top-in{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand .mk{font-weight:700;font-size:1.1rem}.brand .mk em{font-style:normal;color:var(--accent)}
+.brand .sub{font-size:.72rem;color:var(--ink-faint);letter-spacing:.08em;font-family:var(--mono)}
+nav{display:flex;gap:20px;flex-wrap:wrap;align-items:center}nav a{color:var(--ink-dim);font-size:.9rem}nav a:hover{color:var(--accent);text-decoration:none}
+nav a.pill{border:1px solid var(--hairline);border-radius:999px;padding:6px 16px;color:var(--ink)}
+nav a.pill:hover{border-color:var(--accent);color:var(--accent)}
+.btn{display:inline-block;padding:11px 24px;border-radius:9px;font-weight:600;font-size:.92rem}
+.btn-p{background:var(--accent);color:#141310}.btn-p:hover{background:#F0B355;text-decoration:none}
+.btn-s{border:1px solid var(--hairline);color:var(--ink)}.btn-s:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.hero{padding:88px 0 64px;background:radial-gradient(1200px 500px at 70% -10%,rgba(232,163,61,.10),transparent 60%),var(--bg)}
+.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+h1{font-size:clamp(1.9rem,4.4vw,3.1rem);line-height:1.22;font-weight:700;letter-spacing:-.01em}
+h1 .hl{color:var(--accent)}
+.hero-sub{color:var(--ink-dim);font-size:1.06rem;max-width:720px;margin:20px 0 30px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.hero-meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px;color:var(--ink-faint);font-size:.84rem}
+.hero-meta b{color:var(--ink);font-weight:600}
+section{padding:64px 0}
+section.alt{background:var(--bg-2);border-top:1px solid var(--hairline-soft);border-bottom:1px solid var(--hairline-soft)}
+.sec-head{margin-bottom:32px}
+.sec-head .eyebrow{margin-bottom:10px}
+h2{font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:700}
+.sec-sub{color:var(--ink-dim);max-width:680px;margin-top:10px}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
+.card{border:1px solid var(--hairline-soft);border-radius:14px;padding:26px 28px;background:var(--bg)}
+section.alt .card{background:rgba(255,255,255,.015)}
+.card .num{font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:.14em}
+.card h3{font-size:1.12rem;margin:10px 0 8px}
+.card p{color:var(--ink-dim);font-size:.92rem}
+.card .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.tag{font-size:.74rem;border:1px solid var(--hairline);border-radius:999px;padding:3px 12px;color:var(--ink-dim);font-family:var(--mono)}
+.tag.gold{border-color:rgba(232,163,61,.4);color:var(--accent);background:var(--accent-dim)}
+.platform-strip{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.plat{display:flex;align-items:center;gap:8px;border:1px solid var(--hairline);border-radius:10px;padding:8px 14px;font-size:.84rem;color:var(--ink)}
+.plat b{font-weight:600}.plat span{color:var(--ink-faint);font-size:.72rem}
+.plat.deep{border-color:rgba(232,163,61,.45);background:var(--accent-dim)}
+.region{margin-bottom:30px}.region:last-child{margin-bottom:0}
+.plat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.plat-note{color:var(--ink-faint);font-size:.78rem;margin-top:18px}
+.line-group{margin-bottom:34px}
+.line-title{display:flex;align-items:baseline;gap:14px;margin-bottom:16px}
+.line-title .lt{font-size:1.02rem;font-weight:700}
+.line-title .ln{font-family:var(--mono);font-size:.72rem;color:var(--accent)}
+.agent-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.agent{border:1px solid var(--hairline-soft);border-radius:12px;padding:16px 18px;background:var(--bg);display:block}
+.agent:hover{border-color:var(--accent);text-decoration:none}
+.agent .an{font-weight:600;font-size:.96rem;color:var(--ink);display:flex;align-items:center;gap:8px}
+.agent .ad{color:var(--ink-dim);font-size:.8rem;margin-top:4px}
+.agent .soon{font-size:.64rem;font-family:var(--mono);color:var(--ink-faint);border:1px solid var(--hairline);border-radius:999px;padding:2px 9px;letter-spacing:.06em}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:st}
+.step{border:1px solid var(--hairline-soft);border-radius:12px;padding:22px}
+.step::before{counter-increment:st;content:counter(st,decimal-leading-zero);font-family:var(--mono);color:var(--accent);font-size:.8rem;letter-spacing:.12em}
+.step h4{margin:10px 0 6px;font-size:.98rem}
+.step p{color:var(--ink-dim);font-size:.85rem}
+.gate-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:8px}
+.gate-card{border:1px solid var(--hairline-soft);border-radius:12px;padding:20px;background:var(--bg)}
+.gate-card .gl{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em}
+.gate-card .gl.l1{color:#7CB97C}.gate-card .gl.l2{color:var(--accent)}
+.gate-card h4{margin:8px 0 6px;font-size:.98rem}
+.gate-card p{color:var(--ink-dim);font-size:.84rem}
+.final{padding:80px 0;background:radial-gradient(900px 400px at 30% 110%,rgba(232,163,61,.09),transparent 60%),var(--bg);text-align:center}
+.final h2{margin-bottom:14px}
+.final p{color:var(--ink-dim);margin-bottom:28px}
+footer{border-top:1px solid var(--hairline-soft);padding:36px 0;font-size:.84rem;color:var(--ink-faint)}
+.fam{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.fam a{border:1px solid var(--hairline);border-radius:999px;padding:5px 15px;font-size:.8rem;color:var(--ink-dim)}
+.fam a.cur{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+.fam a:hover{border-color:var(--accent);text-decoration:none;color:var(--accent)}
+.f-grid{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.f-links{display:flex;gap:18px;flex-wrap:wrap}
+.f-links a{color:var(--ink-dim)}
+@media(max-width:480px){.hero{padding:56px 0 44px}section{padding:48px 0}.agent-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <div class="brand">
+      <div class="mk">insight<em>marketplac</em> Agent</div>
+      <div class="sub">AGENT PRODUCT · 隶属平台总仓</div>
+    </div>
+    <nav>
+      <a href="../">总览</a><a href="#caps">基础能力</a>
+      <a href="#platforms">平台覆盖</a>
+      <a href="#agents">Agent 阵容</a>
+      <a href="#engine">执行引擎</a>
+      <a href="#start">快速开始</a>
+      <a class="pill" href="../research/">返回平台主站 →</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Agent Product · Multi-Platform Workbench</div>
+    <h1>一个工作台，调度 <span class="hl">19 个</span><br>跨境电商 AI Agent</h1>
+    <p class="hero-sub">insightmarketplac Agent 把平台调研、产品发布这些基础功课全部自动化：北美、欧洲、拉美、亚太、中东非与印度，全球 41 个主流零售平台全部纳入覆盖，重点平台调研与发布一条链打通。写操作全程人工审批，执行过程全量可追溯。</p>
+    <div class="cta-row">
+      <a class="btn btn-p" href="../research/client.html">打开客户端控制台</a>
+      <a class="btn btn-s" href="#platforms">看平台覆盖</a>
+      <a class="btn btn-s" href="../research/pricing.html">个人免费 · 看定价</a>
+    </div>
+    <div class="hero-meta">
+      <span><b>41</b> 个全球零售平台</span>
+      <span><b>7</b> 个平台深度支持</span>
+      <span><b>6</b> 条发布通道批量上架</span>
+      <span><b>19</b> 个 Agent 按业务线分工</span>
+      <span>写操作 <b>L2 审批门</b> 保护</span>
+    </div>
+  </div>
+</section>
+
+<section id="caps">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Core Capabilities</div>
+      <h2>基础能力：调研与发布，先做扎实</h2>
+      <p class="sec-sub">Agent 产品先把卖家每天重复的两件事做透——看清市场、铺上货架，再延展文案、视觉、数据与达人内容。</p>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="num">01 · RESEARCH</div>
+        <h3>多平台市场调研</h3>
+        <p>同一品类在五大平台的价格带、头部集中度、新品上架率与需求信号横向对比，输出逐平台进入顺序建议。一次调研，五份证据，逐平台复用。</p>
+        <div class="platform-strip">
+          <span class="plat deep"><b>🇺🇸 沃尔玛</b><span>WFS 履约红利</span></span>
+          <span class="plat deep"><b>🇷🇺 Ozon</b><span>俄语本地化</span></span>
+          <span class="plat deep"><b>🇲🇽 美客多</b><span>MLA/MLM/MLB</span></span>
+          <span class="plat deep"><b>🌍 eBay</b><span>US/AU 双站</span></span>
+          <span class="plat deep"><b>🇦🇺 Kogan</b><span>供货模式轻</span></span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="num">02 · PUBLISH</div>
+        <h3>多平台产品发布</h3>
+        <p>类目映射、本地化翻译、合规预检、价格护栏一条链跑完，生成发布草稿回填库存与发货模板，经 L2 审批后写入店铺后台。</p>
+        <div class="tags">
+          <span class="tag gold">Walmart 批量发布</span>
+          <span class="tag gold">Ozon 俄语本地化</span>
+          <span class="tag gold">美客多西语本地化</span>
+          <span class="tag">eBay 批量刊登</span>
+          <span class="tag">Kogan 供货上架</span>
+          <span class="tag">野莓规格表</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="num">03 · COPY &amp; VISUAL</div>
+        <h3>文案与视觉</h3>
+        <p>75 字符标题批量改写、互补卖点生成、白底主图与场景图批量制造、A+ 图文长图排版，一套素材多平台复用。</p>
+        <div class="tags"><span class="tag">Listing 工程师</span><span class="tag">图片设计师</span><span class="tag">3000×3000 规范图</span></div>
+      </div>
+      <div class="card">
+        <div class="num">04 · DATA</div>
+        <h3>数据分析与监控</h3>
+        <p>竞品情报监控、关键词排名跟踪、促销异动雷达，数据技能按需接入，指标交叉验证后再出报告。</p>
+        <div class="tags"><span class="tag">竞品监控哨兵</span><span class="tag">数据技能按需调用</span><span class="tag">数据平台 insightmarketplac data 供给</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="platforms" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Global Retail Coverage</div>
+      <h2>全球主要零售平台，全部放进来</h2>
+      <p class="sec-sub">北美、欧洲、拉美、亚太、中东非与印度，41 个主流零售平台按区域组织，调研数据先行覆盖。金色为首批深度支持——调研对比与发布链路已通。</p>
+    </div>
+
+    <div class="region">
+      <div class="line-title"><span class="lt">北美</span><span class="ln">NORTH AMERICA · 10</span></div>
+      <div class="plat-grid">
+        <span class="plat deep"><b>🇺🇸 Amazon</b><span>平台主阵地</span></span>
+        <span class="plat deep"><b>🇺🇸 沃尔玛</b><span>WFS 履约红利</span></span>
+        <span class="plat deep"><b>🌍 eBay</b><span>US/AU 双站</span></span>
+        <span class="plat"><b>🇺🇸 Etsy</b><span>手工艺垂直</span></span>
+        <span class="plat"><b>🇺🇸 Temu</b><span>全托管模式</span></span>
+        <span class="plat"><b>🇺🇸 TikTok Shop</b><span>内容电商</span></span>
+        <span class="plat"><b>🇺🇸 Target</b><span>邀请制平台</span></span>
+        <span class="plat"><b>🇺🇸 Best Buy</b><span>3C 垂直</span></span>
+        <span class="plat"><b>🇺🇸 Home Depot</b><span>家装垂直</span></span>
+        <span class="plat"><b>🇺🇸 Wayfair</b><span>家居垂类</span></span>
+      </div>
+    </div>
+
+    <div class="region">
+      <div class="line-title"><span class="lt">欧洲</span><span class="ln">EUROPE · 10</span></div>
+      <div class="plat-grid">
+        <span class="plat deep"><b>🇷🇺 Ozon</b><span>俄语本地化</span></span>
+        <span class="plat deep"><b>🇷🇺 野莓 WB</b><span>规格表批量</span></span>
+        <span class="plat"><b>🇵🇱 Allegro</b><span>东欧最大</span></span>
+        <span class="plat"><b>🇩🇪 OTTO</b><span>德国本土</span></span>
+        <span class="plat"><b>🇫🇷 Cdiscount</b><span>法国本土</span></span>
+        <span class="plat"><b>🇷🇴 eMAG</b><span>东南欧</span></span>
+        <span class="plat"><b>🇳🇱 bol</b><span>荷比卢</span></span>
+        <span class="plat"><b>🇩🇪 Zalando</b><span>时尚垂直</span></span>
+        <span class="plat"><b>🇬🇧 Fruugo</b><span>一键分销</span></span>
+        <span class="plat"><b>🇷🇺 Joom</b><span>轻量铺货</span></span>
+      </div>
+    </div>
+
+    <div class="region">
+      <div class="line-title"><span class="lt">拉美</span><span class="ln">LATIN AMERICA · 5</span></div>
+      <div class="plat-grid">
+        <span class="plat deep"><b>🇲🇽 美客多</b><span>MLA/MLM/MLB</span></span>
+        <span class="plat"><b>🇧🇷 Americanas</b><span>巴西本土</span></span>
+        <span class="plat"><b>🇧🇷 Magalu</b><span>巴西零售</span></span>
+        <span class="plat"><b>🇨🇱 Falabella</b><span>智利/秘鲁</span></span>
+        <span class="plat"><b>🇲🇽 Linio</b><span>拉美多国</span></span>
+      </div>
+    </div>
+
+    <div class="region">
+      <div class="line-title"><span class="lt">亚太</span><span class="ln">ASIA-PACIFIC · 9</span></div>
+      <div class="plat-grid">
+        <span class="plat deep"><b>🇦🇺 Kogan</b><span>供货模式轻</span></span>
+        <span class="plat"><b>🌏 Shopee</b><span>东南亚七站</span></span>
+        <span class="plat"><b>🌏 Lazada</b><span>东南亚六站</span></span>
+        <span class="plat"><b>🇰🇷 Coupang</b><span>韩国第一</span></span>
+        <span class="plat"><b>🇯🇵 乐天 Rakuten</b><span>日本本土</span></span>
+        <span class="plat"><b>🇯🇵 Qoo10</b><span>日韩跨境</span></span>
+        <span class="plat"><b>🇳🇿 TradeMe</b><span>新西兰霸主</span></span>
+        <span class="plat"><b>🇦🇺 Catch</b><span>澳洲本土</span></span>
+        <span class="plat"><b>🇦🇺 MyDeal</b><span>澳洲家居</span></span>
+      </div>
+    </div>
+
+    <div class="region">
+      <div class="line-title"><span class="lt">中东非 · 印度</span><span class="ln">MEA &amp; INDIA · 7</span></div>
+      <div class="plat-grid">
+        <span class="plat"><b>🇦🇪 Noon</b><span>中东双雄</span></span>
+        <span class="plat"><b>🇹🇷 Trendyol</b><span>土耳其最大</span></span>
+        <span class="plat"><b>🇹🇷 Hepsiburada</b><span>土耳其电商</span></span>
+        <span class="plat"><b>🇳🇬 Jumia</b><span>非洲之王</span></span>
+        <span class="plat"><b>🇿🇦 Takealot</b><span>南非第一</span></span>
+        <span class="plat"><b>🇮🇳 Flipkart</b><span>印度双雄</span></span>
+        <span class="plat"><b>🇮🇳 Meesho</b><span>社交电商</span></span>
+      </div>
+    </div>
+
+    <p class="plat-note">金色边框 = 首批深度支持（调研横向对比 + 发布链路已通）：Amazon · 沃尔玛 · eBay · Ozon · 野莓 · 美客多 · Kogan。其余平台调研数据先行覆盖，发布通道按需求优先级陆续开通。</p>
+  </div>
+</section>
+
+<section id="agents">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Agent Lineup</div>
+      <h2>19 个 Agent，按业务线分工</h2>
+      <p class="sec-sub">每个 Agent 有自己的名字、角色与任务模板。点击查看完整介绍（跳转平台主站 Agent 详情页）。</p>
+    </div>
+
+    <div class="line-group">
+      <div class="line-title"><span class="lt">选品调研</span><span class="ln">RESEARCH</span></div>
+      <div class="agent-grid">
+        <a class="agent" href="../research/agents/research.html"><div class="an">🔬 市场调研员</div><div class="ad">市场容量、竞品全景、五平台横向对比</div></a>
+        <a class="agent" href="../research/agents/scout.html"><div class="an">🎯 选品分析师</div><div class="ad">潜力筛选、Go/No-Go 全链路分析</div></a>
+        <a class="agent" href="../research/agents/monitor.html"><div class="an">📡 竞品监控哨兵</div><div class="ad">竞品异动、关键词排名、促销雷达</div></a>
+      </div>
+    </div>
+
+    <div class="line-group">
+      <div class="line-title"><span class="lt">文案视觉</span><span class="ln">COPY &amp; VISUAL</span></div>
+      <div class="agent-grid">
+        <a class="agent" href="../research/agents/listing.html"><div class="an">✍️ Listing 工程师</div><div class="ad">标题改写、卖点生成、关键词布局</div></a>
+        <a class="agent" href="../research/agents/images.html"><div class="an">🎨 图片设计师</div><div class="ad">白底主图、场景合成、A+ 排版</div></a>
+      </div>
+    </div>
+
+    <div class="line-group">
+      <div class="line-title"><span class="lt">店铺运营</span><span class="ln">OPERATIONS</span></div>
+      <div class="agent-grid">
+        <a class="agent" href="../research/agents/publish.html"><div class="an">🚀 上架专员</div><div class="ad">六大发布通道，批量上架带审批</div></a>
+        <a class="agent" href="../research/agents/docs.html"><div class="an">📄 打单专员</div><div class="ad">报关单批量制作、货代模板匹配</div></a>
+        <a class="agent" href="../research/agents/ops.html"><div class="an">🧭 运营总监</div><div class="ad">店铺运营统筹与任务编排</div></a>
+        <a class="agent" href="../research/agents/cs.html"><div class="an">💬 客服专员</div><div class="ad">买家消息处理与售后流程</div></a>
+        <a class="agent" href="../research/agents/trainer.html"><div class="an">🎓 培训教练</div><div class="ad">新人带教与操作 SOP 沉淀</div></a>
+      </div>
+    </div>
+
+    <div class="line-group">
+      <div class="line-title"><span class="lt">供应链 · 合规 · 数据</span><span class="ln">SUPPLY · COMPLIANCE · DATA</span></div>
+      <div class="agent-grid">
+        <a class="agent" href="../research/agents/sourcing.html"><div class="an">🧮 采购专员 <span class="soon">SOON</span></div><div class="ad">供应商寻源与采购跟单</div></a>
+        <a class="agent" href="../research/agents/inventory.html"><div class="an">📦 库存计划员 <span class="soon">SOON</span></div><div class="ad">补货计划与库存健康度</div></a>
+        <a class="agent" href="../research/agents/compliance.html"><div class="an">🛡️ 合规审查员 <span class="soon">SOON</span></div><div class="ad">认证、禁售与敏感词预检</div></a>
+        <a class="agent" href="../research/agents/localization.html"><div class="an">🌐 本地化翻译官 <span class="soon">SOON</span></div><div class="ad">多语言 Listing 本地化</div></a>
+        <a class="agent" href="../research/agents/analyst.html"><div class="an">📊 数据分析师 <span class="soon">SOON</span></div><div class="ad">经营数据洞察与归因</div></a>
+      </div>
+    </div>
+
+    <div class="line-group" style="margin-bottom:0">
+      <div class="line-title"><span class="lt">达人 IP · 内容</span><span class="ln">INFLUENCER &amp; CONTENT</span></div>
+      <div class="agent-grid">
+        <a class="agent" href="../research/agents/influencer-ip.html"><div class="an">🌟 达人IP开发官 <span class="soon">SOON</span></div><div class="ad">素人 IP 孵化与分销网络</div></a>
+        <a class="agent" href="../research/agents/content.html"><div class="an">📝 内容开发官 <span class="soon">SOON</span></div><div class="ad">内容矩阵日更与选题</div></a>
+        <a class="agent" href="../research/agents/kol.html"><div class="an">🤝 达人合作专员 <span class="soon">SOON</span></div><div class="ad">达人建联与投放跟进</div></a>
+        <a class="agent" href="../research/agents/video.html"><div class="an">🎬 视频剪辑师 <span class="soon">SOON</span></div><div class="ad">产品视频与素材剪辑</div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="engine" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Execution Engine</div>
+      <h2>自研多智能体引擎：能自动的自动，该审的必审</h2>
+      <p class="sec-sub">任务规划 → 数据技能调用 → 交叉验证 → 报告生成，每一步留痕。写操作一律过审批门，批准前不执行任何写入。</p>
+    </div>
+    <div class="gate-strip">
+      <div class="gate-card">
+        <div class="gl l1">L1 · READ-ONLY</div>
+        <h4>只读任务自动执行</h4>
+        <p>调研、监控、筛选类任务直接跑完，结果即时渲染，不触碰任何店铺与文件写入。</p>
+      </div>
+      <div class="gate-card">
+        <div class="gl l2">L2 · WRITE-GATED</div>
+        <h4>写操作人工审批门</h4>
+        <p>产品发布、报关单生成等写操作暂停在审批门，人工批准后才执行，可随时驳回。</p>
+      </div>
+      <div class="gate-card">
+        <div class="gl l1">TRACE</div>
+        <h4>全程可追溯</h4>
+        <p>每个任务保留执行步骤、调用工具与结果快照，任务中心随时回看。</p>
+      </div>
+      <div class="gate-card">
+        <div class="gl l2">DUAL ENGINE</div>
+        <h4>双引擎可切换</h4>
+        <p>标准引擎本地执行循环跑数据技能；高性能引擎由云端大模型负责任务规划与文案生成。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="start">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Get Started</div>
+      <h2>四步跑起来</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h4>下载客户端</h4><p>免费安装 insightmarketplac Agent 客户端，登录即送任务额度。</p></div>
+      <div class="step"><h4>选模板下任务</h4><p>按业务线选 Agent 与任务模板，一键发起，或用一句话下达指令。</p></div>
+      <div class="step"><h4>审批门确认</h4><p>写操作在 L2 审批门等你确认，批准后自动执行并回写 ERP。</p></div>
+      <div class="step"><h4>结果即时用</h4><p>调研报告、发布回执、监控预警直接在工作台查看与导出。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>把调研和上架交给 Agent，把决策留给自己</h2>
+    <p>个人版免费使用 · 19 个 Agent · 41 个零售平台 · 六条发布通道</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn btn-p" href="../research/client.html">免费开始使用</a>
+      <a class="btn btn-s" href="../research/skills.html">浏览 Skill 市场</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fam">
+      <a href="../research/">🏠 insightmarketplac 平台主站（总仓）</a>
+      <a class="cur" href="./">🤖 insightmarketplac Agent 产品站</a>
+      <a href="../data/">📊 insightmarketplac data 数据平台</a>
+    </div>
+    <div class="f-grid">
+      <span>© 2026 insightmarketplac · Agent 产品站 · 隶属平台总仓</span>
+      <div class="f-links">
+        <a href="../research/client.html">客户端</a>
+        <a href="../research/skills.html">Skill 市场</a>
+        <a href="../research/pricing.html">定价</a>
+        <a href="../research/cases.html">客户案例</a>
+        <a href="mailto:haidong.zhou@outlook.com">客服邮箱</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>insightmarketplac — 海外市场调研智能体</title>
+<meta name="description" content="insightmarketplac 是一款海外市场调研智能体客户端：检索海外信息、抓取网页、查询零售与仓储数据。安装即用，无需配置。">
+<style>
+  :root {
+    --bg: #0a0b0e;
+    --bg-soft: #101318;
+    --ink: #f2f4f8;
+    --ink-dim: #9aa3b2;
+    --ink-faint: #5c6472;
+    --accent: #4f8dff;
+    --line: rgba(255,255,255,.08);
+    --font: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", system-ui, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--accent); color: #fff; }
+
+  /* ── Nav ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 48px;
+    background: linear-gradient(to bottom, rgba(10,11,14,.85), transparent);
+    backdrop-filter: blur(2px);
+  }
+  .nav-brand {
+    font-size: 17px; font-weight: 700; letter-spacing: -.02em; color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-cta {
+    font-size: 14px; color: var(--ink); text-decoration: none;
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 9px 22px;
+    transition: border-color .25s, background .25s;
+  }
+  .nav-cta:hover { border-color: var(--accent); background: rgba(79,141,255,.08); }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex; align-items: flex-end;
+    isolation: isolate;
+  }
+  .hero-media {
+    position: absolute; inset: 0; z-index: -1;
+    overflow: hidden;
+  }
+  .hero-media img {
+    width: 100%; height: 100%; object-fit: cover;
+    object-position: center 30%;
+    transform: scale(1.06);
+    animation: heroZoom 2.4s cubic-bezier(.16,1,.3,1) forwards;
+  }
+  @keyframes heroZoom { to { transform: scale(1); } }
+  .hero-media::after {
+    content: ""; position: absolute; inset: 0;
+    background:
+      linear-gradient(to top, var(--bg) 4%, rgba(10,11,14,.55) 38%, rgba(10,11,14,.25) 65%, rgba(10,11,14,.5) 100%);
+  }
+  .hero-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px 96px;
+  }
+  .hero-wordmark {
+    font-size: clamp(40px, 7.5vw, 104px);
+    font-weight: 800;
+    letter-spacing: -.045em;
+    line-height: .95;
+    opacity: 0;
+    animation: riseIn 1s cubic-bezier(.16,1,.3,1) .15s forwards;
+  }
+  .hero-wordmark .dot { color: var(--accent); }
+  .hero-headline {
+    margin-top: 28px;
+    font-size: clamp(20px, 2.6vw, 34px);
+    font-weight: 600;
+    letter-spacing: -.01em;
+    line-height: 1.35;
+    max-width: 560px;
+    opacity: 0;
+    animation: riseIn 1s cubic-bezier(.16,1,.3,1) .35s forwards;
+  }
+  .hero-sub {
+    margin-top: 18px;
+    font-size: 16px;
+    color: var(--ink-dim);
+    line-height: 1.7;
+    max-width: 480px;
+    opacity: 0;
+    animation: riseIn 1s cubic-bezier(.16,1,.3,1) .5s forwards;
+  }
+  .hero-actions {
+    margin-top: 40px;
+    display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+    opacity: 0;
+    animation: riseIn 1s cubic-bezier(.16,1,.3,1) .65s forwards;
+  }
+  @keyframes riseIn {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #fff;
+    font-size: 15px; font-weight: 600;
+    padding: 15px 34px; border-radius: 999px;
+    text-decoration: none;
+    transition: transform .25s cubic-bezier(.16,1,.3,1), box-shadow .25s;
+    box-shadow: 0 0 0 0 rgba(79,141,255,0);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px -8px rgba(79,141,255,.55);
+  }
+  .btn-primary svg { transition: transform .25s; }
+  .btn-primary:hover svg { transform: translateY(2px); }
+  .hero-note {
+    font-size: 13px; color: var(--ink-faint);
+  }
+
+  /* ── Sections ── */
+  section { position: relative; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+  .section-label {
+    font-size: 12px; font-weight: 600;
+    letter-spacing: .22em; text-transform: uppercase;
+    color: var(--accent);
+  }
+  .section-title {
+    margin-top: 16px;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700; letter-spacing: -.03em; line-height: 1.15;
+  }
+
+  /* reveal on scroll */
+  .reveal {
+    opacity: 0; transform: translateY(36px);
+    transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);
+  }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* ── Capabilities ── */
+  .caps { padding: 140px 0 120px; }
+  .caps-list { margin-top: 72px; border-top: 1px solid var(--line); }
+  .cap-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 1.2fr;
+    gap: 32px; align-items: baseline;
+    padding: 44px 0;
+    border-bottom: 1px solid var(--line);
+    transition: background .3s, padding-left .3s;
+  }
+  .cap-row:hover { background: rgba(255,255,255,.02); padding-left: 16px; }
+  .cap-num {
+    font-size: 13px; color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+  .cap-name { font-size: 24px; font-weight: 650; letter-spacing: -.02em; }
+  .cap-desc { font-size: 15px; color: var(--ink-dim); line-height: 1.75; }
+
+  /* ── Flow ── */
+  .flow { padding: 120px 0 140px; background: var(--bg-soft); }
+  .flow-grid {
+    margin-top: 72px;
+    display: grid; grid-template-columns: 1.05fr .95fr; gap: 80px;
+    align-items: center;
+  }
+  .flow-media {
+    border-radius: 16px; overflow: hidden;
+    aspect-ratio: 4 / 3;
+  }
+  .flow-media img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 1.2s cubic-bezier(.16,1,.3,1);
+  }
+  .flow-media:hover img { transform: scale(1.04); }
+  .flow-steps { display: flex; flex-direction: column; }
+  .flow-step {
+    display: flex; gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .flow-step:first-child { padding-top: 0; }
+  .flow-step:last-child { border-bottom: none; padding-bottom: 0; }
+  .flow-idx {
+    flex: none;
+    width: 34px; height: 34px; border-radius: 50%;
+    border: 1px solid var(--line);
+    display: grid; place-items: center;
+    font-size: 13px; color: var(--ink-dim);
+    font-variant-numeric: tabular-nums;
+  }
+  .flow-step h3 { font-size: 18px; font-weight: 650; letter-spacing: -.01em; }
+  .flow-step p { margin-top: 8px; font-size: 14px; color: var(--ink-dim); line-height: 1.7; }
+
+  /* ── Final CTA ── */
+  .final {
+    padding: 160px 0;
+    text-align: center;
+  }
+  .final .section-title { max-width: 640px; margin-left: auto; margin-right: auto; }
+  .final-sub {
+    margin: 22px auto 0;
+    font-size: 15px; color: var(--ink-dim); line-height: 1.75;
+    max-width: 440px;
+  }
+  .final .btn-primary { margin-top: 44px; }
+  .final-meta {
+    margin-top: 20px;
+    font-size: 13px; color: var(--ink-faint);
+  }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 36px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; color: var(--ink-faint);
+  }
+  footer .f-brand { font-weight: 700; color: var(--ink-dim); letter-spacing: -.01em; }
+  footer .f-contact a { color: var(--ink-dim); text-decoration: none; border-bottom: 1px solid var(--line); transition: color .2s, border-color .2s; }
+  footer .f-contact a:hover { color: var(--accent, #6ea8ff); border-color: currentColor; }
+
+  @media (max-width: 860px) {
+    nav { padding: 16px 24px; }
+    .hero-inner { padding: 0 24px 72px; }
+    .wrap { padding: 0 24px; }
+    .cap-row { grid-template-columns: 1fr; gap: 10px; padding: 32px 0; }
+    .cap-row:hover { padding-left: 0; }
+    .flow-grid { grid-template-columns: 1fr; gap: 48px; }
+    .caps { padding: 96px 0 80px; }
+    .flow { padding: 80px 0 96px; }
+    .final { padding: 110px 0; }
+    footer { flex-direction: column; gap: 10px; padding: 28px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="../">insightmarketplac</a>
+  <a class="nav-cta" href="#download">下载客户端</a>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-media">
+    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cinematic%20aerial%20view%20of%20a%20global%20container%20port%20at%20dusk%2C%20cargo%20ships%20and%20cranes%20silhouetted%20against%20deep%20blue%20twilight%20sky%2C%20city%20lights%20glowing%20on%20horizon%2C%20moody%20dark%20tones%2C%20professional%20editorial%20photography%2C%20high%20contrast%2C%20no%20text%20no%20logos&image_size=landscape_16_9" alt="全球贸易港口暮色">
+  </div>
+  <div class="hero-inner">
+    <h1 class="hero-wordmark">insightmarketplac<span class="dot">.</span></h1>
+    <p class="hero-headline">海外市场调研，<br>交给一个智能体就够了。</p>
+    <p class="hero-sub">检索海外信息、抓取网页、查询零售与仓储数据——下载安装，打开即用，无需任何配置。</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://github.com/Hdhaidong/insightmarketplac-promo/releases/download/insightmarketplac-v1.0.0/insightmarketplac-Setup-1.0.0-client01.exe">
+        下载 Windows 客户端
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v14m0 0l-5.5-5.5M12 17l5.5-5.5M4 21h16"/></svg>
+      </a>
+      <span class="hero-note">Windows 10 / 11 · 约 75 MB</span>
+    </div>
+  </div>
+</header>
+
+<!-- Capabilities -->
+<section class="caps">
+  <div class="wrap">
+    <p class="section-label reveal">Capabilities</p>
+    <h2 class="section-title reveal">三种能力，覆盖一次完整调研。</h2>
+    <div class="caps-list">
+      <div class="cap-row reveal">
+        <span class="cap-num">01</span>
+        <h3 class="cap-name">海外市场检索</h3>
+        <p class="cap-desc">用自然语言提问，智能体自动检索海外公开信息——竞品动态、价格区间、用户评价、行业趋势，并整理为可读的结论。</p>
+      </div>
+      <div class="cap-row reveal">
+        <span class="cap-num">02</span>
+        <h3 class="cap-name">网页内容抓取</h3>
+        <p class="cap-desc">指定任意海外网页，自动提取正文与结构化内容。商品页、榜单页、新闻页，交给我就是一段干净的素材。</p>
+      </div>
+      <div class="cap-row reveal">
+        <span class="cap-num">03</span>
+        <h3 class="cap-name">零售数据查询</h3>
+        <p class="cap-desc">直连海外零售与仓储数据源，查询商品、库存与价格信息，为选品与定价提供一手依据。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Workflow -->
+<section class="flow">
+  <div class="wrap">
+    <p class="section-label reveal">Workflow</p>
+    <h2 class="section-title reveal">从提问到报告，三步完成。</h2>
+    <div class="flow-grid">
+      <div class="flow-media reveal">
+        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=minimal%20dark%20workspace%20desk%20with%20a%20laptop%20showing%20softly%20glowing%20data%20charts%2C%20warm%20desk%20lamp%20light%2C%20shallow%20depth%20of%20field%2C%20late%20night%20work%20atmosphere%2C%20photorealistic%2C%20moody%20cinematic%20tones%2C%20no%20readable%20text%20no%20logos&image_size=landscape_4_3" alt="深夜工作台">
+      </div>
+      <div class="flow-steps">
+        <div class="flow-step reveal">
+          <span class="flow-idx">1</span>
+          <div>
+            <h3>用一句话描述目标</h3>
+            <p>「调研美国市场电动工具的售价与口碑」——像交给同事一样，把问题交给它。</p>
+          </div>
+        </div>
+        <div class="flow-step reveal">
+          <span class="flow-idx">2</span>
+          <div>
+            <h3>智能体自动执行</h3>
+            <p>检索、抓取、查数、交叉验证，全过程自动推进，关键步骤清晰可见。</p>
+          </div>
+        </div>
+        <div class="flow-step reveal">
+          <span class="flow-idx">3</span>
+          <div>
+            <h3>收获一份完整报告</h3>
+            <p>结论、数据与出处一并交付，可直接用于选品讨论与客户汇报。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final" id="download">
+  <div class="wrap">
+    <p class="section-label reveal">Get Started</p>
+    <h2 class="section-title reveal">现在开始，让市场调研自己跑起来。</h2>
+    <p class="final-sub reveal">下载安装包，双击安装，打开即用——账号、模型、数据均已为你预置妥当。</p>
+    <a class="btn-primary reveal" href="https://github.com/Hdhaidong/insightmarketplac-promo/releases/download/insightmarketplac-v1.0.0/insightmarketplac-Setup-1.0.0-client01.exe">
+      下载 Windows 客户端
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v14m0 0l-5.5-5.5M12 17l5.5-5.5M4 21h16"/></svg>
+    </a>
+    <p class="final-meta reveal">版本 1.0.0 · Windows 10 / 11（64 位）· 约 75 MB</p>
+  </div>
+</section>
+
+<footer>
+  <span class="f-brand">insightmarketplac</span>
+  <span class="f-contact">
+    联系方式：<a href="mailto:haidong.zhou@outlook.com">haidong.zhou@outlook.com</a>
+  </span>
+  <span>© 2026 insightmarketplac. All rights reserved.</span>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    }
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+</script>
+
+</body>
+</html>

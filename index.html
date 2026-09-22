@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>insightmarketplac — 产品宣传总览 · 跨境电商 AI 数字员工产品家族</title>
+<meta name="description" content="insightmarketplac 产品家族宣传总览：AI 数字员工平台、30 数据源数据层、多智能体工作台、安装即用的调研客户端与数字员工团队。成品公开下载，源码闭源私有，隶属关系一目了然。">
+<link rel="canonical" href="https://hdhaidong.github.io/insightmarketplac-promo/">
+<style>
+  :root {
+    --bg: #0a0b0e;
+    --bg-soft: #101318;
+    --card: #12151b;
+    --ink: #f2f4f8;
+    --ink-dim: #9aa3b2;
+    --ink-faint: #5c6472;
+    --accent: #4f8dff;
+    --accent-soft: rgba(79,141,255,.12);
+    --green: #3ddc97;
+    --line: rgba(255,255,255,.08);
+    --font: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", system-ui, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--accent); color: #fff; }
+  a { color: var(--accent); text-decoration: none; }
+
+  /* ── Nav ── */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 48px;
+    background: rgba(10,11,14,.88);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-brand { font-size: 17px; font-weight: 700; letter-spacing: -.02em; color: var(--ink); }
+  .nav-brand b { color: var(--accent); font-weight: 700; }
+  .nav-links { display: flex; gap: 22px; font-size: 13.5px; }
+  .nav-links a { color: var(--ink-dim); transition: color .2s; }
+  .nav-links a:hover { color: var(--ink); }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
+
+  /* ── Hero ── */
+  .hero { padding: 100px 0 80px; background: radial-gradient(1200px 500px at 50% -10%, rgba(79,141,255,.14), transparent 70%); }
+  .badge {
+    display: inline-block; font-size: 12px; font-weight: 600;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: var(--accent); border: 1px solid rgba(79,141,255,.35);
+    border-radius: 999px; padding: 6px 16px; margin-bottom: 26px;
+  }
+  .hero h1 { font-size: clamp(34px, 5.4vw, 62px); font-weight: 800; letter-spacing: -.04em; line-height: 1.08; }
+  .hero h1 .dot { color: var(--accent); }
+  .hero .sub { margin-top: 24px; font-size: 17px; color: var(--ink-dim); line-height: 1.8; max-width: 640px; }
+  .hero .sub b { color: var(--ink); font-weight: 600; }
+  .hero-actions { margin-top: 38px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #fff; font-size: 15px; font-weight: 600;
+    padding: 14px 32px; border-radius: 999px;
+    transition: transform .25s, box-shadow .25s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px -8px rgba(79,141,255,.55); }
+  .btn-ghost {
+    display: inline-flex; align-items: center;
+    font-size: 15px; color: var(--ink);
+    border: 1px solid var(--line); border-radius: 999px; padding: 14px 32px;
+    transition: border-color .25s;
+  }
+  .btn-ghost:hover { border-color: var(--accent); }
+  .hero-note { font-size: 13px; color: var(--ink-faint); }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: 56px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; text-align: center; }
+  .stat b { display: block; font-size: 28px; font-weight: 800; color: var(--accent); }
+  .stat span { font-size: 12.5px; color: var(--ink-dim); }
+
+  /* ── Sections ── */
+  section { padding: 88px 0; }
+  section + section { border-top: 1px solid var(--line); }
+  .sec-label { font-size: 12px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+  .sec-title { margin-top: 14px; font-size: clamp(26px, 3.6vw, 40px); font-weight: 700; letter-spacing: -.03em; line-height: 1.18; }
+  .sec-sub { margin-top: 14px; font-size: 15px; color: var(--ink-dim); line-height: 1.8; max-width: 720px; }
+
+  /* ── Product cards ── */
+  .grid { margin-top: 52px; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+    padding: 26px; display: flex; flex-direction: column;
+    transition: border-color .25s, transform .25s;
+  }
+  .card:hover { border-color: rgba(79,141,255,.5); transform: translateY(-3px); }
+  .card .crow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+  .tag { font-size: 11px; font-weight: 700; letter-spacing: .08em; border-radius: 6px; padding: 3px 10px; }
+  .tag.main { color: var(--accent); background: var(--accent-soft); }
+  .tag.pub { color: var(--green); background: rgba(61,220,151,.1); }
+  .tag.priv { color: #ffb454; background: rgba(255,180,84,.1); }
+  .card h3 { font-size: 19px; font-weight: 700; letter-spacing: -.01em; }
+  .card h3 small { display: block; margin-top: 4px; font-size: 12px; font-weight: 500; color: var(--ink-faint); letter-spacing: .04em; }
+  .card p { margin-top: 12px; font-size: 14px; color: var(--ink-dim); line-height: 1.75; flex: 1; }
+  .card .belong {
+    margin-top: 16px; padding: 12px 14px;
+    background: rgba(255,255,255,.025); border: 1px dashed var(--line); border-radius: 10px;
+    font-size: 12.5px; color: var(--ink-dim); line-height: 1.7;
+  }
+  .card .belong b { color: var(--ink); font-weight: 600; }
+  .card .go { margin-top: 18px; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--accent); }
+  .card .go:hover { text-decoration: underline; }
+
+  /* ── Structure tree ── */
+  .tree { margin-top: 52px; border: 1px solid var(--line); border-radius: 18px; background: var(--bg-soft); padding: 36px; overflow-x: auto; }
+  .t-root { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .t-root .tag { font-size: 10.5px; }
+  .t-children { margin-top: 18px; border-left: 1px solid var(--line); padding-left: 26px; display: flex; flex-direction: column; gap: 12px; }
+  .t-node { position: relative; }
+  .t-node::before { content: ""; position: absolute; left: -26px; top: 15px; width: 18px; height: 1px; background: var(--line); }
+  .t-node .row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 14.5px; }
+  .t-node .row b { font-weight: 650; }
+  .t-node .row .role { font-size: 12px; color: var(--ink-dim); }
+  .t-node .sub { margin-top: 6px; font-size: 12.5px; color: var(--ink-faint); line-height: 1.7; padding-left: 2px; }
+  .t-node .sub b { color: var(--ink-dim); font-weight: 600; }
+  .legend { margin-top: 26px; display: flex; gap: 22px; flex-wrap: wrap; font-size: 12.5px; color: var(--ink-dim); }
+
+  /* ── Download ── */
+  .dl { text-align: center; background: radial-gradient(800px 400px at 50% 0%, rgba(79,141,255,.1), transparent 70%); }
+  .dl .sec-title { max-width: 620px; margin-left: auto; margin-right: auto; }
+  .dl .sec-sub { max-width: 460px; margin-left: auto; margin-right: auto; }
+  .dl .btn-primary { margin-top: 40px; }
+  .dl-meta { margin-top: 18px; font-size: 13px; color: var(--ink-faint); }
+
+  footer { border-top: 1px solid var(--line); padding: 36px 48px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--ink-faint); }
+  footer .f-brand { font-weight: 700; color: var(--ink-dim); }
+  footer a { color: var(--ink-dim); border-bottom: 1px solid var(--line); }
+  footer a:hover { color: var(--accent); border-color: currentColor; }
+
+  @media (max-width: 860px) {
+    nav { padding: 14px 24px; }
+    .nav-links { gap: 14px; }
+    .wrap { padding: 0 24px; }
+    .hero { padding: 72px 0 56px; }
+    section { padding: 64px 0; }
+    .tree { padding: 22px; }
+    footer { padding: 28px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="./">insightmarketplac<b>.</b></a>
+  <div class="nav-links">
+    <a href="#products">产品矩阵</a>
+    <a href="#structure">仓库隶属</a>
+    <a href="#download">下载客户端</a>
+    <a href="https://github.com/Hdhaidong/insightmarketplac-promo" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="wrap">
+    <div class="badge">Product Family · 宣传总览</div>
+    <h1>insightmarketplac<span class="dot">.</span><br>给跨境生意，配一支 AI 数字员工团队。</h1>
+    <p class="sub">一个项目生态，五条产品线：<b>AI 数字员工平台</b>、<b>30 个数据源的数据层</b>、<b>多智能体工作台</b>、<b>安装即用的调研客户端</b>与<b>19 个数字员工团队</b>——成品公开下载，源码闭源私有。</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://github.com/Hdhaidong/insightmarketplac-promo/releases/download/insightmarketplac-v1.0.0/insightmarketplac-Setup-1.0.0-client01.exe">
+        下载 Windows 客户端
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v14m0 0l-5.5-5.5M12 17l5.5-5.5M4 21h16"/></svg>
+      </a>
+      <a class="btn-ghost" href="#products">浏览产品矩阵</a>
+      <span class="hero-note">Windows 10 / 11 · 约 75 MB · 安装即用</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>5</b><span>产品线</span></div>
+      <div class="stat"><b>19</b><span>数字员工</span></div>
+      <div class="stat"><b>73</b><span>业务产品客户端</span></div>
+      <div class="stat"><b>30</b><span>统一数据源</span></div>
+      <div class="stat"><b>131</b><span>数据 Skill</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- Product matrix -->
+<section id="products">
+  <div class="wrap">
+    <p class="sec-label">Product Matrix</p>
+    <h2 class="sec-title">五条产品线，每个产品都有独立页面。</h2>
+    <p class="sec-sub">从平台底座到开箱即用的成品客户端——产品页在此总览一览可达，成品与页面对外公开，源码全部闭源私有。</p>
+
+    <div class="grid">
+      <article class="card">
+        <div class="crow"><span class="tag main">主平台</span><span class="tag priv">闭源 · 源码私有</span></div>
+        <h3>insightmarketplac 平台<small>PLATFORM · AI DIGITAL EMPLOYEE</small></h3>
+        <p>AI 数字员工平台：CRM 底座 × 记忆引擎 × 多智能体编排 × 本地交付，四大能力域闭源可定制，数据握在自己手里。</p>
+        <div class="belong"><b>隶属：</b>insightmarketplac 主平台 · CRM 底座构建于自研 <b>PI 内核</b>（PI 系列 · 标准独立项目，源码私有）</div>
+        <a class="go" href="platform/">进入平台产品页 →</a>
+      </article>
+
+      <article class="card">
+        <div class="crow"><span class="tag main">数据层</span><span class="tag pub">个人免费</span></div>
+        <h3>insightmarketplac data<small>DATA · UNIFIED DATA GATEWAY</small></h3>
+        <p>30 个数据源一个 API 全搞定：选品、竞品、供应链、广告数据统一网关，注册即领 Token，个人用户整体免费。</p>
+        <div class="belong"><b>隶属：</b>insightmarketplac 平台 · 数据层 · 源码私有</div>
+        <a class="go" href="data/">进入数据产品页 →</a>
+      </article>
+
+      <article class="card">
+        <div class="crow"><span class="tag main">智能体层</span><span class="tag pub">19 个数字员工</span></div>
+        <h3>insightmarketplac Agent<small>AGENT · MULTI-AGENT WORKBENCH</small></h3>
+        <p>跨境电商多智能体工作台：市场调研、选品、Listing、上架、客服、图片、广告——19 个数字员工一句话派活，一次性出完整报告。</p>
+        <div class="belong"><b>隶属：</b>insightmarketplac 平台 · 智能体层 · 源码私有</div>
+        <a class="go" href="agent/">进入 Agent 产品页 →</a>
+      </article>
+
+      <article class="card">
+        <div class="crow"><span class="tag main">成品客户端</span><span class="tag pub">安装包公开下载</span><span class="tag priv">源码私有</span></div>
+        <h3>insightmarketplac 客户端<small>CLIENT · RESEARCH AGENT APP</small></h3>
+        <p>海外市场调研智能体：检索海外信息、抓取网页、查询零售与仓储数据——下载安装，打开即用，无需任何配置。</p>
+        <div class="belong"><b>隶属：</b>insightmarketplac 项目 · 成品分发（本仓 Release 公开）· 客户端源码仓私有</div>
+        <a class="go" href="client/">进入客户端产品页 →</a>
+      </article>
+
+      <article class="card">
+        <div class="crow"><span class="tag main">数字员工团队</span><span class="tag pub">营销站公开</span><span class="tag priv">源码私有</span></div>
+        <h3>数字员工团队<small>DIGITAL EMPLOYEES · MARKETING SITE</small></h3>
+        <p>19 个数字员工的完整阵容页：每个员工的职责与交付、Skill 市场、客户案例、定价方案与 Agent Hub——数字员工的"官网"。</p>
+        <div class="belong"><b>隶属：</b>wenmai-research 总仓（营销页面公开 · 应用源码私有）· 隶属 insightmarketplac 生态</div>
+        <a class="go" href="research/">进入数字员工团队页 →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Repo structure -->
+<section id="structure">
+  <div class="wrap">
+    <p class="sec-label">Repository Structure</p>
+    <h2 class="sec-title">成品仓与源码仓分离，隶属关系一致。</h2>
+    <p class="sec-sub">本仓（insightmarketplac-promo）是 insightmarketplac 项目的<b style="color:var(--ink)">成品分发与宣传总仓</b>：仅含页面与成品客户端，不含任何源码；全部源码仓保持私有。</p>
+
+    <div class="tree">
+      <div class="t-root">insightmarketplac 项目生态 <span class="tag pub">成品仓公开 · 本站</span></div>
+      <div class="t-children">
+        <div class="t-node">
+          <div class="row"><b>insightmarketplac-promo</b><span class="role">成品分发与宣传总仓（本仓 · 公开）</span></div>
+          <div class="sub">总览页 + 五个产品独立页 + 客户端安装包 Release——页面成品公开，<b>不含源码</b></div>
+        </div>
+        <div class="t-node">
+          <div class="row"><b>insightmarketplac</b><span class="tag priv">源码仓 · 私有</span><span class="role">主平台</span></div>
+          <div class="sub">AI 数字员工平台源码（CRM 底座 × 记忆引擎 × 多智能体编排 × 本地交付）</div>
+        </div>
+        <div class="t-node">
+          <div class="row"><b>PI 内核系列</b><span class="tag priv">源码仓 · 私有</span><span class="role">标准独立项目</span></div>
+          <div class="sub">自研微内核（pi-kernel / pi-core / pi-browser）——insightmarketplac 平台 CRM 底座的构建基座，独立演进</div>
+        </div>
+        <div class="t-node">
+          <div class="row"><b>insightmarketplac-data / -agent</b><span class="tag priv">源码仓 · 私有</span><span class="role">数据层 · 智能体层</span></div>
+          <div class="sub">数据平台与多智能体工作台源码，页面成品收录于本仓 <b>data/ · agent/</b></div>
+        </div>
+        <div class="t-node">
+          <div class="row"><b>wenmai-agent</b><span class="tag priv">源码仓 · 私有</span><span class="role">客户端源码</span></div>
+          <div class="sub">Windows 客户端源码——成品安装包在本仓 Release 公开下载，源码不公开</div>
+        </div>
+        <div class="t-node">
+          <div class="row"><b>wenmai-research</b><span class="tag priv">源码仓 · 私有</span><span class="role">总仓</span></div>
+          <div class="sub">数字员工团队总仓——营销页面收录于本仓 <b>research/</b>（含 19 个智能体页、Skill 市场、案例与 Hub），应用源码不公开</div>
+        </div>
+      </div>
+      <div class="legend">
+        <span><span class="tag pub">公开</span>&nbsp; 成品分发与宣传：页面可访问、安装包可下载</span>
+        <span><span class="tag priv">私有</span>&nbsp; 源码仓：闭源，仅项目内维护</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Download -->
+<section class="dl" id="download">
+  <div class="wrap">
+    <p class="sec-label">Get Started</p>
+    <h2 class="sec-title">现在开始，让市场调研自己跑起来。</h2>
+    <p class="sec-sub">下载安装包，双击安装，打开即用——账号、模型、数据均已预置妥当。</p>
+    <a class="btn-primary" href="https://github.com/Hdhaidong/insightmarketplac-promo/releases/download/insightmarketplac-v1.0.0/insightmarketplac-Setup-1.0.0-client01.exe">
+      下载 Windows 客户端
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v14m0 0l-5.5-5.5M12 17l5.5-5.5M4 21h16"/></svg>
+    </a>
+    <p class="dl-meta">insightmarketplac 客户端 v1.0.0 · Windows 10 / 11（64 位）· 约 75 MB · 安装包公开 · 源码私有</p>
+  </div>
+</section>
+
+<footer>
+  <span class="f-brand">insightmarketplac</span>
+  <span>联系方式：<a href="mailto:haidong.zhou@outlook.com">haidong.zhou@outlook.com</a></span>
+  <span>© 2026 insightmarketplac · 成品公开 · 源码私有 · All rights reserved.</span>
+</footer>
+
+</body>
+</html>

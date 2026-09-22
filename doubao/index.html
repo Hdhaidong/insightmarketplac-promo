@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>doubao · OEM 运营分销托管 · 货源×样品×货盘 | 隶属 insightmarketplac 平台</title>
+<meta name="description" content="doubao 是 insightmarketplac 生态的货源·样品·货盘产品线：OEM 贴牌托管、ODM 推款选款、OBM 品牌共建三种模式。佛山家具产业带源头工厂直供，美国现货仓 16 SKU 首发，直连 Wayfair、Home Depot、Lowe's 等 10+ 北美渠道及加拿大、欧洲渠道线。注册买家即可浏览完整货盘、申请样品。">
+<meta name="keywords" content="doubao, OEM 运营分销托管, 货源, 样品, 货盘, 佛山家具产业带, 压缩沙发, 电竞椅, 美国海外仓, Wayfair, Home Depot, 跨境分销, 贴牌代工, insightmarketplac">
+<meta property="og:type" content="website">
+<meta property="og:title" content="doubao · OEM 运营分销托管平台">
+<meta property="og:description" content="货源·样品·货盘一站打通。OEM 贴牌托管、ODM 推款选款、OBM 品牌共建——从产业带工厂到北美渠道货架，全程托管。">
+<link rel="canonical" href="https://hdhaidong.github.io/insightmarketplac-promo/doubao/">
+<meta name="robots" content="index, follow">
+<style>
+  :root {
+    --bg: #0a0b0e;
+    --bg-soft: #101318;
+    --card: #12151b;
+    --ink: #f2f4f8;
+    --ink-dim: #9aa3b2;
+    --ink-faint: #5c6472;
+    --accent: #4f8dff;
+    --accent-soft: rgba(79,141,255,.12);
+    --green: #3ddc97;
+    --amber: #ffb454;
+    --line: rgba(255,255,255,.08);
+    --font: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", system-ui, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  ::selection { background: var(--accent); color: #fff; }
+  a { color: var(--accent); text-decoration: none; }
+  img { display: block; }
+
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 48px;
+    background: rgba(10,11,14,.88);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-brand { font-size: 17px; font-weight: 700; letter-spacing: -.02em; color: var(--ink); }
+  .nav-brand b { color: var(--accent); font-weight: 700; }
+  .nav-links { display: flex; gap: 22px; font-size: 13.5px; align-items: center; }
+  .nav-links a { color: var(--ink-dim); transition: color .2s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.cur { color: var(--ink); font-weight: 600; }
+  .nav-cta {
+    color: #fff !important; background: var(--accent);
+    border-radius: 999px; padding: 8px 18px; font-weight: 600;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px -6px rgba(79,141,255,.55); }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 96px 0 72px;
+    background:
+      radial-gradient(1100px 480px at 78% -10%, rgba(79,141,255,.16), transparent 70%),
+      radial-gradient(700px 380px at 8% 110%, rgba(61,220,151,.07), transparent 70%);
+  }
+  .badge {
+    display: inline-block; font-size: 12px; font-weight: 600;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: var(--accent); border: 1px solid rgba(79,141,255,.35);
+    border-radius: 999px; padding: 6px 16px; margin-bottom: 26px;
+  }
+  .hero h1 { font-size: clamp(34px, 5.2vw, 58px); font-weight: 800; letter-spacing: -.04em; line-height: 1.1; }
+  .hero h1 .dot { color: var(--accent); }
+  .hero h1 .zh { display: block; font-size: .52em; font-weight: 700; letter-spacing: -.01em; margin-top: 14px; color: var(--ink-dim); }
+  .hero .sub { margin-top: 26px; font-size: 16.5px; color: var(--ink-dim); line-height: 1.85; max-width: 660px; }
+  .hero .sub b { color: var(--ink); font-weight: 600; }
+  .hero-actions { margin-top: 38px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #fff; font-size: 15px; font-weight: 600;
+    padding: 14px 32px; border-radius: 999px;
+    transition: transform .25s, box-shadow .25s; cursor: pointer; border: none; font-family: var(--font);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px -8px rgba(79,141,255,.55); }
+  .btn-ghost {
+    display: inline-flex; align-items: center;
+    font-size: 15px; color: var(--ink);
+    border: 1px solid var(--line); border-radius: 999px; padding: 14px 32px;
+    transition: border-color .25s;
+  }
+  .btn-ghost:hover { border-color: var(--accent); }
+  .hero-note { font-size: 13px; color: var(--ink-faint); }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: 54px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; text-align: center; }
+  .stat b { display: block; font-size: 27px; font-weight: 800; color: var(--accent); }
+  .stat span { font-size: 12.5px; color: var(--ink-dim); }
+
+  /* ── Sections ── */
+  section { padding: 88px 0; }
+  section + section { border-top: 1px solid var(--line); }
+  .sec-label { font-size: 12px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+  .sec-title { margin-top: 14px; font-size: clamp(26px, 3.6vw, 40px); font-weight: 700; letter-spacing: -.03em; line-height: 1.18; }
+  .sec-sub { margin-top: 14px; font-size: 15px; color: var(--ink-dim); line-height: 1.85; max-width: 740px; }
+
+  /* ── Mode cards ── */
+  .modes { margin-top: 52px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+  .mode {
+    background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+    padding: 30px 26px; position: relative; overflow: hidden;
+    transition: border-color .25s, transform .25s;
+  }
+  .mode:hover { border-color: rgba(79,141,255,.5); transform: translateY(-3px); }
+  .mode::after {
+    content: attr(data-code); position: absolute; right: -6px; top: 10px;
+    font-size: 64px; font-weight: 800; color: rgba(79,141,255,.07); letter-spacing: -.04em;
+  }
+  .mode h3 { font-size: 21px; font-weight: 700; }
+  .mode h3 small { display: block; margin-top: 5px; font-size: 11.5px; font-weight: 600; letter-spacing: .14em; color: var(--accent); text-transform: uppercase; }
+  .mode p { margin-top: 14px; font-size: 14px; color: var(--ink-dim); line-height: 1.8; }
+  .mode .for { margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--line); font-size: 12.5px; color: var(--ink-faint); line-height: 1.7; }
+  .mode .for b { color: var(--ink-dim); font-weight: 600; }
+
+  /* ── Channels ── */
+  .ch-grid { margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+  .ch {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 18px 18px 16px; transition: border-color .25s;
+  }
+  .ch:hover { border-color: rgba(79,141,255,.45); }
+  .ch b { display: block; font-size: 15.5px; font-weight: 700; letter-spacing: -.01em; }
+  .ch span { display: block; margin-top: 5px; font-size: 12px; color: var(--ink-faint); line-height: 1.6; }
+  .ch-region { margin-top: 34px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .region-tag {
+    font-size: 12px; font-weight: 600; color: var(--ink-dim);
+    border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px;
+  }
+  .region-tag b { color: var(--green); font-weight: 700; }
+
+  /* ── Catalog preview ── */
+  .cat-preview { margin-top: 52px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+  .sku {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    overflow: hidden; transition: border-color .25s, transform .25s; display: flex; flex-direction: column;
+  }
+  .sku:hover { border-color: rgba(79,141,255,.5); transform: translateY(-3px); }
+  .sku .ph { position: relative; aspect-ratio: 4/3; background: #161a22; overflow: hidden; }
+  .sku .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+  .sku:hover .ph img { transform: scale(1.04); }
+  .sku .ph .tag {
+    position: absolute; left: 12px; top: 12px;
+    font-size: 11px; font-weight: 700; letter-spacing: .06em;
+    background: rgba(10,11,14,.82); backdrop-filter: blur(4px);
+    color: var(--accent); border-radius: 6px; padding: 4px 10px;
+  }
+  .sku .body { padding: 18px 18px 20px; flex: 1; display: flex; flex-direction: column; }
+  .sku .body h4 { font-size: 14.5px; font-weight: 650; line-height: 1.5; min-height: 44px; }
+  .sku .meta { margin-top: 12px; display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .sku .meta b { font-size: 20px; font-weight: 800; color: var(--accent); }
+  .sku .meta span { font-size: 12px; color: var(--ink-faint); }
+  .sku .row { margin-top: 10px; display: flex; gap: 14px; font-size: 12px; color: var(--ink-dim); flex-wrap: wrap; }
+  .cat-more { margin-top: 34px; text-align: center; }
+
+  /* ── Steps ── */
+  .steps { margin-top: 52px; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; counter-reset: step; }
+  .step {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 22px 18px; counter-increment: step; position: relative;
+  }
+  .step::before {
+    content: "0" counter(step); font-size: 13px; font-weight: 800;
+    color: var(--accent); letter-spacing: .06em;
+  }
+  .step h4 { margin-top: 10px; font-size: 15.5px; font-weight: 700; }
+  .step p { margin-top: 8px; font-size: 12.5px; color: var(--ink-dim); line-height: 1.7; }
+
+  /* ── Advantages ── */
+  .adv-grid { margin-top: 52px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+  .adv { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 16px; padding: 26px; }
+  .adv .ic {
+    width: 42px; height: 42px; border-radius: 11px; background: var(--accent-soft);
+    display: flex; align-items: center; justify-content: center; color: var(--accent);
+  }
+  .adv h4 { margin-top: 16px; font-size: 16px; font-weight: 700; }
+  .adv p { margin-top: 10px; font-size: 13.5px; color: var(--ink-dim); line-height: 1.8; }
+
+  /* ── FAQ ── */
+  .faq { margin-top: 48px; display: flex; flex-direction: column; gap: 12px; }
+  details {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 20px 24px; transition: border-color .25s;
+  }
+  details[open] { border-color: rgba(79,141,255,.45); }
+  summary { cursor: pointer; font-size: 15px; font-weight: 650; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-size: 19px; color: var(--accent); font-weight: 400; flex-shrink: 0; }
+  details[open] summary::after { content: "−"; }
+  details p { margin-top: 14px; font-size: 13.5px; color: var(--ink-dim); line-height: 1.85; }
+
+  /* ── CTA ── */
+  .cta-final { text-align: center; background: radial-gradient(800px 400px at 50% 0%, rgba(79,141,255,.1), transparent 70%); }
+  .cta-final .sec-title { max-width: 620px; margin-left: auto; margin-right: auto; }
+  .cta-final .sec-sub { max-width: 520px; margin-left: auto; margin-right: auto; }
+  .cta-btns { margin-top: 40px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* ── Belong ── */
+  .belong-band {
+    border-top: 1px solid var(--line);
+    background: var(--bg-soft);
+    padding: 34px 0;
+  }
+  .belong-band .wrap { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; font-size: 13px; color: var(--ink-dim); line-height: 1.8; }
+  .belong-band b { color: var(--ink); font-weight: 650; }
+  .bb-tag { font-size: 11px; font-weight: 700; letter-spacing: .08em; border-radius: 6px; padding: 3px 10px; flex-shrink: 0; }
+  .bb-tag.pub { color: var(--green); background: rgba(61,220,151,.1); }
+  .bb-tag.priv { color: var(--amber); background: rgba(255,180,84,.1); }
+
+  footer { border-top: 1px solid var(--line); padding: 36px 48px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--ink-faint); }
+  footer .f-brand { font-weight: 700; color: var(--ink-dim); }
+  footer a { color: var(--ink-dim); border-bottom: 1px solid var(--line); }
+  footer a:hover { color: var(--accent); border-color: currentColor; }
+
+  @media (max-width: 860px) {
+    nav { padding: 14px 24px; }
+    .nav-links { gap: 14px; }
+    .wrap { padding: 0 24px; }
+    .hero { padding: 68px 0 52px; }
+    section { padding: 64px 0; }
+    footer { padding: 28px 24px; }
+    .nav-links .hide-m { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="../">insightmarketplac<b>·</b>doubao</a>
+  <div class="nav-links">
+    <a href="../">总览</a>
+    <a href="catalog.html">货盘</a>
+    <a href="sample.html">样品</a>
+    <a href="#mode">合作模式</a>
+    <a href="#faq" class="hide-m">FAQ</a>
+    <a class="nav-cta" href="register-buyer.html">注册买家</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="wrap">
+    <div class="badge">Sourcing · OEM · Distribution · 隶属 insightmarketplac 生态</div>
+    <h1>doubao<span class="dot">.</span><span class="zh">OEM 运营分销托管——货源、样品、货盘，一站打通。</span></h1>
+    <p class="sub">面向工厂与卖家的 <b>OEM 运营分销托管平台</b>：产业带源头工厂直供，贴您的牌、上您的店、托管您的运营——从<b>佛山家具产业带</b>的工厂车间，直连 <b>Amazon、Temu、Wayfair、Home Depot、Lowe's</b> 等北美主流渠道及加拿大、欧洲渠道货架，全程托管。</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="register-buyer.html">注册买家 · 查看完整货盘
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m0 0l-5.5-5.5M19 12l-5.5 5.5"/></svg>
+      </a>
+      <a class="btn-ghost" href="catalog.html">浏览首发货盘 · 16 SKU</a>
+      <span class="hero-note">美国现货仓 · 注册即看价格与库存</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>16</b><span>首发货盘 SKU</span></div>
+      <div class="stat"><b>2100+</b><span>美国仓现货（件）</span></div>
+      <div class="stat"><b>12+</b><span>北美主流渠道</span></div>
+      <div class="stat"><b>3</b><span>合作模式 OEM/ODM/OBM</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- Mode -->
+<section id="mode">
+  <div class="wrap">
+    <p class="sec-label">Operation Mode</p>
+    <h2 class="sec-title">三种合作模式，一种托管关系。</h2>
+    <p class="sec-sub">无论您是有渠道的卖家、有产能的工厂，还是想做出品牌的品牌方——都从「货源 · 样品 · 货盘」开始，把运营交给托管团队。</p>
+
+    <div class="modes">
+      <article class="mode" data-code="01">
+        <h3>OEM 贴牌托管<small>Original Equipment · 现货/私模贴牌</small></h3>
+        <p>从现货货盘选款，或开私模定制——贴您的品牌。店铺入驻、Listing、广告投放、客服售后由托管团队全流程打理，您看月度报表收结果。</p>
+        <div class="for"><b>适合：</b>有渠道的卖家 · 想做自有品牌的分销商 · 精品渠道进驻方</div>
+      </article>
+
+      <article class="mode" data-code="02">
+        <h3>ODM 推款选款<small>Original Design · 工厂推款 · 买手选款</small></h3>
+        <p>工厂每周推款、平台买手选款上架：快速测款验证市场，跑出数据再放大订单，把库存风险压到最小，爆款节奏由数据说了算。</p>
+        <div class="for"><b>适合：</b>跨境卖家 · 电商运营团队 · 多店铺铺货型玩家</div>
+      </article>
+
+      <article class="mode" data-code="03">
+        <h3>OBM 品牌共建<small>Own Brand · 品牌调性 · 长期主义</small></h3>
+        <p>品牌调性鲜明的深度合作：品牌设计、渠道共建、联合营销一体化推进，共享长期品牌价值——从贴牌走向真正的自有品牌。</p>
+        <div class="for"><b>适合：</b>品牌方 · 工厂转型品牌出海 · 品牌管理团队</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Channels -->
+<section id="channels">
+  <div class="wrap">
+    <p class="sec-label">Distribution Channels</p>
+    <h2 class="sec-title">直连北美主流渠道，加拿大与欧洲双线延伸。</h2>
+    <p class="sec-sub">托管团队负责渠道入驻、账号安全维护与联合运营——您带着货源或品牌进来，货铺到渠道货架上。</p>
+
+    <div class="ch-grid">
+      <div class="ch"><b>Amazon</b><span>全球最大电商平台 · 一键上架数据包支持</span></div>
+      <div class="ch"><b>Temu</b><span>增长最快的全托管电商平台 · 供货模式直连</span></div>
+      <div class="ch"><b>Wayfair</b><span>美国家居线上零售龙头 · 压缩沙发核心阵地</span></div>
+      <div class="ch"><b>Home Depot</b><span>全球领先家居建材零售商 · 美国第二大零售商</span></div>
+      <div class="ch"><b>Lowe's</b><span>美国第二大家居装饰连锁</span></div>
+      <div class="ch"><b>Walmart</b><span>世界最大零售商 · 线上线下并行</span></div>
+      <div class="ch"><b>Costco</b><span>美国最大连锁会员制仓储量贩</span></div>
+      <div class="ch"><b>Target</b><span>美国第二大零售百货集团</span></div>
+      <div class="ch"><b>Best Buy</b><span>全球最大家电零售企业</span></div>
+      <div class="ch"><b>Overstock</b><span>世界十大购物网站 · 家居垂直</span></div>
+      <div class="ch"><b>Menards</b><span>美西部家装中心连锁</span></div>
+      <div class="ch"><b>Houzz</b><span>知名互联网家装平台</span></div>
+    </div>
+
+    <div class="ch-region">
+      <span class="region-tag">加拿大渠道线 <b>Canada</b></span>
+      <span class="region-tag">欧洲分销与仓配网络 <b>EU · 24/48h 交付</b></span>
+      <span class="region-tag">美国现货仓一件代发 <b>US Fulfillment</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- Catalog preview -->
+<section id="catalog">
+  <div class="wrap">
+    <p class="sec-label">First Catalog</p>
+    <h2 class="sec-title">首发货盘：压缩沙发 × 电竞椅。</h2>
+    <p class="sec-sub">S2056 系列美国仓现货 16 SKU——源头工厂出厂价直供、美国仓一件代发、UPS/FedEx 自提；注册买家即可查看完整货盘表与阶梯价格，并获取<b style="color:var(--ink)">一键上架数据包（Amazon / Temu / Wayfair）</b>。</p>
+
+    <div class="cat-preview">
+      <article class="sku">
+        <div class="ph"><span class="tag">压缩沙发 · Sofas</span><img src="https://cdn3.arkswift.com/seller/1265937234101350401/manual/2026/06/04/3Gh8b919e917af67a.jpg" alt="108&quot; Modular Sectional Sofa 压缩沙发" loading="lazy"></div>
+        <div class="body">
+          <h4>108" Modular Sectional Sofa — L 型无组装 · 灯芯绒深座</h4>
+          <div class="meta"><b>$180<span style="font-size:12px;font-weight:600"> 起</span></b><span>6 色现货 · 库存 2185+</span></div>
+          <div class="row"><span>美国仓直发</span><span>免组装开箱即用</span></div>
+        </div>
+      </article>
+      <article class="sku">
+        <div class="ph"><span class="tag">压缩沙发 · Loveseat</span><img src="https://cdn3.arkswift.com/seller/1265937234101350401/manual/2026/06/04/vQRf3c19e9167ead9.jpg" alt="84&quot; Modular Loveseat Sofa 双人位沙发" loading="lazy"></div>
+        <div class="body">
+          <h4>84" Modular Loveseat Sofa — 双人位云朵沙发 · 雪尼尔</h4>
+          <div class="meta"><b>$140<span style="font-size:12px;font-weight:600"> 起</span></b><span>4 色现货 · 含抱枕</span></div>
+          <div class="row"><span>深座舒适</span><span>公寓卧室客厅</span></div>
+        </div>
+      </article>
+      <article class="sku">
+        <div class="ph"><span class="tag">电竞椅 · Gaming Chair</span><img src="https://cdn3.arkswift.com/seller/1265937234101350401/manual/2026/06/08/OIxf3c19ea66999f9.jpg" alt="Gaming Chair with Retractable Footrest 电竞椅" loading="lazy"></div>
+        <div class="body">
+          <h4>Gaming Chair — 高背人体工学 · 可伸缩脚踏 · 4D 扶手</h4>
+          <div class="meta"><b>$60<span style="font-size:12px;font-weight:600"> 起</span></b><span>灰 / 黑两色</span></div>
+          <div class="row"><span>腰托头枕齐备</span><span>免工具快装</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="cat-more">
+      <a class="btn-ghost" href="catalog.html">查看完整货盘 · 16 SKU 明细 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Steps -->
+<section id="process">
+  <div class="wrap">
+    <p class="sec-label">Cooperation Process</p>
+    <h2 class="sec-title">六步闭环，从提交合作到月度结算。</h2>
+    <p class="sec-sub">标准化流程、高效执行：正常情况下资质审核 7 个工作日内完成，结果以邮件通知。</p>
+
+    <div class="steps">
+      <div class="step"><h4>注册 / 提交合作</h4><p>买家注册或供应商提交合作资料，明确目标市场与品类。</p></div>
+      <div class="step"><h4>资质与需求评估</h4><p>品类分析、渠道匹配与风险评估，7 个工作日出结果。</p></div>
+      <div class="step"><h4>选品与定价</h4><p>现货货盘选款或私模定制，锁定出厂价与阶梯价格。</p></div>
+      <div class="step"><h4>样品确认</h4><p>申请样品、随附质检报告，确认品质后下大货。</p></div>
+      <div class="step"><h4>上架铺货</h4><p>渠道入驻、Listing 制作、上架铺货，进入托管运营。</p></div>
+      <div class="step"><h4>结算与月报</h4><p>月度结算，交付库存、动销与补货返点核算报告。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Advantages -->
+<section id="why">
+  <div class="wrap">
+    <p class="sec-label">Why doubao</p>
+    <h2 class="sec-title">货源、渠道、运营、数据，四件事一站托管。</h2>
+
+    <div class="adv-grid">
+      <div class="adv">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg></div>
+        <h4>源头货源直供</h4>
+        <p>佛山家具产业带源头工厂，出厂价直供、私模可开——省掉中间商差价，把利润留在链条里。</p>
+      </div>
+      <div class="adv">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h4>多元渠道覆盖</h4>
+        <p>Amazon、Temu + 12 个北美主流家居渠道，加拿大、欧洲双线延伸——渠道入驻与账号安全维护由托管团队负责。</p>
+      </div>
+      <div class="adv">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3l-9 9"/><path d="M15 3h6v6"/></svg></div>
+        <h4>精细化托管运营</h4>
+        <p>Listing 制作、一键上架数据包（图片 / 文案 / 合规文件）、广告投放、客服售后全托管——省去自建团队的时间与资金成本。</p>
+      </div>
+      <div class="adv">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-8 4 5 5-9"/></svg></div>
+        <h4>数据透明月报</h4>
+        <p>每月交付库存、动销与补货返点三份核心报告——库存边界、渠道表现、返点核算一目了然。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <p class="sec-label">Help Center</p>
+    <h2 class="sec-title">常被问到的六个问题。</h2>
+
+    <div class="faq">
+      <details>
+        <summary>注册买家有什么权益？</summary>
+        <p>注册激活后即可查看完整货盘、阶梯价格与实时库存，获取一键上架数据包（图片、Listing 文案、尺寸与合规文件），并直接申请样品——一人对接选品、上架与售后。</p>
+      </details>
+      <details>
+        <summary>公司地址可以跟工厂地址不一致吗？</summary>
+        <p>可以。公司地址与工厂地址不一致不影响审核结果；如存在该情况，建议供应商主动向对接人员说明，以免影响审核进度。</p>
+      </details>
+      <details>
+        <summary>没有海外仓可以合作吗？</summary>
+        <p>可以。产品具有独特性、价格有竞争力即可提交合作资料——可先走美国仓代发或海运整柜方案起步，海外仓布局随合作深度推进。</p>
+      </details>
+      <details>
+        <summary>结款周期是怎么安排的？</summary>
+        <p>新供应商默认月结起步，结款周期随合作深度与供应商评级调整，最短可至半月结/日结，具体以双方书面约定为准。</p>
+      </details>
+      <details>
+        <summary>资质审核大概要多久？</summary>
+        <p>正常情况下 7 个工作日内完成审核，审核结果将以邮件形式发送至联系人邮箱。</p>
+      </details>
+      <details>
+        <summary>样品怎么申请？</summary>
+        <p>注册买家后从货盘目录直接提交样品申请：样品按货盘价结算、运费实报实销，随附质检报告；确认品质后再下大货订单。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-final">
+  <div class="wrap">
+    <p class="sec-label">Get Started</p>
+    <h2 class="sec-title">把货源交给我们，把渠道交给托管。</h2>
+    <p class="sec-sub">注册买家，即刻查看 16 SKU 完整货盘、价格与库存；或提交供应商资料，让产业带工厂直连渠道货架。</p>
+    <div class="cta-btns">
+      <a class="btn-primary" href="register-buyer.html">注册买家</a>
+      <a class="btn-ghost" href="sample.html">申请样品</a>
+    </div>
+  </div>
+</section>
+
+<!-- Belong -->
+<div class="belong-band">
+  <div class="wrap">
+    <span class="bb-tag pub">隶属关系</span>
+    <span><b>doubao · OEM 运营分销托管</b>是 insightmarketplac 生态的货源·样品·货盘产品线——本页为<b>成品宣传页（公开）</b>，收录于 insightmarketplac-promo 成品仓 <b>doubao/</b>；平台与货盘系统<b>源码单独建仓、保持私有</b>，隶属关系与 insightmarketplac 项目一致。</span>
+  </div>
+</div>
+
+<footer>
+  <span class="f-brand">insightmarketplac · doubao</span>
+  <span>联系方式：<a href="mailto:haidong.zhou@outlook.com">haidong.zhou@outlook.com</a></span>
+  <span>© 2026 insightmarketplac · 成品公开 · 源码私有</span>
+</footer>
+
+</body>
+</html>

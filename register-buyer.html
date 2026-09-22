@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>注册买家 · doubao · OEM 运营分销托管 | 完整货盘 · 一键上架 · 美国仓直发</title>
+<meta name="description" content="注册成为 doubao 买家：即刻查看 16 SKU 完整货盘、阶梯价格与实时库存；获取一键上架数据包（Amazon / Temu / Wayfair），美国仓直发一件代发，专属运营对接全程托管。工厂与品牌方亦可提交资料，进入 OEM 托管分销体系。">
+<meta name="keywords" content="doubao 注册买家, 跨境货源注册, OEM 运营分销托管, 一键上架, Amazon Temu Wayfair, 美国海外仓, 压缩沙发货源, insightmarketplac">
+<link rel="canonical" href="https://hdhaidong.github.io/insightmarketplac-promo/register-buyer.html">
+<style>
+  :root {
+    --bg: #0a0b0e;
+    --bg-soft: #101318;
+    --card: #12151b;
+    --ink: #f2f4f8;
+    --ink-dim: #9aa3b2;
+    --ink-faint: #5c6472;
+    --accent: #4f8dff;
+    --accent-soft: rgba(79,141,255,.12);
+    --green: #3ddc97;
+    --amber: #ffb454;
+    --line: rgba(255,255,255,.08);
+    --font: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", system-ui, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font); -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--accent); color: #fff; }
+  a { color: var(--accent); text-decoration: none; }
+
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 48px;
+    background: rgba(10,11,14,.88); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-brand { font-size: 17px; font-weight: 700; letter-spacing: -.02em; color: var(--ink); }
+  .nav-brand b { color: var(--accent); }
+  .nav-links { display: flex; gap: 22px; font-size: 13.5px; align-items: center; }
+  .nav-links a { color: var(--ink-dim); transition: color .2s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.cur { color: var(--ink); font-weight: 600; }
+  .nav-cta { color: #fff !important; background: var(--accent); border-radius: 999px; padding: 8px 18px; font-weight: 600; }
+  .nav-cta:hover { box-shadow: 0 8px 24px -6px rgba(79,141,255,.55); }
+
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 48px; }
+
+  .page-head { padding: 64px 0 40px; }
+  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+  h1 { margin-top: 14px; font-size: clamp(28px, 4vw, 42px); font-weight: 800; letter-spacing: -.03em; line-height: 1.15; }
+  .page-sub { margin-top: 14px; font-size: 15px; color: var(--ink-dim); line-height: 1.85; max-width: 720px; }
+  .page-sub b { color: var(--ink); font-weight: 600; }
+
+  .dual { margin-top: 34px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .dcard { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px; transition: border-color .25s; }
+  .dcard.on { border-color: rgba(79,141,255,.55); background: linear-gradient(180deg, rgba(79,141,255,.07), transparent 65%), var(--card); }
+  .dcard b { display: block; font-size: 16px; font-weight: 700; }
+  .dcard small { display: block; margin-top: 4px; font-size: 11.5px; font-weight: 600; letter-spacing: .1em; color: var(--accent); text-transform: uppercase; }
+  .dcard p { margin-top: 10px; font-size: 12.5px; color: var(--ink-dim); line-height: 1.75; }
+
+  .merit-grid { margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-bottom: 44px; }
+  .merit { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+  .merit b { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; }
+  .merit b::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+  .merit p { margin-top: 8px; font-size: 12.5px; color: var(--ink-dim); line-height: 1.7; }
+
+  .form-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+    padding: 40px; margin-bottom: 40px;
+  }
+  .form-card h2 { font-size: 21px; font-weight: 700; }
+  .form-card .hint { margin-top: 8px; font-size: 13px; color: var(--ink-faint); line-height: 1.7; }
+  .fs-label { margin: 26px 0 0; padding-bottom: 10px; border-bottom: 1px dashed var(--line); font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); }
+  form { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .fg { display: flex; flex-direction: column; gap: 7px; }
+  .fg.full { grid-column: 1 / -1; }
+  .fg label { font-size: 13px; font-weight: 600; color: var(--ink-dim); }
+  .fg label em { color: var(--amber); font-style: normal; margin-left: 3px; }
+  .fg input, .fg select, .fg textarea {
+    background: var(--bg-soft); border: 1px solid var(--line); border-radius: 10px;
+    color: var(--ink); font-family: var(--font); font-size: 14px;
+    padding: 13px 14px; outline: none; transition: border-color .2s, box-shadow .2s;
+  }
+  .fg textarea { resize: vertical; min-height: 88px; }
+  .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+  .pw-note { font-size: 11.5px; color: var(--ink-faint); line-height: 1.6; }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+  .chip { position: relative; }
+  .chip input { position: absolute; opacity: 0; pointer-events: none; }
+  .chip span {
+    display: inline-block; font-size: 12.5px; font-weight: 600; color: var(--ink-dim);
+    border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px;
+    cursor: pointer; transition: all .2s; user-select: none;
+  }
+  .chip input:checked + span { color: #fff; background: var(--accent); border-color: var(--accent); }
+  .agree { grid-column: 1 / -1; display: flex; gap: 10px; align-items: flex-start; font-size: 12.5px; color: var(--ink-dim); line-height: 1.7; }
+  .agree input { margin-top: 3px; accent-color: var(--accent); width: 15px; height: 15px; flex-shrink: 0; }
+  .form-foot { grid-column: 1 / -1; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 6px; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #fff; font-size: 14.5px; font-weight: 600; font-family: var(--font);
+    padding: 14px 34px; border-radius: 999px; border: none; cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 10px 30px -8px rgba(79,141,255,.55); }
+  .form-note { font-size: 12.5px; color: var(--ink-faint); line-height: 1.7; }
+
+  .ok { display: none; text-align: center; padding: 40px 20px; }
+  .ok .ic {
+    width: 66px; height: 66px; margin: 0 auto; border-radius: 50%;
+    background: rgba(61,220,151,.12); color: var(--green);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ok h2 { margin-top: 22px; font-size: 23px; font-weight: 700; }
+  .ok p { margin-top: 12px; font-size: 14px; color: var(--ink-dim); line-height: 1.85; max-width: 520px; margin-left: auto; margin-right: auto; }
+  .ok .next { margin-top: 20px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .ok .btn-primary { margin-top: 0; }
+
+  .belong-band { border-top: 1px solid var(--line); background: var(--bg-soft); padding: 34px 0; }
+  .belong-band .wrap { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; font-size: 13px; color: var(--ink-dim); line-height: 1.8; }
+  .belong-band b { color: var(--ink); font-weight: 650; }
+  .bb-tag { font-size: 11px; font-weight: 700; letter-spacing: .08em; border-radius: 6px; padding: 3px 10px; flex-shrink: 0; }
+  .bb-tag.pub { color: var(--green); background: rgba(61,220,151,.1); }
+
+  footer { border-top: 1px solid var(--line); padding: 36px 48px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--ink-faint); }
+  footer .f-brand { font-weight: 700; color: var(--ink-dim); }
+  footer a { color: var(--ink-dim); border-bottom: 1px solid var(--line); }
+  footer a:hover { color: var(--accent); border-color: currentColor; }
+
+  @media (max-width: 860px) {
+    nav { padding: 14px 24px; }
+    .nav-links { gap: 14px; }
+    .wrap { padding: 0 24px; }
+    form { grid-template-columns: 1fr; }
+    .dual { grid-template-columns: 1fr; }
+    .form-card { padding: 26px 22px; }
+    footer { padding: 28px 24px; }
+    .nav-links .hide-m { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="doubao.html">insightmarketplac<b>·</b>doubao</a>
+  <div class="nav-links">
+    <a href="doubao.html">首页</a>
+    <a href="catalog.html">货盘</a>
+    <a href="sample.html">样品</a>
+    <a href="channels.html">渠道</a>
+    <a href="register-buyer.html" class="nav-cta cur">注册买家</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="page-head">
+    <p class="eyebrow">Register · Buyer &amp; Supplier</p>
+    <h1>注册买家，即刻打通货源到货架。</h1>
+    <p class="page-sub">一个账户，两种身份：<b>跨境卖家</b>注册即看完整货盘、阶梯价格与实时库存，获取一键上架数据包；<b>工厂与品牌方</b>提交资料进入 OEM 托管分销体系——贴牌、运营、渠道，全程托管。</p>
+
+    <div class="dual">
+      <div class="dcard on" id="dSeller">
+        <b>我是跨境卖家 / 分销商</b>
+        <small>Sourcing · 找货源</small>
+        <p>注册后 24 小时内激活：查看 16 SKU 完整货盘与阶梯价格、下载一键上架数据包（Amazon / Temu / Wayfair）、直接申请样品。</p>
+      </div>
+      <div class="dcard" id="dFactory">
+        <b>我是工厂 / 品牌方</b>
+        <small>OEM · 找托管</small>
+        <p>提交产能与品类资料，进入托管分销体系：OEM 贴牌、ODM 推款、OBM 品牌共建，渠道入驻与运营全流程由托管团队打理。</p>
+      </div>
+    </div>
+
+    <div class="merit-grid">
+      <div class="merit"><b>完整货盘可见</b><p>注册即解锁价格、库存与阶梯规则，不玩询价游戏。</p></div>
+      <div class="merit"><b>一键上架数据包</b><p>Listing 文案、图片与合规文件齐备，直上 Amazon / Temu / Wayfair。</p></div>
+      <div class="merit"><b>美国仓直发</b><p>现货仓一件代发，UPS / FedEx 自提，时效稳定可控。</p></div>
+      <div class="merit"><b>专属运营对接</b><p>一人对接选品、上架与售后，贴合您的业务节奏。</p></div>
+    </div>
+  </div>
+
+  <div class="form-card" id="formCard">
+    <h2>买家注册</h2>
+    <p class="hint">带 <em style="color:var(--amber);font-style:normal">*</em> 为必填项；信息仅用于账户开通与业务对接，不对外披露。</p>
+
+    <form id="regForm" novalidate>
+      <p class="fs-label">01 · 账户信息</p>
+      <div class="fg">
+        <label>注册邮箱<em>*</em></label>
+        <input type="email" id="email" placeholder="name@company.com" required>
+      </div>
+      <div class="fg">
+        <label>手机 / WhatsApp<em>*</em></label>
+        <input type="tel" id="phone" placeholder="+1 555 000 0000" required>
+      </div>
+      <div class="fg">
+        <label>设置密码<em>*</em></label>
+        <input type="password" id="pw" placeholder="8 位以上，含字母与数字" required>
+        <span class="pw-note">8 位以上，建议包含大小写字母与数字。</span>
+      </div>
+      <div class="fg">
+        <label>确认密码<em>*</em></label>
+        <input type="password" id="pw2" placeholder="再次输入密码" required>
+      </div>
+
+      <p class="fs-label">02 · 基本信息</p>
+      <div class="fg">
+        <label>姓名<em>*</em></label>
+        <input type="text" id="name" placeholder="您的姓名" required>
+      </div>
+      <div class="fg">
+        <label>公司 / 店铺名称</label>
+        <input type="text" id="company" placeholder="公司或店铺名（选填）">
+      </div>
+      <div class="fg">
+        <label>所在国家<em>*</em></label>
+        <select id="country" required>
+          <option value="">请选择</option>
+          <option>United States</option>
+          <option>Canada</option>
+          <option>United Kingdom</option>
+          <option>Germany</option>
+          <option>France</option>
+          <option>Italy</option>
+          <option>Spain</option>
+          <option>Australia</option>
+          <option>其他（备注中说明）</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>您的身份<em>*</em></label>
+        <select id="role" required>
+          <option value="">请选择</option>
+          <option>跨境卖家 / 分销商</option>
+          <option>工厂 / 制造商</option>
+          <option>品牌方 / OBM</option>
+          <option>线下渠道采购商</option>
+          <option>其他</option>
+        </select>
+      </div>
+
+      <p class="fs-label">03 · 业务信息</p>
+      <div class="fg full">
+        <label>主营渠道（可多选）</label>
+        <div class="chips" id="channels">
+          <label class="chip"><input type="checkbox" value="Amazon"><span>Amazon</span></label>
+          <label class="chip"><input type="checkbox" value="Temu"><span>Temu</span></label>
+          <label class="chip"><input type="checkbox" value="Wayfair"><span>Wayfair</span></label>
+          <label class="chip"><input type="checkbox" value="Home Depot"><span>Home Depot</span></label>
+          <label class="chip"><input type="checkbox" value="Walmart"><span>Walmart</span></label>
+          <label class="chip"><input type="checkbox" value="eBay"><span>eBay</span></label>
+          <label class="chip"><input type="checkbox" value="独立站"><span>独立站</span></label>
+          <label class="chip"><input type="checkbox" value="线下渠道"><span>线下渠道</span></label>
+        </div>
+      </div>
+      <div class="fg">
+        <label>月采购 / 供货规模</label>
+        <select id="scale">
+          <option>起步阶段（&lt; $10K / 月）</option>
+          <option>成长阶段（$10K – $50K / 月）</option>
+          <option>规模阶段（$50K – $200K / 月）</option>
+          <option>大卖 / 工厂直供（$200K+ / 月）</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>合作意向</label>
+        <select id="intent">
+          <option>OEM 贴牌托管</option>
+          <option>ODM 推款选款</option>
+          <option>OBM 品牌共建</option>
+          <option>纯分销拿货</option>
+          <option>先看货盘再说</option>
+        </select>
+      </div>
+      <div class="fg full">
+        <label>备注</label>
+        <textarea id="msg" placeholder="目标品类、交期要求、定制需求、渠道资源……"></textarea>
+      </div>
+
+      <label class="agree">
+        <input type="checkbox" id="agree">
+        <span>我已阅读并同意 <a href="#faq-note">合作条款与隐私说明</a>：提交的信息仅用于账户开通、货盘报价与业务对接；资质与商务条款以双方书面确认为准。</span>
+      </label>
+
+      <div class="form-foot">
+        <button class="btn-primary" type="submit">创建买家账户</button>
+        <span class="form-note">提交后 24 小时内发送账户激活邮件；激活即可查看完整货盘、价格与库存。<br>工厂与品牌方提交后，7 个工作日内完成需求评估并邮件回复。</span>
+      </div>
+    </form>
+  </div>
+
+  <div class="form-card ok" id="okCard">
+    <div class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+    <h2>注册申请已提交</h2>
+    <p id="okText">账户激活邮件将于 24 小时内发送至您的邮箱。激活后即可查看完整货盘、价格与库存，并直接申请样品。</p>
+    <div class="next">
+      <a class="btn-primary" href="catalog.html">先去逛货盘</a>
+      <a class="btn-primary" style="background:transparent;border:1px solid var(--line);color:var(--ink)" href="sample.html">申请样品</a>
+    </div>
+    <p id="faq-note" style="font-size:12px;color:var(--ink-faint);margin-top:26px">合作条款与隐私说明：注册信息仅用于账户开通、报价与业务对接；正式合作以双方书面协议为准，货盘价格与库存以激活账户内实时数据为准。</p>
+  </div>
+</div>
+
+<div class="belong-band">
+  <div class="wrap">
+    <span class="bb-tag pub">隶属关系</span>
+    <span><b>doubao · OEM 运营分销托管</b>是 insightmarketplac 生态的货源·样品·货盘产品线——本页为成品宣传页（公开），收录于 insightmarketplac-promo 成品仓<b>根目录</b>；注册与货盘系统源码单独建仓、保持私有。</span>
+  </div>
+</div>
+
+<footer>
+  <span class="f-brand">insightmarketplac · doubao</span>
+  <span>联系方式：<a href="mailto:haidong.zhou@outlook.com">haidong.zhou@outlook.com</a></span>
+  <span>© 2026 insightmarketplac · 成品公开 · 源码私有</span>
+</footer>
+
+<script>
+document.getElementById('role').addEventListener('change', e => {
+  const v = e.target.value;
+  const seller = document.getElementById('dSeller');
+  const factory = document.getElementById('dFactory');
+  seller.classList.toggle('on', v === '跨境卖家 / 分销商');
+  factory.classList.toggle('on', v === '工厂 / 制造商' || v === '品牌方 / OBM');
+});
+
+document.getElementById('regForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const email = document.getElementById('email').value.trim();
+  const pw = document.getElementById('pw').value;
+  const pw2 = document.getElementById('pw2').value;
+  const name = document.getElementById('name').value.trim();
+  const country = document.getElementById('country').value;
+  const role = document.getElementById('role').value;
+  const agree = document.getElementById('agree').checked;
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('请填写有效的注册邮箱'); return; }
+  if (pw.length < 8) { alert('密码至少 8 位'); return; }
+  if (pw !== pw2) { alert('两次输入的密码不一致'); return; }
+  if (!name) { alert('请填写姓名'); return; }
+  if (!country) { alert('请选择所在国家'); return; }
+  if (!role) { alert('请选择您的身份'); return; }
+  if (!agree) { alert('请先阅读并勾选同意合作条款与隐私说明'); return; }
+
+  const isFactory = role === '工厂 / 制造商' || role === '品牌方 / OBM';
+  document.getElementById('okText').textContent = isFactory
+    ? `合作资料已提交（${email}）。我们将在 7 个工作日内完成需求评估，并通过邮件回复对接方案——OEM 贴牌、渠道进驻与托管运营节奏一并提供。`
+    : `账户激活邮件将于 24 小时内发送至 ${email}。激活后即可查看完整货盘、价格与库存，并直接申请样品。`;
+  document.getElementById('formCard').style.display = 'none';
+  document.getElementById('okCard').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>

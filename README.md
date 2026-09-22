@@ -12,9 +12,10 @@
 | `/agent.html` | insightmarketplac Agent 产品页（多智能体工作台） | 平台智能体层 · 源码仓私有 |
 | `/client.html` | insightmarketplac 客户端产品页（安装即用） | 成品分发 · 源码仓 wenmai-agent 私有 |
 | `/research/` | 数字员工团队营销站（19 智能体 / Skill 市场 / 案例 / Hub） | wenmai-research 总仓 · 营销页公开，应用源码私有 |
-| `/doubao/` | doubao · OEM 运营分销托管宣传站（货源 / 样品 / 货盘 / 渠道） | insightmarketplac 生态 · 分销托管线 |
+| `/doubao.html` | doubao · OEM 运营分销托管宣传站首页 | insightmarketplac 生态 · 分销托管线 |
+| `/catalog.html` `/sample.html` `/channels.html` `/register-buyer.html` | doubao 货盘 / 样品 / 渠道网络 / 买家注册 | doubao 宣传站子页 · 同在根目录 |
 
-> 兼容旧链接：`/platform/` `/data/` `/agent/` `/client/` 均为跳转占位页，自动重定向至对应的根级 `.html` 页面。
+> 兼容旧链接：`/platform/` `/data/` `/agent/` `/client/` 与 `/doubao/`（含其 5 个子页）均为跳转占位页，自动重定向至对应的根级 `.html` 页面。
 
 ## 仓库隶属关系
 

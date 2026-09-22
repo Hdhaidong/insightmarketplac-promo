@@ -14,6 +14,8 @@
 | `/research/` | 数字员工团队营销站（19 智能体 / Skill 市场 / 案例 / Hub） | wenmai-research 总仓 · 营销页公开，应用源码私有 |
 | `/doubao/` | doubao · OEM 运营分销托管宣传站（货源 / 样品 / 货盘 / 渠道） | insightmarketplac 生态 · 分销托管线 |
 
+> 兼容旧链接：`/platform/` `/data/` `/agent/` `/client/` 均为跳转占位页，自动重定向至对应的根级 `.html` 页面。
+
 ## 仓库隶属关系
 
 - **成品仓（公开，本仓）**：`insightmarketplac-promo` —— 页面成品 + 客户端安装包（Releases）。

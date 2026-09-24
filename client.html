@@ -3,372 +3,1072 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>insightmarketplac — 海外市场调研智能体</title>
-<meta name="description" content="insightmarketplac 是一款海外市场调研智能体客户端：检索海外信息、抓取网页、查询零售与仓储数据。安装即用，无需配置。">
+<title>我的 Agent · 跨境电商 AI 工作台 | insightmarketplac Agent</title>
+<meta name="description" content="insightmarketplac 我的 Agent 客户端：选品调研、文案视觉、店铺运营、数据分析四大业务线工作台，27 个 Agent 任务模板一键下达，执行全程可追溯，写操作人工审批。">
+<meta name="robots" content="noindex">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="我的 Agent · 跨境电商 AI 工作台">
+  <meta property="og:description" content="insightmarketplac 我的 Agent 客户端：四大业务线工作台，27 个 Agent 任务模板一键下达，执行全程可追溯，写操作人工审批。">
+  <meta property="og:site_name" content="insightmarketplac">
+  <meta property="og:image" content="https://hdhaidong.github.io/insightmarketplac-promo/research/assets/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="insightmarketplac · 跨境电商 AI Agent平台">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="我的 Agent · 跨境电商 AI 工作台">
+  <meta name="twitter:description" content="insightmarketplac 我的 Agent 客户端：四大业务线工作台，27 个 Agent 任务模板一键下达，执行全程可追溯，写操作人工审批。">
+  <meta name="twitter:image" content="https://hdhaidong.github.io/insightmarketplac-promo/research/assets/og-cover.jpg">
 <style>
-  :root {
-    --bg: #0a0b0e;
-    --bg-soft: #101318;
-    --ink: #f2f4f8;
-    --ink-dim: #9aa3b2;
-    --ink-faint: #5c6472;
-    --accent: #4f8dff;
-    --line: rgba(255,255,255,.08);
-    --font: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", system-ui, sans-serif;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--font);
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-  ::selection { background: var(--accent); color: #fff; }
-
-  /* ── Nav ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 48px;
-    background: linear-gradient(to bottom, rgba(10,11,14,.85), transparent);
-    backdrop-filter: blur(2px);
-  }
-  .nav-brand {
-    font-size: 17px; font-weight: 700; letter-spacing: -.02em; color: var(--ink);
-    text-decoration: none;
-  }
-  .nav-cta {
-    font-size: 14px; color: var(--ink); text-decoration: none;
-    border: 1px solid var(--line); border-radius: 999px;
-    padding: 9px 22px;
-    transition: border-color .25s, background .25s;
-  }
-  .nav-cta:hover { border-color: var(--accent); background: rgba(79,141,255,.08); }
-
-  /* ── Hero ── */
-  .hero {
-    position: relative;
-    min-height: 100svh;
-    display: flex; align-items: flex-end;
-    isolation: isolate;
-  }
-  .hero-media {
-    position: absolute; inset: 0; z-index: -1;
-    overflow: hidden;
-  }
-  .hero-media img {
-    width: 100%; height: 100%; object-fit: cover;
-    object-position: center 30%;
-    transform: scale(1.06);
-    animation: heroZoom 2.4s cubic-bezier(.16,1,.3,1) forwards;
-  }
-  @keyframes heroZoom { to { transform: scale(1); } }
-  .hero-media::after {
-    content: ""; position: absolute; inset: 0;
-    background:
-      linear-gradient(to top, var(--bg) 4%, rgba(10,11,14,.55) 38%, rgba(10,11,14,.25) 65%, rgba(10,11,14,.5) 100%);
-  }
-  .hero-inner {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 48px 96px;
-  }
-  .hero-wordmark {
-    font-size: clamp(40px, 7.5vw, 104px);
-    font-weight: 800;
-    letter-spacing: -.045em;
-    line-height: .95;
-    opacity: 0;
-    animation: riseIn 1s cubic-bezier(.16,1,.3,1) .15s forwards;
-  }
-  .hero-wordmark .dot { color: var(--accent); }
-  .hero-headline {
-    margin-top: 28px;
-    font-size: clamp(20px, 2.6vw, 34px);
-    font-weight: 600;
-    letter-spacing: -.01em;
-    line-height: 1.35;
-    max-width: 560px;
-    opacity: 0;
-    animation: riseIn 1s cubic-bezier(.16,1,.3,1) .35s forwards;
-  }
-  .hero-sub {
-    margin-top: 18px;
-    font-size: 16px;
-    color: var(--ink-dim);
-    line-height: 1.7;
-    max-width: 480px;
-    opacity: 0;
-    animation: riseIn 1s cubic-bezier(.16,1,.3,1) .5s forwards;
-  }
-  .hero-actions {
-    margin-top: 40px;
-    display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
-    opacity: 0;
-    animation: riseIn 1s cubic-bezier(.16,1,.3,1) .65s forwards;
-  }
-  @keyframes riseIn {
-    from { opacity: 0; transform: translateY(28px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: var(--accent); color: #fff;
-    font-size: 15px; font-weight: 600;
-    padding: 15px 34px; border-radius: 999px;
-    text-decoration: none;
-    transition: transform .25s cubic-bezier(.16,1,.3,1), box-shadow .25s;
-    box-shadow: 0 0 0 0 rgba(79,141,255,0);
-  }
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px -8px rgba(79,141,255,.55);
-  }
-  .btn-primary svg { transition: transform .25s; }
-  .btn-primary:hover svg { transform: translateY(2px); }
-  .hero-note {
-    font-size: 13px; color: var(--ink-faint);
-  }
-
-  /* ── Sections ── */
-  section { position: relative; }
-  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
-  .section-label {
-    font-size: 12px; font-weight: 600;
-    letter-spacing: .22em; text-transform: uppercase;
-    color: var(--accent);
-  }
-  .section-title {
-    margin-top: 16px;
-    font-size: clamp(28px, 4vw, 48px);
-    font-weight: 700; letter-spacing: -.03em; line-height: 1.15;
-  }
-
-  /* reveal on scroll */
-  .reveal {
-    opacity: 0; transform: translateY(36px);
-    transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);
-  }
-  .reveal.in { opacity: 1; transform: none; }
-
-  /* ── Capabilities ── */
-  .caps { padding: 140px 0 120px; }
-  .caps-list { margin-top: 72px; border-top: 1px solid var(--line); }
-  .cap-row {
-    display: grid;
-    grid-template-columns: 80px 1fr 1.2fr;
-    gap: 32px; align-items: baseline;
-    padding: 44px 0;
-    border-bottom: 1px solid var(--line);
-    transition: background .3s, padding-left .3s;
-  }
-  .cap-row:hover { background: rgba(255,255,255,.02); padding-left: 16px; }
-  .cap-num {
-    font-size: 13px; color: var(--ink-faint);
-    font-variant-numeric: tabular-nums;
-  }
-  .cap-name { font-size: 24px; font-weight: 650; letter-spacing: -.02em; }
-  .cap-desc { font-size: 15px; color: var(--ink-dim); line-height: 1.75; }
-
-  /* ── Flow ── */
-  .flow { padding: 120px 0 140px; background: var(--bg-soft); }
-  .flow-grid {
-    margin-top: 72px;
-    display: grid; grid-template-columns: 1.05fr .95fr; gap: 80px;
-    align-items: center;
-  }
-  .flow-media {
-    border-radius: 16px; overflow: hidden;
-    aspect-ratio: 4 / 3;
-  }
-  .flow-media img {
-    width: 100%; height: 100%; object-fit: cover;
-    transition: transform 1.2s cubic-bezier(.16,1,.3,1);
-  }
-  .flow-media:hover img { transform: scale(1.04); }
-  .flow-steps { display: flex; flex-direction: column; }
-  .flow-step {
-    display: flex; gap: 24px;
-    padding: 28px 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .flow-step:first-child { padding-top: 0; }
-  .flow-step:last-child { border-bottom: none; padding-bottom: 0; }
-  .flow-idx {
-    flex: none;
-    width: 34px; height: 34px; border-radius: 50%;
-    border: 1px solid var(--line);
-    display: grid; place-items: center;
-    font-size: 13px; color: var(--ink-dim);
-    font-variant-numeric: tabular-nums;
-  }
-  .flow-step h3 { font-size: 18px; font-weight: 650; letter-spacing: -.01em; }
-  .flow-step p { margin-top: 8px; font-size: 14px; color: var(--ink-dim); line-height: 1.7; }
-
-  /* ── Final CTA ── */
-  .final {
-    padding: 160px 0;
-    text-align: center;
-  }
-  .final .section-title { max-width: 640px; margin-left: auto; margin-right: auto; }
-  .final-sub {
-    margin: 22px auto 0;
-    font-size: 15px; color: var(--ink-dim); line-height: 1.75;
-    max-width: 440px;
-  }
-  .final .btn-primary { margin-top: 44px; }
-  .final-meta {
-    margin-top: 20px;
-    font-size: 13px; color: var(--ink-faint);
-  }
-
-  footer {
-    border-top: 1px solid var(--line);
-    padding: 36px 48px;
-    display: flex; justify-content: space-between; align-items: center;
-    font-size: 13px; color: var(--ink-faint);
-  }
-  footer .f-brand { font-weight: 700; color: var(--ink-dim); letter-spacing: -.01em; }
-  footer .f-contact a { color: var(--ink-dim); text-decoration: none; border-bottom: 1px solid var(--line); transition: color .2s, border-color .2s; }
-  footer .f-contact a:hover { color: var(--accent, #6ea8ff); border-color: currentColor; }
-
-  @media (max-width: 860px) {
-    nav { padding: 16px 24px; }
-    .hero-inner { padding: 0 24px 72px; }
-    .wrap { padding: 0 24px; }
-    .cap-row { grid-template-columns: 1fr; gap: 10px; padding: 32px 0; }
-    .cap-row:hover { padding-left: 0; }
-    .flow-grid { grid-template-columns: 1fr; gap: 48px; }
-    .caps { padding: 96px 0 80px; }
-    .flow { padding: 80px 0 96px; }
-    .final { padding: 110px 0; }
-    footer { flex-direction: column; gap: 10px; padding: 28px 24px; }
-  }
+:root{--bg:#F4F4F1;--bg-2:#FAFAF8;--card:#FFFFFF;--ink:#1C1C1A;--ink-dim:#5F6470;--ink-faint:#9AA0A8;--accent:#B4791F;--accent-hi:#8F5E13;--accent-dim:rgba(180,121,31,.09);--gold-bg:#FFF8EC;--hairline:rgba(28,28,26,.12);--hairline-soft:rgba(28,28,26,.07);--ok:#2E7D32;--bad:#C62828;--warn:#B26A00;--shadow:0 1px 2px rgba(28,28,26,.05),0 4px 14px rgba(28,28,26,.06);--shadow-hi:0 2px 6px rgba(28,28,26,.08),0 10px 28px rgba(28,28,26,.10);--sans:"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;--mono:"SF Mono","Cascadia Code",Consolas,"Courier New",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+button{font-family:var(--sans)}
+::selection{background:var(--accent-dim)}
+/* ===== top bar ===== */
+.top{background:var(--card);border-bottom:1px solid var(--hairline-soft);position:sticky;top:0;z-index:40}
+.top-in{max-width:1560px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:baseline;gap:10px;cursor:pointer}
+.brand .mk{font-weight:700;font-size:1.08rem;color:var(--ink)}
+.brand .mk em{font-style:normal;color:var(--accent)}
+.brand .bc{font-family:var(--mono);font-size:.66rem;color:var(--ink-faint);letter-spacing:.06em}
+nav.main-nav{display:flex;gap:20px;flex-wrap:wrap}
+nav.main-nav a{color:var(--ink-dim);font-size:.88rem}
+nav.main-nav a:hover{color:var(--accent);text-decoration:none}
+nav.main-nav a.hot{color:var(--accent);font-weight:600}
+.top-right{display:flex;align-items:center;gap:12px}
+.credit-pill{display:flex;align-items:center;gap:7px;background:var(--gold-bg);border:1px solid rgba(180,121,31,.22);color:var(--accent-hi);border-radius:999px;padding:5px 13px;font-size:.78rem;font-weight:600}
+.harness-badge{display:flex;align-items:center;gap:6px;background:var(--bg);border:1px solid var(--hairline);border-radius:999px;padding:5px 13px;font-size:.78rem;color:var(--ink-dim);cursor:pointer;transition:border-color .15s}
+.harness-badge:hover{border-color:var(--accent)}
+.harness-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+/* ===== buttons ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:9px 20px;border-radius:9px;font-weight:600;font-size:.87rem;transition:all .16s;cursor:pointer;border:none}
+.btn-p{background:var(--accent);color:#fff}
+.btn-p:hover{background:var(--accent-hi);text-decoration:none;transform:translateY(-1px)}
+.btn-s{border:1px solid var(--hairline);color:var(--ink-dim);background:var(--card)}
+.btn-s:hover{border-color:var(--accent);color:var(--accent)}
+.btn-xs{padding:5px 13px;font-size:.76rem;border-radius:7px}
+/* ===== shell ===== */
+.shell{max-width:1560px;margin:0 auto;display:grid;grid-template-columns:236px minmax(0,1fr) 284px;gap:18px;padding:18px 22px 40px;align-items:start}
+/* ===== sidebar ===== */
+.sidebar{background:var(--card);border:1px solid var(--hairline-soft);border-radius:14px;padding:14px 12px;position:sticky;top:74px;max-height:calc(100vh - 96px);overflow-y:auto}
+.sb-new{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--accent);color:#fff;border:none;border-radius:10px;padding:11px 0;font-weight:700;font-size:.9rem;cursor:pointer;transition:background .15s;margin-bottom:14px}
+.sb-new:hover{background:var(--accent-hi)}
+.sb-nav{display:flex;flex-direction:column;gap:2px;margin-bottom:6px}
+.sb-item{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:9px;cursor:pointer;color:var(--ink-dim);transition:all .12s;font-size:.87rem}
+.sb-item:hover{background:var(--bg);color:var(--ink)}
+.sb-item.on{background:var(--accent-dim);color:var(--accent-hi);font-weight:600}
+.sb-item .ic{width:20px;text-align:center;font-size:.95rem;flex:none}
+.sb-label{font-size:.68rem;font-weight:700;color:var(--ink-faint);letter-spacing:.08em;margin:14px 4px 7px;text-transform:uppercase}
+.sb-task{display:flex;align-items:flex-start;gap:8px;padding:7px 10px;border-radius:8px;cursor:pointer;color:var(--ink-dim);font-size:.8rem;transition:background .12s}
+.sb-task:hover{background:var(--bg);color:var(--ink)}
+.sb-task .tt{min-width:0}
+.sb-task .tt b{display:block;font-weight:600;font-size:.8rem;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sb-task .tt span{font-size:.7rem;color:var(--ink-faint)}
+.sb-task .st-dot{width:7px;height:7px;border-radius:50%;background:var(--ok);margin-top:6px;flex:none}
+.ws-node{border-radius:9px}
+.ws-head{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:9px;cursor:pointer;color:var(--ink);font-size:.84rem;font-weight:600;transition:background .12s}
+.ws-head:hover{background:var(--bg)}
+.ws-head .arr{font-size:.66rem;color:var(--ink-faint);transition:transform .15s}
+.ws-node.open .ws-head .arr{transform:rotate(90deg)}
+.ws-kids{display:none;padding:2px 0 4px 12px;border-left:1px solid var(--hairline-soft);margin-left:14px}
+.ws-node.open .ws-kids{display:block}
+.ws-kid{padding:5px 10px;border-radius:7px;font-size:.78rem;color:var(--ink-dim);cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:all .12s}
+.ws-kid:hover{background:var(--bg);color:var(--ink)}
+/* ===== main ===== */
+.main{min-width:0}
+.wb-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.wb-title h1{font-size:1.5rem;letter-spacing:-.01em}
+.wb-title h1 em{font-style:normal;color:var(--accent)}
+.wb-title .sub{color:var(--ink-dim);font-size:.86rem;margin-top:3px}
+.line-tabs{display:flex;gap:6px;flex-wrap:wrap;background:var(--card);border:1px solid var(--hairline-soft);border-radius:12px;padding:6px;margin-bottom:14px;box-shadow:var(--shadow)}
+.lt{flex:1;min-width:96px;text-align:center;padding:9px 8px;border-radius:9px;font-size:.88rem;font-weight:600;color:var(--ink-dim);cursor:pointer;transition:all .14s;white-space:nowrap}
+.lt:hover{color:var(--ink);background:var(--bg)}
+.lt.on{background:var(--accent);color:#fff}
+.sub-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.stab{padding:6px 15px;border-radius:999px;border:1px solid var(--hairline);background:var(--card);font-size:.8rem;color:var(--ink-dim);cursor:pointer;transition:all .14s}
+.stab:hover{border-color:var(--accent);color:var(--accent)}
+.stab.on{background:var(--accent-dim);border-color:rgba(180,121,31,.4);color:var(--accent-hi);font-weight:600}
+/* task cards */
+.tpl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.tpl{background:var(--card);border:1px solid var(--hairline-soft);border-radius:13px;padding:16px 16px 13px;cursor:pointer;transition:all .16s;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:9px}
+.tpl:hover{border-color:rgba(180,121,31,.45);box-shadow:var(--shadow-hi);transform:translateY(-2px)}
+.tpl .tt{font-size:.94rem;font-weight:700;letter-spacing:-.005em}
+.tpl .td{font-size:.79rem;color:var(--ink-dim);flex:1}
+.tpl .tmeta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:.7rem;color:var(--ink-faint)}
+.tpl .tmeta .mtag{background:var(--bg);border:1px solid var(--hairline-soft);border-radius:6px;padding:2px 8px}
+.tpl .tmeta .mtag.gold{background:var(--gold-bg);border-color:rgba(180,121,31,.25);color:var(--accent-hi);font-weight:600}
+.tpl .tfoot{display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid var(--hairline-soft);padding-top:10px;margin-top:2px}
+.tpl .model-pick{display:flex;align-items:center;gap:6px}
+.tpl .model-pick label{font-size:.7rem;color:var(--ink-faint)}
+.tpl .model-pick select{border:1px solid var(--hairline);border-radius:7px;background:var(--card);font-size:.74rem;color:var(--ink-dim);padding:3px 6px;cursor:pointer;font-family:var(--sans)}
+.tpl .model-pick button{width:24px;height:24px;border-radius:7px;border:1px dashed var(--hairline);background:transparent;color:var(--ink-faint);font-size:.9rem;cursor:pointer;line-height:1}
+.tpl .model-pick button:hover{border-color:var(--accent);color:var(--accent)}
+.tpl .go-run{background:var(--accent-dim);color:var(--accent-hi);border:1px solid rgba(180,121,31,.3);border-radius:8px;padding:6px 14px;font-size:.78rem;font-weight:700;cursor:pointer;transition:all .14s;white-space:nowrap}
+.tpl .go-run:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.tpl .gate-flag{font-size:.68rem;color:var(--warn);background:rgba(178,106,0,.08);border:1px solid rgba(178,106,0,.22);border-radius:6px;padding:2px 8px;font-weight:600}
+/* generic panel */
+.panel{background:var(--card);border:1px solid var(--hairline-soft);border-radius:13px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden}
+.panel-h{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 18px;border-bottom:1px solid var(--hairline-soft)}
+.panel-h h3{font-size:.95rem}
+.panel-h .hint{font-size:.74rem;color:var(--ink-faint)}
+.panel-b{padding:16px 18px}
+/* ===== session / chat ===== */
+.sess-head{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--hairline-soft);flex-wrap:wrap}
+.sess-head .back{border:1px solid var(--hairline);background:var(--card);border-radius:8px;padding:5px 12px;font-size:.78rem;color:var(--ink-dim);cursor:pointer}
+.sess-head .back:hover{border-color:var(--accent);color:var(--accent)}
+.sess-head .avatar{width:38px;height:38px;border-radius:11px;background:var(--gold-bg);border:1px solid rgba(180,121,31,.25);display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex:none}
+.sess-head .sn{min-width:0}
+.sess-head .sn b{display:block;font-size:.95rem}
+.sess-head .sn span{font-size:.74rem;color:var(--ink-faint)}
+.chat{padding:18px;min-height:320px;max-height:56vh;overflow-y:auto;display:flex;flex-direction:column;gap:14px}
+.chat .empty{color:var(--ink-faint);font-size:.84rem;text-align:center;padding:60px 20px;border:1px dashed var(--hairline);border-radius:11px;background:var(--bg-2)}
+.msg{display:flex;gap:10px}
+.msg .who{width:30px;height:30px;border-radius:9px;background:var(--bg);border:1px solid var(--hairline-soft);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex:none}
+.msg .bubble{min-width:0;flex:1;background:var(--bg-2);border:1px solid var(--hairline-soft);border-radius:11px;padding:10px 14px}
+.msg.user .bubble{background:var(--gold-bg);border-color:rgba(180,121,31,.22)}
+.msg .nm{font-size:.72rem;font-weight:700;color:var(--ink-faint);margin-bottom:4px}
+.msg .bd{font-size:.86rem}
+.trace{display:flex;flex-direction:column;gap:7px;margin-top:10px}
+.tstep{display:flex;align-items:center;gap:10px;font-size:.8rem;color:var(--ink-dim)}
+.tstep .st{width:20px;height:20px;border-radius:50%;background:var(--bg);border:1px solid var(--hairline);display:flex;align-items:center;justify-content:center;font-size:.64rem;flex:none}
+.tstep.run .st{border-color:var(--accent);color:var(--accent)}
+.tstep.done .st{background:var(--ok);border-color:var(--ok);color:#fff}
+.tstep .tx{flex:1;min-width:0}
+.tstep .st-tool{display:inline-block;margin-left:8px;font-size:.68rem;color:var(--ink-faint);background:var(--bg);border:1px solid var(--hairline-soft);border-radius:5px;padding:1px 7px}
+.tstep .ms{font-family:var(--mono);font-size:.68rem;color:var(--ink-faint)}
+.gate{margin-top:12px;border:1px solid rgba(178,106,0,.35);background:#FFF6E8;border-radius:11px;padding:12px 14px}
+.gate .gt{font-weight:700;font-size:.84rem;color:var(--warn)}
+.gate .gd{font-size:.78rem;color:var(--ink-dim);margin:5px 0 10px}
+.gate .gacts{display:flex;gap:8px}
+/* result */
+.result{margin-top:12px;border:1px solid var(--hairline);border-radius:11px;overflow:hidden;background:var(--card)}
+.result .rt{padding:10px 14px;background:var(--gold-bg);border-bottom:1px solid rgba(180,121,31,.2);font-weight:700;font-size:.86rem;color:var(--accent-hi)}
+.rkpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--hairline-soft)}
+.rkpi .k{background:var(--card);padding:10px 14px}
+.rkpi .l{font-size:.68rem;color:var(--ink-faint)}
+.rkpi .v{font-size:1.02rem;font-weight:700;color:var(--accent-hi)}
+.rkpi .s{font-size:.68rem;color:var(--ink-faint)}
+table.rt{width:100%;border-collapse:collapse;font-size:.78rem}
+table.rt th{background:var(--bg-2);text-align:left;padding:8px 12px;font-size:.7rem;color:var(--ink-faint);border-bottom:1px solid var(--hairline-soft);white-space:nowrap}
+table.rt td{padding:8px 12px;border-bottom:1px solid var(--hairline-soft);vertical-align:top}
+table.rt tr:last-child td{border-bottom:none}
+td.go,span.go{color:var(--ok);font-weight:700}
+td.nogo,span.nogo{color:var(--bad);font-weight:700}
+td.pos{color:var(--ok);font-weight:600}
+td.neg{color:var(--bad);font-weight:600}
+.rnote{padding:10px 14px;font-size:.78rem;color:var(--ink-dim);background:var(--bg-2);border-top:1px solid var(--hairline-soft)}
+.composer{display:flex;gap:10px;padding:14px 18px;border-top:1px solid var(--hairline-soft);background:var(--bg-2)}
+.composer input{flex:1;border:1px solid var(--hairline);border-radius:10px;padding:11px 15px;font-size:.87rem;background:var(--card);font-family:var(--sans);outline:none}
+.composer input:focus{border-color:var(--accent)}
+/* ===== right highlights ===== */
+.hl-col{position:sticky;top:74px;display:flex;flex-direction:column;gap:12px}
+.hl-card{background:var(--card);border:1px solid var(--hairline-soft);border-radius:13px;padding:15px 16px;box-shadow:var(--shadow);transition:all .16s;cursor:default}
+.hl-card:hover{border-color:rgba(180,121,31,.4)}
+.hl-card .hc-t{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.88rem;margin-bottom:5px}
+.hl-card .hc-t .ic{width:28px;height:28px;border-radius:9px;background:var(--gold-bg);border:1px solid rgba(180,121,31,.22);display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.hl-card p{font-size:.76rem;color:var(--ink-dim)}
+/* ===== skills ===== */
+.search-row input{width:100%;max-width:420px;border:1px solid var(--hairline);border-radius:10px;padding:10px 15px;font-size:.86rem;background:var(--card);font-family:var(--sans);outline:none}
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.ftab{padding:5px 14px;border-radius:999px;border:1px solid var(--hairline);font-size:.78rem;color:var(--ink-dim);cursor:pointer;background:var(--card);transition:all .13s}
+.ftab b{font-weight:400;opacity:.65;margin-left:4px;font-size:.7rem}
+.ftab.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.ftab:not(.on):hover{border-color:var(--accent);color:var(--accent)}
+.sk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.sk-card{background:var(--card);border:1px solid var(--hairline-soft);border-radius:11px;padding:13px 14px;display:flex;flex-direction:column;gap:8px;transition:all .15s}
+.sk-card:hover{border-color:rgba(180,121,31,.4)}
+.sk-card.installed{border-color:rgba(46,125,50,.35)}
+.sk-card h4{font-size:.86rem}
+.sk-card p{font-size:.75rem;color:var(--ink-dim);flex:1}
+.sk-tags{display:flex;gap:5px;flex-wrap:wrap}
+.sk-tag{font-size:.64rem;background:var(--bg);border:1px solid var(--hairline-soft);border-radius:5px;padding:1px 7px;color:var(--ink-faint)}
+.sk-tag.cat{background:var(--accent-dim);border-color:rgba(180,121,31,.25);color:var(--accent-hi)}
+.sk-foot{display:flex;justify-content:space-between;align-items:center;font-size:.74rem}
+.sk-foot .dl{color:var(--ink-faint)}
+.sk-foot .use{color:var(--accent);font-weight:700;cursor:pointer}
+/* ===== tasks ===== */
+.run-row{display:flex;align-items:center;gap:12px;padding:11px 6px;border-bottom:1px solid var(--hairline-soft);font-size:.84rem}
+.run-row:last-child{border-bottom:none}
+.st-ic{width:9px;height:9px;border-radius:50%;flex:none}
+.st-ic.ok{background:var(--ok)}
+.st-ic.run{background:var(--warn);animation:pulse 1.2s infinite}
+.st-ic.wait{background:var(--ink-faint)}
+@keyframes pulse{50%{opacity:.4}}
+.run-row .rn{flex:1;min-width:0}
+.run-row .rn b{display:block;font-size:.84rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.run-row .meta{font-size:.7rem;color:var(--ink-faint)}
+.run-row .rc{font-family:var(--mono);font-size:.74rem;color:var(--ink-faint)}
+.sched-row{display:flex;align-items:center;gap:12px;padding:12px 6px;border-bottom:1px solid var(--hairline-soft);font-size:.84rem}
+.sched-row:last-child{border-bottom:none}
+.sched-row .sc{width:34px;height:34px;border-radius:10px;background:var(--gold-bg);border:1px solid rgba(180,121,31,.22);display:flex;align-items:center;justify-content:center;font-size:1rem;flex:none}
+.sched-row .sn2{flex:1;min-width:0}
+.sched-row .sn2 b{display:block;font-size:.84rem}
+.sched-row .sn2 span{font-size:.7rem;color:var(--ink-faint)}
+.sched-row .sw{width:34px;height:20px;border-radius:999px;background:var(--ok);position:relative;cursor:pointer;transition:background .15s;flex:none}
+.sched-row .sw::after{content:"";position:absolute;top:2px;left:16px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .15s}
+.sched-row .sw.off{background:var(--hairline)}
+.sched-row .sw.off::after{left:2px}
+/* ===== connectors ===== */
+.conn-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.conn-card{background:var(--card);border:1px solid var(--hairline-soft);border-radius:12px;padding:15px 16px;display:flex;flex-direction:column;gap:8px}
+.conn-card .cc-h{display:flex;align-items:center;gap:9px}
+.conn-card .cc-h .ic{width:32px;height:32px;border-radius:10px;background:var(--bg);border:1px solid var(--hairline-soft);display:flex;align-items:center;justify-content:center;font-size:1rem}
+.conn-card b{font-size:.88rem}
+.conn-card p{font-size:.75rem;color:var(--ink-dim);flex:1}
+.conn-state{font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:999px;width:max-content}
+.conn-state.on{background:rgba(46,125,50,.1);color:var(--ok);border:1px solid rgba(46,125,50,.25)}
+.conn-state.off{background:var(--bg);color:var(--ink-faint);border:1px solid var(--hairline)}
+/* ===== modal & toast ===== */
+.modal-mask{position:fixed;inset:0;background:rgba(28,28,26,.42);display:none;align-items:center;justify-content:center;z-index:60;backdrop-filter:blur(3px)}
+.modal-mask.on{display:flex}
+.modal{background:var(--card);border-radius:15px;width:min(560px,92vw);max-height:86vh;overflow-y:auto;box-shadow:var(--shadow-hi)}
+.mh{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid var(--hairline-soft)}
+.mh h3{font-size:1rem}
+.mh .x{font-size:1.3rem;color:var(--ink-faint);cursor:pointer;line-height:1}
+.mb{padding:18px 22px}
+.set-row{margin-bottom:16px}
+.set-row label{display:block;font-size:.8rem;font-weight:700;margin-bottom:7px}
+.set-row input{width:100%;border:1px solid var(--hairline);border-radius:9px;padding:10px 13px;font-size:.85rem;font-family:var(--sans);background:var(--card);outline:none}
+.set-row input:focus{border-color:var(--accent)}
+.seg{display:flex;gap:6px}
+.seg button{flex:1;border:1px solid var(--hairline);background:var(--card);border-radius:9px;padding:9px 0;font-size:.82rem;color:var(--ink-dim);cursor:pointer;transition:all .13s}
+.seg button.on{background:var(--accent-dim);border-color:rgba(180,121,31,.45);color:var(--accent-hi);font-weight:700}
+.desc{font-size:.72rem;color:var(--ink-faint);margin-top:5px}
+.tgl-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0;border-top:1px solid var(--hairline-soft)}
+.tgl-row .tl{font-size:.85rem;font-weight:600}
+.tgl-row .desc{margin-top:2px}
+.tgl{position:relative;display:inline-block;width:40px;height:22px;flex:none}
+.tgl input{opacity:0;width:0;height:0}
+.tgl .tk{position:absolute;inset:0;background:var(--hairline);border-radius:999px;cursor:pointer;transition:background .15s}
+.tgl .tk::after{content:"";position:absolute;top:2.5px;left:3px;width:17px;height:17px;border-radius:50%;background:#fff;transition:left .15s}
+.tgl input:checked+.tk{background:var(--accent)}
+.tgl input:checked+.tk::after{left:20px}
+.toast{position:fixed;bottom:28px;left:50%;transform:translate(-50%,16px);background:var(--ink);color:#fff;padding:11px 22px;border-radius:10px;font-size:.84rem;opacity:0;pointer-events:none;transition:all .25s;z-index:70;box-shadow:var(--shadow-hi)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.empty{color:var(--ink-faint);font-size:.84rem;text-align:center;padding:44px 20px}
+/* ===== responsive ===== */
+@media(max-width:1280px){.shell{grid-template-columns:222px minmax(0,1fr)}.hl-col{display:none}}
+@media(max-width:900px){
+  .shell{grid-template-columns:1fr;padding:14px 14px 30px}
+  .sidebar{position:static;max-height:none}
+  nav.main-nav{display:none}
+  .wb-title h1{font-size:1.25rem}
+}
 </style>
 </head>
 <body>
 
-<nav>
-  <a class="nav-brand" href="./">insightmarketplac</a>
-  <a class="nav-cta" href="#download">下载客户端</a>
-</nav>
-
-<!-- Hero -->
-<header class="hero">
-  <div class="hero-media">
-    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cinematic%20aerial%20view%20of%20a%20global%20container%20port%20at%20dusk%2C%20cargo%20ships%20and%20cranes%20silhouetted%20against%20deep%20blue%20twilight%20sky%2C%20city%20lights%20glowing%20on%20horizon%2C%20moody%20dark%20tones%2C%20professional%20editorial%20photography%2C%20high%20contrast%2C%20no%20text%20no%20logos&image_size=landscape_16_9" alt="全球贸易港口暮色">
-  </div>
-  <div class="hero-inner">
-    <h1 class="hero-wordmark">insightmarketplac<span class="dot">.</span></h1>
-    <p class="hero-headline">海外市场调研，<br>交给一个智能体就够了。</p>
-    <p class="hero-sub">检索海外信息、抓取网页、查询零售与仓储数据——下载安装，打开即用，无需任何配置。</p>
-    <div class="hero-actions">
-      <a class="btn-primary" href="https://github.com/Hdhaidong/insightmarketplac-promo/releases/download/insightmarketplac-v1.0.0/insightmarketplac-Setup-1.0.0-client01.exe">
-        下载 Windows 客户端
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v14m0 0l-5.5-5.5M12 17l5.5-5.5M4 21h16"/></svg>
-      </a>
-      <span class="hero-note">Windows 10 / 11 · 约 75 MB</span>
+<header class="top">
+  <div class="top-in">
+    <a href="./" class="brand"><span class="mk">insight<em>marketplac</em></span><span class="bc">AGENT WORKBENCH</span></a>
+    <nav class="main-nav">
+      <a href="./">首页</a>
+      <a href="index.html#capabilities">产品</a>
+      <a href="customers.html">客户案例</a>
+      <a href="enterprise-ai.html">企业AI赋能</a>
+      <a href="cases.html">选品调研报告</a>
+      <a href="skills.html">Skill市场</a><a href="clients.html">客户端</a>
+      <a href="hub/">社区</a>
+      <a href="pricing.html">定价</a>
+    </nav>
+    <div class="top-right">
+      <span class="credit-pill">额度 <b id="creditVal">5,000</b></span>
+      <span class="harness-badge" id="harnessBadge"><span class="dot"></span><span id="harnessName">标准引擎</span> · 设置</span>
     </div>
   </div>
 </header>
 
-<!-- Capabilities -->
-<section class="caps">
-  <div class="wrap">
-    <p class="section-label reveal">Capabilities</p>
-    <h2 class="section-title reveal">三种能力，覆盖一次完整调研。</h2>
-    <div class="caps-list">
-      <div class="cap-row reveal">
-        <span class="cap-num">01</span>
-        <h3 class="cap-name">海外市场检索</h3>
-        <p class="cap-desc">用自然语言提问，智能体自动检索海外公开信息——竞品动态、价格区间、用户评价、行业趋势，并整理为可读的结论。</p>
+<div class="shell">
+  <aside class="sidebar">
+    <button class="sb-new" onclick="newSession()">＋ 新建会话</button>
+    <div class="sb-nav">
+      <div class="sb-item on" data-v="bench" onclick="switchView('bench')"><span class="ic">🏠</span>工作台</div>
+      <div class="sb-item" data-v="tasks" onclick="switchView('tasks')"><span class="ic">⏱</span>定时任务</div>
+      <div class="sb-item" data-v="skills" onclick="switchView('skills')"><span class="ic">🧩</span>技能</div>
+      <div class="sb-item" data-v="connectors" onclick="switchView('connectors')"><span class="ic">🔌</span>连接器</div>
+      <a class="sb-item" href="cases.html" target="_blank"><span class="ic">📂</span>案例中心</a>
+    </div>
+    <div class="sb-label">定时任务</div>
+    <div id="sbSched"></div>
+    <div class="sb-label">工作空间</div>
+    <div id="sbWs"></div>
+  </aside>
+
+  <main class="main" id="main"></main>
+
+  <div class="hl-col">
+    <div class="hl-card"><div class="hc-t"><span class="ic">✍️</span>Listing 撰写</div><p>批量 75 字符标题、五点卖点、富内容图文一站式生成，上传前自动合规校验。</p></div>
+    <div class="hl-card"><div class="hc-t"><span class="ic">🔬</span>选品调研</div><p>集成多路专业数据源，5 分钟出一份证据驱动的调研报告。</p></div>
+    <div class="hl-card"><div class="hc-t"><span class="ic">🏪</span>店铺运营</div><p>多平台上架与单证打单，写操作走人工审批门，确认后才执行。</p></div>
+    <div class="hl-card"><div class="hc-t"><span class="ic">📡</span>运营监控</div><p>竞品、关键词排名与价格异动 7×24 监控，自动推送运营 IM 群。</p></div>
+  </div>
+</div>
+
+<div class="modal-mask" id="settingsMask">
+  <div class="modal">
+    <div class="mh"><h3>客户端设置</h3><span class="x" onclick="closeSettings()">×</span></div>
+    <div class="mb">
+      <div class="set-row">
+        <label>执行引擎</label>
+        <div class="seg" id="harnessSeg">
+          <button data-h="std" class="on">标准引擎</button>
+          <button data-h="pro">高性能引擎</button>
+        </div>
+        <div class="desc" id="harnessDesc">本地执行引擎：任务规划、工具调用与报告生成在本地执行循环内完成。</div>
       </div>
-      <div class="cap-row reveal">
-        <span class="cap-num">02</span>
-        <h3 class="cap-name">网页内容抓取</h3>
-        <p class="cap-desc">指定任意海外网页，自动提取正文与结构化内容。商品页、榜单页、新闻页，交给我就是一段干净的素材。</p>
+      <div class="set-row" id="keyRow" style="display:none">
+        <label>高性能引擎 API Key</label>
+        <input type="password" id="dsKey" placeholder="sk-..." autocomplete="off">
+        <div class="desc">密钥仅保存在本机浏览器 localStorage，不随任务上传。个人设置 → API Key 中获取。</div>
       </div>
-      <div class="cap-row reveal">
-        <span class="cap-num">03</span>
-        <h3 class="cap-name">零售数据查询</h3>
-        <p class="cap-desc">直连海外零售与仓储数据源，查询商品、库存与价格信息，为选品与定价提供一手依据。</p>
+      <div class="set-row">
+        <label>数据 API Key（数据技能调用）</label>
+        <input type="password" id="wmKey" placeholder="在个人设置中获取" autocomplete="off">
+        <div class="desc">配置后数据型 Skill（评论 VOC、关键词反查、类目研究等）可直连数据网关。</div>
+      </div>
+      <div class="tgl-row">
+        <div class="tl">写操作审批门<span class="desc">文件生成、表格回写等写操作必须人工确认后执行</span></div>
+        <label class="tgl"><input type="checkbox" id="tglGate" checked><span class="tk"></span></label>
+      </div>
+      <div class="tgl-row">
+        <div class="tl">高危操作双重确认<span class="desc">店铺价格修改、批量折扣等 L3 操作需二次确认</span></div>
+        <label class="tgl"><input type="checkbox" id="tglL3" checked><span class="tk"></span></label>
+      </div>
+      <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:16px">
+        <button class="btn btn-s" onclick="closeSettings()">取消</button>
+        <button class="btn btn-p" onclick="saveSettings()">保存设置</button>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- Workflow -->
-<section class="flow">
-  <div class="wrap">
-    <p class="section-label reveal">Workflow</p>
-    <h2 class="section-title reveal">从提问到报告，三步完成。</h2>
-    <div class="flow-grid">
-      <div class="flow-media reveal">
-        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=minimal%20dark%20workspace%20desk%20with%20a%20laptop%20showing%20softly%20glowing%20data%20charts%2C%20warm%20desk%20lamp%20light%2C%20shallow%20depth%20of%20field%2C%20late%20night%20work%20atmosphere%2C%20photorealistic%2C%20moody%20cinematic%20tones%2C%20no%20readable%20text%20no%20logos&image_size=landscape_4_3" alt="深夜工作台">
-      </div>
-      <div class="flow-steps">
-        <div class="flow-step reveal">
-          <span class="flow-idx">1</span>
-          <div>
-            <h3>用一句话描述目标</h3>
-            <p>「调研美国市场电动工具的售价与口碑」——像交给同事一样，把问题交给它。</p>
-          </div>
-        </div>
-        <div class="flow-step reveal">
-          <span class="flow-idx">2</span>
-          <div>
-            <h3>智能体自动执行</h3>
-            <p>检索、抓取、查数、交叉验证，全过程自动推进，关键步骤清晰可见。</p>
-          </div>
-        </div>
-        <div class="flow-step reveal">
-          <span class="flow-idx">3</span>
-          <div>
-            <h3>收获一份完整报告</h3>
-            <p>结论、数据与出处一并交付，可直接用于选品讨论与客户汇报。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="toast" id="toast"></div>
 
-<!-- Final CTA -->
-<section class="final" id="download">
-  <div class="wrap">
-    <p class="section-label reveal">Get Started</p>
-    <h2 class="section-title reveal">现在开始，让市场调研自己跑起来。</h2>
-    <p class="final-sub reveal">下载安装包，双击安装，打开即用——账号、模型、数据均已为你预置妥当。</p>
-    <a class="btn-primary reveal" href="https://github.com/Hdhaidong/insightmarketplac-promo/releases/download/insightmarketplac-v1.0.0/insightmarketplac-Setup-1.0.0-client01.exe">
-      下载 Windows 客户端
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v14m0 0l-5.5-5.5M12 17l5.5-5.5M4 21h16"/></svg>
-    </a>
-    <p class="final-meta reveal">版本 1.0.0 · Windows 10 / 11（64 位）· 约 75 MB</p>
-  </div>
-</section>
-
-<footer>
-  <span class="f-brand">insightmarketplac</span>
-  <span class="f-contact">
-    联系方式：<a href="mailto:haidong.zhou@outlook.com">haidong.zhou@outlook.com</a>
-  </span>
-  <span>© 2026 insightmarketplac. All rights reserved.</span>
-</footer>
-
+<script src="data.js"></script>
 <script>
-  const io = new IntersectionObserver((entries) => {
-    for (const e of entries) {
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-        io.unobserve(e.target);
-      }
-    }
-  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-</script>
+/* ================= state ================= */
+const LS_KEY='insightagent_client_v2';
+let S=load();
+function def(){return{credits:5000,harness:'std',dsKey:'',wmKey:'',gate:true,gl3:true,installed:[],runs:[],sessions:[],line:'research',sub:'market',wsOpen:true}}
+function load(){try{return Object.assign(def(),JSON.parse(localStorage.getItem(LS_KEY))||{})}catch(e){return def()}}
+function save(){localStorage.setItem(LS_KEY,JSON.stringify(S))}
+function fmt(n){return n.toLocaleString('en-US')}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2200)}
+function now(){return new Date().toLocaleString('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})}
+function spend(c){S.credits=Math.max(0,S.credits-c);document.getElementById('creditVal').textContent=fmt(S.credits);save()}
 
+/* ================= agents ================= */
+const AGENTS=[
+{id:'research',icon:'🔬',name:'市场调研员',role:'Research Agent',wsTag:'北美A店铺运营',
+  templates:[
+    {id:'t1',name:'市场调研报告｜市场容量与竞品全景',desc:'TAM/SAM/SOM 三层估算，判断赛道规模、增长信号与竞争强度',cost:400,steps:4,kind:'market'},
+    {id:'t2',name:'竞品深度调研报告｜看清对手怎么卖',desc:'拆解对手定价、卖点、图片、评价和下一步可跟进的打法',cost:400,steps:4,kind:'competitor'},
+    {id:'t3',name:'用户需求分析报告｜找出买家没被满足的点',desc:'从评论里看清用户抱怨什么、想要什么，以及产品还能怎么改',cost:300,steps:3,kind:'voc'},
+    {id:'t4',name:'多平台市场调研｜北美连锁 · 俄语区 · 拉美 · 欧美刊登 · 澳洲供货',desc:'同一品类在五大区域平台的价格带、竞争强度与需求信号横向对比',cost:400,steps:6,kind:'multip'}
+  ]},
+{id:'scout',icon:'🎯',name:'选品分析师',role:'Product Scout Agent',wsTag:'北美A店铺运营',
+  templates:[
+    {id:'t1',name:'潜力商品筛选',desc:'按价格、销量和配送方式筛选具备潜力的平台商品',cost:150,steps:3,kind:'potential'},
+    {id:'t2',name:'北美平台选品分析报告',desc:'市场、竞品、关键词、VOC、供应链、利润与 Go/No-Go 全链路分析',cost:400,steps:5,kind:'gonogo'},
+    {id:'t3',name:'历史商品回溯筛选',desc:'基于指定历史时间点的商品指标回溯选品和竞品表现',cost:200,steps:3,kind:'potential'}
+  ]},
+{id:'monitor',icon:'📡',name:'竞品监控哨兵',role:'Monitor Agent',wsTag:'北美A店铺运营',
+  templates:[
+    {id:'t1',name:'竞品情报监控',desc:'从站点和自有商品建立长期竞品、关键词排名与 Listing 变化监控',cost:200,steps:4,kind:'monitor'},
+    {id:'t2',name:'关键词排名跟踪',desc:'跟踪指定商品在关键词下的页面和位置变化，越界告警',cost:100,steps:3,kind:'rank'},
+    {id:'t3',name:'促销异动雷达',desc:'监控零售站点促销和商品动态，发现价格波动与活动机会',cost:100,steps:3,kind:'deal'}
+  ]},
+{id:'ads',icon:'📈',name:'广告优化师',role:'Ads Agent',wsTag:'北美A店铺运营',
+  templates:[
+    {id:'t1',name:'竞品广告拆解｜看清对手在买什么流量',desc:'拆解竞品搜索/品牌/展示广告位、素材与投放关键词，判断对手的流量买法',cost:400,steps:4,kind:'adspy'},
+    {id:'t2',name:'关键词分层｜核心 · 长尾 · 防御',desc:'按转化意图与竞价压力给广告关键词分层，明确每一层的目标 ACOS',cost:300,steps:3,kind:'adskw'},
+    {id:'t3',name:'广告盈亏模型｜ACOS 与回本测算',desc:'按客单价、毛利率与转化率测算保本 ACOS 与目标 ACOS，判断加码还是收缩',cost:300,steps:3,kind:'adspnl'},
+    {id:'t4',name:'45 天广告推进路线｜搜索 · 品牌 · 展示',desc:'为新品或旺季制定 45 天广告节奏：测词、放量、防守三阶段推进',cost:400,steps:4,kind:'adsroad'}
+  ]},
+{id:'docs',icon:'📄',name:'打单专员',role:'Document Agent',wsTag:'北美A店铺运营',
+  templates:[
+    {id:'t1',name:'批量报关单制作',desc:'为当天新增报关数据匹配货代模板并批量生成报关单 Excel（参考福建大卖案例：月省 63 小时）',cost:120,steps:5,kind:'customs',gate:'L2'},
+    {id:'t2',name:'货代模板匹配核验',desc:'为每条报关数据找到正确货代模板，字段映射预检，冲突项人工复核',cost:40,steps:3,kind:'tplmatch'}
+  ]},
+{id:'listing',icon:'✍️',name:'Listing 工程师',role:'Listing Agent',wsTag:'北美A店铺运营',
+  templates:[
+    {id:'t1',name:'批量 75 字符标题改写',desc:'批量改写标题与商品亮点，上传平台后台前做合规校验',cost:80,steps:4,kind:'title'},
+    {id:'t2',name:'互补卖点生成（≤125 字符）',desc:'依据商品详情中的标题、品牌、核心关键词生成互补卖点',cost:60,steps:3,kind:'bullets'}
+  ]},
+{id:'publish',icon:'🚀',name:'上架专员',role:'Publishing Agent',wsTag:'北美A店铺运营',
+  templates:[
+    {id:'t1',name:'北美连锁批量产品发布',desc:'类目属性模板映射 + 商品 ID 生成 + 合规校验，一次发布 20 个 SKU',cost:150,steps:5,kind:'pubwm',gate:'L2'},
+    {id:'t2',name:'俄语区产品发布（俄语本地化）',desc:'Listing 俄语翻译 + 平台仓/自发货物流属性 + 类目映射，发布前合规预检',cost:180,steps:5,kind:'pubru',gate:'L2'},
+    {id:'t3',name:'俄语区规格表批量生成',desc:'平台规格表 + 尺码映射 + 供货价换算，生成可上传的 xlsx',cost:120,steps:4,kind:'pubwb',gate:'L2'},
+    {id:'t4',name:'欧美刊登平台批量刊登',desc:'刊登模板 + 变体属性映射 + 议价策略，US / EU / AU 多站点批量上线',cost:130,steps:4,kind:'pubeu',gate:'L2'},
+    {id:'t5',name:'拉美产品发布（西语本地化）',desc:'多站点类目映射 + 西语 / 葡语翻译 + 平台本地履约属性，发布前合规预检',cost:160,steps:5,kind:'pubml',gate:'L2'},
+    {id:'t6',name:'澳洲供货上架（澳元定价）',desc:'平台供货商规格表 + AUD 含 GST 定价换算 + 库存与运费模板',cost:110,steps:4,kind:'pubau',gate:'L2'}
+  ]},
+{id:'images',icon:'🎨',name:'图片设计师',role:'Image Factory Agent',wsTag:'北美A店铺运营',
+  templates:[
+    {id:'t1',name:'白底主图批量制造',desc:'抠图 + 阴影 + 排版，一次出全套 SKU 的 3000×3000 规范白底图',cost:100,steps:4,kind:'imgwhite'},
+    {id:'t2',name:'场景图批量合成',desc:'按目标市场家居/户外/节日场景批量合成，模特与道具自动匹配',cost:160,steps:4,kind:'imgscene'},
+    {id:'t3',name:'富内容图文长图排版',desc:'从卖点提炼到模块排版，生成平台富内容长图页面',cost:140,steps:5,kind:'imgap'}
+  ]}
+];
+
+/* ================= business lines & cards ================= */
+const LINES=[
+{id:'research',name:'选品调研',subs:[
+  {id:'market',name:'市场机会调研'},
+  {id:'competitor',name:'竞品商品拆解'},
+  {id:'voc',name:'评论洞察分析'}]},
+{id:'copy',name:'文案视觉',subs:[
+  {id:'listing',name:'Listing 文案'},
+  {id:'image',name:'产品图片'}]},
+{id:'ops',name:'店铺运营',subs:[
+  {id:'publish',name:'多平台上架'},
+  {id:'docs',name:'单证与打单'},
+  {id:'ads',name:'广告优化'}]},
+{id:'data',name:'数据分析',subs:[
+  {id:'monitor',name:'竞品监控'},
+  {id:'rank',name:'关键词与排名'}]},
+{id:'ip',name:'达人IP·内容',subs:[
+  {id:'soon',name:'即将上线'}]}
+];
+const CARDS={
+'research:market':[{a:'research',t:'t1'},{a:'research',t:'t4'},{a:'scout',t:'t2'},{a:'scout',t:'t1'},{a:'scout',t:'t3'}],
+'research:competitor':[{a:'research',t:'t2'},{a:'monitor',t:'t1'}],
+'research:voc':[{a:'research',t:'t3'}],
+'copy:listing':[{a:'listing',t:'t1'},{a:'listing',t:'t2'}],
+'copy:image':[{a:'images',t:'t1'},{a:'images',t:'t2'},{a:'images',t:'t3'}],
+'ops:publish':[{a:'publish',t:'t1'},{a:'publish',t:'t2'},{a:'publish',t:'t3'},{a:'publish',t:'t4'},{a:'publish',t:'t5'},{a:'publish',t:'t6'}],
+'ops:docs':[{a:'docs',t:'t1'},{a:'docs',t:'t2'}],
+'ops:ads':[{a:'ads',t:'t1'},{a:'ads',t:'t2'},{a:'ads',t:'t3'},{a:'ads',t:'t4'}],
+'data:monitor':[{a:'monitor',t:'t1'},{a:'monitor',t:'t3'}],
+'data:rank':[{a:'monitor',t:'t2'}]
+};
+
+/* ================= scheduled & workspace (demo data) ================= */
+const SCHEDULED=[
+{name:'每周 Listing 优化',meta:'Listing 工程师 · 每周一 09:00',icon:'✍️'},
+{name:'竞品变动监控每日执行',meta:'竞品监控哨兵 · 每日 08:30',icon:'📡'},
+{name:'每日竞品快讯入库',meta:'竞品监控哨兵 · 每日 18:00',icon:'📰'}
+];
+const WS_DEMO=['库存优化建议','产品流量周报','诊断广告优化空间','参考竞品优化 Listing','选品调研 · 宠物刮毛器','竞品快讯 · 今日异动'];
+
+/* ================= view routing ================= */
+let VIEW='bench';
+function switchView(v){
+  VIEW=v;
+  document.querySelectorAll('.sb-item[data-v]').forEach(e=>e.classList.toggle('on',e.dataset.v===v));
+  const main=document.getElementById('main');
+  main.innerHTML='';
+  if(v==='bench')renderBench();
+  else if(v==='session')renderSession();
+  else if(v==='skills')renderSkills();
+  else if(v==='tasks')renderTasks();
+  else if(v==='connectors')renderConnectors();
+}
+function h(html){const d=document.createElement('div');d.innerHTML=html.trim();return d.firstChild}
+
+/* ================= workbench ================= */
+function renderBench(){
+  const line=LINES.find(l=>l.id===S.line)||LINES[0];
+  if(!line.subs.find(s=>s.id===S.sub))S.sub=line.subs[0].id;
+  const main=document.getElementById('main');
+  const ws=h(`<div>
+    <div class="wb-head">
+      <div class="wb-title">
+        <h1>insight<em>marketplac</em> Agent 工作台</h1>
+        <div class="sub">跨境电商 AI 工作台 · 选择任务模板一键下达，执行全程可追溯</div>
+      </div>
+    </div>
+    <div class="line-tabs" id="lineTabs"></div>
+    <div class="sub-tabs" id="subTabs"></div>
+    <div class="tpl-grid" id="tplGrid"></div>
+  </div>`);
+  main.appendChild(ws);
+  const lt=ws.querySelector('#lineTabs');
+  LINES.forEach(l=>{
+    const t=h(`<div class="lt ${l.id===S.line?'on':''}">${l.name}</div>`);
+    t.onclick=()=>{S.line=l.id;S.sub=l.subs[0].id;save();renderBench()};
+    lt.appendChild(t);
+  });
+  const st=ws.querySelector('#subTabs');
+  line.subs.forEach(s=>{
+    const t=h(`<div class="stab ${s.id===S.sub?'on':''}">${s.name}</div>`);
+    t.onclick=()=>{S.sub=s.id;save();renderBench()};
+    st.appendChild(t);
+  });
+  const grid=ws.querySelector('#tplGrid');
+  const key=S.line+':'+S.sub;
+  const cards=CARDS[key]||[];
+  if(!cards.length){
+    grid.appendChild(h(`<div class="tpl" style="grid-column:1/-1;cursor:default">
+      <div class="tt">达人 IP 开发官 · 内容开发官 · KOL 运营官</div>
+      <div class="td">达人 IP 与内容业务线正在内测：素人 IP 孵化、达人分销网络、内容矩阵日更三大玩法即将上架。可先看 <a href="influencer.html" target="_blank">达人 IP 与内容业务线玩法介绍 →</a></div>
+      <div class="tmeta"><span class="mtag gold">COMING SOON</span><span class="mtag">订阅上架通知</span></div>
+    </div>`));
+    return;
+  }
+  cards.forEach(c=>{
+    const a=AGENTS.find(x=>x.id===c.a);const t=a.templates.find(x=>x.id===c.t);
+    const card=h(`<div class="tpl" onclick="startTemplate('${a.id}','${t.id}')">
+      <div class="tt">${t.name}</div>
+      <div class="td">${t.desc}</div>
+      <div class="tmeta">
+        <span class="mtag gold">${a.icon} ${a.name}</span>
+        <span class="mtag">${a.wsTag}</span>
+        ${t.gate?'<span class="gate-flag">写操作 · L2 审批</span>':''}
+      </div>
+      <div class="tfoot">
+        <div class="model-pick" onclick="event.stopPropagation()">
+          <label>智能模型</label>
+          <select onchange="pickModel(this.value)"><option value="std"${S.harness==='std'?' selected':''}>标准引擎</option><option value="pro"${S.harness==='pro'?' selected':''}>高性能引擎</option></select>
+          <button onclick="openSettings()" title="配置 API Key">+</button>
+        </div>
+        <span class="go-run">发起任务 →</span>
+      </div>
+    </div>`);
+    grid.appendChild(card);
+  });
+}
+function pickModel(v){
+  S.harness=v;save();applyHarnessBadge();
+  document.querySelectorAll('.model-pick select').forEach(s=>s.value=v);
+  toast(v==='pro'?'已切换高性能引擎':'已切换标准引擎');
+}
+
+/* ================= session / execution ================= */
+let CUR={agent:null,tpl:null,title:'新会话'};
+function newSession(){
+  CUR={agent:AGENTS[0],tpl:null,title:'新会话 · '+AGENTS[0].name};
+  switchView('session');
+}
+function startTemplate(aid,tid){
+  const a=AGENTS.find(x=>x.id===aid);const t=a.templates.find(x=>x.id===tid);
+  CUR={agent:a,tpl:t,title:t.name};
+  switchView('session');
+  runTemplate(aid,tid);
+}
+function renderSession(){
+  const a=CUR.agent||AGENTS[0];
+  const main=document.getElementById('main');
+  const ws=h(`<div class="panel" style="margin-bottom:0">
+    <div class="sess-head">
+      <button class="back" onclick="switchView('bench')">← 工作台</button>
+      <div class="avatar">${a.icon}</div>
+      <div class="sn"><b>${CUR.title}</b><span>${a.name} · ${a.role} · 执行引擎按客户端设置运行</span></div>
+    </div>
+    <div class="chat" id="chat"><div class="empty">下达任务后，${a.name} 将按引擎循环执行：规划 → 调用技能 → 获取数据 → 分析 → 生成结果</div></div>
+    <div class="composer">
+      <input id="cmdInput" placeholder="例：调研北美站宠物刮毛器类目…" onkeydown="if(event.key==='Enter')runFreeCmd('${a.id}')">
+      <button class="btn btn-p" onclick="runFreeCmd('${a.id}')">下达任务</button>
+    </div>
+  </div>`);
+  main.appendChild(ws);
+}
+let RUN_SEQ=1;
+function addMsg(chat,who,nm,bd){
+  const m=h(`<div class="msg ${who}"><div class="who">${who==='user'?'👤':(CUR.agent?CUR.agent.icon:'🤖')}</div><div class="bubble"><div class="nm">${nm}</div><div class="bd">${bd}</div></div></div>`);
+  chat.appendChild(m);chat.scrollTop=chat.scrollHeight;return m.querySelector('.bd');
+}
+function sleep(ms){return new Promise(r=>setTimeout(r,ms))}
+async function runTemplate(aid,tid){
+  const a=AGENTS.find(x=>x.id===aid);const t=a.templates.find(x=>x.id===tid);
+  CUR.agent=a;CUR.tpl=t;CUR.title=t.name;
+  if(S.credits<t.cost){toast('额度不足，个人版每日免费恢复');return}
+  const chat=document.getElementById('chat');
+  if(!chat)return;
+  chat.innerHTML='';
+  addMsg(chat,'user','你',t.name);
+  const bd=addMsg(chat,'bot',a.name,'正在接收任务…');
+  const run={id:'R'+String(RUN_SEQ++).padStart(3,'0'),agent:a.name,task:t.name,cost:t.cost,time:now(),status:'执行中'};
+  S.runs.unshift(run);
+  S.sessions.unshift({title:t.name,agent:a.name,time:now()});
+  S.sessions=S.sessions.slice(0,7);
+  save();drawSidebar();
+  spend(t.cost);
+  const trace=h(`<div class="trace" style="margin-top:12px"></div>`);
+  bd.appendChild(trace);
+  const steps=buildSteps(a,t);
+  for(let i=0;i<steps.length;i++){
+    const st=h(`<div class="tstep run"><div class="st">${i+1}</div><div class="tx">${steps[i].t}${steps[i].tool?`<span class="st-tool">⚙ ${steps[i].tool}</span>`:''}</div><div class="ms">…</div></div>`);
+    trace.appendChild(st);chat.scrollTop=chat.scrollHeight;
+    await sleep(steps[i].ms||800);
+    st.classList.remove('run');st.classList.add('done');st.querySelector('.st').textContent='✓';
+    st.querySelector('.ms').textContent=steps[i].msLabel||((steps[i].ms||800)/1000).toFixed(1)+'s';
+  }
+  if(t.gate==='L2'&&S.gate){
+    const pubTask=t.kind&&t.kind.indexOf('pub')===0;
+    const gate=h(`<div class="gate">
+      <div class="gt">⚠ L2 写操作审批门</div>
+      <div class="gd">${pubTask?'该任务将向电商平台提交产品发布草稿并写入店铺后台，按审批策略需人工确认后执行。':'该任务将生成文件并写入本地输出目录，按审批策略需人工确认后执行。'}</div>
+      <div class="gacts"><button class="btn btn-p btn-xs" id="gOk">批准执行</button><button class="btn btn-s btn-xs" id="gNo">驳回</button></div>
+    </div>`);
+    bd.appendChild(gate);chat.scrollTop=chat.scrollHeight;
+    const ok=await new Promise(res=>{gate.querySelector('#gOk').onclick=()=>res(true);gate.querySelector('#gNo').onclick=()=>res(false)});
+    if(!ok){gate.remove();addMsg(chat,'bot',a.name,'任务已驳回，未执行任何写操作。执行记录保留在任务中心。');run.status='已驳回';save();drawSidebar();return}
+    gate.querySelector('.gacts').innerHTML='<span style="font-size:.74rem;color:var(--ok);font-weight:700">✓ 已批准 · ' + now() + '</span>';
+  }
+  const res=h(renderResult(t));
+  bd.appendChild(res);chat.scrollTop=chat.scrollHeight;
+  addMsg(chat,'bot',a.name,`任务完成，消耗 ${fmt(t.cost)} 额度。结果已生成，可继续下达后续任务。`);
+  run.status='已完成';save();drawSidebar();
+  toast(t.name+' · 执行完成');
+}
+function runFreeCmd(aid){
+  const a=AGENTS.find(x=>x.id===aid);
+  const inp=document.getElementById('cmdInput');const v=inp.value.trim();
+  if(!v){toast('请输入任务指令');return}
+  inp.value='';
+  const t=a.templates[0];
+  startTemplate(aid,t.id);
+}
+function buildSteps(a,t){
+  const base=[
+    {t:'解析任务，生成执行计划',tool:'Agent Planner',ms:700},
+    {t:'调用数据技能获取指标',tool:'Skill',ms:1100},
+    {t:'交叉验证与结构化分析',tool:'Data Refine',ms:900},
+    {t:'生成报告并渲染结果',tool:'Report Builder',ms:800}
+  ];
+  const customs=[
+    {t:'读取多维表格当日报关数据',tool:'Sheet Reader',ms:900},
+    {t:'识别每条数据的货代并匹配模板',tool:'货代模板库 · 十数家',ms:1100},
+    {t:'字段映射预检（品名/数量/重量/申报价值）',tool:'Field Mapper',ms:900},
+    {t:'生成报关单 Excel 并写入输出目录',tool:'Excel Writer',ms:1000},
+    {t:'回写任务状态并推送群消息',tool:'IM Notify',ms:700}
+  ];
+  if(t.kind==='multip')return [
+    {t:'解析品类与调研框架，锁定五大平台',tool:'Agent Planner',ms:700},
+    {t:'北美连锁 · 俄语区市场数据采集',tool:'Skill',ms:1100},
+    {t:'拉美 · 欧美刊登 · 澳洲市场数据采集',tool:'Skill',ms:1100},
+    {t:'价格带 · 竞争强度 · 需求信号横向对比',tool:'Data Refine',ms:900},
+    {t:'逐平台机会判定与进入顺序排序',tool:'Data Refine',ms:800},
+    {t:'生成五平台对比报告并渲染结果',tool:'Report Builder',ms:800}
+  ];
+  const PUB_PRE={
+    pubwm:{t:'映射连锁平台三级类目与属性模板',tool:'Item Mapper',ms:1100},
+    pubru:{t:'Listing 俄语本地化 + 平台仓/自发货物流属性映射',tool:'Localize + Mapper',ms:1200},
+    pubwb:{t:'生成俄语区平台规格表（特征字段逐一映射）',tool:'Spec Builder',ms:1000},
+    pubeu:{t:'套用刊登模板并映射变体属性',tool:'Listing Template',ms:1000},
+    pubml:{t:'拉美多站点类目映射（阿根廷 / 墨西哥 / 巴西）',tool:'Category Mapper',ms:1200},
+    pubau:{t:'生成澳洲供货商规格表与澳元定价',tool:'Spec Builder',ms:1000}
+  };
+  if(PUB_PRE[t.kind]){
+    const st=[
+      {t:'读取商品资料与图片素材',tool:'ERP Reader',ms:900},
+      PUB_PRE[t.kind],
+      {t:'合规预检（认证 / 禁售 / 敏感词）',tool:'Compliance Check',ms:1000}
+    ];
+    if(t.steps===5)st.push({t:'价格换算与利润护栏校验',tool:'Price Guard',ms:800});
+    st.push({t:'生成发布草稿并回填库存与发货模板',tool:'Draft Builder',ms:900});
+    return st;
+  }
+  if(t.kind==='customs')return customs;
+  if(t.kind==='tplmatch')return [customs[0],customs[1],customs[2]];
+  if(t.steps===3)return [base[0],base[1],base[3]];
+  if(t.steps===5)return [base[0],base[1],base[1],base[2],base[3]];
+  return base;
+}
+
+/* ================= result renderers ================= */
+function renderResult(t){
+  const k=(l,v,s='')=>`<div class="k"><div class="l">${l}</div><div class="v">${v}</div><div class="s">${s}</div></div>`;
+  switch(t.kind){
+    case 'market':return `<div class="result">
+      <div class="rt">市场调研报告 · 宠物刮毛器（北美站点）</div>
+      <div class="rkpi">${k('TAM','$412M','类目总容量')}${k('SAM','$96M','可服务市场')}${k('SOM','$3.2M','12 个月可得')}${k('头部集中度','CR5 41%','中等竞争')}</div>
+      <table class="rt"><tr><th>价格带</th><th>商品数占比</th><th>月销量级</th><th>平均评分</th><th>判定</th></tr>
+      <tr><td>$9–15</td><td>28%</td><td>3,000+</td><td>4.3</td><td class="go">红海</td></tr>
+      <tr><td>$15–25</td><td>44%</td><td>1,800+</td><td>4.5</td><td class="go">主力带</td></tr>
+      <tr><td>$25–40</td><td>19%</td><td>600+</td><td>4.6</td><td class="go">机会带</td></tr>
+      <tr><td>$40+</td><td>9%</td><td>150+</td><td>4.7</td><td class="nogo">小众</td></tr></table>
+      <div class="rnote">结论：类目增长信号为正（YoY +9%），$25–40 机会带新品占比低、评分门槛高，建议以静音 + 无线 + 长续航差异化切入，Go。</div></div>`;
+    case 'competitor':return `<div class="result">
+      <div class="rt">竞品深度调研 · Top5 拆解</div>
+      <table class="rt"><tr><th>竞品商品</th><th>价格</th><th>月销</th><th>核心卖点</th><th>主要差评点</th></tr>
+      <tr><td><b>CP-8812</b></td><td>$19.99</td><td>4,200</td><td>静音 ≤50dB</td><td class="neg">续航虚标</td></tr>
+      <tr><td><b>CP-3341</b></td><td>$24.99</td><td>3,100</td><td>陶瓷刀头不夹毛</td><td class="neg">充电口松动</td></tr>
+      <tr><td><b>CP-9057</b></td><td>$16.99</td><td>2,600</td><td>IPX7 全身水洗</td><td class="neg">动力衰减快</td></tr>
+      <tr><td><b>CP-1276</b></td><td>$29.99</td><td>1,900</td><td>低应激宠物模式</td><td class="neg">配件贵</td></tr>
+      <tr><td><b>CP-5560</b></td><td>$21.99</td><td>1,700</td><td>双速 + 记忆</td><td class="neg">说明书差</td></tr></table>
+      <div class="rnote">可跟进打法：对手差评集中于续航与充电结构；标题高频词为 quiet / cordless / rechargeable；主图第 2 张均展示分贝对比。建议 Listing 主打「实测续航 + Type-C」。</div></div>`;
+    case 'voc':return `<div class="result">
+      <div class="rt">用户需求分析 · 评论 VOC（1,842 条）</div>
+      <div class="rkpi">${k('正面主题','61%','静音 / 好上手')}${k('负面主题','23%','续航 / 振动')}${k('需求缺口','12 条','未满足诉求')}${k('满意度缺口','-9pp','对比类目均值')}</div>
+      <table class="rt"><tr><th>买家反复提到</th><th>频次</th><th>情绪</th><th>产品改良线索</th></tr>
+      <tr><td>电池不耐用</td><td>214</td><td class="neg">负</td><td>2,000mAh + 电量显示</td></tr>
+      <tr><td>声音比宣传大</td><td>168</td><td class="neg">负</td><td>分贝实测图放进富内容页</td></tr>
+      <tr><td>适合小型犬</td><td>302</td><td class="pos">正</td><td>按体型做 SKU 变体</td></tr>
+      <tr><td>希望有收纳盒</td><td>96</td><td>中性</td><td>附收纳盒做溢价配件</td></tr></table>
+      <div class="rnote">机会提炼：类目「收纳 + 全套配件」搜索上升，头部无一满足，可作为差异化组合。</div></div>`;
+    case 'multip':return `<div class="result">
+      <div class="rt">多平台市场调研 · 宠物刮毛器（北美连锁 · 俄语区 · 拉美 · 欧美刊登 · 澳洲供货）</div>
+      <div class="rkpi">${k('覆盖平台','5 个','横向对比')}${k('最优切入','澳洲','竞争最低')}${k('需求上升','欧美刊登','AU 站 +18%')}${k('价格锚点','$26.99','对齐机会带')}</div>
+      <table class="rt"><tr><th>平台</th><th>主流价格带</th><th>头部集中度</th><th>新品 6 月上架率</th><th>判定</th></tr>
+      <tr><td><b>北美连锁</b> 🇺🇸</td><td>$24–42</td><td>CR5 41%</td><td>17%</td><td class="go">机会</td></tr>
+      <tr><td><b>俄语区平台</b> 🇷🇺</td><td>₽1,590–2,890</td><td>CR5 34%</td><td>15%</td><td class="go">机会</td></tr>
+      <tr><td><b>拉美平台</b> 🇲🇽</td><td>MX$449–799</td><td>CR5 28%</td><td>13%</td><td class="go">机会</td></tr>
+      <tr><td><b>欧美刊登</b> 🌍</td><td>$18–32</td><td>CR5 22%</td><td>19%</td><td class="go">机会</td></tr>
+      <tr><td><b>澳洲供货</b> 🇦🇺</td><td>AU$39–69</td><td>CR5 19%</td><td>9%</td><td class="go">优先</td></tr></table>
+      <div class="rnote">建议顺序：澳洲供货（竞争最低、模式轻）→ 欧美刊登（US/AU 双站点）→ 北美连锁（平台仓履约红利期）→ 俄语区（俄语本地化）→ 拉美（需本地履约）。五平台共用一套调研证据与图片素材，逐平台复用。</div></div>`;
+    case 'potential':return `<div class="result">
+      <div class="rt">潜力商品筛选 · 23 / 156 入池</div>
+      <div class="rkpi">${k('筛选池','156','初筛商品')}${k('入池','23','通过阈值')}${k('利润中位','31%','平台仓到手')}${k('退货风险','低','<4%')}</div>
+      <table class="rt"><tr><th>商品 ID</th><th>价格</th><th>月销</th><th>评分</th><th>配送</th><th>判定</th></tr>
+      <tr><td><b>PG-TRIM-01</b></td><td>$23.99</td><td>1,340</td><td>4.4</td><td>平台仓</td><td class="go">GO</td></tr>
+      <tr><td><b>PG-TRIM-02</b></td><td>$18.49</td><td>2,060</td><td>4.2</td><td>平台仓</td><td class="go">GO</td></tr>
+      <tr><td><b>PG-COMBO-A</b></td><td>$34.99</td><td>420</td><td>4.6</td><td>自发货</td><td class="nogo">NO-GO</td></tr></table>
+      <div class="rnote">筛选条件：$15–40、月销 ≥800、评分 ≥4.2、平台仓优先、评分波动 <0.3。NO-GO 原因：自发货时效影响转化，且评论基数不足。</div></div>`;
+    case 'gonogo':return `<div class="result">
+      <div class="rt">选品分析报告 · Go / No-Go 判定</div>
+      <div class="rkpi">${k('综合判定','GO','置信度 78%')}${k('毛利率','34%','含广告 ACOS 18%')}${k('回本周期','4.1 月','首单 500 件')}${k('供应链','货源可做','同款 ≥6 家')}</div>
+      <table class="rt"><tr><th>维度</th><th>证据</th><th>结论</th></tr>
+      <tr><td>市场容量</td><td>类目月销 38 万件，YoY +9%</td><td class="pos">通过</td></tr>
+      <tr><td>竞争强度</td><td>CR5 41%，新品 6 个月上架率 12%</td><td class="pos">通过</td></tr>
+      <tr><td>关键词</td><td>主词月搜 8.4 万，长尾 37 个可布局</td><td class="pos">通过</td></tr>
+      <tr><td>VOC 缺口</td><td>续航差评 23%，存在改良空间</td><td class="pos">通过</td></tr>
+      <tr><td>供应链</td><td>国内货源平台同款 6 家，最低 ¥38 交付</td><td class="pos">通过</td></tr>
+      <tr><td>合规</td><td>含锂电池，需 UN38.3 认证</td><td class="neg">风险项</td></tr></table>
+      <div class="rnote">建议：GO，但首批认证周期 2 周需纳入上市节奏；定价 $26.99 卡位机会带。</div></div>`;
+    case 'monitor':return `<div class="result">
+      <div class="rt">竞品情报监控 · 本日异动摘要</div>
+      <div class="rkpi">${k('监控中','12 个商品','+3 关键词')}${k('今日异动','5 项','2 升 3 降')}${k('最大跌幅','-14%','CP-3341 流量份额')}${k('推送','已送达','运营群')}</div>
+      <table class="rt"><tr><th>监控对象</th><th>指标</th><th>变化</th><th>判定</th></tr>
+      <tr><td>CP-3341</td><td>自然流量份额</td><td class="neg">14.2% → 12.2%</td><td>主图 A/B 实验中</td></tr>
+      <tr><td>CP-8812</td><td>价格</td><td class="neg">$19.99 → $17.99</td><td>7 天促销开始</td></tr>
+      <tr><td>pet hair trimmer</td><td>自然排名</td><td class="pos">#8 → #5</td><td>我们的 Listing 上升</td></tr>
+      <tr><td>quiet dog clipper</td><td>自然排名</td><td class="pos">#12 → #9</td><td>埋词策略生效</td></tr>
+      <tr><td>CP-9057</td><td>评论数</td><td>+37 / 周</td><td>疑似合并变体</td></tr></table>
+      <div class="rnote">已推送运营群：3 条行动建议（跟进促销监控、巩固 #5 排名词、举报变体滥用）。明日 08:30 自动晨报。</div></div>`;
+    case 'rank':return `<div class="result">
+      <div class="rt">关键词排名跟踪 · 7 日走势</div>
+      <table class="rt"><tr><th>关键词</th><th>月搜索量</th><th>当前排名</th><th>7 日变化</th><th>状态</th></tr>
+      <tr><td>pet hair trimmer</td><td>84,000</td><td>#5</td><td class="pos">↑3</td><td>巩固</td></tr>
+      <tr><td>quiet dog clipper</td><td>31,000</td><td>#9</td><td class="pos">↑3</td><td>巩固</td></tr>
+      <tr><td>cordless dog shaver</td><td>19,000</td><td>#14</td><td class="neg">↓2</td><td>观察</td></tr>
+      <tr><td>low noise pet groomer</td><td>9,600</td><td>#21</td><td class="pos">↑6</td><td>上升</td></tr></table>
+      <div class="rnote">告警规则：主词跌出 Top10、周跌幅 ≥3 位时推送 IM 双通道。当前无触发。</div></div>`;
+    case 'deal':return `<div class="result">
+      <div class="rt">促销异动雷达 · 24 小时</div>
+      <div class="rkpi">${k('监控站点','8 个','北美多站点')}${k('捕获促销','17 场','含 2 场秒杀日')}${k('价格异动','9 次','降幅 5–28%')}${k('跟卖警告','1 次','已记录证据')}</div>
+      <table class="rt"><tr><th>平台</th><th>商品</th><th>原价 → 现价</th><th>类型</th></tr>
+      <tr><td>综合电商 A</td><td>CP-8812</td><td>$19.99 → $17.99</td><td>限时特惠</td></tr>
+      <tr><td>连锁零售 B</td><td>Pet Groom Pro</td><td>$22.99 → $16.99</td><td>平台降价</td></tr>
+      <tr><td>连锁零售 C</td><td>Quiet Trim Kit</td><td>$24.99 → $21.24</td><td>会员优惠</td></tr></table>
+      <div class="rnote">建议：连锁平台 B 同款降价价差 26%，检查我方该平台定价竞争力；秒杀日结束后 48h 常有流量余温，可安排关联广告。</div></div>`;
+    case 'customs':return `<div class="result">
+      <div class="rt">报关单批量制作 · 50 份完成</div>
+      <div class="rkpi">${k('处理量','50 份','当日新增')}${k('单份耗时','约 1 分钟','原 20 分钟')}${k('本月节省','63 小时','按 200 份/月')}${k('异常项','2 条','已转人工')}</div>
+      <table class="rt"><tr><th>货代</th><th>匹配模板</th><th>份数</th><th>输出文件</th></tr>
+      <tr><td>华运达</td><td>HYD-2026-STD</td><td>18</td><td>报关单_华运达_0912.xlsx</td></tr>
+      <tr><td>美速通</td><td>MST-CUSTOMS-V3</td><td>14</td><td>报关单_美速通_0912.xlsx</td></tr>
+      <tr><td>跨洋物流</td><td>KY-BASIC-01</td><td>11</td><td>报关单_跨洋_0912.xlsx</td></tr>
+      <tr><td>其他 7 家</td><td>各自专属模板</td><td>7</td><td>分货代归档</td></tr></table>
+      <div class="rnote">2 条异常：申报价值字段缺失（已标记待补）、HS 编码冲突（建议复核）。文件已写入输出目录，任务状态已回写多维表格并推送物流群。</div></div>`;
+    case 'tplmatch':return `<div class="result">
+      <div class="rt">货代模板匹配核验 · 50 条</div>
+      <table class="rt"><tr><th>核验项</th><th>结果</th><th>说明</th></tr>
+      <tr><td>货代识别</td><td class="pos">50 / 50</td><td>全部匹配到唯一模板</td></tr>
+      <tr><td>字段映射</td><td class="pos">48 / 50</td><td>2 条申报价值缺失</td></tr>
+      <tr><td>HS 编码</td><td class="neg">49 / 50</td><td>1 条编码冲突待复核</td></tr>
+      <tr><td>重量单位</td><td class="pos">50 / 50</td><td>kg/g 归一完成</td></tr></table>
+      <div class="rnote">冲突项已生成复核清单，回复确认后即可批量出单。参考福建大卖链路：多维表格 → 模板匹配 → Excel 生成 → 自动归档。</div></div>`;
+    case 'pubwm':return `<div class="result">
+      <div class="rt">北美连锁批量产品发布 · 执行摘要</div>
+      <div class="rkpi">${k('发布成功','18 / 20','商品 ID 已生成')}${k('合规拦截','2 个','缺失安全认证')}${k('类目命中','100%','三级类目映射')}${k('回写 ERP','已完成','商品库同步')}</div>
+      <table class="rt"><tr><th>SKU</th><th>类目映射</th><th>定价</th><th>商品 ID</th><th>状态</th></tr>
+      <tr><td><b>PG-TRIM-01</b></td><td>pet grooming &gt; clippers</td><td>$24.97</td><td>ITM-88412X</td><td class="go">已发布</td></tr>
+      <tr><td><b>PG-TRIM-02</b></td><td>pet grooming &gt; clippers</td><td>$27.97</td><td>ITM-88413X</td><td class="go">已发布</td></tr>
+      <tr><td><b>PG-COMBO-A</b></td><td>pet supplies &gt; grooming kits</td><td>$34.97</td><td>ITM-88420X</td><td class="go">已发布</td></tr>
+      <tr><td><b>PG-LITE-EU</b></td><td>宠物护理（映射待确认）</td><td>—</td><td>—</td><td class="nogo">合规拦截</td></tr></table>
+      <div class="rnote">拦截原因：PG-LITE-EU 含锂电池，平台要求 UN38.3 报告；补传后自动重发。发布记录已回写 ERP 商品库并推送运营群。</div></div>`;
+    case 'pubru':return `<div class="result">
+      <div class="rt">俄语区产品发布 · 俄语本地化完成</div>
+      <div class="rkpi">${k('翻译质量','98.2 分','人工抽检 5 条')}${k('类目映射','平台三级','证书已关联')}${k('物流模式','平台仓','体积重已校准')}${k('定价换算','₽1,890','含佣金 18%')}</div>
+      <table class="rt"><tr><th>字段</th><th>原文（EN）</th><th>俄语本地化</th></tr>
+      <tr><td>标题</td><td>Quiet Dog Clipper, Cordless…</td><td><b>Тихая машинка для стрижки собак…</b></td></tr>
+      <tr><td>类目</td><td>pet grooming &gt; clippers</td><td>Зоотовары / Машинки для стрижки</td></tr>
+      <tr><td>属性</td><td>50dB, Type-C, IPX7</td><td>50 дБ, Type-C, IPX7（已按平台属性表填写）</td></tr>
+      <tr><td>富内容</td><td>图文模块 6 段</td><td>已适配平台富内容规范</td></tr></table>
+      <div class="rnote">合规预检通过：EAC 认证编号已关联，体积重按平台仓规则校准为 0.42kg。发布链接已推送运营群。</div></div>`;
+    case 'pubwb':return `<div class="result">
+      <div class="rt">俄语区规格表批量生成 · 24 SKU</div>
+      <div class="rkpi">${k('规格行','24','含尺码映射')}${k('供货价换算','完成','₽ 含平台佣金')}${k('尺码冲突','1 处','已按 RU 标准修正')}${k('输出','spec_upload.xlsx','可直传')}</div>
+      <table class="rt"><tr><th>SKU</th><th>国际尺码</th><th>RU 尺码</th><th>供货价</th></tr>
+      <tr><td><b>TRIM-M</b></td><td>M</td><td>48–50</td><td>₽1,190</td></tr>
+      <tr><td><b>TRIM-L</b></td><td>L</td><td>52–54</td><td>₽1,240</td></tr>
+      <tr><td><b>COMBO-SET</b></td><td>One Size</td><td>Универсальный</td><td>₽2,290</td></tr></table>
+      <div class="rnote">俄语区上传模板已按最新字段校验（Категория / Размер / Цена без учёта скидки）；尺码按 GOST RU 标准修正 1 处。文件在输出目录：spec_upload.xlsx。</div></div>`;
+    case 'pubeu':return `<div class="result">
+      <div class="rt">欧美刊登平台批量刊登 · 24 SKU 多站点上线</div>
+      <div class="rkpi">${k('刊登成功','23 / 24','US / AU 双站点')}${k('变体属性','100%','属性映射完成')}${k('议价策略','8 SKU','已启用')}${k('拦截','1 个','汽配需兼容表')}</div>
+      <table class="rt"><tr><th>SKU</th><th>站点</th><th>刊登模板</th><th>定价</th><th>状态</th></tr>
+      <tr><td><b>PG-TRIM-01</b></td><td>US 站</td><td>Pet Grooming · Fixed Price</td><td>$24.99</td><td class="go">已刊登</td></tr>
+      <tr><td><b>PG-TRIM-01</b></td><td>AU 站</td><td>Pet Grooming · Fixed Price</td><td>AU$38.99</td><td class="go">已刊登</td></tr>
+      <tr><td><b>PG-COMBO-A</b></td><td>US 站</td><td>Grooming Kits · 议价</td><td>$34.99</td><td class="go">已刊登</td></tr>
+      <tr><td><b>PG-FILTER-EU</b></td><td>US 站</td><td>Auto Parts（待兼容表）</td><td>—</td><td class="nogo">合规拦截</td></tr></table>
+      <div class="rnote">拦截原因：汽配类目需上传 fitment 兼容表（车型年份映射），补齐后自动重发。刊登费用已按平台费率预估并回写 ERP。</div></div>`;
+    case 'pubml':return `<div class="result">
+      <div class="rt">拉美产品发布 · 西语本地化完成</div>
+      <div class="rkpi">${k('站点','3 个','阿根廷 / 墨西哥 / 巴西')}${k('翻译质量','98.5 分','西语 + 葡语抽检')}${k('类目映射','100%','三级类目')}${k('物流','本地履约','时效承诺 48h')}</div>
+      <table class="rt"><tr><th>字段</th><th>原文（EN）</th><th>西语本地化（墨西哥站）</th></tr>
+      <tr><td>标题</td><td>Quiet Dog Clipper, Cordless…</td><td><b>Cortadora de pelo para perros silenciosa, inalámbrica…</b></td></tr>
+      <tr><td>类目</td><td>pet grooming &gt; clippers</td><td>Mascotas / Cortadoras de pelo</td></tr>
+      <tr><td>属性</td><td>50dB, Type-C, IPX7</td><td>50 dB, Type-C, IPX7（已按平台属性表填写）</td></tr>
+      <tr><td>站点适配</td><td>阿根廷 / 巴西</td><td>阿根廷西语 / 巴西葡语双版本已生成</td></tr></table>
+      <div class="rnote">合规预检通过：墨西哥站税号已关联，本地履约时效承诺 48h；巴西站使用葡语版本。发布链接已推送运营群。</div></div>`;
+    case 'pubau':return `<div class="result">
+      <div class="rt">澳洲供货上架 · 澳元定价完成</div>
+      <div class="rkpi">${k('上架 SKU','18 个','供货模式')}${k('GST','10%','含税定价已换算')}${k('运费模板','2 套','小包 / 大件')}${k('结算','周结','平台供货')}</div>
+      <table class="rt"><tr><th>SKU</th><th>国际定价</th><th>AUD 含 GST 供货价</th><th>库存同步</th><th>状态</th></tr>
+      <tr><td><b>PG-TRIM-01</b></td><td>$26.99</td><td>AU$44.99</td><td>500 件</td><td class="go">已上架</td></tr>
+      <tr><td><b>PG-TRIM-02</b></td><td>$29.99</td><td>AU$49.99</td><td>350 件</td><td class="go">已上架</td></tr>
+      <tr><td><b>PG-COMBO-A</b></td><td>$34.99</td><td>AU$59.99</td><td>200 件</td><td class="go">已上架</td></tr></table>
+      <div class="rnote">澳洲平台采用供货商模式：定价含 10% GST，按周结算；库存与运费模板已绑定，售罄自动下架保护评分。上架记录已回写 ERP 并推送运营群。</div></div>`;
+    case 'imgwhite':return `<div class="result">
+      <div class="rt">白底主图批量制造 · 10 张完成</div>
+      <div class="rkpi">${k('产出','10 张','5 SKU × 2 角度')}${k('规格','3000×3000','RGB · sRGB 校色')}${k('抠图精度','边缘 98%','发丝级处理')}${k('消耗','100 额度','10 额度/张')}</div>
+      <table class="rt"><tr><th>SKU</th><th>角度</th><th>处理</th><th>输出</th></tr>
+      <tr><td><b>PG-TRIM-01</b></td><td>正面 45°</td><td>抠图 + 软阴影 + 居中排版</td><td>PG-TRIM-01_main.jpg</td></tr>
+      <tr><td><b>PG-TRIM-01</b></td><td>俯视展开</td><td>抠图 + 投影 + 配件排布</td><td>PG-TRIM-01_flat.jpg</td></tr>
+      <tr><td><b>PG-COMBO-A</b></td><td>全家福</td><td>多主体合成 + 间距对齐</td><td>PG-COMBO-A_main.jpg</td></tr></table>
+      <div class="rnote">符合主流平台主图规范：纯白背景（RGB 255,255,255）、产品占画幅 85%、无文字水印。已同步至 Listing 工程师工作流。</div></div>`;
+    case 'imgscene':return `<div class="result">
+      <div class="rt">场景图批量合成 · 16 张完成</div>
+      <div class="rkpi">${k('场景','4 类','家居/户外/节日/宠物店')}${k('产出','16 张','1600×1600')}${k('模特匹配','3 组','按目标市场人像')}${k('消耗','160 额度','10 额度/张')}</div>
+      <table class="rt"><tr><th>场景</th><th>张数</th><th>创意说明</th><th>用途</th></tr>
+      <tr><td>美式家居客厅</td><td>6</td><td>沙发旁给金毛修剪，暖光</td><td>主图 2 / 富内容</td></tr>
+      <tr><td>户外草地</td><td>4</td><td>便携收纳 + 户外使用</td><td>副图 / 广告</td></tr>
+      <tr><td>圣诞节日</td><td>3</td><td>礼盒包装 + 节日红绿</td><td>Q4 季节性</td></tr>
+      <tr><td>宠物店专业场景</td><td>3</td><td>美容台 + 专业工具墙</td><td>B 端背书图</td></tr></table>
+      <div class="rnote">道具与人像按美国市场审美库匹配；每张图附 PSD 分层文件，方便运营改文案贴片。节日图已排期 10 月上架。</div></div>`;
+    case 'imgap':return `<div class="result">
+      <div class="rt">富内容图文长图排版 · 6 模块完成</div>
+      <table class="rt"><tr><th>模块</th><th>内容</th><th>规格</th></tr>
+      <tr><td>品牌横幅</td><td>品牌主张 + 主视觉</td><td>970×600</td></tr>
+      <tr><td>卖点四宫格</td><td>静音 50dB / 2000mAh / IPX7 / Type-C</td><td>970×600</td></tr>
+      <tr><td>对比图</td><td>有线 vs 无线 使用场景对比</td><td>970×600</td></tr>
+      <tr><td>规格表</td><td>参数可视化 + 图标</td><td>970×600</td></tr>
+      <tr><td>场景长图</td><td>家居/户外双场景</td><td>970×1200</td></tr>
+      <tr><td>FAQ + 售后</td><td>6 条高频问题 + 24 个月质保</td><td>970×600</td></tr></table>
+      <div class="rnote">文案由 Listing 工程师的五点描述复用，图片由图片设计师场景图供给；已导出主图与富内容两套尺寸。上传模板已生成。</div></div>`;
+    case 'title':return `<div class="result">
+      <div class="rt">批量 75 字符标题 · 改写结果（3/24）</div>
+      <table class="rt"><tr><th>原标题（截断）</th><th>新标题</th><th>字符</th><th>合规</th></tr>
+      <tr><td>Dog Grooming Clipper for Pets Dogs Cats Quiet…</td><td><b>Quiet Dog Clipper, Cordless Pet Grooming Kit with 2000mAh Battery, Low Noise 50dB for Dogs Cats, Type-C Rechargeable</b></td><td>124</td><td class="pos">通过</td></tr>
+      <tr><td>Pet Hair Trimmer Professional Rechargeable…</td><td><b>Pet Hair Trimmer, Professional Cordless Dog Shaver with LED Display, IPX7 Washable, Quiet Grooming for Small Dogs</b></td><td>119</td><td class="pos">通过</td></tr>
+      <tr><td>Cat Grooming Kit Electric Clipper Low Noise…</td><td><b>Cat Grooming Clippers, Electric Low Noise Pet Shaver 45dB, Rechargeable Cordless Trimmer for Cats Rabbits Small Pets</b></td><td>121</td><td class="pos">通过</td></tr></table>
+      <div class="rnote">合规校验：无违禁词（如 cure / best）、无品牌词侵权、首字母大写规范。所有标题 ≤75 字符（平台按字符计），已按上传格式导出。</div></div>`;
+    case 'bullets':return `<div class="result">
+      <div class="rt">互补卖点 · 五点描述（≤125 字符）</div>
+      <table class="rt"><tr><th>#</th><th>卖点</th><th>字符</th></tr>
+      <tr><td>1</td><td><b>REAL 2000mAh BATTERY</b> — Type-C fast charge, 120-min runtime for full-body grooming on one charge</td><td>115</td></tr>
+      <tr><td>2</td><td><b>WHISPER-QUIET 50dB</b> — low-vibration motor keeps anxious pets calm; stress-free trim for cats and dogs</td><td>112</td></tr>
+      <tr><td>3</td><td><b>IPX7 WASHABLE</b> — detachable ceramic blade rinses clean under water; 3 guide combs included</td><td>99</td></tr>
+      <tr><td>4</td><td><b>LED POWER DISPLAY</b> — always know remaining battery before grooming starts, never cut mid-trim</td><td>101</td></tr>
+      <tr><td>5</td><td><b>WHAT YOU GET</b> — clipper, 3 combs, Type-C cable, cleaning brush and 24-month warranty support</td><td>104</td></tr></table>
+      <div class="rnote">生成依据：商品详情的标题、品牌、核心关键词与变体信息；卖点互补不重复主图信息，埋入 quiet / Type-C / IPX7 高频搜索词。</div></div>`;
+    default:return `<div class="result"><div class="rt">任务完成</div><div class="rnote">结果已生成。</div></div>`;
+  }
+}
+
+/* ================= skills market ================= */
+let skFilter={cat:'全部技能',q:''};
+function renderSkills(){
+  const main=document.getElementById('main');
+  const counts={};counts['全部技能']=SKILLS.length;
+  SKILL_CATS.forEach(c=>counts[c]=SKILLS.filter(s=>s.cats.includes(c)).length);
+  const ws=h(`<div>
+    <div class="wb-head">
+      <div class="wb-title">
+        <h1>技能 · Skill 市场</h1>
+        <div class="sub">一句话调出跨境数据报告 · <b>${SKILLS.length}</b> 个数据 Skill，下载后安装到Agent</div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-h"><h3>四步安装到你的Agent</h3><span class="hint">下载 Skill 文件 → 上传到聊天窗口 → 获取 API Key → 配置</span></div>
+      <div class="panel-b" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+        ${['① 下载需要安装的 Skill 文件','② 上传到 Agent 聊天窗口，发送「帮我安装这个 Skill」','③ 登录个人设置获取数据 API Key','④ 在设置中配置 API Key 即可调用'].map(s=>`<div style="border:1px solid var(--hairline-soft);border-radius:10px;padding:12px 14px;font-size:.78rem;color:var(--ink-dim);background:var(--bg-2)">${s}</div>`).join('')}
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-h"><h3>全部技能</h3><span class="hint">已安装 ${S.installed.length} 个</span></div>
+      <div class="panel-b">
+        <div class="search-row"><input id="skSearch" placeholder="搜索技能名称 / 标签 / 数据源…" value="${skFilter.q}"></div>
+        <div class="filter-bar" id="skTabs"></div>
+        <div class="sk-grid" id="skGrid"></div>
+      </div>
+    </div>
+  </div>`);
+  main.appendChild(ws);
+  const tabs=ws.querySelector('#skTabs');
+  ['全部技能',...SKILL_CATS].forEach(c=>{
+    const t=h(`<div class="ftab ${skFilter.cat===c?'on':''}">${c}<b>${counts[c]}</b></div>`);
+    t.onclick=()=>{skFilter.cat=c;renderSkills()};
+    tabs.appendChild(t);
+  });
+  const search=ws.querySelector('#skSearch');
+  search.oninput=()=>{skFilter.q=search.value;drawGrid(ws)};
+  drawGrid(ws);
+}
+function drawGrid(ws){
+  const grid=ws.querySelector('#skGrid');grid.innerHTML='';
+  const q=skFilter.q.trim().toLowerCase();
+  let list=SKILLS.filter(s=>{
+    if(skFilter.cat!=='全部技能'&&!s.cats.includes(skFilter.cat))return false;
+    if(!q)return true;
+    return (s.title+s.desc+s.tags.join('')).toLowerCase().includes(q);
+  });
+  if(!list.length){grid.innerHTML='<div class="empty" style="grid-column:1/-1">没有匹配的技能</div>';return}
+  list.slice(0,60).forEach(s=>{
+    const inst=S.installed.includes(s.id);
+    const card=h(`<div class="sk-card ${inst?'installed':''}">
+      <div class="sk-h"><h4>${s.title}</h4></div>
+      <p>${s.desc}</p>
+      <div class="sk-tags">${s.cats.map(c=>`<span class="sk-tag cat">${c}</span>`).join('')}${s.tags.slice(0,3).map(t=>`<span class="sk-tag">${t}</span>`).join('')}</div>
+      <div class="sk-foot"><span class="dl">${inst?'✓ 已安装':'⬇ 可下载'}</span><span class="use" onclick="installSkill('${s.id}')">${inst?'分配员工':'安装'}</span></div>
+    </div>`);
+    grid.appendChild(card);
+  });
+  if(list.length>60){
+    grid.appendChild(h(`<div class="empty" style="grid-column:1/-1">仅显示前 60 个，共 ${list.length} 个匹配 — 用搜索或分类缩小范围</div>`));
+  }
+}
+function installSkill(id){
+  if(!S.installed.includes(id)){S.installed.push(id);save()}
+  toast('Skill 已安装，可在任务模板中调用');
+  renderSkills();
+}
+
+/* ================= tasks & scheduled ================= */
+function renderTasks(){
+  const main=document.getElementById('main');
+  const rows=S.runs.length?S.runs.map(r=>`<div class="run-row">
+    <span class="st-ic ${r.status==='已完成'?'ok':r.status==='执行中'?'run':'wait'}"></span>
+    <div class="rn"><b>${r.task}</b><div class="meta">${r.id} · ${r.agent} · ${r.time}</div></div>
+    <span style="font-size:.72rem;color:${r.status==='已完成'?'var(--ok)':r.status==='已驳回'?'var(--bad)':'var(--warn)'}">${r.status}</span>
+    <span class="rc">-${fmt(r.cost)}</span>
+  </div>`).join(''):'<div class="empty">暂无执行记录。去工作台下达第一条任务。</div>';
+  const ws=h(`<div>
+    <div class="wb-head">
+      <div class="wb-title">
+        <h1>定时任务与执行记录</h1>
+        <div class="sub">竞品监控、Listing 优化等周期任务自动执行 · 累计 ${S.runs.length} 次执行</div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-h"><h3>定时任务</h3><span class="hint">到期自动执行，异动推送运营 IM 群</span></div>
+      <div class="panel-b">
+        ${SCHEDULED.map((s,i)=>`<div class="sched-row">
+          <div class="sc">${s.icon}</div>
+          <div class="sn2"><b>${s.name}</b><span>${s.meta}</span></div>
+          <div class="sw" onclick="toggleSched(this)"></div>
+        </div>`).join('')}
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-h"><h3>执行记录</h3><span class="hint">写操作任务带 L2/L3 审批状态</span></div>
+      <div class="panel-b">${rows}</div>
+    </div>
+  </div>`);
+  main.appendChild(ws);
+}
+function toggleSched(el){el.classList.toggle('off');toast(el.classList.contains('off')?'定时任务已暂停':'定时任务已恢复')}
+
+/* ================= connectors ================= */
+function renderConnectors(){
+  const main=document.getElementById('main');
+  const dataOn=!!S.wmKey,dsOn=!!S.dsKey;
+  const ws=h(`<div>
+    <div class="wb-head">
+      <div class="wb-title">
+        <h1>连接器</h1>
+        <div class="sub">数据源、推送通道与执行引擎的接入配置 · 一次配置全局调用</div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-h"><h3>数据与引擎</h3><span class="hint">API Key 仅保存在本机浏览器</span></div>
+      <div class="panel-b"><div class="conn-grid">
+        <div class="conn-card"><div class="cc-h"><span class="ic">🛰</span><b>数据 API</b></div><p>评论 VOC、关键词反查、类目研究等数据型 Skill 的统一数据网关。</p><span class="conn-state ${dataOn?'on':'off'}">${dataOn?'已连接':'未配置'}</span></div>
+        <div class="conn-card"><div class="cc-h"><span class="ic">⚡</span><b>高性能引擎</b></div><p>云端大模型驱动任务规划与文案生成，数据技能仍走本地工具链。</p><span class="conn-state ${dsOn?'on':'off'}">${dsOn?'已连接':'未配置'}</span></div>
+      </div></div>
+    </div>
+    <div class="panel">
+      <div class="panel-h"><h3>推送与协作通道</h3><span class="hint">监控异动与任务完成通知自动送达</span></div>
+      <div class="panel-b"><div class="conn-grid">
+        <div class="conn-card"><div class="cc-h"><span class="ic">💬</span><b>运营群推送</b></div><p>竞品异动、排名告警、任务完成摘要自动推送运营 IM 群。</p><span class="conn-state on">已连接</span></div>
+        <div class="conn-card"><div class="cc-h"><span class="ic">📌</span><b>多维表格回写</b></div><p>任务状态回写多维表格，报关数据与执行记录自动归档。</p><span class="conn-state on">已连接</span></div>
+        <div class="conn-card"><div class="cc-h"><span class="ic">🌐</span><b>店铺浏览器</b></div><p>多平台店铺后台自动化操作，写操作走人工审批门。</p><span class="conn-state off">企业版</span></div>
+      </div></div>
+    </div>
+    <div style="margin-top:14px"><button class="btn btn-p" onclick="openSettings()">配置连接器</button></div>
+  </div>`);
+  main.appendChild(ws);
+}
+
+/* ================= sidebar ================= */
+function drawSidebar(){
+  const sched=document.getElementById('sbSched');
+  sched.innerHTML='';
+  SCHEDULED.slice(0,3).forEach(s=>{
+    const el=h(`<div class="sb-task" onclick="switchView('tasks')"><span class="st-dot"></span><div class="tt"><b>${s.name}</b><span>${s.meta.split('·')[1]||''}</span></div></div>`);
+    sched.appendChild(el);
+  });
+  const wsBox=document.getElementById('sbWs');
+  wsBox.innerHTML='';
+  const node=h(`<div class="ws-node ${S.wsOpen?'open':''}">
+    <div class="ws-head"><span class="arr">▶</span><span>🗂 北美A店铺运营</span></div>
+    <div class="ws-kids"></div>
+  </div>`);
+  node.querySelector('.ws-head').onclick=()=>{S.wsOpen=!S.wsOpen;save();drawSidebar()};
+  const kids=node.querySelector('.ws-kids');
+  const items=S.sessions.length?S.sessions.map(s=>s.title):WS_DEMO;
+  items.slice(0,7).forEach(it=>{
+    const kid=h(`<div class="ws-kid">${it}</div>`);
+    kid.onclick=()=>switchView('tasks');
+    kids.appendChild(kid);
+  });
+  wsBox.appendChild(node);
+}
+
+/* ================= settings ================= */
+function openSettings(){
+  document.getElementById('settingsMask').classList.add('on');
+  document.getElementById('tglGate').checked=S.gate;
+  document.getElementById('tglL3').checked=S.gl3;
+  document.getElementById('dsKey').value=S.dsKey;
+  document.getElementById('wmKey').value=S.wmKey;
+  setHarnessUI(S.harness);
+}
+function closeSettings(){document.getElementById('settingsMask').classList.remove('on')}
+function setHarnessUI(hv){
+  document.querySelectorAll('#harnessSeg button').forEach(b=>b.classList.toggle('on',b.dataset.h===hv));
+  document.getElementById('keyRow').style.display=hv==='pro'?'block':'none';
+  document.getElementById('harnessDesc').textContent=hv==='pro'
+    ?'高性能引擎：任务规划与文案生成由云端大模型完成，质量更高，数据技能仍走本地工具链。'
+    :'本地执行引擎：任务规划、工具调用与报告生成在本地执行循环内完成。';
+}
+document.querySelectorAll('#harnessSeg button').forEach(b=>b.onclick=()=>setHarnessUI(b.dataset.h));
+function saveSettings(){
+  S.harness=document.querySelector('#harnessSeg button.on').dataset.h;
+  S.dsKey=document.getElementById('dsKey').value.trim();
+  S.wmKey=document.getElementById('wmKey').value.trim();
+  S.gate=document.getElementById('tglGate').checked;
+  S.gl3=document.getElementById('tglL3').checked;
+  save();applyHarnessBadge();closeSettings();toast('设置已保存');
+  if(VIEW==='connectors')renderConnectors();
+}
+function applyHarnessBadge(){
+  document.getElementById('harnessName').textContent=S.harness==='pro'?'高性能引擎':'标准引擎';
+}
+document.getElementById('harnessBadge').onclick=openSettings;
+document.getElementById('settingsMask').onclick=e=>{if(e.target.id==='settingsMask')closeSettings()};
+
+/* ================= boot ================= */
+applyHarnessBadge();
+document.getElementById('creditVal').textContent=fmt(S.credits);
+drawSidebar();
+switchView('bench');
+</script>
 </body>
 </html>

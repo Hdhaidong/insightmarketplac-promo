@@ -1,4 +1,4 @@
-/* insightmarketplac Agent — unified dark design system (wenmai black + gold) */
+/* insightmarketplac Agent — unified dark design system (black + gold) */
 @font-face {
   font-family: 'Instrument Serif';
   src: url('../../fonts/instrument-serif-italic.woff2') format('woff2');
@@ -52,7 +52,7 @@ img { display: block; max-width: 100%; }
 .text-muted { color: var(--muted); }
 .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
-/* ---------- unified site header (wenmai chrome) ---------- */
+/* ---------- unified site header (site chrome) ---------- */
 .top { border-bottom: 1px solid var(--hairline-soft); background: rgba(0, 0, 0, .92); position: sticky; top: 0; z-index: 40; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
 .top-in { max-width: 1120px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .brand { display: flex; align-items: baseline; gap: 10px; }
@@ -134,7 +134,7 @@ textarea.field-input { resize: vertical; min-height: 96px; }
 .divider-or { display: flex; align-items: center; gap: 12px; font-size: 12px; color: var(--muted); }
 .divider-or::before, .divider-or::after { content: ''; flex: 1; height: 1px; background: rgba(242, 238, 230, .14); }
 
-/* ---------- unified footer (wenmai chrome) ---------- */
+/* ---------- unified footer (site chrome) ---------- */
 footer { padding: 48px 0 36px; border-top: 1px solid var(--hairline-soft); }
 .f-grid { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
 .f-brand .mk { font-weight: 700; font-size: 1.05rem; }

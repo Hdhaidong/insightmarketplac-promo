@@ -9,8 +9,8 @@
 | `/` | 宣传总览（11 个已上线业务 Agent 阵容 + 仓库隶属关系） | insightmarketplac 项目生态 |
 | `/platform.html` | insightmarketplac 平台产品页（AI 数字员工平台） | 主平台 · 源码仓私有 |
 | `/agent.html` | insightmarketplac Agent 产品页（多智能体工作台 · 20 个 Agent，11 个已上线） | 平台智能体层 · 源码仓私有 |
-| `/client.html` | insightmarketplac 客户端产品页（安装即用） | 成品分发 · 源码仓 wenmai-agent 私有 |
-| `/research/` | 数字员工团队营销站（20 个 Agent 产品 / Skill 市场 / 案例 / Hub） | wenmai-research 总仓 · 营销页公开，应用源码私有 |
+| `/client.html` | insightmarketplac 客户端产品页（安装即用） | 成品分发 · 源码仓 agent-client 私有 |
+| `/research/` | 数字员工团队营销站（20 个 Agent 产品 / Skill 市场 / 案例 / Hub） | research-hub 总仓 · 营销页公开，应用源码私有 |
 | `/doubao.html` | doubao · OEM 运营分销托管宣传站首页 | insightmarketplac 生态 · 分销托管线 |
 | `/catalog.html` `/sample.html` `/channels.html` `/register-buyer.html` | doubao 货盘 / 样品 / 渠道网络 / 买家注册 | doubao 宣传站子页 · 同在根目录 |
 
@@ -21,7 +21,7 @@
 ## 仓库隶属关系
 
 - **成品仓（公开，本仓）**：`insightmarketplac-promo` —— 页面成品 + 客户端安装包（Releases）。
-- **源码仓（全部私有）**：`insightmarketplac`（主平台）、`wenmai-research`（总仓）、`wenmai-agent`（客户端）、PI 内核系列（`pi-kernel` / `pi-core` / `pi-browser`，标准独立项目，平台 CRM 底座构建于其上）。
+- **源码仓（全部私有）**：`insightmarketplac`（主平台）、`research-hub`（总仓）、`agent-client`（客户端）、PI 内核系列（`pi-kernel` / `pi-core` / `pi-browser`，标准独立项目，平台 CRM 底座构建于其上）。
 - 成品与源码分仓存放，**隶属关系与项目一致**：本仓为 insightmarketplac 项目的对外分发出口。
 
 ## 客户端下载

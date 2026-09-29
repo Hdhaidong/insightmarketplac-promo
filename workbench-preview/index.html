@@ -52,14 +52,12 @@ details.svc input{font-size:13px}
   <h2>🔌 服务连接 <small style="font-size:12px;color:#888;font-weight:400">pi-kernel 真实 HTTP 接口</small></h2>
   <div class="svcgrid" id="svcStatus">
     <span class="pill wait">能力市场：检测中…</span>
-    <span class="pill wait">CRM：检测中…</span>
     <span class="pill wait">数据资讯：检测中…</span>
   </div>
   <details class="svc">
     <summary>⚙️ 服务地址设置（保存在本机 localStorage）</summary>
     <div class="row">
       <div class="fld"><label class="f">能力市场</label><input type="text" id="svcMarket"></div>
-      <div class="fld"><label class="f">CRM</label><input type="text" id="svcCrm"></div>
       <div class="fld"><label class="f">数据资讯</label><input type="text" id="svcIntel"></div>
     </div>
     <button class="btn small" id="svcSave" style="margin-top:10px">保存并重连</button>
@@ -87,7 +85,7 @@ details.svc input{font-size:13px}
 <h2 class="grphead">🤝 客户与流程 <small>service</small></h2>
 <div class="modgrid" id="grid-service"></div>
 
-<div class="note">写操作说明：能力市场 HTTP 只暴露只读接口（<code>/api/orders</code>、<code>/api/catalog</code> 等），下单与执行请在能力市场面板完成；CRM 回复草稿的审批（approve / reject）在 CRM 面板完成。本页不虚构任何不存在的接口。</div>
+<div class="note">写操作说明：能力市场 HTTP 只暴露只读接口（<code>/api/orders</code>、<code>/api/catalog</code> 等），下单与执行请在能力市场面板完成。本页不虚构任何不存在的接口。CRM 是独立系统，不在本工作台内接入。</div>
 
 <footer class="pagefoot">coach-studio · Target 运营工作台 · 业务数据来自 pi-kernel 真实服务，UI 状态（平台选择、服务地址）存本机 localStorage</footer>
 </div>
@@ -101,14 +99,12 @@ details.svc input{font-size:13px}
   /* ---------- 服务地址：localStorage 只存 UI 配置，键前缀 coach:workbench: ---------- */
   var DEF_SVC = {
     market: 'http://127.0.0.1:18791',  // capability-market web (MARKET_WEB_PORT)
-    crm: 'http://127.0.0.1:18789',     // crm-plugin web (CRM_WEB_PORT)
     intel: 'http://127.0.0.1:18791'    // data-intel (DATA_INTEL_PORT，默认与市场同端口)
   };
   var svc = {};
   function loadSvc() {
     var saved = Store.get('workbench:svc', {});
     svc.market = saved.market || DEF_SVC.market;
-    svc.crm = saved.crm || DEF_SVC.crm;
     svc.intel = saved.intel || DEF_SVC.intel;
   }
   loadSvc();
@@ -144,10 +140,9 @@ details.svc input{font-size:13px}
       actions: [{ label: '打开能力市场面板', href: function () { return svc.market + '/'; } }],
       note: '能力市场 42 张卡中暂无数据包生成类卡片（HTTP 仅只读），生成动作在市场面板完成。' },
     { id: 'weekly-report', group: 'data', icon: '📰', title: 'AI 周报 / 简报',
-      desc: 'CRM 简报：待审批事项、动能 Top3、逾期任务预警（GET /api/brief 真实接口）。',
+      desc: '基于能力市场订单与 data-intel 热点生成的运营简报（CRM 独立运行，不在本工作台接入）。',
       st: 'st-weekly',
-      actions: [{ label: '在 CRM 面板查看', href: function () { return svc.crm + '/'; } }],
-      live: loadWeekly },
+      actions: [{ label: '打开能力市场面板', href: function () { return svc.market + '/'; } }] },
     { id: 'product-research', group: 'growth', icon: '🔍', title: '选品调研',
       desc: 'data-intel 机会分（0–100）量化类目热度；能力市场 product-research 卡做深度报告。',
       st: 'st-research',
@@ -185,15 +180,13 @@ details.svc input{font-size:13px}
       ],
       live: function (el) { checkCardVisible('listing-optimization', el, 'listing-optimization'); } },
     { id: 'after-sales', group: 'service', icon: '🛡️', title: '售后服务',
-      desc: 'CRM 统一收件箱：客诉会话列表（GET /api/inbox 真实接口）；能力市场 cs-outsourcing 卡做客服外包。',
+      desc: '能力市场 cs-outsourcing 卡做客服外包（CRM 独立运行，不在本工作台接入）。',
       st: 'st-after',
-      actions: [{ label: '打开 CRM 收件箱', href: function () { return svc.crm + '/'; } }],
-      live: loadInbox },
+      actions: [{ label: '打开能力市场面板', href: function () { return svc.market + '/'; } }] },
     { id: 'approvals', group: 'service', icon: '✅', title: '审批流程',
-      desc: 'CRM 待审批回复草稿（GET /api/drafts?status=pending 真实接口），审批在 CRM 面板完成。',
+      desc: '能力市场订单与执行的审批在市场面板完成（CRM 独立运行，不在本工作台接入）。',
       st: 'st-approvals',
-      actions: [{ label: '去 CRM 审批', href: function () { return svc.crm + '/'; } }],
-      live: loadApprovals }
+      actions: [{ label: '打开能力市场面板', href: function () { return svc.market + '/'; } }] }
   ];
 
   /* ---------- 渲染卡片 ---------- */
@@ -222,15 +215,6 @@ details.svc input{font-size:13px}
   function offlineTxt(name) { return '<span class="warn">⚠️ ' + Store.esc(name) + '未连接（服务未启动或浏览器跨域拦截）</span>'; }
 
   /* ---------- 各卡实时数据（全部走真实接口） ---------- */
-  function loadWeekly(el) {
-    fetchJson(svc.crm + '/api/brief').then(function (r) {
-      if (!r.ok || !r.data || r.data.ok === false) { setSt('st-weekly', offlineTxt('CRM')); return; }
-      var b = r.data.brief || {};
-      var alerts = b.alerts || [];
-      var txt = alerts.length ? Store.esc(alerts[0].text) : '简报已生成，暂无预警事项';
-      setSt('st-weekly', '📋 ' + txt);
-    });
-  }
   function loadResearch(el) {
     fetchJson(svc.intel + '/api/intel?platform=' + encodeURIComponent(plat()) + '&minHeat=60&limit=50')
       .then(function (r) {
@@ -249,34 +233,11 @@ details.svc input{font-size:13px}
         : '⚠️ <b>' + Store.esc(label) + '</b> 在' + Store.esc(platName()) + '不可见（目录/授权/平台身份过滤）');
     });
   }
-  function loadInbox(el) {
-    fetchJson(svc.crm + '/api/inbox').then(function (r) {
-      if (!r.ok || !r.data || r.data.ok === false) { setSt('st-after', offlineTxt('CRM')); return; }
-      var list = r.data.sessions || r.data.list || [];
-      setSt('st-after', '💬 收件箱会话 <b>' + list.length + '</b> 个');
-    });
-  }
-  function loadApprovals(el) {
-    fetchJson(svc.crm + '/api/drafts?status=pending').then(function (r) {
-      if (!r.ok || !r.data || !Array.isArray(r.data.drafts)) { setSt('st-approvals', offlineTxt('CRM')); return; }
-      var ds = r.data.drafts;
-      var html = '⏳ 待审批草稿 <b>' + ds.length + '</b> 份';
-      if (ds.length) {
-        html += ds.slice(0, 3).map(function (d) {
-          return '<div class="appritem">• ' + Store.esc(d.clientName || d.clientId || '') +
-            ' <span class="tag">' + Store.esc(d.channel || '') + '</span></div>';
-        }).join('');
-      }
-      setSt('st-approvals', html);
-    });
-  }
 
   /* ---------- 顶部统计条（pi-kernel 真实数据） ---------- */
   function loadStats() {
     var defs = [
       { label: '能力订单', id: 'stat-orders' },
-      { label: 'CRM 客户', id: 'stat-clients' },
-      { label: '待审批草稿', id: 'stat-pending' },
       { label: '热点资讯', id: 'stat-intel' }
     ];
     $('statRow').innerHTML = defs.map(function (d) {
@@ -284,13 +245,6 @@ details.svc input{font-size:13px}
     }).join('');
     fetchJson(svc.market + '/api/orders').then(function (r) {
       $('stat-orders').textContent = (r.ok && r.data && Array.isArray(r.data.orders)) ? r.data.orders.length : '—';
-    });
-    fetchJson(svc.crm + '/api/stats').then(function (r) {
-      $('stat-clients').textContent = (r.ok && r.data && r.data.stats && typeof r.data.stats.clients === 'number')
-        ? r.data.stats.clients : '—';
-    });
-    fetchJson(svc.crm + '/api/drafts?status=pending').then(function (r) {
-      $('stat-pending').textContent = (r.ok && r.data && Array.isArray(r.data.drafts)) ? r.data.drafts.length : '—';
     });
     fetchJson(svc.intel + '/api/market').then(function (r) {
       if (r.ok && r.data && typeof r.data.total === 'number') { $('stat-intel').textContent = r.data.total; return; }
@@ -306,7 +260,6 @@ details.svc input{font-size:13px}
   function loadSvcStatus() {
     var items = [
       { name: '能力市场', base: svc.market, probe: '/api/orders', key: 'market' },
-      { name: 'CRM', base: svc.crm, probe: '/api/stats', key: 'crm' },
       { name: '数据资讯', base: svc.intel, probe: '/health', key: 'intel' }
     ];
     $('svcStatus').innerHTML = items.map(function (it) {
@@ -368,12 +321,10 @@ details.svc input{font-size:13px}
   /* ---------- 服务地址设置 ---------- */
   function initSettings() {
     $('svcMarket').value = svc.market;
-    $('svcCrm').value = svc.crm;
     $('svcIntel').value = svc.intel;
     $('svcSave').addEventListener('click', function () {
       var v = {
         market: $('svcMarket').value.trim().replace(/\/$/, ''),
-        crm: $('svcCrm').value.trim().replace(/\/$/, ''),
         intel: $('svcIntel').value.trim().replace(/\/$/, '')
       };
       Store.set('workbench:svc', v);  // 仅 UI 配置进 localStorage

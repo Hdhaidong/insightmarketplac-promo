@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>运营工作台 · coach-studio</title>
+<link rel="stylesheet" href="content/common.css">
+<style>
+.pill{display:inline-block;font-size:12px;padding:3px 12px;border-radius:999px;margin:2px 6px 2px 0}
+.pill.on{background:#e6f7ed;color:#178a4c}
+.pill.off{background:#fdecea;color:#c5221f}
+.pill.wait{background:#f0f3f8;color:#888}
+.svcgrid{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.svcitem{font-size:13px;color:#555}
+.svcitem code{font-size:12px;color:#1a73e8}
+.cardbtns{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.modcard .st{margin-top:10px;font-size:13px;color:#1a73e8;min-height:20px}
+.modcard .st .warn{color:#8a6d1a}
+details.svc{margin-top:12px;font-size:13px}
+details.svc summary{cursor:pointer;color:#1a73e8;font-size:13px}
+details.svc .row{margin-top:8px}
+details.svc input{font-size:13px}
+.lboard{margin-top:8px}
+.lrow{display:grid;grid-template-columns:28px 1fr 120px 64px;gap:10px;align-items:center;padding:9px 4px;border-bottom:1px dashed #eef1f6;font-size:13px}
+.lrow:last-child{border-bottom:none}
+.lrow .rank{font-weight:700;color:#999;text-align:center}
+.lrow .t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lrow .t small{display:block;color:#888;font-size:11px;white-space:normal}
+.hbar{height:8px;background:#eef1f6;border-radius:99px;overflow:hidden}
+.hbar i{display:block;height:100%;background:#1a73e8;border-radius:99px}
+.hbar.hot i{background:#178a4c}
+.hscore{font-size:18px;font-weight:700;color:#1a73e8;text-align:right}
+.grphead{font-size:18px;margin:26px 0 4px}
+.grphead small{font-size:12px;color:#888;font-weight:400;margin-left:8px}
+.sectnote{font-size:12px;color:#888;margin-bottom:4px}
+.appritem{font-size:13px;color:#555;padding:6px 0;border-bottom:1px dashed #eef1f6}
+.appritem:last-child{border:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div id="coachNav" data-page="workbench"></div>
+
+<div class="topbar">
+  <div>
+    <h1>🛠️ 运营工作台</h1>
+    <p class="sub">对标 DSH ui-ops-workbench：10 项运营能力，调用 pi-kernel 真实服务。<span class="platchip" id="platChip"></span></p>
+  </div>
+</div>
+
+<div class="card">
+  <h2>🔌 服务连接 <small style="font-size:12px;color:#888;font-weight:400">pi-kernel 真实 HTTP 接口</small></h2>
+  <div class="svcgrid" id="svcStatus">
+    <span class="pill wait">能力市场：检测中…</span>
+    <span class="pill wait">CRM：检测中…</span>
+    <span class="pill wait">数据资讯：检测中…</span>
+  </div>
+  <details class="svc">
+    <summary>⚙️ 服务地址设置（保存在本机 localStorage）</summary>
+    <div class="row">
+      <div class="fld"><label class="f">能力市场</label><input type="text" id="svcMarket"></div>
+      <div class="fld"><label class="f">CRM</label><input type="text" id="svcCrm"></div>
+      <div class="fld"><label class="f">数据资讯</label><input type="text" id="svcIntel"></div>
+    </div>
+    <button class="btn small" id="svcSave" style="margin-top:10px">保存并重连</button>
+  </details>
+  <div class="note" style="margin-bottom:0">能力市场面板默认 <code>127.0.0.1:18791</code>（MARKET_WEB_PORT）；data-intel 默认也是 <code>18791</code>（DATA_INTEL_PORT，可改环境变量错开），两服务同时运行时请在此修改地址。浏览器跨域限制下，页面内实时数据可能读不到——此时点各卡的「打开面板」按钮直达服务自带页面查看（导航不受跨域限制）。</div>
+</div>
+
+<div class="statrow" id="statRow"></div>
+
+<div class="card">
+  <h2>🔍 选品调研 · 机会分榜单 <span class="tag" id="spotTag">data-intel</span></h2>
+  <p class="desc">来自 data-intel <code>/api/intel?platform=&lt;当前平台&gt;&amp;minHeat=60</code> 的实时数据（热度 0–100，≥60 入榜）。服务未启动时显示离线提示，不编造示例数据。</p>
+  <div class="lboard" id="leaderboard"><div class="empty">加载中…</div></div>
+</div>
+
+<h2 class="grphead">📊 数据与报告 <small>data</small></h2>
+<div class="modgrid" id="grid-data"></div>
+
+<h2 class="grphead">📈 运营与增长 <small>growth</small></h2>
+<div class="modgrid" id="grid-growth"></div>
+
+<h2 class="grphead">📦 商品与内容 <small>catalog</small></h2>
+<div class="modgrid" id="grid-catalog"></div>
+
+<h2 class="grphead">🤝 客户与流程 <small>service</small></h2>
+<div class="modgrid" id="grid-service"></div>
+
+<div class="note">写操作说明：能力市场 HTTP 只暴露只读接口（<code>/api/orders</code>、<code>/api/catalog</code> 等），下单与执行请在能力市场面板完成；CRM 回复草稿的审批（approve / reject）在 CRM 面板完成。本页不虚构任何不存在的接口。</div>
+
+<footer class="pagefoot">coach-studio · 运营工作台 · 业务数据来自 pi-kernel 真实服务，UI 状态（平台选择、服务地址）存本机 localStorage</footer>
+</div>
+
+<script src="content/store.js"></script>
+<script src="content/nav.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- 服务地址：localStorage 只存 UI 配置，键前缀 coach:workbench: ---------- */
+  var DEF_SVC = {
+    market: 'http://127.0.0.1:18791',  // capability-market web (MARKET_WEB_PORT)
+    crm: 'http://127.0.0.1:18789',     // crm-plugin web (CRM_WEB_PORT)
+    intel: 'http://127.0.0.1:18791'    // data-intel (DATA_INTEL_PORT，默认与市场同端口)
+  };
+  var svc = {};
+  function loadSvc() {
+    var saved = Store.get('workbench:svc', {});
+    svc.market = saved.market || DEF_SVC.market;
+    svc.crm = saved.crm || DEF_SVC.crm;
+    svc.intel = saved.intel || DEF_SVC.intel;
+  }
+  loadSvc();
+
+  function $(id) { return document.getElementById(id); }
+  function plat() { return Store.platform(); }
+  function platName() { return Store.PLATS[plat()] || plat(); }
+
+  /* 带超时的 fetch；pi-kernel /api/* 无通用 CORS 头，浏览器跨域会被拦截 -> 标记离线 */
+  function fetchJson(url, ms) {
+    ms = ms || 3500;
+    return new Promise(function (resolve) {
+      var done = false;
+      var timer = setTimeout(function () {
+        if (!done) { done = true; resolve({ ok: false, offline: true }); }
+      }, ms);
+      function fin(r) { if (!done) { done = true; clearTimeout(timer); resolve(r); } }
+      try {
+        fetch(url).then(function (resp) {
+          if (!resp.ok) throw new Error('http ' + resp.status);
+          return resp.json();
+        }).then(function (d) { fin({ ok: true, data: d }); })
+          .catch(function () { fin({ ok: false, offline: true }); });
+      } catch (e) { fin({ ok: false, offline: true }); }
+    });
+  }
+
+  /* ---------- 10 个模块：全部映射到真实存在的 pi-kernel 接口/面板 ---------- */
+  var MODULES = [
+    { id: 'data-package', group: 'data', icon: '📦', title: '标准数据包',
+      desc: '汇总店铺核心指标、商品表现与库存建议，输出结构化运营数据包。',
+      st: 'st-datapackage',
+      actions: [{ label: '打开能力市场面板', href: function () { return svc.market + '/'; } }],
+      note: '能力市场 42 张卡中暂无数据包生成类卡片（HTTP 仅只读），生成动作在市场面板完成。' },
+    { id: 'weekly-report', group: 'data', icon: '📰', title: 'AI 周报 / 简报',
+      desc: 'CRM 简报：待审批事项、动能 Top3、逾期任务预警（GET /api/brief 真实接口）。',
+      st: 'st-weekly',
+      actions: [{ label: '在 CRM 面板查看', href: function () { return svc.crm + '/'; } }],
+      live: loadWeekly },
+    { id: 'product-research', group: 'growth', icon: '🔍', title: '选品调研',
+      desc: 'data-intel 机会分（0–100）量化类目热度；能力市场 product-research 卡做深度报告。',
+      st: 'st-research',
+      actions: [
+        { label: '数据市场 feed', href: function () { return svc.intel + '/api/market'; } },
+        { label: '能力市场 · product-research 卡', href: function () { return svc.market + '/'; } }
+      ],
+      live: loadResearch },
+    { id: 'store-ops', group: 'growth', icon: '🏪', title: '店铺运营',
+      desc: '店铺健康检查：详情页质量、价格竞争力、评价趋势。最接近的能力卡为 store-onboarding（平台入驻代办）。',
+      st: 'st-storeops',
+      actions: [{ label: '打开能力市场面板', href: function () { return svc.market + '/'; } }],
+      live: function (el) { checkCardVisible('store-onboarding', el, 'store-onboarding'); } },
+    { id: 'ad-optimize', group: 'growth', icon: '🎯', title: '广告优化',
+      desc: '能力市场 ad-management 卡：广告代投放——结构搭建、出价调优与周报复盘。',
+      st: 'st-ad',
+      actions: [{ label: '打开能力市场面板', href: function () { return svc.market + '/'; } }],
+      live: function (el) { checkCardVisible('ad-management', el, 'ad-management'); } },
+    { id: 'listing-publish', group: 'catalog', icon: '🚀', title: '商品上架',
+      desc: '按平台类目规范生成上架资料清单。能力市场暂无上架类卡片——已如实标注，未虚构接口。',
+      st: 'st-publish',
+      tag: '暂无对应能力',
+      actions: [{ label: '浏览市场全目录', href: function () { return svc.market + '/api/all'; } }] },
+    { id: 'listing-manager', group: 'catalog', icon: '📋', title: 'List 管理',
+      desc: '全店商品状态看板。暂无精确对应卡，最接近：listing-optimization（Listing 诊断与优化）。',
+      st: 'st-listing',
+      actions: [{ label: '打开能力市场面板', href: function () { return svc.market + '/'; } }],
+      live: function (el) { checkCardVisible('listing-optimization', el, 'listing-optimization'); } },
+    { id: 'content-boost', group: 'catalog', icon: '✨', title: '图文优化',
+      desc: '能力市场 listing-optimization 卡：标题、图片、A+ 与关键词全改；站内内容打造工作台同步可用。',
+      st: 'st-content',
+      actions: [
+        { label: '打开内容打造', href: function () { return '/content.html'; }, same: true },
+        { label: '能力市场面板', href: function () { return svc.market + '/'; } }
+      ],
+      live: function (el) { checkCardVisible('listing-optimization', el, 'listing-optimization'); } },
+    { id: 'after-sales', group: 'service', icon: '🛡️', title: '售后服务',
+      desc: 'CRM 统一收件箱：客诉会话列表（GET /api/inbox 真实接口）；能力市场 cs-outsourcing 卡做客服外包。',
+      st: 'st-after',
+      actions: [{ label: '打开 CRM 收件箱', href: function () { return svc.crm + '/'; } }],
+      live: loadInbox },
+    { id: 'approvals', group: 'service', icon: '✅', title: '审批流程',
+      desc: 'CRM 待审批回复草稿（GET /api/drafts?status=pending 真实接口），审批在 CRM 面板完成。',
+      st: 'st-approvals',
+      actions: [{ label: '去 CRM 审批', href: function () { return svc.crm + '/'; } }],
+      live: loadApprovals }
+  ];
+
+  /* ---------- 渲染卡片 ---------- */
+  function renderCards() {
+    ['data', 'growth', 'catalog', 'service'].forEach(function (g) { $( 'grid-' + g).innerHTML = ''; });
+    MODULES.forEach(function (m) {
+      var box = document.createElement('div');
+      box.className = 'modcard';
+      var tagHtml = m.tag ? ' <span class="tag amber">' + Store.esc(m.tag) + '</span>' : '';
+      var btns = m.actions.map(function (a) {
+        var href = a.href();
+        var target = a.same ? '' : ' target="_blank" rel="noopener"';
+        return '<a class="btn ghost small" style="margin-top:0" href="' + Store.esc(href) + '"' + target + '>' + Store.esc(a.label) + '</a>';
+      }).join('');
+      box.innerHTML =
+        '<div class="icon">' + m.icon + '</div><h2>' + Store.esc(m.title) + tagHtml + '</h2>' +
+        '<p>' + Store.esc(m.desc) + '</p>' +
+        '<div class="st" id="' + m.st + '"><span class="warn">检测中…</span></div>' +
+        (m.note ? '<p style="font-size:12px;color:#8a6d1a;margin-top:8px">' + Store.esc(m.note) + '</p>' : '') +
+        '<div class="cardbtns">' + btns + '</div>';
+      $('grid-' + m.group).appendChild(box);
+    });
+  }
+
+  function setSt(id, html) { var el = $(id); if (el) el.innerHTML = html; }
+  function offlineTxt(name) { return '<span class="warn">⚠️ ' + Store.esc(name) + '未连接（服务未启动或浏览器跨域拦截）</span>'; }
+
+  /* ---------- 各卡实时数据（全部走真实接口） ---------- */
+  function loadWeekly(el) {
+    fetchJson(svc.crm + '/api/brief').then(function (r) {
+      if (!r.ok || !r.data || r.data.ok === false) { setSt('st-weekly', offlineTxt('CRM')); return; }
+      var b = r.data.brief || {};
+      var alerts = b.alerts || [];
+      var txt = alerts.length ? Store.esc(alerts[0].text) : '简报已生成，暂无预警事项';
+      setSt('st-weekly', '📋 ' + txt);
+    });
+  }
+  function loadResearch(el) {
+    fetchJson(svc.intel + '/api/intel?platform=' + encodeURIComponent(plat()) + '&minHeat=60&limit=50')
+      .then(function (r) {
+        if (!r.ok || !Array.isArray(r.data)) { setSt('st-research', offlineTxt('data-intel')); return; }
+        setSt('st-research', '🔥 ' + Store.esc(platName()) + ' 热度≥60 的资讯 <b>' + r.data.length + '</b> 条');
+      });
+  }
+  function checkCardVisible(cardId, el, label) {
+    fetchJson(svc.market + '/api/catalog?platform=' + encodeURIComponent(plat())).then(function (r) {
+      if (!r.ok) { setSt(el, offlineTxt('能力市场')); return; }
+      var d = r.data || {};
+      var list = d.cards || d.items || d.list || [];
+      var found = list.some(function (c) { return c && (c.id === cardId); });
+      setSt(el, found
+        ? '✅ 能力卡 <b>' + Store.esc(label) + '</b> 在' + Store.esc(platName()) + '可见'
+        : '⚠️ <b>' + Store.esc(label) + '</b> 在' + Store.esc(platName()) + '不可见（目录/授权/平台身份过滤）');
+    });
+  }
+  function loadInbox(el) {
+    fetchJson(svc.crm + '/api/inbox').then(function (r) {
+      if (!r.ok || !r.data || r.data.ok === false) { setSt('st-after', offlineTxt('CRM')); return; }
+      var list = r.data.sessions || r.data.list || [];
+      setSt('st-after', '💬 收件箱会话 <b>' + list.length + '</b> 个');
+    });
+  }
+  function loadApprovals(el) {
+    fetchJson(svc.crm + '/api/drafts?status=pending').then(function (r) {
+      if (!r.ok || !r.data || !Array.isArray(r.data.drafts)) { setSt('st-approvals', offlineTxt('CRM')); return; }
+      var ds = r.data.drafts;
+      var html = '⏳ 待审批草稿 <b>' + ds.length + '</b> 份';
+      if (ds.length) {
+        html += ds.slice(0, 3).map(function (d) {
+          return '<div class="appritem">• ' + Store.esc(d.clientName || d.clientId || '') +
+            ' <span class="tag">' + Store.esc(d.channel || '') + '</span></div>';
+        }).join('');
+      }
+      setSt('st-approvals', html);
+    });
+  }
+
+  /* ---------- 顶部统计条（pi-kernel 真实数据） ---------- */
+  function loadStats() {
+    var defs = [
+      { label: '能力订单', id: 'stat-orders' },
+      { label: 'CRM 客户', id: 'stat-clients' },
+      { label: '待审批草稿', id: 'stat-pending' },
+      { label: '热点资讯', id: 'stat-intel' }
+    ];
+    $('statRow').innerHTML = defs.map(function (d) {
+      return '<div class="stat"><div class="n" id="' + d.id + '">…</div><div class="l">' + d.label + '</div></div>';
+    }).join('');
+    fetchJson(svc.market + '/api/orders').then(function (r) {
+      $('stat-orders').textContent = (r.ok && r.data && Array.isArray(r.data.orders)) ? r.data.orders.length : '—';
+    });
+    fetchJson(svc.crm + '/api/stats').then(function (r) {
+      $('stat-clients').textContent = (r.ok && r.data && r.data.stats && typeof r.data.stats.clients === 'number')
+        ? r.data.stats.clients : '—';
+    });
+    fetchJson(svc.crm + '/api/drafts?status=pending').then(function (r) {
+      $('stat-pending').textContent = (r.ok && r.data && Array.isArray(r.data.drafts)) ? r.data.drafts.length : '—';
+    });
+    fetchJson(svc.intel + '/api/market').then(function (r) {
+      if (r.ok && r.data && typeof r.data.total === 'number') { $('stat-intel').textContent = r.data.total; return; }
+      fetchJson(svc.intel + '/api/stats').then(function (r2) {
+        var d = (r2.ok && r2.data) || {};
+        var n = typeof d.total === 'number' ? d.total : (typeof d.count === 'number' ? d.count : null);
+        $('stat-intel').textContent = n === null ? '—' : n;
+      });
+    });
+  }
+
+  /* ---------- 服务状态 ---------- */
+  function loadSvcStatus() {
+    var items = [
+      { name: '能力市场', base: svc.market, probe: '/api/orders', key: 'market' },
+      { name: 'CRM', base: svc.crm, probe: '/api/stats', key: 'crm' },
+      { name: '数据资讯', base: svc.intel, probe: '/health', key: 'intel' }
+    ];
+    $('svcStatus').innerHTML = items.map(function (it) {
+      return '<span class="pill wait" id="pill-' + it.key + '">' + Store.esc(it.name) + '：检测中…</span>';
+    }).join('') + '<span class="svcitem">当前平台：<b>' + Store.esc(platName()) + '</b></span>';
+    items.forEach(function (it) {
+      fetchJson(it.base + it.probe).then(function (r) {
+        var el = $('pill-' + it.key);
+        if (!el) return;
+        el.className = 'pill ' + (r.ok ? 'on' : 'off');
+        el.innerHTML = Store.esc(it.name) + '：' + (r.ok ? '在线' : '离线') +
+          ' <code>' + Store.esc(it.base.replace(/^https?:\/\//, '')) + '</code>';
+      });
+    });
+  }
+
+  /* ---------- 选品 spotlight：data-intel 真实榜单 ---------- */
+  function loadLeaderboard() {
+    var box = $('leaderboard');
+    box.innerHTML = '<div class="empty">加载中…</div>';
+    fetchJson(svc.intel + '/api/intel?platform=' + encodeURIComponent(plat()) + '&minHeat=60&limit=8')
+      .then(function (r) {
+        if (!r.ok || !Array.isArray(r.data)) {
+          $('spotTag').textContent = '离线';
+          box.innerHTML = '<div class="empty">⚠️ data-intel 服务未连接（未启动或浏览器跨域拦截），暂无实时榜单。本页不编造示例数据。</div>';
+          return;
+        }
+        var items = r.data.slice(0, 8);
+        $('spotTag').textContent = '实时 · ' + platName();
+        if (!items.length) {
+          box.innerHTML = '<div class="empty">' + Store.esc(platName()) + ' 暂无热度≥60 的资讯（服务在线但 feed 为空）。</div>';
+          return;
+        }
+        box.innerHTML = items.map(function (it, i) {
+          var heat = Math.max(0, Math.min(100, Number(it.heat) || 0));
+          var hot = heat >= 80 ? ' hot' : '';
+          var link = it.url
+            ? '<a href="' + Store.esc(it.url) + '" target="_blank" rel="noopener" style="color:#1a73e8">' + Store.esc(it.title) + '</a>'
+            : Store.esc(it.title);
+          return '<div class="lrow"><div class="rank">' + (i + 1) + '</div>' +
+            '<div class="t">' + link + '<small>' + Store.esc(it.source || '') +
+            (it.category ? ' · ' + Store.esc(it.category) : '') + '</small></div>' +
+            '<div class="hbar' + hot + '"><i style="width:' + heat + '%"></i></div>' +
+            '<div class="hscore">' + heat + '</div></div>';
+        }).join('');
+      });
+  }
+
+  /* ---------- 平台切换：刷新平台相关数据 ---------- */
+  function refreshAll() {
+    $('platChip').textContent = platName();
+    loadSvcStatus();
+    loadStats();
+    loadLeaderboard();
+    renderCards();
+    MODULES.forEach(function (m) { if (m.live) m.live(m.st); });
+  }
+
+  /* ---------- 服务地址设置 ---------- */
+  function initSettings() {
+    $('svcMarket').value = svc.market;
+    $('svcCrm').value = svc.crm;
+    $('svcIntel').value = svc.intel;
+    $('svcSave').addEventListener('click', function () {
+      var v = {
+        market: $('svcMarket').value.trim().replace(/\/$/, ''),
+        crm: $('svcCrm').value.trim().replace(/\/$/, ''),
+        intel: $('svcIntel').value.trim().replace(/\/$/, '')
+      };
+      Store.set('workbench:svc', v);  // 仅 UI 配置进 localStorage
+      loadSvc();
+      refreshAll();
+    });
+  }
+
+  document.addEventListener('coach:platform', function () { refreshAll(); });
+
+  initSettings();
+  refreshAll();
+})();
+</script>
+</body>
+</html>

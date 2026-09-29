@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>验货 · Quality Inspection | insightmarketplac Agent</title>
+<meta name="description" content="验货（Quality Inspection）：出货前按 AQL 抽检,外观、功能、包装逐项核验并出报告。">
+<meta name="keywords" content="验货, Quality Inspection, 设计开发, 供应链管理, 跨境电商, Agent">
+<meta property="og:type" content="website">
+<meta property="og:title" content="验货 · Quality Inspection">
+<meta property="og:description" content="出货前按 AQL 抽检,外观、功能、包装逐项核验并出报告。">
+<meta property="og:site_name" content="insightmarketplac">
+<meta property="og:image" content="https://hdhaidong.github.io/insightmarketplac-promo/research/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="验货 · Quality Inspection">
+<meta name="twitter:description" content="出货前按 AQL 抽检,外观、功能、包装逐项核验并出报告。">
+<link rel="canonical" href="https://hdhaidong.github.io/insightmarketplac-promo/research/agents/quality-inspection.html">
+<meta name="robots" content="index, follow">
+<style>
+:root{--bg:#000000;--bg-2:#0A0A0A;--bg-3:#111111;--ink:#F2EEE6;--ink-dim:#A7ADB8;--ink-faint:#6E7683;--accent:#E8A33D;--accent-hi:#F4BA60;--accent-dim:rgba(232,163,61,.12);--hairline:rgba(242,238,230,.12);--hairline-soft:rgba(242,238,230,.07);--sans:"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;--mono:"SF Mono","Cascadia Code",Consolas,"Courier New",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+.top{border-bottom:1px solid var(--hairline-soft);background:rgba(0,0,0,.92);position:sticky;top:0;z-index:40;backdrop-filter:blur(10px)}
+.top-in{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:baseline;gap:10px}
+.brand .mk{font-weight:700;font-size:1.1rem}
+.brand .mk em{font-style:normal;color:var(--accent)}
+.brand .bc{font-family:var(--mono);font-size:.68rem;color:var(--ink-faint);letter-spacing:.06em}
+nav.main-nav{display:flex;gap:22px;flex-wrap:wrap}
+nav.main-nav a{color:var(--ink-dim);font-size:.9rem}
+nav.main-nav a:hover{color:var(--accent);text-decoration:none}
+nav.main-nav a.hot{color:var(--accent);font-weight:600}
+.btn{display:inline-block;padding:12px 26px;border-radius:9px;font-weight:600;font-size:.92rem;transition:all .18s;cursor:pointer;border:none;font-family:var(--sans)}
+.btn-p{background:var(--accent);color:#141414}
+.btn-p:hover{background:var(--accent-hi);text-decoration:none;transform:translateY(-1px)}
+.btn-s{border:1px solid var(--hairline);color:var(--ink-dim);background:transparent}
+.btn-s:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.btn-lg{padding:15px 34px;font-size:1rem}
+.page-hero{padding:72px 0 52px;border-bottom:1px solid var(--hairline-soft);position:relative;overflow:hidden}
+.page-hero::before{content:"";position:absolute;top:-180px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(232,163,61,.09),transparent 65%);pointer-events:none}
+.crumbs{font-size:.82rem;color:var(--ink-faint);margin-bottom:24px}
+.crumbs a{color:var(--ink-dim)}
+.agent-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.avatar{width:84px;height:84px;border-radius:22px;background:var(--accent-dim);border:1px solid rgba(232,163,61,.35);display:flex;align-items:center;justify-content:center;font-size:2.4rem;margin-bottom:22px}
+.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+h1{font-size:clamp(1.9rem,4.6vw,2.8rem);line-height:1.2;letter-spacing:-.015em}
+h1 .hl{color:var(--accent)}
+.role-en{font-family:var(--mono);font-size:.82rem;color:var(--ink-faint);letter-spacing:.14em;margin-top:10px;text-transform:uppercase}
+.hero-sub{color:var(--ink-dim);max-width:560px;margin:18px 0 22px;font-size:1.02rem}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.chips span{border:1px solid var(--hairline-soft);border-radius:999px;padding:4px 14px;font-size:.76rem;color:var(--ink-dim);background:var(--bg-2)}
+.chips span.g{border-color:rgba(232,163,61,.4);color:var(--accent)}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.hero-side{border:1px solid var(--hairline);border-radius:16px;background:var(--bg-2);padding:26px}
+.hero-side .mt{font-family:var(--mono);font-size:.64rem;color:var(--accent);letter-spacing:.18em;margin-bottom:16px}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.kv .b{border:1px solid var(--hairline-soft);border-radius:12px;padding:16px;background:var(--bg)}
+.kv .v{font-size:1.45rem;font-weight:700;color:var(--accent);font-family:var(--mono)}
+.kv .k{font-size:.72rem;color:var(--ink-faint);margin-top:4px}
+section{padding:72px 0;border-bottom:1px solid var(--hairline-soft)}
+section:nth-of-type(even){background:var(--bg-2)}
+.sec-head{margin-bottom:40px;max-width:660px}
+.sec-head .eyebrow{margin-bottom:10px}
+h2{font-size:clamp(1.5rem,3.4vw,2.1rem);letter-spacing:-.01em;line-height:1.3}
+.sec-sub{color:var(--ink-dim);margin-top:12px;font-size:.98rem}
+.tpl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tpl{border:1px solid var(--hairline-soft);border-radius:14px;padding:26px 24px;background:var(--bg);display:flex;flex-direction:column;transition:all .16s}
+.tpl:hover{border-color:var(--accent);transform:translateY(-2px)}
+.tpl .tno{font-family:var(--mono);font-size:.64rem;color:var(--accent);letter-spacing:.18em}
+.tpl h3{font-size:1.04rem;margin:12px 0 8px;line-height:1.5}
+.tpl>p{font-size:.84rem;color:var(--ink-dim);flex:1}
+.tpl .tmeta{display:flex;gap:16px;margin-top:18px;padding-top:14px;border-top:1px dashed var(--hairline-soft);font-size:.72rem;color:var(--ink-faint)}
+.tpl .tmeta b{color:var(--accent);font-family:var(--mono);font-weight:600}
+.tpl .gate{display:inline-block;border:1px solid rgba(232,163,61,.4);border-radius:999px;padding:1px 10px;font-size:.66rem;color:var(--accent);margin-left:auto}
+.loop{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.lstep{border:1px solid var(--hairline-soft);border-radius:14px;padding:22px 18px;background:var(--bg)}
+.lstep .ln{font-family:var(--mono);font-size:.64rem;color:var(--accent);letter-spacing:.18em}
+.lstep h4{font-size:.94rem;margin:10px 0 8px}
+.lstep p{font-size:.76rem;color:var(--ink-dim)}
+.skill-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.skill{display:flex;align-items:center;gap:14px;border:1px solid var(--hairline-soft);border-radius:12px;padding:16px 18px;background:var(--bg)}
+.skill .sic{width:38px;height:38px;border-radius:10px;background:var(--accent-dim);border:1px solid rgba(232,163,61,.3);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0}
+.skill b{font-size:.9rem;font-weight:600;display:block}
+.skill i{font-style:normal;font-size:.72rem;color:var(--ink-faint)}
+.use-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.use{border:1px solid var(--hairline-soft);border-radius:14px;padding:24px;background:var(--bg)}
+.use .ic{font-size:1.4rem;display:block;margin-bottom:12px}
+.use h3{font-size:1rem;margin-bottom:8px}
+.use p{font-size:.83rem;color:var(--ink-dim)}
+.fam-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.fam{border:1px solid var(--hairline-soft);border-radius:12px;padding:18px;background:var(--bg);transition:all .16s;display:block;color:var(--ink)}
+.fam:hover{border-color:var(--accent);text-decoration:none;transform:translateY(-2px)}
+.fam .fi{font-size:1.3rem;display:block;margin-bottom:8px}
+.fam b{font-size:.9rem;display:block}
+.fam i{font-style:normal;font-size:.7rem;color:var(--ink-faint)}
+.fam.me{border-color:var(--accent);background:linear-gradient(180deg,rgba(232,163,61,.08),transparent 70%),var(--bg)}
+.fam.me i{color:var(--accent)}
+.cta-band{padding:88px 0;text-align:center;background:var(--bg-2)}
+.cta-band p{color:var(--ink-dim);margin:14px 0 30px}
+footer{padding:48px 0 36px;border-top:1px solid var(--hairline-soft)}
+.f-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.f-brand .mk{font-weight:700;font-size:1.05rem}
+.f-brand .mk em{font-style:normal;color:var(--accent)}
+.f-brand p{font-size:.8rem;color:var(--ink-faint);margin-top:10px;max-width:360px}
+.f-col h4{font-size:.8rem;color:var(--ink-faint);font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.f-col a{display:block;color:var(--ink-dim);font-size:.86rem;padding:4px 0}
+.f-col a:hover{color:var(--accent)}
+.f-bottom{margin-top:36px;padding-top:20px;border-top:1px solid var(--hairline-soft);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.74rem;color:var(--ink-faint)}
+@media(max-width:960px){.agent-hero{grid-template-columns:1fr}.tpl-grid{grid-template-columns:1fr}.loop{grid-template-columns:repeat(2,1fr)}.skill-list{grid-template-columns:1fr}.use-grid{grid-template-columns:1fr}.fam-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.top-in{flex-direction:column;gap:12px}.loop{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a href="../" class="brand" style="color:var(--ink)"><span class="mk">insight<em>marketplac</em></span><span class="bc">AGENT</span></a>
+    <nav class="main-nav">
+      <a href="../">首页</a>
+      <a href="../../agent.html">全部 Agent</a>
+      <a href="../customers.html">客户案例</a>
+      <a href="../pricing.html">定价</a>
+    </nav>
+    <a href="../client.html" class="btn btn-p">免费试用</a>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="../">首页</a> / <a href="../../agent.html">Agent</a> / 验货</div>
+    <div class="agent-hero">
+      <div>
+        <div class="avatar">🛡️</div>
+        <div class="eyebrow">Agent Product · 37 / 47</div>
+        <h1>验货</h1>
+        <div class="role-en">Quality Inspection</div>
+        <p class="hero-sub">出货前按 AQL 抽检：外观、功能、包装逐项核验并出报告。</p>
+        <div class="chips"><span class="g">设计开发</span><span>供应链管理</span></div>
+        <div class="cta-row">
+          <a href="../client.html" class="btn btn-p btn-lg">免费试用</a>
+          <a href="mailto:haidong.zhou@outlook.com" class="btn btn-s btn-lg">联系商务</a>
+        </div>
+      </div>
+      <div class="hero-side">
+        <div class="mt">AGENT PROFILE</div>
+        <div class="kv">
+          <div class="b"><div class="v">3</div><div class="k">核心能力</div></div>
+          <div class="b"><div class="v">设计开发</div><div class="k">产品线</div></div>
+          <div class="b"><div class="v">1</div><div class="k">适用阶段</div></div>
+          <div class="b"><div class="v">商务</div><div class="k">体验方式</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Capabilities</div>
+      <h2>验货能做什么</h2>
+      <p class="sec-sub">出货前按 AQL 抽检,外观、功能、包装逐项核验并出报告。</p>
+    </div>
+    <div class="tpl-grid">
+      <div class="tpl">
+        <span class="tno">能力 01</span>
+        <h3>AQL 抽检</h3>
+        <p>按 AQL 标准抽样检验。</p>
+        <div class="tmeta"><span><b>设计开发</b> · 产品线</span></div>
+      </div>
+      <div class="tpl">
+        <span class="tno">能力 02</span>
+        <h3>逐项核验</h3>
+        <p>外观、功能、包装逐项核验。</p>
+        <div class="tmeta"><span><b>设计开发</b> · 产品线</span></div>
+      </div>
+      <div class="tpl">
+        <span class="tno">能力 03</span>
+        <h3>检验报告</h3>
+        <p>输出书面检验报告。</p>
+        <div class="tmeta"><span><b>设计开发</b> · 产品线</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">How It Works</div>
+      <h2>工作流程</h2>
+      <p class="sec-sub">说清需求，Agent 按步骤完成，关键节点可确认。</p>
+    </div>
+    <div class="loop">
+      <div class="lstep"><span class="ln">01</span><h4>说清需求</h4><p>一句话描述你要的结果。</p></div>
+      <div class="lstep"><span class="ln">02</span><h4>确认方案</h4><p>Agent 给出执行方案，你确认后开跑。</p></div>
+      <div class="lstep"><span class="ln">03</span><h4>执行任务</h4><p>按方案逐步执行，全程留痕。</p></div>
+      <div class="lstep"><span class="ln">04</span><h4>人工确认</h4><p>关键节点由你确认后再继续。</p></div>
+      <div class="lstep"><span class="ln">05</span><h4>交付结果</h4><p>输出结果，可追溯、可复用。</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Use Cases</div>
+      <h2>什么时候用验货</h2>
+    </div>
+    <div class="use-grid">
+      <div class="use"><span class="ic">📦</span><h3>出货前</h3><p>抽检合格再出货。</p></div>
+      <div class="use"><span class="ic">🤝</span><h3>新供应商时</h3><p>用验货报告约束品质。</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Who &amp; How</div>
+      <h2>适用谁 · 输入输出</h2>
+    </div>
+    <div class="skill-list">
+      <div class="skill"><span class="sic">👥</span><div><b>适用谁</b><i>适用阶段：供应链管理</i></div></div>
+      <div class="skill"><span class="sic">📥</span><div><b>你需要提供</b><i>订单信息、检验标准。</i></div></div>
+      <div class="skill"><span class="sic">📤</span><div><b>你会得到</b><i>验货报告。</i></div></div>
+      <div class="skill"><span class="sic">🏷️</span><div><b>产品线</b><i>设计开发 · Quality Inspection</i></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Digital Workforce</div>
+      <h2>47 个 Agent · 一个平台</h2>
+      <p class="sec-sub">点击查看每个 Agent 的完整介绍。</p>
+    </div>
+    <div class="fam-grid">
+      <a class="fam" href="warehouse-inventory.html"><span class="fi">📋</span><b>仓库库存查询</b><i>Warehouse Inventory Query</i></a>
+      <a class="fam" href="content-breakdown.html"><span class="fi">📝</span><b>内容拆解</b><i>Content Breakdown</i></a>
+      <a class="fam" href="brand-breakdown.html"><span class="fi">🏷️</span><b>品牌拆解</b><i>Brand Breakdown</i></a>
+      <a class="fam" href="supply-chain-breakdown.html"><span class="fi">🗺️</span><b>供应链拆解</b><i>Supply Chain Breakdown</i></a>
+      <a class="fam" href="product-breakdown.html"><span class="fi">🔬</span><b>产品拆解</b><i>Product Breakdown</i></a>
+      <a class="fam" href="product-research.html"><span class="fi">📊</span><b>市场数据与竞品分析</b><i>Market Data &amp; Competitor Analysis</i></a>
+      <a class="fam" href="ad-management.html"><span class="fi">📈</span><b>广告代投放</b><i>Ad Management</i></a>
+      <a class="fam" href="fx-settlement.html"><span class="fi">💱</span><b>汇率与回款</b><i>FX &amp; Settlement</i></a>
+      <a class="fam" href="obm-brand.html"><span class="fi">👑</span><b>OBM 自有品牌</b><i>OBM Private Brand</i></a>
+      <a class="fam" href="sample-seeding.html"><span class="fi">📤</span><b>样品投放</b><i>Sample Seeding</i></a>
+      <a class="fam" href="tax-filing.html"><span class="fi">🧾</span><b>报税</b><i>Tax Filing</i></a>
+      <a class="fam" href="vat-registration.html"><span class="fi">🧾</span><b>VAT 注册</b><i>VAT Registration</i></a>
+      <a class="fam" href="us-company-registration.html"><span class="fi">🇺🇸</span><b>美国公司注册</b><i>US Company Registration</i></a>
+      <a class="fam" href="eu-company-registration.html"><span class="fi">🇪🇺</span><b>欧洲公司注册</b><i>EU Company Registration</i></a>
+      <a class="fam" href="warehouse-address.html"><span class="fi">📍</span><b>仓库独立地址租赁</b><i>Warehouse Address Leasing</i></a>
+      <a class="fam" href="phone-repair.html"><span class="fi">📱</span><b>手机维修</b><i>Phone Repair</i></a>
+      <a class="fam" href="car-modification.html"><span class="fi">🚗</span><b>汽车改装</b><i>Car Modification</i></a>
+      <a class="fam" href="moto-modification.html"><span class="fi">🏍️</span><b>摩托车改造</b><i>Motorcycle Modification</i></a>
+      <a class="fam" href="warehouse-fulfillment.html"><span class="fi">📦</span><b>仓库仓储发货</b><i>Warehouse Fulfillment</i></a>
+      <a class="fam" href="insight-shelf.html"><span class="fi">🛒</span><b>Insight Shelf</b><i>Insight Shelf</i></a>
+      <a class="fam" href="coach-consulting.html"><span class="fi">🧑‍🏫</span><b>电商教练咨询</b><i>E-commerce Coaching</i></a>
+      <a class="fam" href="student-recruitment.html"><span class="fi">🎓</span><b>学员招募</b><i>Student Recruitment</i></a>
+      <a class="fam" href="store-onboarding.html"><span class="fi">🏪</span><b>平台入驻代办</b><i>Marketplace Onboarding</i></a>
+      <a class="fam" href="payment-account.html"><span class="fi">💳</span><b>收款账户开设</b><i>Payment Account Setup</i></a>
+      <a class="fam" href="expo-sourcing.html"><span class="fi">🎪</span><b>展会选品会</b><i>Expo Sourcing Events</i></a>
+      <a class="fam" href="logistics.html"><span class="fi">🚚</span><b>跨境物流</b><i>Cross-border Logistics</i></a>
+      <a class="fam" href="product-certification.html"><span class="fi">✅</span><b>产品认证</b><i>Product Certification</i></a>
+      <a class="fam" href="trademark-patent.html"><span class="fi">®️</span><b>商标专利</b><i>Trademark &amp; Patent</i></a>
+      <a class="fam" href="listing-optimization.html"><span class="fi">✍️</span><b>Listing 优化</b><i>Listing Optimization</i></a>
+      <a class="fam" href="product-review.html"><span class="fi">⭐</span><b>测评</b><i>Product Testing &amp; Reviews</i></a>
+      <a class="fam" href="cs-outsourcing.html"><span class="fi">💬</span><b>客服外包</b><i>Customer Service Outsourcing</i></a>
+      <a class="fam" href="training-courses.html"><span class="fi">📚</span><b>培训课程</b><i>Training Courses</i></a>
+      <a class="fam" href="supply-financing.html"><span class="fi">💰</span><b>供应链金融</b><i>Supply Chain Financing</i></a>
+      <a class="fam" href="prototyping.html"><span class="fi">🧪</span><b>打样</b><i>Prototyping</i></a>
+      <a class="fam" href="odm-development.html"><span class="fi">💡</span><b>ODM 设计制造</b><i>ODM Development</i></a>
+      <a class="fam" href="mold-development.html"><span class="fi">🧱</span><b>产品模具开发</b><i>Mold Development</i></a>
+      <a class="fam me" href="quality-inspection.html"><span class="fi">🛡️</span><b>验货</b><i>Quality Inspection · 当前页</i></a>
+      <a class="fam" href="factory-stationing.html"><span class="fi">👷</span><b>驻厂</b><i>On-site Factory Supervision</i></a>
+      <a class="fam" href="factory-audit.html"><span class="fi">🔍</span><b>验厂</b><i>Factory Audit</i></a>
+      <a class="fam" href="hardware-development.html"><span class="fi">⚙️</span><b>硬件产品开发</b><i>Hardware Product Development</i></a>
+      <a class="fam" href="hardware-design.html"><span class="fi">🔌</span><b>硬件设计</b><i>Hardware Design</i></a>
+      <a class="fam" href="design.html"><span class="fi">👗</span><b>服装设计</b><i>Apparel Design</i></a>
+      <a class="fam" href="pattern-making.html"><span class="fi">📐</span><b>制版</b><i>Pattern Making</i></a>
+      <a class="fam" href="sampling.html"><span class="fi">✂️</span><b>打样</b><i>Sample Making</i></a>
+      <a class="fam" href="oem-manufacturing.html"><span class="fi">🏭</span><b>OEM 代工</b><i>OEM Manufacturing</i></a>
+      <a class="fam" href="machining.html"><span class="fi">🔩</span><b>机械加工</b><i>CNC Machining</i></a>
+      <a class="fam" href="factory-capacity.html"><span class="fi">🏭</span><b>Factory 工厂产能</b><i>Factory Capacity</i></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="eyebrow" style="margin-bottom:12px">Get Started</div>
+    <h2>让验货为你工作</h2>
+    <p>出货前按 AQL 抽检：外观、功能、包装逐项核验并出报告。</p>
+    <div class="cta-row" style="justify-content:center">
+      <a href="../client.html" class="btn btn-p btn-lg">免费试用</a>
+      <a href="mailto:haidong.zhou@outlook.com" class="btn btn-s btn-lg">预约演示</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="mk">insight<em>marketplac</em> Agent</div>
+        <p>跨境电商企业的 AI Agent 平台。设计开发 · 验货。</p>
+      </div>
+      <div class="f-col">
+        <h4>Agent</h4>
+        <a href="../../agent.html">全部 47 个 Agent</a>
+        <a href="product-research.html">市场数据与竞品分析</a>
+        <a href="brand-breakdown.html">品牌拆解</a>
+        <a href="listing-optimization.html">Listing 优化</a>
+      </div>
+      <div class="f-col">
+        <h4>更多</h4>
+        <a href="../client.html">免费试用</a>
+        <a href="../pricing.html">定价</a>
+        <a href="mailto:haidong.zhou@outlook.com">联系商务</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 insightmarketplac · Agent 平台</span>
+      <span>47 个 Agent · 设计开发</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

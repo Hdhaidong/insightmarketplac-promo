@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>桥链供应链 BRIDGELINK — 北美 · 中国品牌供应链服务</title>
+<meta name="description" content="桥链供应链：面向北美与中国市场的品牌供应链服务——打样、OEM/ODM、验货、仓储物流、电商运营与数字营销。">
+<style>
+:root{
+  --red:#c8102e; --red-dark:#a00d25; --ink:#1a1a1a; --gray:#5b5b5b;
+  --bg:#ffffff; --bg-soft:#f7f7f8; --line:#e8e8ea; --gold:#b98a2f;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,sans-serif;color:var(--ink);line-height:1.7;background:var(--bg)}
+a{color:inherit;text-decoration:none}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+/* ===== Nav ===== */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}
+.logo-mark{width:34px;height:34px;background:var(--red);clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);display:inline-block}
+.logo small{font-weight:400;color:var(--gray);font-size:12px;display:block;line-height:1.2}
+.nav-links{display:flex;gap:28px;font-size:15px}
+.nav-links a{position:relative;padding:6px 0;color:#333}
+.nav-links a:hover{color:var(--red)}
+.lang-toggle{border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;font-size:13px}
+.lang-toggle button{border:0;background:#fff;padding:6px 14px;cursor:pointer;color:var(--gray)}
+.lang-toggle button.active{background:var(--red);color:#fff}
+/* ===== Hero ===== */
+.hero{background:linear-gradient(120deg,#8f0a20 0%,var(--red) 55%,#e0344f 100%);color:#fff;padding:96px 0 84px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border:2px solid rgba(255,255,255,.15);clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)}
+.hero h1{font-size:44px;line-height:1.35;font-weight:800;max-width:760px}
+.hero h1 .en{display:block;font-size:20px;font-weight:400;opacity:.85;margin-top:10px;letter-spacing:.5px}
+.hero p.lead{margin-top:18px;font-size:17px;opacity:.92;max-width:680px}
+.hero-cta{margin-top:30px;display:flex;gap:14px}
+.btn{display:inline-block;padding:12px 34px;border-radius:4px;font-size:15px;font-weight:600;cursor:pointer;border:0}
+.btn-white{background:#fff;color:var(--red)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.7)}
+.btn-red{background:var(--red);color:#fff}
+/* ===== Stats ===== */
+.stats{background:#fff;border-bottom:1px solid var(--line)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+.stat{padding:34px 10px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0}
+.stat .num{font-size:38px;font-weight:800;color:var(--red)}
+.stat .lbl{color:var(--gray);font-size:14px;margin-top:6px}
+.stat .tag{display:inline-block;font-size:11px;color:#999;border:1px solid var(--line);border-radius:3px;padding:1px 8px;margin-top:8px}
+/* ===== Sections ===== */
+section.block{padding:76px 0}
+section.alt{background:var(--bg-soft)}
+.sec-head{text-align:center;margin-bottom:48px}
+.sec-head .kicker{color:var(--red);font-weight:700;font-size:14px;letter-spacing:2px}
+.sec-head h2{font-size:32px;margin:10px 0 6px}
+.sec-head p{color:var(--gray);max-width:720px;margin:0 auto}
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.cards.cols4{grid-template-columns:repeat(4,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:32px 28px;transition:.25s}
+.card:hover{box-shadow:0 12px 32px rgba(200,16,46,.10);transform:translateY(-3px)}
+.card .icon{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--red),#e0344f);color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px}
+.card h3{font-size:19px;margin-bottom:8px}
+.card h3 .en{display:block;font-size:12px;color:#999;font-weight:400;letter-spacing:1px}
+.card p{color:var(--gray);font-size:14.5px}
+.card ul{margin:14px 0 0 2px;color:#444;font-size:14px;list-style:none}
+.card ul li{padding:5px 0 5px 20px;position:relative}
+.card ul li::before{content:"—";position:absolute;left:0;color:var(--red)}
+/* markets */
+.markets{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.market{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.market .m-head{padding:26px 30px;color:#fff;font-size:20px;font-weight:700}
+.market .m-head.na{background:linear-gradient(120deg,#0b3d91,#1565c0)}
+.market .m-head.cn{background:linear-gradient(120deg,#8f0a20,var(--red))}
+.market .m-head small{display:block;font-size:13px;font-weight:400;opacity:.85}
+.market ul{padding:22px 30px;list-style:none;color:#444;font-size:14.5px}
+.market ul li{padding:7px 0 7px 22px;position:relative}
+.market ul li::before{content:"✓";position:absolute;left:0;color:var(--red);font-weight:700}
+/* about */
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
+.about-grid p{color:#444;margin-bottom:14px}
+.checklist{list-style:none;margin-top:8px}
+.checklist li{padding:8px 0 8px 26px;position:relative;color:#333}
+.checklist li::before{content:"✓";position:absolute;left:2px;color:var(--red);font-weight:700}
+.note{font-size:12.5px;color:#999;margin-top:18px;border-top:1px dashed var(--line);padding-top:12px}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.contact-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:30px}
+.contact-card h3{font-size:18px;margin-bottom:14px;color:var(--red)}
+.contact-card p{color:#444;font-size:14.5px;margin:6px 0}
+.form input,.form textarea{width:100%;border:1px solid var(--line);border-radius:4px;padding:11px 14px;font-size:14px;margin-bottom:12px;font-family:inherit}
+.form textarea{height:110px;resize:vertical}
+/* footer */
+footer{background:#141414;color:#bbb;padding:44px 0 26px;font-size:13.5px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;margin-bottom:26px}
+.foot-grid h4{color:#fff;font-size:15px;margin-bottom:12px}
+.foot-grid a{display:block;padding:4px 0;color:#bbb}
+.foot-grid a:hover{color:#fff}
+.copy{border-top:1px solid #2a2a2a;padding-top:18px;color:#777;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+/* responsive */
+@media(max-width:900px){
+  .cards,.cards.cols4,.markets,.about-grid,.contact-grid,.foot-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(3){border-left:0}
+  .hero h1{font-size:32px}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#top"><span class="logo-mark"></span><span>桥链供应链<small>BRIDGELINK · 示例品牌</small></span></a>
+    <nav class="nav-links">
+      <a href="#about" data-i18n="nav_about">关于我们</a>
+      <a href="#supply" data-i18n="nav_supply">供应链服务</a>
+      <a href="#brand" data-i18n="nav_brand">品牌服务</a>
+      <a href="#tech" data-i18n="nav_tech">技术方案</a>
+      <a href="#markets" data-i18n="nav_markets">北美 · 中国</a>
+      <a href="#contact" data-i18n="nav_contact">联系我们</a>
+    </nav>
+    <div class="lang-toggle">
+      <button id="btn-zh" class="active" onclick="setLang('zh')">中文</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero" id="top">
+  <div class="container">
+    <h1><span data-i18n="hero_h1">连接北美品牌与中国供应链</span><span class="en" data-i18n="hero_h1_en">Connecting North American Brands with China's Supply Chain</span></h1>
+    <p class="lead" data-i18n="hero_lead">打样 · OEM/ODM · 验货 · 仓储物流一站式服务，为品牌客户提供从样品到交付的全链路供应链支持。</p>
+    <div class="hero-cta">
+      <a class="btn btn-white" href="#contact" data-i18n="hero_cta1">获取报价</a>
+      <a class="btn btn-outline" href="#supply" data-i18n="hero_cta2">了解服务</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STATS ============ -->
+<div class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><div class="num" data-i18n="stat1_num">500+</div><div class="lbl" data-i18n="stat1_lbl">合作工厂</div><span class="tag" data-i18n="tag_demo">示例数据</span></div>
+    <div class="stat"><div class="num" data-i18n="stat2_num">20万+</div><div class="lbl" data-i18n="stat2_lbl">年打样件数</div><span class="tag" data-i18n="tag_demo">示例数据</span></div>
+    <div class="stat"><div class="num" data-i18n="stat3_num">99.2%</div><div class="lbl" data-i18n="stat3_lbl">验货一次通过率</div><span class="tag" data-i18n="tag_demo">示例数据</span></div>
+    <div class="stat"><div class="num" data-i18n="stat4_num">3万㎡</div><div class="lbl" data-i18n="stat4_lbl">仓储面积</div><span class="tag" data-i18n="tag_demo">示例数据</span></div>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="block" id="about">
+  <div class="container">
+    <div class="sec-head">
+      <div class="kicker" data-i18n="about_kicker">ABOUT US</div>
+      <h2 data-i18n="about_h2">关于我们</h2>
+      <p data-i18n="about_sub">专注服务品牌客户的供应链公司，打通"北美市场需求 — 中国制造能力"。</p>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p data-i18n="about_p1">桥链供应链是一家面向北美与中国市场的品牌供应链服务商（品牌名为示例）。我们为时尚、快消、家居、3C 等行业的品牌客户提供打样、OEM/ODM、验货、仓储物流一站式服务，并配套电商运营与数字营销支持。</p>
+        <p data-i18n="about_p2">我们在中国华南、华东布局样品中心与质检团队，在北美设立商务与客服窗口，让品牌方用母语沟通、用本地时区对接，而生产与品控扎根中国制造集群。</p>
+        <ul class="checklist">
+          <li data-i18n="about_c1">双语团队：中英双语项目经理全程跟进</li>
+          <li data-i18n="about_c2">全品类覆盖：服装、家居、快消、3C 及定制类目</li>
+          <li data-i18n="about_c3">合规保障：验货标准对齐北美市场准入要求</li>
+          <li data-i18n="about_c4">数字化协同：订单、样品、验货报告全程线上可查</li>
+        </ul>
+        <p class="note" data-i18n="about_note">注：本页公司名称、数据、客户描述均为示例，用于网站版式演示，不构成商业承诺。</p>
+      </div>
+      <div class="card">
+        <div class="icon">◈</div>
+        <h3 data-i18n="about_card_h">为什么选择我们<span class="en">WHY BRIDGELINK</span></h3>
+        <ul>
+          <li data-i18n="about_card_1">品牌客户专属服务流程，非散单模式</li>
+          <li data-i18n="about_card_2">打样—大货—验货—出运闭环管理</li>
+          <li data-i18n="about_card_3">北美时区客服，响应无时差</li>
+          <li data-i18n="about_card_4">问题批次先行赔付机制（示例条款）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUPPLY CHAIN ============ -->
+<section class="block alt" id="supply">
+  <div class="container">
+    <div class="sec-head">
+      <div class="kicker" data-i18n="supply_kicker">SUPPLY CHAIN SERVICES</div>
+      <h2 data-i18n="supply_h2">供应链服务</h2>
+      <p data-i18n="supply_sub">从样品到交付，为品牌客户提供全链路供应链支持。</p>
+    </div>
+    <div class="cards cols4">
+      <div class="card">
+        <div class="icon">✂</div>
+        <h3><span data-i18n="s1_h">打样</span><span class="en">SAMPLING / PROTOTYPING</span></h3>
+        <p data-i18n="s1_p">极速打样中心，品牌方提供图纸或参考样，我们输出可量产的确认样。</p>
+        <ul>
+          <li data-i18n="s1_1">常规品类 7 天出样（示例时效）</li>
+          <li data-i18n="s1_2">面料 / 材料 / 工艺多方案比对</li>
+          <li data-i18n="s1_3">样品确认单 + 工艺档案留存</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon">⚙</div>
+        <h3><span data-i18n="s2_h">OEM / ODM</span><span class="en">OEM / ODM MANUFACTURING</span></h3>
+        <p data-i18n="s2_p">按品牌方设计生产（OEM）或联合开发（ODM），柔性排单、品质稳定。</p>
+        <ul>
+          <li data-i18n="s2_1">OEM：来图来样，严控公差与色差</li>
+          <li data-i18n="s2_2">ODM：结构 / 外观联合开发，模具共管</li>
+          <li data-i18n="s2_3">小单快反与大货排期双通道</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon">✓</div>
+        <h3><span data-i18n="s3_h">验货</span><span class="en">INSPECTION / QC</span></h3>
+        <p data-i18n="s3_p">独立质检团队，产前、产中、产终三段检验，报告中英双语。</p>
+        <ul>
+          <li data-i18n="s3_1">AQL 抽样标准，支持客户自定义标准</li>
+          <li data-i18n="s3_2">48 小时内出具双语验货报告（示例时效）</li>
+          <li data-i18n="s3_3">不合格批次整改跟踪与复检</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon">▣</div>
+        <h3><span data-i18n="s4_h">仓储物流</span><span class="en">WAREHOUSING & LOGISTICS</span></h3>
+        <p data-i18n="s4_p">中国仓 + 北美前置仓联动，B2B 大货与 DTC 小包双模式。</p>
+        <ul>
+          <li data-i18n="s4_1">贴标、换包装、组套等增值服务</li>
+          <li data-i18n="s4_2">海运 / 空运 / 快递多方案比价</li>
+          <li data-i18n="s4_3">库存水位预警与补货建议</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRAND SERVICES ============ -->
+<section class="block" id="brand">
+  <div class="container">
+    <div class="sec-head">
+      <div class="kicker" data-i18n="brand_kicker">BRAND SERVICES</div>
+      <h2 data-i18n="brand_h2">品牌服务</h2>
+      <p data-i18n="brand_sub">供应链之外，配套品牌在中国与北美市场的增长服务。</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">◉</div>
+        <h3><span data-i18n="b1_h">电商运营</span><span class="en">E-COMMERCE OPERATIONS</span></h3>
+        <p data-i18n="b1_p">覆盖主流电商平台的店铺运营服务，与供应链数据打通。</p>
+        <ul>
+          <li data-i18n="b1_1">店铺搭建、商品上架与页面优化</li>
+          <li data-i18n="b1_2">促销策划与库存协同，避免超卖断货</li>
+          <li data-i18n="b1_3">客服外包与售后流程承接</li>
+          <li data-i18n="b1_4">销售数据回传，反哺选品与备货</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon">◎</div>
+        <h3><span data-i18n="b2_h">数字营销</span><span class="en">DIGITAL MARKETING</span></h3>
+        <p data-i18n="b2_p">品效合一的数字营销，服务品牌在两地市场的声量与转化。</p>
+        <ul>
+          <li data-i18n="b2_1">社媒内容策划与 KOL/KOC 合作</li>
+          <li data-i18n="b2_2">效果广告投放与归因分析</li>
+          <li data-i18n="b2_3">品牌视觉与卖点提炼（多语言）</li>
+          <li data-i18n="b2_4">新品上市整合营销战役</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECH ============ -->
+<section class="block alt" id="tech">
+  <div class="container">
+    <div class="sec-head">
+      <div class="kicker" data-i18n="tech_kicker">TECHNOLOGY</div>
+      <h2 data-i18n="tech_h2">技术方案</h2>
+      <p data-i18n="tech_sub">数字化工具让跨洋协作像在同一个办公室。</p>
+    </div>
+    <div class="cards cols4">
+      <div class="card">
+        <div class="icon">◈</div>
+        <h3><span data-i18n="t1_h">供应链协同中台</span><span class="en">COLLABORATION HUB</span></h3>
+        <p data-i18n="t1_p">订单、样品、验货、物流状态一屏总览，品牌方随时可查。</p>
+      </div>
+      <div class="card">
+        <div class="icon">◊</div>
+        <h3><span data-i18n="t2_h">品质数据看板</span><span class="en">QUALITY DASHBOARD</span></h3>
+        <p data-i18n="t2_p">验货通过率、缺陷分布、工厂评分可视化，驱动持续改善。</p>
+      </div>
+      <div class="card">
+        <div class="icon">⬡</div>
+        <h3><span data-i18n="t3_h">全渠道对接</span><span class="en">OMNICHANNEL API</span></h3>
+        <p data-i18n="t3_p">与主流电商平台、ERP 的标准接口，订单与库存自动同步。</p>
+      </div>
+      <div class="card">
+        <div class="icon">✦</div>
+        <h3><span data-i18n="t4_h">文件与合规中心</span><span class="en">COMPLIANCE CENTER</span></h3>
+        <p data-i18n="t4_p">工艺档案、检测报告、认证文件集中管理，随取随用。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARKETS ============ -->
+<section class="block" id="markets">
+  <div class="container">
+    <div class="sec-head">
+      <div class="kicker" data-i18n="mk_kicker">NORTH AMERICA · CHINA</div>
+      <h2 data-i18n="mk_h2">北美 · 中国双市场</h2>
+      <p data-i18n="mk_sub">一边是品牌与市场，一边是制造与供应链——我们站在中间。</p>
+    </div>
+    <div class="markets">
+      <div class="market">
+        <div class="m-head na"><span data-i18n="mk_na_h">北美市场</span><small data-i18n="mk_na_s">NORTH AMERICA — 品牌侧</small></div>
+        <ul>
+          <li data-i18n="mk_na_1">英语母语商务团队，北美时区响应</li>
+          <li data-i18n="mk_na_2">熟悉北美市场准入与合规要求（示例表述）</li>
+          <li data-i18n="mk_na_3">前置仓支持 DTC 与 B2B 快速交付</li>
+          <li data-i18n="mk_na_4">本地退货与售后协同</li>
+        </ul>
+      </div>
+      <div class="market">
+        <div class="m-head cn"><span data-i18n="mk_cn_h">中国供应链</span><small data-i18n="mk_cn_s">CHINA — 制造侧</small></div>
+        <ul>
+          <li data-i18n="mk_cn_1">华南 / 华东制造集群深度合作</li>
+          <li data-i18n="mk_cn_2">自有打样中心与驻厂质检团队</li>
+          <li data-i18n="mk_cn_3">原材料与工艺资源快速调动</li>
+          <li data-i18n="mk_cn_4">出运前全检，问题不出厂</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="block alt" id="contact">
+  <div class="container">
+    <div class="sec-head">
+      <div class="kicker" data-i18n="ct_kicker">CONTACT</div>
+      <h2 data-i18n="ct_h2">联系我们</h2>
+      <p data-i18n="ct_sub">告诉我们您的产品想法，获取打样与报价方案。</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3 data-i18n="ct_info_h">联系方式</h3>
+        <p><strong data-i18n="ct_office_cn">中国办公室（示例）</strong><br><span data-i18n="ct_addr_cn">广东省广州市 · 示例地址</span></p>
+        <p><strong data-i18n="ct_office_na">北美办公室（示例）</strong><br><span data-i18n="ct_addr_na">Los Angeles, CA · 示例地址</span></p>
+        <p><span data-i18n="ct_email_l">商务邮箱</span>：info@example.com</p>
+        <p><span data-i18n="ct_hours_l">服务时间</span>：<span data-i18n="ct_hours">中美双时区覆盖 · 示例</span></p>
+        <p class="note" data-i18n="ct_note">注：联系方式为占位示例，正式上线前请替换为真实信息。</p>
+      </div>
+      <div class="contact-card form">
+        <h3 data-i18n="ct_form_h">获取报价</h3>
+        <input id="f-name" data-i18n-ph="ct_ph_name" placeholder="您的姓名">
+        <input id="f-mail" data-i18n-ph="ct_ph_mail" placeholder="邮箱">
+        <input id="f-prod" data-i18n-ph="ct_ph_prod" placeholder="产品类目（如：家居收纳 / 服装）">
+        <textarea id="f-msg" data-i18n-ph="ct_ph_msg" placeholder="需求描述：打样 / OEM / 验货…"></textarea>
+        <button class="btn btn-red" onclick="submitForm()" data-i18n="ct_submit">提交需求</button>
+        <p class="note" data-i18n="ct_form_note">演示站点：表单仅做本地校验，不会发送到任何服务器。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <h4>桥链供应链 BRIDGELINK</h4>
+        <p data-i18n="ft_desc">连接北美品牌与中国供应链：打样 · OEM/ODM · 验货 · 仓储物流。</p>
+        <p style="margin-top:10px;color:#777" data-i18n="ft_demo">本网站为版式演示，所有公司名称、数据、联系方式均为示例。</p>
+      </div>
+      <div>
+        <h4 data-i18n="ft_svc">服务</h4>
+        <a href="#supply" data-i18n="nav_supply">供应链服务</a>
+        <a href="#brand" data-i18n="nav_brand">品牌服务</a>
+        <a href="#tech" data-i18n="nav_tech">技术方案</a>
+      </div>
+      <div>
+        <h4 data-i18n="ft_co">公司</h4>
+        <a href="#about" data-i18n="nav_about">关于我们</a>
+        <a href="#markets" data-i18n="nav_markets">北美 · 中国</a>
+        <a href="#contact" data-i18n="nav_contact">联系我们</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 桥链供应链 BRIDGELINK · <span data-i18n="ft_demo2">演示站点</span></span>
+      <span><a href="#top" onclick="setLang('zh')" style="margin-right:12px">中文</a><a href="#top" onclick="setLang('en')">English</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const I18N = {
+zh:{
+nav_about:"关于我们",nav_supply:"供应链服务",nav_brand:"品牌服务",nav_tech:"技术方案",nav_markets:"北美 · 中国",nav_contact:"联系我们",
+hero_h1:"连接北美品牌与中国供应链",hero_h1_en:"Connecting North American Brands with China's Supply Chain",
+hero_lead:"打样 · OEM/ODM · 验货 · 仓储物流一站式服务，为品牌客户提供从样品到交付的全链路供应链支持。",
+hero_cta1:"获取报价",hero_cta2:"了解服务",
+stat1_num:"500+",stat1_lbl:"合作工厂",stat2_num:"20万+",stat2_lbl:"年打样件数",stat3_num:"99.2%",stat3_lbl:"验货一次通过率",stat4_num:"3万㎡",stat4_lbl:"仓储面积",tag_demo:"示例数据",
+about_kicker:"ABOUT US",about_h2:"关于我们",about_sub:"专注服务品牌客户的供应链公司，打通「北美市场需求 — 中国制造能力」。",
+about_p1:"桥链供应链是一家面向北美与中国市场的品牌供应链服务商（品牌名为示例）。我们为时尚、快消、家居、3C 等行业的品牌客户提供打样、OEM/ODM、验货、仓储物流一站式服务，并配套电商运营与数字营销支持。",
+about_p2:"我们在中国华南、华东布局样品中心与质检团队，在北美设立商务与客服窗口，让品牌方用母语沟通、用本地时区对接，而生产与品控扎根中国制造集群。",
+about_c1:"双语团队：中英双语项目经理全程跟进",about_c2:"全品类覆盖：服装、家居、快消、3C 及定制类目",about_c3:"合规保障：验货标准对齐北美市场准入要求",about_c4:"数字化协同：订单、样品、验货报告全程线上可查",
+about_note:"注：本页公司名称、数据、客户描述均为示例，用于网站版式演示，不构成商业承诺。",
+about_card_h:"为什么选择我们",about_card_1:"品牌客户专属服务流程，非散单模式",about_card_2:"打样—大货—验货—出运闭环管理",about_card_3:"北美时区客服，响应无时差",about_card_4:"问题批次先行赔付机制（示例条款）",
+supply_kicker:"SUPPLY CHAIN SERVICES",supply_h2:"供应链服务",supply_sub:"从样品到交付，为品牌客户提供全链路供应链支持。",
+s1_h:"打样",s1_p:"极速打样中心，品牌方提供图纸或参考样，我们输出可量产的确认样。",s1_1:"常规品类 7 天出样（示例时效）",s1_2:"面料 / 材料 / 工艺多方案比对",s1_3:"样品确认单 + 工艺档案留存",
+s2_h:"OEM / ODM",s2_p:"按品牌方设计生产（OEM）或联合开发（ODM），柔性排单、品质稳定。",s2_1:"OEM：来图来样，严控公差与色差",s2_2:"ODM：结构 / 外观联合开发，模具共管",s2_3:"小单快反与大货排期双通道",
+s3_h:"验货",s3_p:"独立质检团队，产前、产中、产终三段检验，报告中英双语。",s3_1:"AQL 抽样标准，支持客户自定义标准",s3_2:"48 小时内出具双语验货报告（示例时效）",s3_3:"不合格批次整改跟踪与复检",
+s4_h:"仓储物流",s4_p:"中国仓 + 北美前置仓联动，B2B 大货与 DTC 小包双模式。",s4_1:"贴标、换包装、组套等增值服务",s4_2:"海运 / 空运 / 快递多方案比价",s4_3:"库存水位预警与补货建议",
+brand_kicker:"BRAND SERVICES",brand_h2:"品牌服务",brand_sub:"供应链之外，配套品牌在中国与北美市场的增长服务。",
+b1_h:"电商运营",b1_p:"覆盖主流电商平台的店铺运营服务，与供应链数据打通。",b1_1:"店铺搭建、商品上架与页面优化",b1_2:"促销策划与库存协同，避免超卖断货",b1_3:"客服外包与售后流程承接",b1_4:"销售数据回传，反哺选品与备货",
+b2_h:"数字营销",b2_p:"品效合一的数字营销，服务品牌在两地市场的声量与转化。",b2_1:"社媒内容策划与 KOL/KOC 合作",b2_2:"效果广告投放与归因分析",b2_3:"品牌视觉与卖点提炼（多语言）",b2_4:"新品上市整合营销战役",
+tech_kicker:"TECHNOLOGY",tech_h2:"技术方案",tech_sub:"数字化工具让跨洋协作像在同一个办公室。",
+t1_h:"供应链协同中台",t1_p:"订单、样品、验货、物流状态一屏总览，品牌方随时可查。",
+t2_h:"品质数据看板",t2_p:"验货通过率、缺陷分布、工厂评分可视化，驱动持续改善。",
+t3_h:"全渠道对接",t3_p:"与主流电商平台、ERP 的标准接口，订单与库存自动同步。",
+t4_h:"文件与合规中心",t4_p:"工艺档案、检测报告、认证文件集中管理，随取随用。",
+mk_kicker:"NORTH AMERICA · CHINA",mk_h2:"北美 · 中国双市场",mk_sub:"一边是品牌与市场，一边是制造与供应链——我们站在中间。",
+mk_na_h:"北美市场",mk_na_s:"NORTH AMERICA — 品牌侧",mk_na_1:"英语母语商务团队，北美时区响应",mk_na_2:"熟悉北美市场准入与合规要求（示例表述）",mk_na_3:"前置仓支持 DTC 与 B2B 快速交付",mk_na_4:"本地退货与售后协同",
+mk_cn_h:"中国供应链",mk_cn_s:"CHINA — 制造侧",mk_cn_1:"华南 / 华东制造集群深度合作",mk_cn_2:"自有打样中心与驻厂质检团队",mk_cn_3:"原材料与工艺资源快速调动",mk_cn_4:"出运前全检，问题不出厂",
+ct_kicker:"CONTACT",ct_h2:"联系我们",ct_sub:"告诉我们您的产品想法，获取打样与报价方案。",
+ct_info_h:"联系方式",ct_office_cn:"中国办公室（示例）",ct_addr_cn:"广东省广州市 · 示例地址",ct_office_na:"北美办公室（示例）",ct_addr_na:"Los Angeles, CA · 示例地址",
+ct_email_l:"商务邮箱",ct_hours_l:"服务时间",ct_hours:"中美双时区覆盖 · 示例",ct_note:"注：联系方式为占位示例，正式上线前请替换为真实信息。",
+ct_form_h:"获取报价",ct_submit:"提交需求",ct_form_note:"演示站点：表单仅做本地校验，不会发送到任何服务器。",
+ft_desc:"连接北美品牌与中国供应链：打样 · OEM/ODM · 验货 · 仓储物流。",ft_demo:"本网站为版式演示，所有公司名称、数据、联系方式均为示例。",
+ft_svc:"服务",ft_co:"公司",ft_demo2:"演示站点",
+ct_ph_name:"您的姓名",ct_ph_mail:"邮箱",ct_ph_prod:"产品类目（如：家居收纳 / 服装）",ct_ph_msg:"需求描述：打样 / OEM / 验货…",
+form_ok:"已收到您的需求（演示模式，未实际发送）。",form_need:"请填写姓名与邮箱。"
+},
+en:{
+nav_about:"About",nav_supply:"Supply Chain",nav_brand:"Brand Services",nav_tech:"Technology",nav_markets:"NA · China",nav_contact:"Contact",
+hero_h1:"Connecting North American Brands with China's Supply Chain",hero_h1_en:"",
+hero_lead:"One-stop sampling, OEM/ODM, inspection, warehousing & logistics — end-to-end supply chain support for brand clients, from sample to delivery.",
+hero_cta1:"Get a Quote",hero_cta2:"Our Services",
+stat1_num:"500+",stat1_lbl:"Partner Factories",stat2_num:"200K+",stat2_lbl:"Samples / Year",stat3_num:"99.2%",stat3_lbl:"First-Pass Inspection Rate",stat4_num:"30K㎡",stat4_lbl:"Warehouse Space",tag_demo:"Sample data",
+about_kicker:"ABOUT US",about_h2:"About Us",about_sub:"A supply chain company built for brand clients — bridging North American demand with Chinese manufacturing.",
+about_p1:"BridgeLink is a brand-focused supply chain service provider for the North American and China markets (brand name shown as a placeholder). We serve brands in fashion, FMCG, home goods and 3C with sampling, OEM/ODM, inspection, warehousing and logistics, plus e-commerce operations and digital marketing support.",
+about_p2:"We run sampling centers and QC teams across South and East China, with business and support windows in North America — so brands communicate in their own language and time zone while production and quality stay rooted in China's manufacturing clusters.",
+about_c1:"Bilingual teams: dedicated CN/EN project managers",about_c2:"All categories: apparel, home, FMCG, 3C and custom",about_c3:"Compliance: inspection aligned with NA market requirements",about_c4:"Digital: orders, samples and reports tracked online",
+about_note:"Note: company name, figures and client descriptions on this page are placeholders for layout demonstration only.",
+about_card_h:"Why BridgeLink",about_card_1:"Brand-client workflows, not one-off orders",about_card_2:"Closed loop: sample → bulk → inspection → shipment",about_card_3:"NA time-zone support, no lag",about_card_4:"Advance compensation for failed batches (sample terms)",
+supply_kicker:"SUPPLY CHAIN SERVICES",supply_h2:"Supply Chain Services",supply_sub:"From sample to delivery — full-chain support for brand clients.",
+s1_h:"Sampling",s1_p:"Rapid sampling center: send drawings or reference samples, get production-ready confirmed samples.",s1_1:"7-day sampling for standard categories (sample lead time)",s1_2:"Multi-option fabric / material / process comparison",s1_3:"Sample approval sheets + process files archived",
+s2_h:"OEM / ODM",s2_p:"Build-to-print (OEM) or co-development (ODM) with flexible scheduling and stable quality.",s2_1:"OEM: your design, tight tolerance & color control",s2_2:"ODM: joint structure / appearance design, shared tooling",s2_3:"Fast-track small runs + bulk scheduling",
+s3_h:"Inspection",s3_p:"Independent QC team: pre-production, in-line and final inspections with bilingual reports.",s3_1:"AQL sampling, custom standards supported",s3_2:"Bilingual inspection report within 48h (sample lead time)",s3_3:"Corrective-action tracking and re-inspection",
+s4_h:"Warehousing & Logistics",s4_p:"China warehouse + NA forward warehouse; B2B bulk and DTC parcel modes.",s4_1:"Labeling, repackaging, kitting value-added services",s4_2:"Sea / air / express multi-quote comparison",s4_3:"Inventory alerts and replenishment advice",
+brand_kicker:"BRAND SERVICES",brand_h2:"Brand Services",brand_sub:"Beyond supply chain — growth services for brands in China and North America.",
+b1_h:"E-commerce Operations",b1_p:"Store operations across major marketplaces, connected with supply chain data.",b1_1:"Store setup, listing and page optimization",b1_2:"Promo planning synced with inventory",b1_3:"Outsourced customer service & after-sales",b1_4:"Sales data feeding back into sourcing",
+b2_h:"Digital Marketing",b2_p:"Performance-driven marketing for brand voice and conversion in both markets.",b2_1:"Social content and KOL/KOC partnerships",b2_2:"Performance ads with attribution",b2_3:"Multilingual brand visuals and messaging",b2_4:"Integrated launch campaigns",
+tech_kicker:"TECHNOLOGY",tech_h2:"Technology",tech_sub:"Digital tools that make trans-Pacific collaboration feel local.",
+t1_h:"Collaboration Hub",t1_p:"Orders, samples, inspections and logistics in one dashboard.",
+t2_h:"Quality Dashboard",t2_p:"Pass rates, defect distribution and factory scores visualized.",
+t3_h:"Omnichannel API",t3_p:"Standard integrations with marketplaces and ERPs.",
+t4_h:"Compliance Center",t4_p:"Process files, test reports and certificates in one place.",
+mk_kicker:"NORTH AMERICA · CHINA",mk_h2:"Two Markets: NA · China",mk_sub:"Brands and markets on one side, manufacturing on the other — we stand in between.",
+mk_na_h:"North America",mk_na_s:"NORTH AMERICA — brand side",mk_na_1:"Native-English business team, NA time-zone support",mk_na_2:"Familiar with NA market access & compliance (sample wording)",mk_na_3:"Forward warehouse for fast DTC & B2B delivery",mk_na_4:"Local returns & after-sales coordination",
+mk_cn_h:"China Supply Chain",mk_cn_s:"CHINA — manufacturing side",mk_cn_1:"Deep ties with South / East China clusters",mk_cn_2:"In-house sampling center & on-site QC teams",mk_cn_3:"Fast mobilization of materials & processes",mk_cn_4:"Full pre-shipment inspection — issues never leave the factory",
+ct_kicker:"CONTACT",ct_h2:"Contact Us",ct_sub:"Tell us your product idea and get a sampling & quotation plan.",
+ct_info_h:"Contact",ct_office_cn:"China Office (sample)",ct_addr_cn:"Guangzhou, Guangdong · sample address",ct_office_na:"North America Office (sample)",ct_addr_na:"Los Angeles, CA · sample address",
+ct_email_l:"Business email",ct_hours_l:"Hours",ct_hours:"CN + US time-zone coverage · sample",ct_note:"Note: contact details are placeholders — replace before launch.",
+ct_form_h:"Get a Quote",ct_submit:"Submit Request",ct_form_note:"Demo site: the form only validates locally and sends nothing.",
+ft_desc:"Connecting North American brands with China's supply chain: sampling · OEM/ODM · inspection · warehousing & logistics.",ft_demo:"Layout demo — company name, figures and contact details are placeholders.",
+ft_svc:"Services",ft_co:"Company",ft_demo2:"Demo site",
+ct_ph_name:"Your name",ct_ph_mail:"Email",ct_ph_prod:"Product category (e.g. home storage / apparel)",ct_ph_msg:"Describe your needs: sampling / OEM / inspection…",
+form_ok:"Request received (demo mode — nothing was sent).",form_need:"Please fill in your name and email."
+}};
+let LANG = localStorage.getItem('bl_lang') || 'zh';
+function setLang(l){
+  LANG = l; localStorage.setItem('bl_lang', l);
+  document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    if(I18N[l][k] !== undefined) el.textContent = I18N[l][k];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{
+    const k = el.getAttribute('data-i18n-ph');
+    if(I18N[l][k] !== undefined) el.placeholder = I18N[l][k];
+  });
+  document.getElementById('btn-zh').classList.toggle('active', l==='zh');
+  document.getElementById('btn-en').classList.toggle('active', l==='en');
+  document.title = l==='zh' ? '桥链供应链 BRIDGELINK — 北美 · 中国品牌供应链服务' : 'BRIDGELINK — Supply Chain Services for North America · China';
+}
+function submitForm(){
+  const n = document.getElementById('f-name').value.trim();
+  const m = document.getElementById('f-mail').value.trim();
+  alert((n && m) ? I18N[LANG].form_ok : I18N[LANG].form_need);
+}
+document.addEventListener('DOMContentLoaded', ()=> setLang(LANG));
+</script>
+</body>
+</html>

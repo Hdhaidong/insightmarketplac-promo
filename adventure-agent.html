@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adventure Agent 桌面客户端 · 282 个 Skill 本地运行 | insightmarketplac</title>
+<meta name="description" content="Adventure Agent 桌面客户端：Electron 桌面应用，内置 282 个平台 Skill（6 平台 × 47 能力），数据存本地 SQLite，Token 经系统级加密保管，离线可用。">
+<meta name="keywords" content="Adventure Agent, 桌面客户端, Electron, Skill, Wayfair, Walmart, Whatnot, Amazon, TikTok, 小红书, 本地数据">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Adventure Agent 桌面客户端 · 282 个 Skill">
+<meta property="og:description" content="6 平台 × 47 能力 = 282 个 Skill 本地运行，数据不出本机，Token 系统级加密。">
+<meta property="og:site_name" content="insightmarketplac">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Adventure Agent 桌面客户端 · 282 个 Skill">
+<meta name="twitter:description" content="6 平台 × 47 能力 = 282 个 Skill 本地运行，数据不出本机，Token 系统级加密。">
+<link rel="canonical" href="https://hdhaidong.github.io/insightmarketplac-promo/adventure-agent.html">
+<meta name="robots" content="index, follow">
+<style>
+:root{--bg:#000;--bg-2:#0A0A0A;--ink:#F2EEE6;--ink-dim:#A7ADB8;--ink-faint:#6E7683;--accent:#E8A33D;--accent-dim:rgba(232,163,61,.12);--hairline:rgba(242,238,230,.12);--hairline-soft:rgba(242,238,230,.07);--sans:"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;--mono:"SF Mono",Consolas,monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.75}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.top{border-bottom:1px solid var(--hairline-soft);background:rgba(0,0,0,.92);position:sticky;top:0;z-index:40;backdrop-filter:blur(10px)}
+.top-in{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand .mk{font-weight:700;font-size:1.1rem}.brand .mk em{font-style:normal;color:var(--accent)}
+.brand .sub{font-size:.72rem;color:var(--ink-faint);letter-spacing:.08em;font-family:var(--mono)}
+nav{display:flex;gap:20px;flex-wrap:wrap;align-items:center}nav a{color:var(--ink-dim);font-size:.9rem}nav a:hover{color:var(--accent);text-decoration:none}
+.btn{display:inline-block;padding:11px 24px;border-radius:9px;font-weight:600;font-size:.92rem}
+.btn-p{background:var(--accent);color:#141310}.btn-p:hover{background:#F0B355;text-decoration:none}
+.btn-s{border:1px solid var(--hairline);color:var(--ink)}.btn-s:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.hero{padding:88px 0 64px;background:radial-gradient(1200px 500px at 70% -10%,rgba(232,163,61,.10),transparent 60%),var(--bg)}
+.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+h1{font-size:clamp(1.9rem,4.4vw,3.1rem);line-height:1.22;font-weight:700;letter-spacing:-.01em}
+h1 .hl{color:var(--accent)}
+.hero-sub{color:var(--ink-dim);font-size:1.06rem;max-width:720px;margin:20px 0 30px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 28px}
+.chips span{border:1px solid var(--hairline);border-radius:999px;padding:4px 14px;font-size:.78rem;color:var(--ink-dim)}
+.chips span.g{border-color:rgba(232,163,61,.4);color:var(--accent)}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.dlbox{margin-top:28px;border:1px solid var(--hairline);border-radius:14px;background:var(--bg-2);padding:22px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.dlbox .meta{font-family:var(--mono);font-size:.78rem;color:var(--ink-faint)}
+.dlbox .meta b{color:var(--ink-dim)}
+section{padding:72px 0;border-top:1px solid var(--hairline-soft)}
+.sec-head{margin-bottom:40px;max-width:680px}
+.sec-head .eyebrow{margin-bottom:10px}
+h2{font-size:clamp(1.5rem,3.4vw,2.1rem);letter-spacing:-.01em;line-height:1.3}
+.sec-sub{color:var(--ink-dim);margin-top:12px;font-size:.98rem}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:820px){.grid3,.grid2{grid-template-columns:1fr}}
+.card{border:1px solid var(--hairline-soft);border-radius:14px;padding:26px 24px;background:var(--bg-2)}
+.card .tno{font-family:var(--mono);font-size:.64rem;color:var(--accent);letter-spacing:.18em}
+.card h3{font-size:1.05rem;margin:12px 0 8px}
+.card p{font-size:.86rem;color:var(--ink-dim)}
+.aud{border:1px solid var(--hairline);border-radius:14px;padding:28px;background:var(--bg-2)}
+.aud h3{color:var(--accent);font-size:1rem;margin-bottom:10px}
+.aud p,.aud li{font-size:.9rem;color:var(--ink-dim)}
+.aud ul{padding-left:20px;margin-top:8px}.aud li{margin-bottom:6px}
+.final{text-align:center;padding:88px 0}
+.final h2{margin-bottom:14px}.final p{color:var(--ink-dim);margin-bottom:28px}
+footer{border-top:1px solid var(--hairline-soft);padding:36px 0;color:var(--ink-faint);font-size:.82rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <div class="brand">
+      <div class="mk">insight<em>marketplac</em></div>
+      <div class="sub">ADVENTURE AGENT · 桌面客户端</div>
+    </div>
+    <nav>
+      <a href="./">总览</a>
+      <a href="agent.html">Agent 阵容</a>
+      <a href="adventure-market.html">能力市场 →</a>
+      <a href="adventure-data.html">数据平台 →</a>
+      <a href="#download" class="btn btn-p" style="padding:8px 18px">下载客户端</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Desktop Client · 桌面端</div>
+    <h1>Adventure <span class="hl">Agent</span><br>282 个 Skill，装进口袋的工作台</h1>
+    <p class="hero-sub">桌面级 AI 客户端：6 大平台 × 47 项能力 = 282 个 Skill 全部内置，打开即用。数据存在本机、Token 经系统级加密保管，不上云、不泄露，离线也能干活。</p>
+    <div class="chips">
+      <span class="g">282 个 Skill</span><span>6 大平台</span><span>数据存本机</span><span>Token 系统级加密</span><span>Linux AppImage</span>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-p" href="#download">下载客户端</a>
+      <a class="btn btn-s" href="agent.html">浏览 Skill 阵容</a>
+    </div>
+    <div class="dlbox" id="download">
+      <div>
+        <div style="font-weight:700;margin-bottom:6px">adventure-retail 桌面客户端 v0.1.6-alpha.3</div>
+        <div class="meta">Linux AppImage · <b>929 MB</b> · 含 282 个 Skill · SHA256 校验通过</div>
+      </div>
+      <a class="btn btn-p" href="https://github.com/Hdhaidong/insightmarketplac-promo/releases/download/adventure-retail-v0.1.6-alpha.3/adventure-retail-0.1.6-alpha.3-r11.AppImage">⬇ 下载 AppImage</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Features</div>
+      <h2>282 个 Skill，6 平台全覆盖</h2>
+      <p class="sec-sub">47 项能力 × 6 大平台，每个平台 47 个专属 Skill：Wayfair 的品牌拆解只懂 Wayfair，TikTok 的内容拆解只懂 TikTok。</p>
+    </div>
+    <div class="grid3">
+      <div class="card">
+        <span class="tno">SKILL · 282</span>
+        <h3>平台专属 Skill</h3>
+        <p>每个 Skill 按平台定制：同一能力在不同平台有不同的数据口径与业务侧重，客户端只展示当前平台相关的 Skill。</p>
+      </div>
+      <div class="card">
+        <span class="tno">LOCAL · 本地优先</span>
+        <h3>数据存在本机</h3>
+        <p>运行数据、配置、记录全部存放在本地数据库，不上传云端。你的业务数据只属于你自己。</p>
+      </div>
+      <div class="card">
+        <span class="tno">SECURE · 安全</span>
+        <h3>Token 系统级加密</h3>
+        <p>登录 Token 经操作系统级加密机制保管，不以明文落盘，换人、换机都带不走。</p>
+      </div>
+      <div class="card">
+        <span class="tno">OFFLINE · 离线</span>
+        <h3>离线可用</h3>
+        <p>核心能力本地运行，不依赖网络。弱网、出差、高铁上照样干活。</p>
+      </div>
+      <div class="card">
+        <span class="tno">PLUGIN · 插件化</span>
+        <h3>Skill 即插即用</h3>
+        <p>能力以 Skill 插件形态注册，按需加载。新增能力随版本更新推送，无需重装。</p>
+      </div>
+      <div class="card">
+        <span class="tno">CROSS · 双端</span>
+        <h3>网页端联动</h3>
+        <p>与网页版工作台能力对齐：在网页上跑过的能力，桌面端同样可用，体验一致。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Privacy</div>
+      <h2>你的数据，不出本机</h2>
+      <p class="sec-sub">三条隐私红线，写进产品设计里：</p>
+    </div>
+    <div class="grid3">
+      <div class="card">
+        <span class="tno">01</span>
+        <h3>数据本地存储</h3>
+        <p>所有业务数据、运行记录存放在本机数据库，不上传、不同步到任何服务器。</p>
+      </div>
+      <div class="card">
+        <span class="tno">02</span>
+        <h3>Token 加密保管</h3>
+        <p>账号 Token 经系统级加密存储，明文不出内存，保障账号安全。</p>
+      </div>
+      <div class="card">
+        <span class="tno">03</span>
+        <h3>不做数据分析</h3>
+        <p>客户端不收集、不分析你的业务数据，没有 BI、没有画像，只有你自己的工作台。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Who it's for</div>
+      <h2>适合这样的你</h2>
+    </div>
+    <div class="grid2">
+      <div class="aud">
+        <h3>💼 多平台卖家</h3>
+        <p>同时做几个平台：在一个客户端里切换平台工作台，282 个 Skill 按平台呈现，不用来回登录网页。</p>
+      </div>
+      <div class="aud">
+        <h3>🔒 在意数据安全</h3>
+        <p>业务数据敏感：数据存本机、Token 加密、不上云，用得放心。</p>
+      </div>
+      <div class="aud">
+        <h3>✈️ 经常出差 / 弱网环境</h3>
+        <p>网络不稳定：核心能力本地运行，离线也能拆解、分析、做方案。</p>
+      </div>
+      <div class="aud">
+        <h3>💻 Linux 用户</h3>
+        <ul>
+          <li>当前版本：Linux AppImage（929 MB）</li>
+          <li>下载即用，无需安装</li>
+          <li>SHA256 校验保障文件完整</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>把 <span style="color:var(--accent)">282 个 Skill</span> 装进口袋</h2>
+    <p>Adventure Agent 桌面客户端 v0.1.6-alpha.3 现已发布，免费下载。</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn btn-p" href="https://github.com/Hdhaidong/insightmarketplac-promo/releases/download/adventure-retail-v0.1.6-alpha.3/adventure-retail-0.1.6-alpha.3-r11.AppImage">⬇ 下载 AppImage（929 MB）</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>insightmarketplac · Adventure Agent 桌面客户端</div>
+    <div><a href="./">返回总览</a> · <a href="adventure-market.html">能力市场</a> · <a href="adventure-data.html">数据平台</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

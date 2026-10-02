@@ -1,0 +1,1682 @@
+[
+  {
+    "slug": "amazon",
+    "platform": "Amazon",
+    "platformCn": "亚马逊",
+    "country": "美国",
+    "en": "Free Amazon (the US) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费亚马逊（美国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "walmart",
+    "platform": "Walmart",
+    "platformCn": "沃尔玛",
+    "country": "美国",
+    "en": "Free Walmart (the US) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费沃尔玛（美国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "wayfair",
+    "platform": "Wayfair",
+    "platformCn": "Wayfair",
+    "country": "美国",
+    "en": "Free Wayfair (the US) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Wayfair（美国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "target",
+    "platform": "Target",
+    "platformCn": "Target",
+    "country": "美国",
+    "en": "Free Target (the US) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Target（美国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "homedepot",
+    "platform": "Home Depot",
+    "platformCn": "家得宝",
+    "country": "美国",
+    "en": "Free Home Depot (the US) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费家得宝（美国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "lowes",
+    "platform": "Lowe's",
+    "platformCn": "劳氏",
+    "country": "美国",
+    "en": "Free Lowe's (the US) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费劳氏（美国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ebay",
+    "platform": "eBay",
+    "platformCn": "eBay",
+    "country": "美国",
+    "en": "Free eBay (the US) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费eBay（美国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "etsy",
+    "platform": "Etsy",
+    "platformCn": "Etsy",
+    "country": "美国",
+    "en": "Free Etsy (the US) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Etsy（美国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "bestbuy",
+    "platform": "Best Buy",
+    "platformCn": "百思买",
+    "country": "美国",
+    "en": "Free Best Buy (the US) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费百思买（美国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "costco",
+    "platform": "Costco",
+    "platformCn": "好市多",
+    "country": "美国",
+    "en": "Free Costco (the US) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费好市多（美国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-at",
+    "platform": "Amazon Austria",
+    "platformCn": "亚马逊奥地利",
+    "country": "奥地利",
+    "en": "Free Amazon Austria (Austria) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费亚马逊奥地利（奥地利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "zalando-at",
+    "platform": "Zalando",
+    "platformCn": "Zalando 奥地利",
+    "country": "奥地利",
+    "en": "Free Zalando (Austria) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Zalando 奥地利（奥地利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shopping-at",
+    "platform": "shöpping",
+    "platformCn": "shöpping 奥地利",
+    "country": "奥地利",
+    "en": "Free shöpping (Austria) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费shöpping 奥地利（奥地利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "willhaben-at",
+    "platform": "willhaben",
+    "platformCn": "willhaben 奥地利",
+    "country": "奥地利",
+    "en": "Free willhaben (Austria) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费willhaben 奥地利（奥地利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "mediamarkt-at",
+    "platform": "MediaMarkt",
+    "platformCn": "MediaMarkt 奥地利",
+    "country": "奥地利",
+    "en": "Free MediaMarkt (Austria) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费MediaMarkt 奥地利（奥地利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "vinted-at",
+    "platform": "Vinted",
+    "platformCn": "Vinted 奥地利",
+    "country": "奥地利",
+    "en": "Free Vinted (Austria) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Vinted 奥地利（奥地利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "aliexpress-at",
+    "platform": "AliExpress",
+    "platformCn": "速卖通奥地利",
+    "country": "奥地利",
+    "en": "Free AliExpress (Austria) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费速卖通奥地利（奥地利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-at",
+    "platform": "Temu",
+    "platformCn": "Temu 奥地利",
+    "country": "奥地利",
+    "en": "Free Temu (Austria) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu 奥地利（奥地利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shein-at",
+    "platform": "Shein",
+    "platformCn": "Shein 奥地利",
+    "country": "奥地利",
+    "en": "Free Shein (Austria) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Shein 奥地利（奥地利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "xxxlutz-at",
+    "platform": "XXXLutz",
+    "platformCn": "XXXLutz 奥地利",
+    "country": "奥地利",
+    "en": "Free XXXLutz (Austria) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费XXXLutz 奥地利（奥地利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "bol-be",
+    "platform": "bol",
+    "platformCn": "bol 比利时",
+    "country": "比利时",
+    "en": "Free bol (Belgium) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费bol 比利时（比利时）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-be",
+    "platform": "Amazon Belgium",
+    "platformCn": "亚马逊比利时",
+    "country": "比利时",
+    "en": "Free Amazon Belgium (Belgium) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费亚马逊比利时（比利时）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "vinted-be",
+    "platform": "Vinted",
+    "platformCn": "Vinted 比利时",
+    "country": "比利时",
+    "en": "Free Vinted (Belgium) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Vinted 比利时（比利时）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "zalando-be",
+    "platform": "Zalando",
+    "platformCn": "Zalando 比利时",
+    "country": "比利时",
+    "en": "Free Zalando (Belgium) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Zalando 比利时（比利时）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "mediamarkt-be",
+    "platform": "MediaMarkt",
+    "platformCn": "MediaMarkt 比利时",
+    "country": "比利时",
+    "en": "Free MediaMarkt (Belgium) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费MediaMarkt 比利时（比利时）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "decathlon-be",
+    "platform": "Decathlon",
+    "platformCn": "迪卡侬比利时",
+    "country": "比利时",
+    "en": "Free Decathlon (Belgium) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费迪卡侬比利时（比利时）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "2dehands-be",
+    "platform": "2dehands",
+    "platformCn": "2dehands 比利时",
+    "country": "比利时",
+    "en": "Free 2dehands (Belgium) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费2dehands 比利时（比利时）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "aliexpress-be",
+    "platform": "AliExpress",
+    "platformCn": "速卖通比利时",
+    "country": "比利时",
+    "en": "Free AliExpress (Belgium) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费速卖通比利时（比利时）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-be",
+    "platform": "Temu",
+    "platformCn": "Temu 比利时",
+    "country": "比利时",
+    "en": "Free Temu (Belgium) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu 比利时（比利时）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shein-be",
+    "platform": "Shein",
+    "platformCn": "Shein 比利时",
+    "country": "比利时",
+    "en": "Free Shein (Belgium) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Shein 比利时（比利时）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "galaxus-ch",
+    "platform": "Galaxus",
+    "platformCn": "Galaxus 瑞士",
+    "country": "瑞士",
+    "en": "Free Galaxus (Switzerland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Galaxus 瑞士（瑞士）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "zalando-ch",
+    "platform": "Zalando",
+    "platformCn": "Zalando 瑞士",
+    "country": "瑞士",
+    "en": "Free Zalando (Switzerland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Zalando 瑞士（瑞士）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "digitec-ch",
+    "platform": "Digitec",
+    "platformCn": "Digitec 瑞士",
+    "country": "瑞士",
+    "en": "Free Digitec (Switzerland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Digitec 瑞士（瑞士）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-ch",
+    "platform": "Temu",
+    "platformCn": "Temu 瑞士",
+    "country": "瑞士",
+    "en": "Free Temu (Switzerland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu 瑞士（瑞士）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-ch",
+    "platform": "Amazon",
+    "platformCn": "Amazon 瑞士",
+    "country": "瑞士",
+    "en": "Free Amazon (Switzerland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Amazon 瑞士（瑞士）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ricardo-ch",
+    "platform": "Ricardo",
+    "platformCn": "Ricardo 瑞士",
+    "country": "瑞士",
+    "en": "Free Ricardo (Switzerland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Ricardo 瑞士（瑞士）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "aliexpress-ch",
+    "platform": "AliExpress",
+    "platformCn": "速卖通 瑞士",
+    "country": "瑞士",
+    "en": "Free AliExpress (Switzerland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费速卖通 瑞士（瑞士）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shein-ch",
+    "platform": "Shein",
+    "platformCn": "Shein 瑞士",
+    "country": "瑞士",
+    "en": "Free Shein (Switzerland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Shein 瑞士（瑞士）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ebay-ch",
+    "platform": "eBay",
+    "platformCn": "eBay 瑞士",
+    "country": "瑞士",
+    "en": "Free eBay (Switzerland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费eBay 瑞士（瑞士）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "tutti-ch",
+    "platform": "Tutti.ch",
+    "platformCn": "Tutti.ch 瑞士",
+    "country": "瑞士",
+    "en": "Free Tutti.ch (Switzerland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Tutti.ch 瑞士（瑞士）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "alza-cz",
+    "platform": "Alza",
+    "platformCn": "Alza 捷克",
+    "country": "捷克",
+    "en": "Free Alza (Czechia) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Alza 捷克（捷克）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "allegro-cz",
+    "platform": "Allegro",
+    "platformCn": "Allegro 捷克",
+    "country": "捷克",
+    "en": "Free Allegro (Czechia) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Allegro 捷克（捷克）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "heureka-cz",
+    "platform": "Heureka",
+    "platformCn": "Heureka 捷克",
+    "country": "捷克",
+    "en": "Free Heureka (Czechia) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Heureka 捷克（捷克）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "kaufland-cz",
+    "platform": "Kaufland",
+    "platformCn": "Kaufland 捷克",
+    "country": "捷克",
+    "en": "Free Kaufland (Czechia) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Kaufland 捷克（捷克）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "aukro-cz",
+    "platform": "Aukro",
+    "platformCn": "Aukro 捷克",
+    "country": "捷克",
+    "en": "Free Aukro (Czechia) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Aukro 捷克（捷克）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-cz",
+    "platform": "Temu",
+    "platformCn": "Temu 捷克",
+    "country": "捷克",
+    "en": "Free Temu (Czechia) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu 捷克（捷克）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-cz",
+    "platform": "Amazon",
+    "platformCn": "Amazon 捷克（跨境）",
+    "country": "捷克",
+    "en": "Free Amazon (Czechia) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Amazon 捷克（跨境）（捷克）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "aliexpress-cz",
+    "platform": "AliExpress",
+    "platformCn": "AliExpress 捷克",
+    "country": "捷克",
+    "en": "Free AliExpress (Czechia) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费AliExpress 捷克（捷克）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ebay-cz",
+    "platform": "eBay",
+    "platformCn": "eBay 捷克",
+    "country": "捷克",
+    "en": "Free eBay (Czechia) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费eBay 捷克（捷克）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shein-cz",
+    "platform": "SHEIN",
+    "platformCn": "SHEIN 捷克",
+    "country": "捷克",
+    "en": "Free SHEIN (Czechia) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费SHEIN 捷克（捷克）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-de",
+    "platform": "Amazon.de",
+    "platformCn": "亚马逊德国",
+    "country": "德国",
+    "en": "Free Amazon.de (Germany) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费亚马逊德国（德国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ebay-de",
+    "platform": "eBay.de",
+    "platformCn": "易贝德国",
+    "country": "德国",
+    "en": "Free eBay.de (Germany) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费易贝德国（德国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "otto-de",
+    "platform": "Otto",
+    "platformCn": "奥托",
+    "country": "德国",
+    "en": "Free Otto (Germany) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费奥托（德国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "zalando-de",
+    "platform": "Zalando",
+    "platformCn": "Zalando德国",
+    "country": "德国",
+    "en": "Free Zalando (Germany) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Zalando德国（德国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "kaufland-de",
+    "platform": "Kaufland.de",
+    "platformCn": "Kaufland德国",
+    "country": "德国",
+    "en": "Free Kaufland.de (Germany) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Kaufland德国（德国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "mediamarkt-de",
+    "platform": "MediaMarkt",
+    "platformCn": "MediaMarkt德国",
+    "country": "德国",
+    "en": "Free MediaMarkt (Germany) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费MediaMarkt德国（德国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "about-you-de",
+    "platform": "ABOUT YOU",
+    "platformCn": "ABOUT YOU",
+    "country": "德国",
+    "en": "Free ABOUT YOU (Germany) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费ABOUT YOU（德国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-de",
+    "platform": "Temu",
+    "platformCn": "Temu德国",
+    "country": "德国",
+    "en": "Free Temu (Germany) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu德国（德国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "etsy-de",
+    "platform": "Etsy",
+    "platformCn": "Etsy德国",
+    "country": "德国",
+    "en": "Free Etsy (Germany) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Etsy德国（德国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "manomano-de",
+    "platform": "ManoMano",
+    "platformCn": "ManoMano德国",
+    "country": "德国",
+    "en": "Free ManoMano (Germany) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费ManoMano德国（德国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "zalando-dk",
+    "platform": "Zalando",
+    "platformCn": "Zalando 丹麦",
+    "country": "丹麦",
+    "en": "Free Zalando (Denmark) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Zalando 丹麦（丹麦）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "vinted-dk",
+    "platform": "Vinted",
+    "platformCn": "Vinted 丹麦",
+    "country": "丹麦",
+    "en": "Free Vinted (Denmark) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Vinted 丹麦（丹麦）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-dk",
+    "platform": "Temu",
+    "platformCn": "Temu 丹麦",
+    "country": "丹麦",
+    "en": "Free Temu (Denmark) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu 丹麦（丹麦）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-dk",
+    "platform": "Amazon",
+    "platformCn": "Amazon 丹麦",
+    "country": "丹麦",
+    "en": "Free Amazon (Denmark) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Amazon 丹麦（丹麦）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "aliexpress-dk",
+    "platform": "AliExpress",
+    "platformCn": "速卖通 丹麦",
+    "country": "丹麦",
+    "en": "Free AliExpress (Denmark) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费速卖通 丹麦（丹麦）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shein-dk",
+    "platform": "Shein",
+    "platformCn": "Shein 丹麦",
+    "country": "丹麦",
+    "en": "Free Shein (Denmark) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Shein 丹麦（丹麦）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ebay-dk",
+    "platform": "eBay",
+    "platformCn": "eBay 丹麦",
+    "country": "丹麦",
+    "en": "Free eBay (Denmark) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费eBay 丹麦（丹麦）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "dba-dk",
+    "platform": "DBA.dk",
+    "platformCn": "DBA 丹麦",
+    "country": "丹麦",
+    "en": "Free DBA.dk (Denmark) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费DBA 丹麦（丹麦）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "tradera-dk",
+    "platform": "Tradera",
+    "platformCn": "Tradera 丹麦",
+    "country": "丹麦",
+    "en": "Free Tradera (Denmark) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Tradera 丹麦（丹麦）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "miinto-dk",
+    "platform": "Miinto",
+    "platformCn": "Miinto 丹麦",
+    "country": "丹麦",
+    "en": "Free Miinto (Denmark) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Miinto 丹麦（丹麦）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-es",
+    "platform": "Amazon.es",
+    "platformCn": "亚马逊西班牙",
+    "country": "西班牙",
+    "en": "Free Amazon.es (Spain) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费亚马逊西班牙（西班牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "aliexpress-es",
+    "platform": "AliExpress",
+    "platformCn": "AliExpress西班牙",
+    "country": "西班牙",
+    "en": "Free AliExpress (Spain) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费AliExpress西班牙（西班牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "el-corte-ingles-es",
+    "platform": "El Corte Inglés",
+    "platformCn": "西班牙英格列斯",
+    "country": "西班牙",
+    "en": "Free El Corte Inglés (Spain) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费西班牙英格列斯（西班牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ebay-es",
+    "platform": "eBay.es",
+    "platformCn": "易贝西班牙",
+    "country": "西班牙",
+    "en": "Free eBay.es (Spain) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费易贝西班牙（西班牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "vinted-es",
+    "platform": "Vinted",
+    "platformCn": "Vinted西班牙",
+    "country": "西班牙",
+    "en": "Free Vinted (Spain) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Vinted西班牙（西班牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "wallapop-es",
+    "platform": "Wallapop",
+    "platformCn": "Wallapop",
+    "country": "西班牙",
+    "en": "Free Wallapop (Spain) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Wallapop（西班牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-es",
+    "platform": "Temu",
+    "platformCn": "Temu西班牙",
+    "country": "西班牙",
+    "en": "Free Temu (Spain) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu西班牙（西班牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shein-es",
+    "platform": "Shein",
+    "platformCn": "Shein西班牙",
+    "country": "西班牙",
+    "en": "Free Shein (Spain) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Shein西班牙（西班牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "miravia-es",
+    "platform": "Miravia",
+    "platformCn": "Miravia",
+    "country": "西班牙",
+    "en": "Free Miravia (Spain) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Miravia（西班牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "pccomponentes-es",
+    "platform": "PC Componentes",
+    "platformCn": "PC Componentes",
+    "country": "西班牙",
+    "en": "Free PC Componentes (Spain) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费PC Componentes（西班牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "zalando-fi",
+    "platform": "Zalando",
+    "platformCn": "Zalando 芬兰",
+    "country": "芬兰",
+    "en": "Free Zalando (Finland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Zalando 芬兰（芬兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "vinted-fi",
+    "platform": "Vinted",
+    "platformCn": "Vinted 芬兰",
+    "country": "芬兰",
+    "en": "Free Vinted (Finland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Vinted 芬兰（芬兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-fi",
+    "platform": "Temu",
+    "platformCn": "Temu 芬兰",
+    "country": "芬兰",
+    "en": "Free Temu (Finland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu 芬兰（芬兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-fi",
+    "platform": "Amazon",
+    "platformCn": "Amazon 芬兰",
+    "country": "芬兰",
+    "en": "Free Amazon (Finland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Amazon 芬兰（芬兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "aliexpress-fi",
+    "platform": "AliExpress",
+    "platformCn": "速卖通 芬兰",
+    "country": "芬兰",
+    "en": "Free AliExpress (Finland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费速卖通 芬兰（芬兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shein-fi",
+    "platform": "Shein",
+    "platformCn": "Shein 芬兰",
+    "country": "芬兰",
+    "en": "Free Shein (Finland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Shein 芬兰（芬兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ebay-fi",
+    "platform": "eBay",
+    "platformCn": "eBay 芬兰",
+    "country": "芬兰",
+    "en": "Free eBay (Finland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费eBay 芬兰（芬兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "tori-fi",
+    "platform": "Tori.fi",
+    "platformCn": "Tori.fi 芬兰",
+    "country": "芬兰",
+    "en": "Free Tori.fi (Finland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Tori.fi 芬兰（芬兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "sellpy-fi",
+    "platform": "Sellpy",
+    "platformCn": "Sellpy 芬兰",
+    "country": "芬兰",
+    "en": "Free Sellpy (Finland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Sellpy 芬兰（芬兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "etsy-fi",
+    "platform": "Etsy",
+    "platformCn": "Etsy 芬兰",
+    "country": "芬兰",
+    "en": "Free Etsy (Finland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Etsy 芬兰（芬兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-fr",
+    "platform": "Amazon.fr",
+    "platformCn": "亚马逊法国",
+    "country": "法国",
+    "en": "Free Amazon.fr (France) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费亚马逊法国（法国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "cdiscount-fr",
+    "platform": "Cdiscount",
+    "platformCn": "Cdiscount",
+    "country": "法国",
+    "en": "Free Cdiscount (France) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Cdiscount（法国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "fnac-fr",
+    "platform": "Fnac",
+    "platformCn": "Fnac",
+    "country": "法国",
+    "en": "Free Fnac (France) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Fnac（法国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "leroy-merlin-fr",
+    "platform": "Leroy Merlin",
+    "platformCn": "Leroy Merlin法国",
+    "country": "法国",
+    "en": "Free Leroy Merlin (France) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Leroy Merlin法国（法国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "manomano-fr",
+    "platform": "ManoMano",
+    "platformCn": "ManoMano法国",
+    "country": "法国",
+    "en": "Free ManoMano (France) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费ManoMano法国（法国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "back-market-fr",
+    "platform": "Back Market",
+    "platformCn": "Back Market法国",
+    "country": "法国",
+    "en": "Free Back Market (France) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Back Market法国（法国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "vinted-fr",
+    "platform": "Vinted",
+    "platformCn": "Vinted法国",
+    "country": "法国",
+    "en": "Free Vinted (France) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Vinted法国（法国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ebay-fr",
+    "platform": "eBay.fr",
+    "platformCn": "易贝法国",
+    "country": "法国",
+    "en": "Free eBay.fr (France) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费易贝法国（法国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "aliexpress-fr",
+    "platform": "AliExpress",
+    "platformCn": "AliExpress法国",
+    "country": "法国",
+    "en": "Free AliExpress (France) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费AliExpress法国（法国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-fr",
+    "platform": "Temu",
+    "platformCn": "Temu法国",
+    "country": "法国",
+    "en": "Free Temu (France) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu法国（法国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "skroutz-gr",
+    "platform": "Skroutz",
+    "platformCn": "Skroutz 希腊",
+    "country": "希腊",
+    "en": "Free Skroutz (Greece) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Skroutz 希腊（希腊）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shopflix-gr",
+    "platform": "Shopflix",
+    "platformCn": "Shopflix 希腊",
+    "country": "希腊",
+    "en": "Free Shopflix (Greece) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Shopflix 希腊（希腊）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "public-gr",
+    "platform": "Public",
+    "platformCn": "Public 希腊",
+    "country": "希腊",
+    "en": "Free Public (Greece) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Public 希腊（希腊）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-gr",
+    "platform": "Temu",
+    "platformCn": "Temu 希腊",
+    "country": "希腊",
+    "en": "Free Temu (Greece) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu 希腊（希腊）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "aliexpress-gr",
+    "platform": "AliExpress",
+    "platformCn": "AliExpress 希腊",
+    "country": "希腊",
+    "en": "Free AliExpress (Greece) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费AliExpress 希腊（希腊）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shein-gr",
+    "platform": "SHEIN",
+    "platformCn": "SHEIN 希腊",
+    "country": "希腊",
+    "en": "Free SHEIN (Greece) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费SHEIN 希腊（希腊）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-gr",
+    "platform": "Amazon",
+    "platformCn": "Amazon 希腊（跨境）",
+    "country": "希腊",
+    "en": "Free Amazon (Greece) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Amazon 希腊（跨境）（希腊）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ebay-gr",
+    "platform": "eBay",
+    "platformCn": "eBay 希腊",
+    "country": "希腊",
+    "en": "Free eBay (Greece) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费eBay 希腊（希腊）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "zalando-gr",
+    "platform": "Zalando",
+    "platformCn": "Zalando 希腊",
+    "country": "希腊",
+    "en": "Free Zalando (Greece) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Zalando 希腊（希腊）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "vinted-gr",
+    "platform": "Vinted",
+    "platformCn": "Vinted 希腊",
+    "country": "希腊",
+    "en": "Free Vinted (Greece) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Vinted 希腊（希腊）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "emag-hu",
+    "platform": "eMAG",
+    "platformCn": "eMAG 匈牙利",
+    "country": "匈牙利",
+    "en": "Free eMAG (Hungary) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费eMAG 匈牙利（匈牙利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "alza-hu",
+    "platform": "Alza",
+    "platformCn": "Alza 匈牙利",
+    "country": "匈牙利",
+    "en": "Free Alza (Hungary) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Alza 匈牙利（匈牙利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "allegro-hu",
+    "platform": "Allegro",
+    "platformCn": "Allegro 匈牙利",
+    "country": "匈牙利",
+    "en": "Free Allegro (Hungary) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Allegro 匈牙利（匈牙利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-hu",
+    "platform": "Temu",
+    "platformCn": "Temu 匈牙利",
+    "country": "匈牙利",
+    "en": "Free Temu (Hungary) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu 匈牙利（匈牙利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "aliexpress-hu",
+    "platform": "AliExpress",
+    "platformCn": "速卖通 匈牙利",
+    "country": "匈牙利",
+    "en": "Free AliExpress (Hungary) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费速卖通 匈牙利（匈牙利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-hu",
+    "platform": "Amazon",
+    "platformCn": "Amazon 匈牙利（跨境）",
+    "country": "匈牙利",
+    "en": "Free Amazon (Hungary) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Amazon 匈牙利（跨境）（匈牙利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ebay-hu",
+    "platform": "eBay",
+    "platformCn": "eBay 匈牙利",
+    "country": "匈牙利",
+    "en": "Free eBay (Hungary) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费eBay 匈牙利（匈牙利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shein-hu",
+    "platform": "SHEIN",
+    "platformCn": "SHEIN 匈牙利",
+    "country": "匈牙利",
+    "en": "Free SHEIN (Hungary) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费SHEIN 匈牙利（匈牙利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "arukereso-hu",
+    "platform": "Árukereső",
+    "platformCn": "Árukereső 匈牙利",
+    "country": "匈牙利",
+    "en": "Free Árukereső (Hungary) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Árukereső 匈牙利（匈牙利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "vatera-hu",
+    "platform": "Vatera",
+    "platformCn": "Vatera 匈牙利",
+    "country": "匈牙利",
+    "en": "Free Vatera (Hungary) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Vatera 匈牙利（匈牙利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-ie",
+    "platform": "Amazon",
+    "platformCn": "Amazon 爱尔兰",
+    "country": "爱尔兰",
+    "en": "Free Amazon (Ireland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Amazon 爱尔兰（爱尔兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shein-ie",
+    "platform": "Shein",
+    "platformCn": "Shein 爱尔兰",
+    "country": "爱尔兰",
+    "en": "Free Shein (Ireland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Shein 爱尔兰（爱尔兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ebay-ie",
+    "platform": "eBay",
+    "platformCn": "eBay 爱尔兰",
+    "country": "爱尔兰",
+    "en": "Free eBay (Ireland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费eBay 爱尔兰（爱尔兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-ie",
+    "platform": "Temu",
+    "platformCn": "Temu 爱尔兰",
+    "country": "爱尔兰",
+    "en": "Free Temu (Ireland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu 爱尔兰（爱尔兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "aliexpress-ie",
+    "platform": "AliExpress",
+    "platformCn": "速卖通 爱尔兰",
+    "country": "爱尔兰",
+    "en": "Free AliExpress (Ireland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费速卖通 爱尔兰（爱尔兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "vinted-ie",
+    "platform": "Vinted",
+    "platformCn": "Vinted 爱尔兰",
+    "country": "爱尔兰",
+    "en": "Free Vinted (Ireland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Vinted 爱尔兰（爱尔兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "etsy-ie",
+    "platform": "Etsy",
+    "platformCn": "Etsy 爱尔兰",
+    "country": "爱尔兰",
+    "en": "Free Etsy (Ireland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Etsy 爱尔兰（爱尔兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "fruugo-ie",
+    "platform": "Fruugo",
+    "platformCn": "Fruugo 爱尔兰",
+    "country": "爱尔兰",
+    "en": "Free Fruugo (Ireland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Fruugo 爱尔兰（爱尔兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "donedeal-ie",
+    "platform": "DoneDeal",
+    "platformCn": "DoneDeal 爱尔兰",
+    "country": "爱尔兰",
+    "en": "Free DoneDeal (Ireland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费DoneDeal 爱尔兰（爱尔兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "wayfair-ie",
+    "platform": "Wayfair",
+    "platformCn": "Wayfair 爱尔兰",
+    "country": "爱尔兰",
+    "en": "Free Wayfair (Ireland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Wayfair 爱尔兰（爱尔兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-it",
+    "platform": "Amazon.it",
+    "platformCn": "亚马逊意大利",
+    "country": "意大利",
+    "en": "Free Amazon.it (Italy) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费亚马逊意大利（意大利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ebay-it",
+    "platform": "eBay.it",
+    "platformCn": "易贝意大利",
+    "country": "意大利",
+    "en": "Free eBay.it (Italy) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费易贝意大利（意大利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "zalando-it",
+    "platform": "Zalando",
+    "platformCn": "Zalando意大利",
+    "country": "意大利",
+    "en": "Free Zalando (Italy) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Zalando意大利（意大利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "vinted-it",
+    "platform": "Vinted",
+    "platformCn": "Vinted意大利",
+    "country": "意大利",
+    "en": "Free Vinted (Italy) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Vinted意大利（意大利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-it",
+    "platform": "Temu",
+    "platformCn": "Temu意大利",
+    "country": "意大利",
+    "en": "Free Temu (Italy) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu意大利（意大利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shein-it",
+    "platform": "Shein",
+    "platformCn": "Shein意大利",
+    "country": "意大利",
+    "en": "Free Shein (Italy) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Shein意大利（意大利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "aliexpress-it",
+    "platform": "AliExpress",
+    "platformCn": "AliExpress意大利",
+    "country": "意大利",
+    "en": "Free AliExpress (Italy) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费AliExpress意大利（意大利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "etsy-it",
+    "platform": "Etsy",
+    "platformCn": "Etsy意大利",
+    "country": "意大利",
+    "en": "Free Etsy (Italy) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Etsy意大利（意大利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "manomano-it",
+    "platform": "ManoMano",
+    "platformCn": "ManoMano意大利",
+    "country": "意大利",
+    "en": "Free ManoMano (Italy) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费ManoMano意大利（意大利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "leroy-merlin-it",
+    "platform": "Leroy Merlin",
+    "platformCn": "Leroy Merlin意大利",
+    "country": "意大利",
+    "en": "Free Leroy Merlin (Italy) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Leroy Merlin意大利（意大利）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "bol-nl",
+    "platform": "bol",
+    "platformCn": "bol 荷兰",
+    "country": "荷兰",
+    "en": "Free bol (the Netherlands) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费bol 荷兰（荷兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-nl",
+    "platform": "Amazon Netherlands",
+    "platformCn": "亚马逊荷兰",
+    "country": "荷兰",
+    "en": "Free Amazon Netherlands (the Netherlands) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费亚马逊荷兰（荷兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "aliexpress-nl",
+    "platform": "AliExpress",
+    "platformCn": "速卖通荷兰",
+    "country": "荷兰",
+    "en": "Free AliExpress (the Netherlands) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费速卖通荷兰（荷兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "zalando-nl",
+    "platform": "Zalando",
+    "platformCn": "Zalando 荷兰",
+    "country": "荷兰",
+    "en": "Free Zalando (the Netherlands) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Zalando 荷兰（荷兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-nl",
+    "platform": "Temu",
+    "platformCn": "Temu 荷兰",
+    "country": "荷兰",
+    "en": "Free Temu (the Netherlands) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu 荷兰（荷兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shein-nl",
+    "platform": "Shein",
+    "platformCn": "Shein 荷兰",
+    "country": "荷兰",
+    "en": "Free Shein (the Netherlands) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Shein 荷兰（荷兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "vinted-nl",
+    "platform": "Vinted",
+    "platformCn": "Vinted 荷兰",
+    "country": "荷兰",
+    "en": "Free Vinted (the Netherlands) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Vinted 荷兰（荷兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ebay-nl",
+    "platform": "eBay",
+    "platformCn": "eBay 荷兰",
+    "country": "荷兰",
+    "en": "Free eBay (the Netherlands) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费eBay 荷兰（荷兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "mediamarkt-nl",
+    "platform": "MediaMarkt",
+    "platformCn": "MediaMarkt 荷兰",
+    "country": "荷兰",
+    "en": "Free MediaMarkt (the Netherlands) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费MediaMarkt 荷兰（荷兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "decathlon-nl",
+    "platform": "Decathlon",
+    "platformCn": "迪卡侬荷兰",
+    "country": "荷兰",
+    "en": "Free Decathlon (the Netherlands) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费迪卡侬荷兰（荷兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "komplett-no",
+    "platform": "Komplett",
+    "platformCn": "Komplett 挪威",
+    "country": "挪威",
+    "en": "Free Komplett (Norway) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Komplett 挪威（挪威）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "elkjop-no",
+    "platform": "Elkjøp",
+    "platformCn": "Elkjøp 挪威",
+    "country": "挪威",
+    "en": "Free Elkjøp (Norway) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Elkjøp 挪威（挪威）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "cdon-no",
+    "platform": "CDON",
+    "platformCn": "CDON 挪威",
+    "country": "挪威",
+    "en": "Free CDON (Norway) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费CDON 挪威（挪威）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-no",
+    "platform": "Temu",
+    "platformCn": "Temu 挪威",
+    "country": "挪威",
+    "en": "Free Temu (Norway) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu 挪威（挪威）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "zalando-no",
+    "platform": "Zalando",
+    "platformCn": "Zalando 挪威",
+    "country": "挪威",
+    "en": "Free Zalando (Norway) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Zalando 挪威（挪威）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-no",
+    "platform": "Amazon",
+    "platformCn": "Amazon 挪威（跨境）",
+    "country": "挪威",
+    "en": "Free Amazon (Norway) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Amazon 挪威（跨境）（挪威）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ebay-no",
+    "platform": "eBay",
+    "platformCn": "eBay 挪威",
+    "country": "挪威",
+    "en": "Free eBay (Norway) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费eBay 挪威（挪威）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "aliexpress-no",
+    "platform": "AliExpress",
+    "platformCn": "AliExpress 挪威",
+    "country": "挪威",
+    "en": "Free AliExpress (Norway) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费AliExpress 挪威（挪威）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shein-no",
+    "platform": "SHEIN",
+    "platformCn": "SHEIN 挪威",
+    "country": "挪威",
+    "en": "Free SHEIN (Norway) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费SHEIN 挪威（挪威）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "tise-no",
+    "platform": "Tise",
+    "platformCn": "Tise 挪威",
+    "country": "挪威",
+    "en": "Free Tise (Norway) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Tise 挪威（挪威）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "allegro-pl",
+    "platform": "Allegro",
+    "platformCn": "Allegro 波兰",
+    "country": "波兰",
+    "en": "Free Allegro (Poland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Allegro 波兰（波兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-pl",
+    "platform": "Amazon Poland",
+    "platformCn": "亚马逊波兰",
+    "country": "波兰",
+    "en": "Free Amazon Poland (Poland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费亚马逊波兰（波兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ebay-pl",
+    "platform": "eBay",
+    "platformCn": "eBay 波兰",
+    "country": "波兰",
+    "en": "Free eBay (Poland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费eBay 波兰（波兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "aliexpress-pl",
+    "platform": "AliExpress",
+    "platformCn": "速卖通波兰",
+    "country": "波兰",
+    "en": "Free AliExpress (Poland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费速卖通波兰（波兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "zalando-pl",
+    "platform": "Zalando",
+    "platformCn": "Zalando 波兰",
+    "country": "波兰",
+    "en": "Free Zalando (Poland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Zalando 波兰（波兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "empik-pl",
+    "platform": "Empik",
+    "platformCn": "Empik 波兰",
+    "country": "波兰",
+    "en": "Free Empik (Poland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Empik 波兰（波兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "vinted-pl",
+    "platform": "Vinted",
+    "platformCn": "Vinted 波兰",
+    "country": "波兰",
+    "en": "Free Vinted (Poland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Vinted 波兰（波兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-pl",
+    "platform": "Temu",
+    "platformCn": "Temu 波兰",
+    "country": "波兰",
+    "en": "Free Temu (Poland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu 波兰（波兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "mediamarkt-pl",
+    "platform": "MediaMarkt",
+    "platformCn": "MediaMarkt 波兰",
+    "country": "波兰",
+    "en": "Free MediaMarkt (Poland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费MediaMarkt 波兰（波兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shein-pl",
+    "platform": "Shein",
+    "platformCn": "Shein 波兰",
+    "country": "波兰",
+    "en": "Free Shein (Poland) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Shein 波兰（波兰）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-pt",
+    "platform": "Amazon",
+    "platformCn": "Amazon 葡萄牙",
+    "country": "葡萄牙",
+    "en": "Free Amazon (Portugal) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Amazon 葡萄牙（葡萄牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "worten-pt",
+    "platform": "Worten",
+    "platformCn": "Worten 葡萄牙",
+    "country": "葡萄牙",
+    "en": "Free Worten (Portugal) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Worten 葡萄牙（葡萄牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shein-pt",
+    "platform": "Shein",
+    "platformCn": "Shein 葡萄牙",
+    "country": "葡萄牙",
+    "en": "Free Shein (Portugal) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Shein 葡萄牙（葡萄牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "vinted-pt",
+    "platform": "Vinted",
+    "platformCn": "Vinted 葡萄牙",
+    "country": "葡萄牙",
+    "en": "Free Vinted (Portugal) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Vinted 葡萄牙（葡萄牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "fnac-pt",
+    "platform": "Fnac",
+    "platformCn": "Fnac 葡萄牙",
+    "country": "葡萄牙",
+    "en": "Free Fnac (Portugal) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Fnac 葡萄牙（葡萄牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "elcorteingles-pt",
+    "platform": "El Corte Inglés",
+    "platformCn": "El Corte Inglés 葡萄牙",
+    "country": "葡萄牙",
+    "en": "Free El Corte Inglés (Portugal) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费El Corte Inglés 葡萄牙（葡萄牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "olx-pt",
+    "platform": "OLX Portugal",
+    "platformCn": "OLX 葡萄牙",
+    "country": "葡萄牙",
+    "en": "Free OLX Portugal (Portugal) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费OLX 葡萄牙（葡萄牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "etsy-pt",
+    "platform": "Etsy",
+    "platformCn": "Etsy 葡萄牙",
+    "country": "葡萄牙",
+    "en": "Free Etsy (Portugal) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Etsy 葡萄牙（葡萄牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-pt",
+    "platform": "Temu",
+    "platformCn": "Temu 葡萄牙",
+    "country": "葡萄牙",
+    "en": "Free Temu (Portugal) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu 葡萄牙（葡萄牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ebay-pt",
+    "platform": "eBay",
+    "platformCn": "eBay 葡萄牙",
+    "country": "葡萄牙",
+    "en": "Free eBay (Portugal) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费eBay 葡萄牙（葡萄牙）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "emag-ro",
+    "platform": "eMAG",
+    "platformCn": "eMAG 罗马尼亚",
+    "country": "罗马尼亚",
+    "en": "Free eMAG (Romania) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费eMAG 罗马尼亚（罗马尼亚）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "fashiondays-ro",
+    "platform": "Fashion Days",
+    "platformCn": "Fashion Days 罗马尼亚",
+    "country": "罗马尼亚",
+    "en": "Free Fashion Days (Romania) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Fashion Days 罗马尼亚（罗马尼亚）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "okazii-ro",
+    "platform": "Okazii",
+    "platformCn": "Okazii 罗马尼亚",
+    "country": "罗马尼亚",
+    "en": "Free Okazii (Romania) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Okazii 罗马尼亚（罗马尼亚）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "altex-ro",
+    "platform": "Altex",
+    "platformCn": "Altex 罗马尼亚",
+    "country": "罗马尼亚",
+    "en": "Free Altex (Romania) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Altex 罗马尼亚（罗马尼亚）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-ro",
+    "platform": "Temu",
+    "platformCn": "Temu 罗马尼亚",
+    "country": "罗马尼亚",
+    "en": "Free Temu (Romania) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu 罗马尼亚（罗马尼亚）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "aliexpress-ro",
+    "platform": "AliExpress",
+    "platformCn": "AliExpress 罗马尼亚",
+    "country": "罗马尼亚",
+    "en": "Free AliExpress (Romania) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费AliExpress 罗马尼亚（罗马尼亚）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shein-ro",
+    "platform": "SHEIN",
+    "platformCn": "SHEIN 罗马尼亚",
+    "country": "罗马尼亚",
+    "en": "Free SHEIN (Romania) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费SHEIN 罗马尼亚（罗马尼亚）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "trendyol-ro",
+    "platform": "Trendyol",
+    "platformCn": "Trendyol 罗马尼亚",
+    "country": "罗马尼亚",
+    "en": "Free Trendyol (Romania) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Trendyol 罗马尼亚（罗马尼亚）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-ro",
+    "platform": "Amazon",
+    "platformCn": "Amazon 罗马尼亚（跨境）",
+    "country": "罗马尼亚",
+    "en": "Free Amazon (Romania) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Amazon 罗马尼亚（跨境）（罗马尼亚）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ebay-ro",
+    "platform": "eBay",
+    "platformCn": "eBay 罗马尼亚",
+    "country": "罗马尼亚",
+    "en": "Free eBay (Romania) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费eBay 罗马尼亚（罗马尼亚）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-se",
+    "platform": "Amazon Sweden",
+    "platformCn": "亚马逊瑞典",
+    "country": "瑞典",
+    "en": "Free Amazon Sweden (Sweden) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费亚马逊瑞典（瑞典）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "cdon-se",
+    "platform": "CDON",
+    "platformCn": "CDON 瑞典",
+    "country": "瑞典",
+    "en": "Free CDON (Sweden) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费CDON 瑞典（瑞典）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "zalando-se",
+    "platform": "Zalando",
+    "platformCn": "Zalando 瑞典",
+    "country": "瑞典",
+    "en": "Free Zalando (Sweden) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Zalando 瑞典（瑞典）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "tradera-se",
+    "platform": "Tradera",
+    "platformCn": "Tradera 瑞典",
+    "country": "瑞典",
+    "en": "Free Tradera (Sweden) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Tradera 瑞典（瑞典）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "vinted-se",
+    "platform": "Vinted",
+    "platformCn": "Vinted 瑞典",
+    "country": "瑞典",
+    "en": "Free Vinted (Sweden) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Vinted 瑞典（瑞典）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "fyndiq-se",
+    "platform": "Fyndiq",
+    "platformCn": "Fyndiq 瑞典",
+    "country": "瑞典",
+    "en": "Free Fyndiq (Sweden) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Fyndiq 瑞典（瑞典）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "aliexpress-se",
+    "platform": "AliExpress",
+    "platformCn": "速卖通瑞典",
+    "country": "瑞典",
+    "en": "Free AliExpress (Sweden) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费速卖通瑞典（瑞典）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-se",
+    "platform": "Temu",
+    "platformCn": "Temu 瑞典",
+    "country": "瑞典",
+    "en": "Free Temu (Sweden) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu 瑞典（瑞典）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "shein-se",
+    "platform": "Shein",
+    "platformCn": "Shein 瑞典",
+    "country": "瑞典",
+    "en": "Free Shein (Sweden) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Shein 瑞典（瑞典）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ahlens-se",
+    "platform": "Åhléns",
+    "platformCn": "奥伦斯瑞典",
+    "country": "瑞典",
+    "en": "Free Åhléns (Sweden) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费奥伦斯瑞典（瑞典）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "amazon-uk",
+    "platform": "Amazon UK",
+    "platformCn": "亚马逊英国",
+    "country": "英国",
+    "en": "Free Amazon UK (the UK) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费亚马逊英国（英国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "ebay-uk",
+    "platform": "eBay UK",
+    "platformCn": "易贝英国",
+    "country": "英国",
+    "en": "Free eBay UK (the UK) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费易贝英国（英国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "etsy-uk",
+    "platform": "Etsy UK",
+    "platformCn": "Etsy英国",
+    "country": "英国",
+    "en": "Free Etsy UK (the UK) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Etsy英国（英国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "temu-uk",
+    "platform": "Temu UK",
+    "platformCn": "Temu英国",
+    "country": "英国",
+    "en": "Free Temu UK (the UK) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Temu英国（英国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "tiktok-shop-uk",
+    "platform": "TikTok Shop UK",
+    "platformCn": "TikTok商店英国",
+    "country": "英国",
+    "en": "Free TikTok Shop UK (the UK) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费TikTok商店英国（英国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "wayfair-uk",
+    "platform": "Wayfair UK",
+    "platformCn": "Wayfair英国",
+    "country": "英国",
+    "en": "Free Wayfair UK (the UK) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Wayfair英国（英国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "onbuy-uk",
+    "platform": "OnBuy",
+    "platformCn": "OnBuy",
+    "country": "英国",
+    "en": "Free OnBuy (the UK) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费OnBuy（英国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "vinted-uk",
+    "platform": "Vinted UK",
+    "platformCn": "Vinted英国",
+    "country": "英国",
+    "en": "Free Vinted UK (the UK) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Vinted英国（英国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "back-market-uk",
+    "platform": "Back Market UK",
+    "platformCn": "Back Market英国",
+    "country": "英国",
+    "en": "Free Back Market UK (the UK) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费Back Market英国（英国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  },
+  {
+    "slug": "manomano-uk",
+    "platform": "ManoMano UK",
+    "platformCn": "ManoMano英国",
+    "country": "英国",
+    "en": "Free ManoMano UK (the UK) seller ops workbench: 11 modules for listing, pricing, ads & AI-assisted operations.",
+    "cn": "免费ManoMano英国（英国）卖家运营工作台：11 大模块覆盖上新、刊登、价格、广告与 AI 运营。"
+  }
+]

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fashion-agent 打版跟单 Agent — 服装人的免费跟单工具</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#0f0f1a;color:#e8e8f0;line-height:1.7}
+.hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);padding:80px 20px;text-align:center}
+.hero h1{font-size:2.5em;margin-bottom:16px;background:linear-gradient(90deg,#ff6b6b,#ffa502,#2ed573);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.2em;color:#a0a0b8;max-width:640px;margin:0 auto 32px}
+.cta{display:inline-block;background:#ff6b6b;color:#fff;padding:14px 40px;border-radius:30px;text-decoration:none;font-size:1.1em;font-weight:700;transition:.3s}
+.cta:hover{background:#ff5252;transform:translateY(-2px)}
+.section{max-width:900px;margin:0 auto;padding:60px 20px}
+.section h2{font-size:1.8em;margin-bottom:24px;text-align:center}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:32px}
+.card{background:#1a1a2e;border-radius:12px;padding:28px;border:1px solid #2a2a4a}
+.card h3{font-size:1.2em;margin-bottom:12px;color:#ffa502}
+.card p{color:#a0a0b8;font-size:.95em}
+.steps{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:32px}
+.step{background:#1a1a2e;border-radius:12px;padding:24px;flex:1;min-width:220px;text-align:center;border:1px solid #2a2a4a}
+.step .num{font-size:2.5em;font-weight:800;color:#ff6b6b}
+.step h3{margin:12px 0 8px}
+.step p{color:#a0a0b8;font-size:.9em}
+.demo{background:#1a1a2e;border-radius:12px;padding:32px;margin-top:32px;border:1px solid #2a2a4a}
+.demo h3{color:#2ed573;margin-bottom:16px}
+.demo table{width:100%;border-collapse:collapse;font-size:.9em}
+.demo th,.demo td{padding:10px;text-align:left;border-bottom:1px solid #2a2a4a}
+.demo th{color:#ffa502}
+.demo td{color:#c0c0d8}
+.demo a{color:#2ed573}
+.demo ul{color:#c0c0d8;font-size:.95em;padding-left:20px}
+.demo li{margin:8px 0}
+.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:32px}
+.price-card{background:#1a1a2e;border-radius:12px;padding:32px;text-align:center;border:1px solid #2a2a4a}
+.price-card.hot{border-color:#ff6b6b;transform:scale(1.03)}
+.price-card h3{font-size:1.3em;margin-bottom:8px}
+.price-card .price{font-size:2em;font-weight:800;color:#ffa502;margin:12px 0}
+.price-card ul{list-style:none;text-align:left;margin-top:16px}
+.price-card li{padding:6px 0;color:#a0a0b8;font-size:.9em}
+.price-card li::before{content:"✓ ";color:#2ed573}
+.footer{text-align:center;padding:40px 20px;color:#606078;font-size:.85em}
+.footer a{color:#2ed573}
+.badge{display:inline-block;background:#ff6b6b;color:#fff;font-size:.75em;padding:4px 12px;border-radius:12px;margin-bottom:16px}
+.note{color:#a0a0b8;max-width:640px;margin:0 auto;text-align:center}</style>
+</head>
+<body>
+<div class="hero">
+<div class="badge">服装打版跟单</div>
+<h1>fashion-agent</h1>
+<p>工艺单流转、版型版本管理、打版跟单<br>板房和服装采购的免费工具</p>
+<a class="cta" href="#start">看看它怎么工作</a>
+</div>
+<div class="section">
+<h2>CAD 的联网副驾驶</h2>
+<div class="cards"><div class="card"><h3>工艺单管理</h3><p>上传工艺单（PDF/图片/Excel），结构化录入，规则版 AI 自动解析抽取关键字段。</p></div>
+<div class="card"><h3>版型版本管理</h3><p>DXF/PDF 版型文件上传，自动 v1/v2/v3 编号，改版有记录、可对比。</p></div>
+<div class="card"><h3>打版跟单看板</h3><p>待打版→打版中→样衣制作→批版→完成，全流程看板，交期预警、催办记录。</p></div>
+<div class="card"><h3>分销渠道</h3><p>渠道库管理：分发哪些款、渠道价多少、佣金怎么算，一目了然。</p></div>
+<div class="card"><h3>联盟成员</h3><p>网红/分销商联盟：申请、审核、专属推广链接。</p></div>
+<div class="card"><h3>发行批次</h3><p>款式×渠道分发矩阵：这批货发给谁、什么状态，全程跟踪。</p></div>
+<div class="card"><h3>数据授权</h3><p>版师数据授权与 50% 分成约定，权责写清楚。</p></div></div>
+</div>
+<div class="section" id="start">
+<h2>三步上手</h2>
+<div class="steps"><div class="step"><div class="num">1</div><h3>上传工艺单</h3><p>把工艺单拍照/上传，AI 自动解析，版型文件按版本归档。</p></div>
+<div class="step"><div class="num">2</div><h3>跟踪打版进度</h3><p>看板上推进阶段：打版中、样衣制作、批版，交期快到了自动预警。</p></div>
+<div class="step"><div class="num">3</div><h3>分销发行</h3><p>款式定版后分发到各渠道，发行批次跟踪回款。</p></div></div>
+<div class="demo"><h3>内置演示数据</h3>
+<table><tr><th>款式</th><th>状态</th><th>说明</th></tr>
+<tr><td>WZ26001 女装连衣裙</td><td>打版中</td><td>交期2026-10-04，临期预警；工艺单+v1/v2版型</td></tr>
+<tr><td>WZ26002 男士牛仔裤</td><td>样衣制作</td><td>工艺单+v1版型</td></tr>
+<tr><td>WZ26003 女装T恤</td><td>批版</td><td>改版2次，v1/v2/v3完整记录</td></tr>
+<tr><td>WZ26004 男士西装外套</td><td>待打版</td><td>工艺单已上传</td></tr></table></div>
+</div>
+<div class="section">
+<h2>谁在用</h2>
+<div class="cards"><div class="card"><h3>板房 / 版师</h3><p>工艺单和版型文件不再散落微信，版本管理清清楚楚。</p></div>
+<div class="card"><h3>服装采购</h3><p>跟单进度实时看，交期预警不用天天催。</p></div>
+<div class="card"><h3>服装品牌</h3><p>分销渠道和发行批次统一管，数据沉淀。</p></div></div>
+</div>
+<div class="section">
+<h2>定价</h2>
+<div class="pricing"><div class="price-card hot"><h3>免费版</h3><div class="price">¥0</div>
+<ul><li>全部功能</li><li>本地使用</li><li>数据存在本地</li></ul></div></div>
+</div>
+<div class="section" style="text-align:center">
+<h2>技术说明</h2>
+<p class="note">服装全类目平台"策划—发行—分销—售后"的 P0 落子。工具免费，商业模式是沉淀"款式—面料—版型—工艺"数据做数据产品。基于 pi-mono 架构，本地运行。测试 43/43 全绿。源码私有。</p>
+</div>
+<div class="footer">
+<p>insightmarketplac-promo · 成品分发仓（公开）| 源码私有<br>
+<a href="https://github.com/Hdhaidong/insightmarketplac-promo">GitHub</a> · <a href="/">返回首页</a></p>
+</div>
+</body>
+</html>

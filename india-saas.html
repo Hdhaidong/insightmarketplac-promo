@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>印度电商SaaS全景调研 | insightmarketplac</title>
+<meta name="description" content="印度电商SaaS全景调研：数据平台、客服Agent、数据分析。CommerceIQ、DataWeave、Freshworks、Zoho 等印度系SaaS产品事实、价格带（已验证/未验证标注）、短板与差异化分析。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hdhaidong.github.io/insightmarketplac-promo/india-saas.html">
+<style>
+:root{--bg:#000;--bg-2:#0A0A0A;--ink:#F2EEE6;--ink-dim:#A7ADB8;--ink-faint:#6E7683;--accent:#E8A33D;--accent-dim:rgba(232,163,61,.12);--hairline:rgba(242,238,230,.12);--hairline-soft:rgba(242,238,230,.07);--sans:"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;--mono:"SF Mono",Consolas,monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.75}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.top{border-bottom:1px solid var(--hairline-soft);background:rgba(0,0,0,.92);position:sticky;top:0;z-index:40;backdrop-filter:blur(10px)}
+.top-in{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand .mk{font-weight:700;font-size:1.1rem}.brand .mk em{font-style:normal;color:var(--accent)}
+.brand .sub{font-size:.72rem;color:var(--ink-faint);letter-spacing:.08em;font-family:var(--mono)}
+nav{display:flex;gap:20px;flex-wrap:wrap;align-items:center}nav a{color:var(--ink-dim);font-size:.9rem}nav a:hover{color:var(--accent);text-decoration:none}
+.hero{padding:88px 0 64px;background:radial-gradient(1200px 500px at 70% -10%,rgba(232,163,61,.10),transparent 60%),var(--bg)}
+.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+h1{font-size:clamp(1.9rem,4.4vw,3.1rem);line-height:1.22;font-weight:700;letter-spacing:-.01em}
+.hero-sub{color:var(--ink-dim);font-size:1.06rem;max-width:720px;margin:20px 0 30px}
+section{padding:64px 0}
+section.alt{background:var(--bg-2);border-top:1px solid var(--hairline-soft);border-bottom:1px solid var(--hairline-soft)}
+.sec-head{margin-bottom:28px}
+h2{font-size:clamp(1.35rem,2.6vw,1.85rem);font-weight:700}
+h3{font-size:1.15rem;margin:26px 0 12px;color:var(--ink)}
+.sec-sub{color:var(--ink-dim);max-width:680px;margin-top:10px}
+.callout{border:1px solid rgba(232,163,61,.35);background:var(--accent-dim);border-radius:12px;padding:18px 22px;margin:0 0 24px;font-size:.9rem;color:var(--ink-dim)}
+.callout b{color:var(--ink)}
+.doc p{margin:10px 0;color:var(--ink-dim)}
+.doc ul,.doc ol{margin:10px 0 10px 22px;color:var(--ink-dim)}
+.doc li{margin:6px 0}
+.doc strong,.doc b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.86rem}
+th{text-align:left;font-weight:600;color:var(--ink);border-bottom:2px solid var(--hairline);padding:10px 12px;white-space:nowrap}
+td{border-bottom:1px solid var(--hairline-soft);padding:10px 12px;color:var(--ink-dim);vertical-align:top}
+tr:hover td{background:rgba(255,255,255,.02)}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--hairline-soft);border-radius:12px;margin:18px 0}
+.tbl-wrap table{margin:0}
+.badge{display:inline-block;font-family:var(--mono);font-size:.7rem;border-radius:999px;padding:2px 10px;white-space:nowrap;margin:0 2px}
+.badge.ok{border:1px solid rgba(124,185,124,.5);color:#8FD08F;background:rgba(124,185,124,.08)}
+.badge.no{border:1px solid rgba(232,163,61,.5);color:var(--accent);background:var(--accent-dim)}
+hr{border:0;border-top:1px solid var(--hairline-soft);margin:36px 0}
+.final{padding:80px 0;background:radial-gradient(900px 400px at 30% 110%,rgba(232,163,61,.09),transparent 60%),var(--bg);text-align:center}
+.final h2{margin-bottom:14px}
+.final p{color:var(--ink-dim);margin-bottom:28px}
+footer{border-top:1px solid var(--hairline-soft);padding:36px 0;font-size:.84rem;color:var(--ink-faint)}
+.fam{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.fam a{border:1px solid var(--hairline);border-radius:999px;padding:5px 15px;font-size:.8rem;color:var(--ink-dim)}
+.fam a.cur{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+.fam a:hover{border-color:var(--accent);text-decoration:none;color:var(--accent)}
+.f-grid{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.f-links{display:flex;gap:18px;flex-wrap:wrap}
+.f-links a{color:var(--ink-dim)}
+@media(max-width:480px){.hero{padding:56px 0 44px}section{padding:48px 0}table{font-size:.78rem}}
+
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <div class="brand">
+      <div class="mk">insight<em>marketplac</em> · 调研</div>
+      <div class="sub">RESEARCH · 隶属平台总仓</div>
+    </div>
+    <nav>
+      <a href="./">总览</a><a href="agent.html">Agent 产品</a><a href="platform.html">平台</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero"><div class="wrap"><div class="eyebrow">Research · 市场调研</div><h1>印度电商SaaS全景：数据平台、客服Agent、数据分析一网打尽</h1><p class="hero-sub">印度电商SaaS全景调研：数据平台、客服Agent、数据分析一网打尽。</p></div></div>
+<hr>
+<section><div class="wrap doc"><div class="sec-head"><div class="eyebrow">Section 01</div><h2>一、总览：印度电商SaaS版图</h2></div>
+<div class="callout">整理日期：2026-09-30<br>口径说明：产品事实来自各官网与可信媒体；价格带中&quot;<span class="badge ok">已验证</span>&quot;为第三方转述官方定价页（2026-09数据），&quot;<span class="badge no">未验证</span>&quot;为企业询价制、无公开定价页；部分公司背景为用户自研调研口径，文中注明。引用签约前请以官网为准。</div>
+<p>印度是全球电商SaaS的重要策源地，但打法和中国/美国公司很不一样：<b>很少做大而全的平台，多做垂直模块SaaS</b>——每个公司吃透一个模块（建站、OMS、客服、订阅计费、CDP、数据分析），再用开放API互相咬合。</p>
+<p>先分两类：</p>
+<h3>1. 全球出海型（印度创始，服务全球跨境卖家）</h3>
+<div class="tbl-wrap"><table><thead><tr>
+<th>产品</th>
+<th>总部/创始</th>
+<th>定位</th>
+<th>主要市场</th>
+</tr></thead><tbody>
+<tr><td>Zoho Commerce</td><td>印度金奈（Zoho）</td><td>一站式电商建站SaaS，对标Shopify</td><td>全球中小B2C、跨境DTC</td></tr>
+<tr><td>Freshworks（Freshdesk/Freshsales）</td><td>印度金奈，纳斯达克上市</td><td>电商客服工单、CRM、售后</td><td>欧美独立站、亚马逊卖家</td></tr>
+<tr><td>Chargebee</td><td>印度金奈</td><td>订阅电商计费系统</td><td>全球订阅类电商</td></tr>
+<tr><td>Unicommerce</td><td>印度班加罗尔</td><td>跨境多渠道ERP/OMS</td><td>印度+东南亚+中东</td></tr>
+<tr><td>Capillary Technologies</td><td>印度班加罗尔（已IPO，用户口径）</td><td>CDP客户数据平台+会员忠诚度</td><td>47国410+品牌（用户口径，<span class="badge no">未验证</span>)</td></tr>
+<tr><td>CommerceIQ</td><td>印度裔创始，美国Palo Alto总部，独角兽（用户口径）</td><td>AI Agent驱动的数字货架+零售媒体+全链路数据分析</td><td>北美/欧洲/澳洲/加拿大</td></tr>
+<tr><td>DataWeave</td><td>印度班加罗尔</td><td>数字货架、价格情报、品牌保护</td><td>北美/欧洲/澳洲/加拿大</td></tr>
+<tr><td>SellerApp</td><td>印度班加罗尔</td><td>亚马逊卖家全栈数据分析（PPC/关键词）</td><td>北美/欧洲/澳洲/加拿大</td></tr>
+<tr><td>Intelligence Node</td><td>印度孟买</td><td>价格情报+零售电商分析</td><td>北美/欧洲/澳洲/加拿大</td></tr>
+<tr><td>WizCommerce（原SourceWiz）</td><td>IIT团队</td><td>B2B批发销售SaaS</td><td>B2B工厂/经销商</td></tr>
+</tbody></table></div>
+<h3>2. 印度本土头部（主要服务印度D2C、本土电商）</h3>
+<div class="tbl-wrap"><table><thead><tr>
+<th>产品</th>
+<th>定位</th>
+</tr></thead><tbody>
+<tr><td>Razorpay</td><td>印度头部支付网关，电商收款/分期/订阅</td></tr>
+<tr><td>Shiprocket</td><td>电商履约SaaS：多快递商比价、打单、跟踪、退货</td></tr>
+<tr><td>Traknly.ai</td><td>D2C电商AI聚合分析（亚马逊+独立站+社媒统一报表）</td></tr>
+<tr><td>Moglix</td><td>工业MRO B2B电商+供应链SaaS（制造业采购）</td></tr>
+<tr><td>Increff</td><td>服装D2C专用OMS（SKU颜色尺码智能分配）</td></tr>
+<tr><td>IndiaMART</td><td>印度最大B2B撮合平台（是市场平台，不是SaaS）</td></tr>
+</tbody></table></div>
+<h3>3. 常见结构</h3>
+<ul>
+<li><b>创始团队印度，总部搬美国，研发放班加罗尔</b>——CommerceIQ、Chargebee都是这个路数。</li>
+<li><b>开放API优先</b>：对接Shopify、亚马逊、Walmart，不重复造平台，做平台的&quot;外挂模块&quot;。</li>
+<li><b>套件化强、业财打通</b>：Zoho全家桶（Commerce-CRM-Books-Analytics-Inventory）是典型。</li>
+</ul>
+<hr>
+</div></section>
+<section class="alt"><div class="wrap doc"><div class="sec-head"><div class="eyebrow">Section 02</div><h2>二、数据平台与数据分析（核心篇）</h2></div>
+<p>这是印度系最强的一块，也是和你业务最相关的一块。</p>
+<h3>1. CommerceIQ —— &quot;AI Agent做电商数据分析&quot;的印度系代表</h3>
+<ul>
+<li><b>背景</b>：印度裔创始，美国Palo Alto总部，研发大量在班加罗尔；2022年3月软银愿景基金2领投$115M Series D，估值超$10亿（独角兽）；第三方数据：累计融资约$1.955亿、年收入约$1.366亿、676人、2,200+品牌客户。客户：Nestle、Colgate-Palmolive、Whirlpool、Bayer、Kellogg&#x27;s、百事等，<b>大量Home Depot、Walmart供应商（含中国出海工厂）在用</b>（用户调研口径）。</li>
+<li><b>收购</b>：2022年收购 e.fundamentals（英国数字货架分析）、Ideoclick（西雅图亚马逊代运营）。注意：<b>没有收购DataWeave，两家是竞争对手</b>。</li>
+<li><b>定价</b>：企业定制年费，无公开价；第三方目录参考起点约 <b>$25,000/年</b>(<span class="badge no">未验证</span>)。</li>
+</ul>
+<p><b>核心功能（输入→输出）</b>：</p>
+<ol>
+<li><b>Digital Shelf 数字货架分析</b>：输入SKU清单+零售商范围 → 输出货架评分、有货率/搜索排名/Buy Box监控（覆盖1,450+零售商）、标题/图片/属性合规检测、缺货预警、竞品排名、Share of Search</li>
+<li><b>零售媒体广告分析（Retail Media）</b>：输入广告账户 → 输出基于50+货架感知信号的出价/预算优化、iROAS、<b>增量归因</b>（区分真增量 vs 自然流量）、SOV预算再分配</li>
+<li><b>市场份额与竞争情报</b>：输入品类 → 输出品类份额、对手销量、价格趋势、评论情感分析；区分自有/第三方卖家</li>
+<li><b>收入保护自动化</b>：输入全网SKU → 输出未授权第三方卖家识别、变体乱上架、价格乱价，自动告警/发起下架——解决渠道窜货损失</li>
+<li><b>销售&amp;库存洞察</b>：输入销售/库存数据 → 输出跨平台销售汇总、缺货/断货识别、PO采购订单对账、预测；支持Home Depot供应商门户数据接入</li>
+<li><b>AI Agent工作流</b>（最大差异点）：<b>不是只出报表，而是AI自动生成行动建议、自动处理订单对账、缺货纠纷、内容修正建议</b></li>
+<li><b>Content Agent</b>：输入PIM产品数据+品牌规范 → 输出AI改写后的标题/卖点/A+页面、PDP合规审计+自动修正（人工审批后生效）、AEO/SEO优化</li>
+</ol>
+<p><b>短板</b>：不做订单/ERP库存，只做外部市场数据+广告+货架分析；<b>不做工厂内部生产BOM</b>。</p>
+<h3>2. DataWeave —— 价格情报+货架抓取专家</h3>
+<ul>
+<li><b>背景</b>：2011年创立，班加罗尔；PitchBook口径累计融资$28.6M；自称5000亿+数据点、40万+品牌、4,000+网站；客户：Nordstrom、Overstock、Home Depot、Mars、Mondelez。<b>收购方</b>：2021年收购Sparrosense、2022年收购Vectorised AI Labs（未被收购）。</li>
+<li><b>定价</b>：企业询价，无公开价格(<span class="badge no">未验证</span>)。</li>
+</ul>
+<p><b>核心功能</b>：</p>
+<ol>
+<li><b>Pricing Intelligence</b>：输入产品目录/链接 → 输出跨地区/渠道/币种的竞品价格对标（AI商品匹配，自称99%+准确率）</li>
+<li><b>Assortment Analytics</b>：输入类目 → 输出与竞品的选品缺口、组货建议</li>
+<li><b>Digital Shelf Analytics</b>：输入品牌/SKU → 输出Share of Search、Share of Media、评分/评论、有货率、内容质量</li>
+<li><b>品牌保护</b>：仿冒、假货监测；全网价格监控、价格优化建议；输出API给企业BI</li>
+</ol>
+<p><b>与CommerceIQ的区别</b>：更偏重价格&amp;货架抓取，<b>广告媒体能力弱，没有广告优化Agent，没有AI自动化工作流</b>。</p>
+<h3>3. SellerApp —— 亚马逊卖家全栈</h3>
+<ul>
+<li><b>定位</b>：亚马逊PPC广告、关键词、竞品调研，同时支持Walmart。</li>
+<li><b>能力</b>：关键词挖掘、广告出价优化、竞品销量估算、Listing评分、利润计算器、多市场报表。</li>
+<li><b>短板</b>：对Home Depot支持弱；主要聚焦亚马逊，其他零售平台覆盖有限。</li>
+</ul>
+<h3>4. Intelligence Node —— 价格情报</h3>
+<ul>
+<li><b>定位</b>：价格情报+零售电商分析，面向全球DTC与品牌商。</li>
+<li><b>能力</b>：实时比价、竞品监测、促销分析、评论情感、品类趋势；给品牌做定价策略。</li>
+<li><b>短板</b>：缺少零售媒体广告模块。</li>
+</ul>
+<h3>5. Traknly.ai —— D2C聚合分析</h3>
+<ul>
+<li><b>定位</b>：把亚马逊、独立站、社媒店铺数据统一，AI生成报表、销售预测、产品洞察；面向D2C品牌，印度本土为主。</li>
+</ul>
+<h3>6. Zoho Analytics —— 通用BI</h3>
+<ul>
+<li><b>定位</b>：不是纯电商专用，是通用BI；可对接Amazon、Walmart、Shopify、Home Depot供应商API，自建电商仪表盘。</li>
+<li><b>优势</b>：和Zoho Commerce/CRM打通，业财一体化；适合中小卖家。短板是需要自己写数据源对接，无现成电商AI分析Agent。</li>
+</ul>
+<h3>数据分析五家横向对比</h3>
+<div class="tbl-wrap"><table><thead><tr>
+<th>产品</th>
+<th>核心能力</th>
+<th>支持Home Depot</th>
+<th>适合中国工厂供应商</th>
+<th>短板</th>
+</tr></thead><tbody>
+<tr><td>CommerceIQ</td><td>数字货架+广告AI Agent+市场份额+防窜货</td><td>✅强</td><td>✅</td><td>不做内部ERP、生产BOM</td></tr>
+<tr><td>DataWeave</td><td>价格情报、货架抓取、品牌保护</td><td>✅</td><td>✅</td><td>无广告优化，无Agent工作流</td></tr>
+<tr><td>SellerApp</td><td>亚马逊广告、关键词分析</td><td>❌弱</td><td>✅亚马逊卖家</td><td>Home Depot/Walmart支持差</td></tr>
+<tr><td>Intelligence Node</td><td>价格&amp;竞品监测</td><td>⚠️一般</td><td>✅</td><td>缺少零售媒体广告模块</td></tr>
+<tr><td>Zoho Analytics</td><td>通用BI，自定义报表</td><td>✅</td><td>✅中小卖家</td><td>需自建数据源，无现成AI Agent</td></tr>
+</tbody></table></div>
+<hr>
+</div></section>
+<section><div class="wrap doc"><div class="sec-head"><div class="eyebrow">Section 03</div><h2>三、客服 Agent（Freshworks）</h2></div>
+<h3>Freshworks（Freshdesk / Freshsales）</h3>
+<ul>
+<li><b>背景</b>：印度金奈创立，纳斯达克上市；不做建站ERP，专注电商售后与客户运营；欧美大量独立站、亚马逊卖家在用。</li>
+<li><b>定价</b>(<span class="badge ok">已验证</span>，第三方转述官方定价页2026-09）：Freshdesk Growth <b>$19/坐席/月</b>、Pro $55、Enterprise $89（年付）；<b>Freddy AI Agent：500 sessions免费，之后$49/100 sessions</b>；Freddy Copilot +$29/坐席/月。</li>
+</ul>
+<p><b>电商客服模块功能清单</b>：</p>
+<ol>
+<li><b>工单系统</b>：电商售后、退货、投诉；多渠道（邮件、聊天、WhatsApp）统一收单</li>
+<li><b>客户档案</b>：订单历史、沟通记录；客户标签分群</li>
+<li><b>Freddy AI</b>：线索打分、商机风险预警、推荐下一步动作；AI自动回复+转人工</li>
+<li><b>营销自动化</b>：邮件营销、客户旅程、复购触达</li>
+<li><b>Freshsales CRM侧</b>：多联系人（一家客户：采购/工程师/财务）、工作流自动化、报价单/任务自动触发；可与Freshdesk售后工单打通，客户售后闭环</li>
+</ol>
+<p><b>短板</b>：套件生态弱于Zoho（无原生财务、库存）；高级报表弱；<b>完全没有工业品BOM、图纸、RFQ工程报价模块</b>；对接Home Depot/Walmart供应商门户需大量二次开发。</p>
+<p><b>对你的启示</b>：Freshdesk&quot;按坐席订阅 + AI按session附加&quot;双轨制已成型——你的AI电商客服&quot;基础年费 + 按解决单量阶梯&quot;与该模式同构，可直接引用为定价依据。</p>
+<hr>
+</div></section>
+<section class="alt"><div class="wrap doc"><div class="sec-head"><div class="eyebrow">Section 04</div><h2>四、其他电商SaaS模块速览</h2></div>
+<h3>1. Zoho Commerce —— 建站（对标Shopify）</h3>
+<ul>
+<li><b>定价</b>(<span class="badge ok">已验证</span>)：Starter <b>$22/月（年付）</b>/$27（月付）；Pro $60/$75；Advanced $140/$175；高版本含RFQ询价/赊销账期/B2B信用额度。</li>
+<li><b>功能</b>：无代码拖拽建站、多模板；自定义域名、多语言多币种；SKU变体、商品图集、3D/AR展示；优惠券/满减/捆绑/upsell；多国运费规则、VAT/美国销售税自动计算；购物车放弃挽回（邮件/WhatsApp）；对接Stripe/PayPal；打通Zoho CRM/Books/Analytics。</li>
+<li><b>核心卖点</b>：业财一体化，一套SaaS打通，不需要多套系统；全球18个数据中心。</li>
+</ul>
+<h3>2. Chargebee —— 订阅计费</h3>
+<ul>
+<li><b>定价</b>(<span class="badge ok">已验证</span>)：Flow <b>$0 + 开票额0.80%</b>，或 <b>$99/月 + 0.65%</b>；Enterprise询价；CPQ/RevRec独立产品线另收费。</li>
+<li><b>功能</b>：月/季/年套餐、试用/暂停/取消/升级降级；多币种账单、自动发票；欧洲PSD2、美国税务合规；退款、优惠券、赠礼订阅；收入预测、订阅流失分析；Webhook API。</li>
+<li><b>对你的启示</b>：&quot;$0+0.80%开票额&quot;验证了&quot;固定费+按交易额比例&quot;双轨——你的教练&quot;会员费+课程交易抽成&quot;结构一致。</li>
+</ul>
+<h3>3. Unicommerce —— OMS订单库存</h3>
+<ul>
+<li><b>定位</b>：跨境多渠道ERP/OMS；对接亚马逊、Shopee、Flipkart、ONDC；多平台订单聚合、库存、仓配、退货RTO处理；定价<span class="badge no">未验证</span>（企业询价制）。</li>
+<li><b>功能</b>：订单状态流转（待付款→已付款→拣货→打包→发货→完成→退货退款）；自动分仓、最优仓库路由、异常订单拦截；退货质检、退款、库存回库、退货原因统计；多仓库/库位/条码；实时库存同步防超卖；对接第三方海外仓3PL。</li>
+</ul>
+<h3>4. Capillary —— CDP+会员忠诚度</h3>
+<ul>
+<li><b>定位</b>：统一全渠道客户数据、用户画像、预测分析、会员积分、营销自动化；用户口径：服务47国410+品牌、处理18亿+消费者数据(<span class="badge no">未验证</span>)。</li>
+<li><b>功能</b>：线上线下用户数据统一；积分、等级、优惠券、储值；复购概率/流失风险预测；千人千面营销；GDPR/CCPA合规。</li>
+</ul>
+<h3>5. WizCommerce（原SourceWiz）—— B2B批发</h3>
+<ul>
+<li><b>定位</b>：B2B买家门户，客户分级、<b>客户专属定价、阶梯批发价</b>；批量下单、一键重购、RFQ询价、报价单生成；赊销账期管理、B2B发票、PO下发供应商；销售代表移动端接单APP。</li>
+<li><b>评价</b>：印度SaaS里B2B批发做得最深的一家。</li>
+</ul>
+<h3>6. 支付/物流/其他</h3>
+<ul>
+<li><b>Razorpay</b>：印度头部支付网关；国内交易<b>2%+GST</b>（官方博客，<span class="badge ok">已验证</span>)，新商户90天或₹5L GMV内0%；国际卡3%。</li>
+<li><b>Shiprocket</b>：多快递商比价、打单、物流跟踪、退货管理（定价<span class="badge no">未验证</span>)。</li>
+<li><b>Increff</b>：服装D2C专用OMS，SKU颜色尺码智能分配。</li>
+<li><b>Moglix</b>：工业MRO B2B电商+供应链SaaS，面向制造业采购（不是零售电商）。</li>
+</ul>
+<hr>
+</div></section>
+<section><div class="wrap doc"><div class="sec-head"><div class="eyebrow">Section 05</div><h2>五、价格带总表</h2></div>
+<div class="tbl-wrap"><table><thead><tr>
+<th>产品</th>
+<th>模块</th>
+<th>收费模式</th>
+<th>价格带</th>
+<th>状态</th>
+</tr></thead><tbody>
+<tr><td>Zoho Commerce</td><td>建站</td><td>按版本订阅</td><td>$22–140/月</td><td><span class="badge ok">已验证</span></td></tr>
+<tr><td>Freshdesk</td><td>客服/工单</td><td>按坐席+AI附加</td><td>$19–89/坐席/月；AI $49/100 sessions</td><td><span class="badge ok">已验证</span></td></tr>
+<tr><td>Chargebee</td><td>订阅计费</td><td>按开票额比例</td><td>$0+0.80% 或 $99/月+0.65%</td><td><span class="badge ok">已验证</span></td></tr>
+<tr><td>Razorpay</td><td>支付</td><td>按交易额比例</td><td>国内2%+GST</td><td><span class="badge ok">已验证</span></td></tr>
+<tr><td>CommerceIQ</td><td>数据分析</td><td>企业年费</td><td>约$25,000/年起</td><td><span class="badge no">未验证</span>（第三方参考）</td></tr>
+<tr><td>DataWeave</td><td>数据分析</td><td>企业询价</td><td>—</td><td><span class="badge no">未验证</span></td></tr>
+<tr><td>SellerApp</td><td>数据分析</td><td>企业询价</td><td>—</td><td><span class="badge no">未验证</span></td></tr>
+<tr><td>Intelligence Node</td><td>数据分析</td><td>企业询价</td><td>—</td><td><span class="badge no">未验证</span></td></tr>
+<tr><td>Unicommerce</td><td>OMS</td><td>企业询价</td><td>—</td><td><span class="badge no">未验证</span></td></tr>
+<tr><td>Capillary</td><td>CDP</td><td>企业询价</td><td>—</td><td><span class="badge no">未验证</span></td></tr>
+<tr><td>Shiprocket/WizCommerce/Increff</td><td>物流/B2B/WMS</td><td>企业询价</td><td>—</td><td><span class="badge no">未验证</span></td></tr>
+</tbody></table></div>
+<p><b>规律</b>：面向中小卖家的模块（建站/客服/计费/支付）明码标价；面向大品牌/大零售商的数据分析与OMS/CDP全部企业询价——<b>&quot;明码标价&quot;本身就是切中小客户的差异化</b>。</p>
+<hr>
+</div></section>
+<section class="alt"><div class="wrap doc"><div class="sec-head"><div class="eyebrow">Section 06</div><h2>六、短板与能力边界（决定你的差异化）</h2></div>
+<p>印度系电商SaaS的通病，恰好是你的机会：</p>
+<ol>
+<li>❌ <b>缺少中国供应链深度模块</b>：没有工厂BOM、CNC/设备生产工单、工艺文档管理——主要服务海外买家，不做中国工厂内部生产管理</li>
+<li>❌ Home Depot/Walmart供应商的<b>供应商门户深度不足</b>，没有针对工业硬件、工控设备的定制化字段</li>
+<li>❌ 国内本土ERP对接弱；对中国跨境卖家的本土化支持一般</li>
+<li>❌ 广告PPC优化能力弱（SellerApp只做亚马逊，Home Depot弱）</li>
+<li>✅ 强项：B2B批发RFQ、订阅计费、客户CDP会员、业财一体化、多国家税务合规、开放API</li>
+</ol>
+<p><b>一句话</b>：印度系从&quot;订单&quot;开始做SaaS，<b>你从&quot;制造&quot;开始做——BOM是主数据，订单是下游</b>。他们服务&quot;卖货的人&quot;，你服务&quot;造货的人&quot;。这是结构性差异化，不是功能点差异化。</p>
+<hr>
+</div></section>
+<section><div class="wrap doc"><div class="sec-head"><div class="eyebrow">Section 07</div><h2>七、12模块对标：印度系有 vs 你缺（差异化设计）</h2></div>
+<div class="tbl-wrap"><table><thead><tr>
+<th>模块</th>
+<th>印度系现状</th>
+<th>你的现状</th>
+<th>结论</th>
+</tr></thead><tbody>
+<tr><td>D2C建站</td><td>Zoho Commerce $22–140/月</td><td>无</td><td><b>不做</b></td></tr>
+<tr><td>OMS多渠道聚合</td><td>Unicommerce</td><td>AI客服P0有查订单骨架（未真实对接）</td><td><b>对接不自建</b>，走开放API</td></tr>
+<tr><td>WMS</td><td>Increff（服装SKU）</td><td>无</td><td><b>不做</b>（工业场景不需要）</td></tr>
+<tr><td>B2B批发（专属定价/阶梯价/RFQ/账期）</td><td>强项（WizCommerce、Zoho高版本）</td><td>CRM无B2B报价模块</td><td><b>抄+差异化</b>：RFQ照抄，报价单从BOM自动生成（他们没有）</td></tr>
+<tr><td>订阅计费</td><td>Chargebee（价格<span class="badge ok">已验证</span>)</td><td>教练会员制</td><td><b>抄模式不自建引擎</b>：先人工+审批台账</td></tr>
+<tr><td>CRM/CDP</td><td>Freshworks工单+Capillary忠诚度</td><td>销售Agent（P0–P3）+ 新产品线工业品外贸CRM</td><td>见第八节</td></tr>
+<tr><td>财务税务</td><td>Zoho业财一体</td><td>无</td><td>后期接第三方，不自建</td></tr>
+<tr><td>物流履约</td><td>Shiprocket</td><td>无</td><td><b>不做</b></td></tr>
+<tr><td>BI报表</td><td>通用模块</td><td>仅运营数据看板</td><td><b>不做</b>，保持轻</td></tr>
+<tr><td>开放API</td><td>共同模式</td><td>Connect六连接器开发中</td><td><b>坚持做</b></td></tr>
+<tr><td><b>工厂BOM/生产工单/工艺文档</b></td><td><b>都没有</b></td><td>四拆解+工厂订阅+验厂卡</td><td><b>独占区，主攻</b></td></tr>
+<tr><td><b>工业品B2B门户/供应商门户深度</b></td><td><b>弱</b></td><td>HITBOX拿货价表（真实数据）</td><td><b>独占区，主攻</b></td></tr>
+</tbody></table></div>
+<p><b>CommerceIQ 6大功能标注</b>：AI行动建议✅可抄（数字货架+行动建议）、PO对账✅可抄（走审批）、缺货纠纷✅可抄（售后链路复用）、内容修正✅可抄、防窜货✅可抄（只告警，自动下架走审批）、价格乱价监控✅可抄。<b>他们都不做的（内部BOM/生产协同）= 你的差异化</b>。</p>
+<hr>
+</div></section>
+<section class="alt"><div class="wrap doc"><div class="sec-head"><div class="eyebrow">Section 08</div><h2>八、结论</h2></div>
+<ol>
+<li><b>印度电商SaaS的真正强项</b>：垂直模块做深（客服、计费、OMS、CDP、数据分析各一个冠军），开放API咬合，印创始+美总部+班加罗尔研发是标准结构。</li>
+<li><b>数据分析是皇冠</b>：CommerceIQ（AI Agent工作流+防窜货）&gt; DataWeave（价格货架抓取）&gt; SellerApp/Intelligence Node（单点工具）。DataWeave-lite + CommerceIQ式行动建议是你的敲门砖组合。</li>
+<li><b>客服Agent定价已定型</b>：$19–89/坐席/月 + AI按session附加——你的AI客服定价可直接对标。</li>
+<li><b>你的结构性机会</b>：他们都没有工厂BOM/生产工单/工艺文档，不做中国工厂内部——&quot;RFQ-BOM-图纸&quot;数据主线 + 工业品外贸专用CRM + Home Depot/Walmart供应商门户深度，是他们够不着的战场。</li>
+<li><b>不要做的</b>：建站、WMS、物流履约、自建计费引擎、自建BI——这些要么印度系已占住，要么投入产出比低。</li>
+</ol>
+<div class="callout">全文完。原始调研证据见《真实市场调研 + 快速盈利产品化方案》第六~八节。</div>
+</div></section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>从"制造"开始做 SaaS</h2>
+    <p>印度系从"订单"开始做 SaaS，你从"制造"开始做——BOM 是主数据，订单是下游。<br>引用签约前请以各产品官网为准。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fam">
+      <a href="research/">🏠 insightmarketplac 平台主站（总仓）</a>
+      <a href="agent.html">🤖 insightmarketplac Agent 产品站</a>
+      <a class="cur" href="india-saas.html">📊 印度电商SaaS全景调研</a>
+    </div>
+    <div class="f-grid">
+      <span>© 2026 insightmarketplac · 印度电商SaaS全景调研 · 整理日期 2026-09-30</span>
+      <div class="f-links">
+        <a href="mailto:haidong.zhou@outlook.com">客服邮箱</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

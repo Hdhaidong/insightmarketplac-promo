@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-zh="预约会议 — 嘉兴砥石科技" data-en="Book a Meeting — Adventure Retail">预约会议 — 嘉兴砥石科技</title>
+<meta name="description" content="预约 Adventure Retail 商业洞察会议：咨询、产品演示、合作洽谈。">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="assets/customer-service.css">
+<style>
+/* 预约页专用样式 */
+.step-title { color: var(--navy); margin: 28px 0 14px; font-size: 19px; }
+.step-title .n { display: inline-flex; width: 28px; height: 28px; border-radius: 50%;
+  background: var(--blue); color: #fff; font-size: 15px; align-items: center; justify-content: center; margin-right: 8px; }
+.type-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.type-card { display: block; border: 2px solid var(--line); border-radius: var(--radius);
+  padding: 18px 16px; cursor: pointer; transition: border-color .15s, background .15s; }
+.type-card input { display: none; }
+.type-card strong { display: block; color: var(--navy); margin-bottom: 6px; font-size: 16px; }
+.type-card p { font-size: 13px; color: var(--muted); line-height: 1.6; margin: 0; }
+.type-card:has(input:checked) { border-color: var(--blue); background: var(--blue-light); }
+.date-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(86px, 1fr)); gap: 10px; }
+.date-btn { border: 1px solid var(--line); background: #fff; border-radius: 8px; padding: 10px 4px;
+  cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; transition: all .15s; }
+.date-btn .d { font-weight: 700; color: var(--navy); font-size: 14px; }
+.date-btn .w { font-size: 12px; color: var(--muted); }
+.date-btn:hover { border-color: var(--blue); }
+.date-btn.sel { background: var(--navy); border-color: var(--navy); }
+.date-btn.sel .d, .date-btn.sel .w { color: #fff; }
+.slot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 10px; }
+.slot-btn { border: 1px solid var(--line); background: #fff; border-radius: 8px; padding: 10px 0;
+  cursor: pointer; font-size: 15px; color: var(--navy); transition: all .15s; }
+.slot-btn:hover { border-color: var(--blue); }
+.slot-btn.sel { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
+.slot-note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+.confirm-box { max-width: 720px; margin: 0 auto; text-align: center; border: 2px solid var(--accent);
+  border-radius: 12px; padding: 40px 28px; background: #f3faf6; }
+.confirm-box .ok-icon { font-size: 52px; }
+.confirm-no { font-size: 30px; font-weight: 800; color: var(--navy); letter-spacing: 2px; margin: 12px 0; }
+.confirm-detail { text-align: left; background: #fff; border: 1px solid var(--line); border-radius: 8px;
+  padding: 18px 20px; margin: 20px 0; font-size: 15px; }
+.confirm-detail div { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0;
+  border-bottom: 1px dashed var(--line); }
+.confirm-detail div:last-child { border-bottom: none; }
+.booking-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.booking-item { display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; margin-bottom: 10px; font-size: 14px; }
+.btn-cancel { border: 1px solid #e0a3a3; background: #fff; color: #c0392b; border-radius: 6px;
+  padding: 6px 14px; cursor: pointer; font-size: 13px; }
+.btn-cancel:hover { background: #fdf0f0; }
+.two-field { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 640px) {
+  .type-cards { grid-template-columns: 1fr; }
+  .two-field { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">AR</span><span data-zh="嘉兴砥石科技" data-en="Adventure Retail">嘉兴砥石科技</span></a>
+    <button class="burger" aria-label="菜单">☰</button>
+    <nav class="nav">
+      <a data-page="index.html" href="index.html" data-zh="首页" data-en="Home">首页</a>
+      <a data-page="about.html" href="about.html" data-zh="关于我们" data-en="About">关于我们</a>
+      <a data-page="business.html" href="business.html" data-zh="业务领域" data-en="Business">业务领域</a>
+      <a data-page="business-platform.html" href="business-platform.html" data-zh="业务平台" data-en="Platform">业务平台</a>
+      <a data-page="agents.html" href="agents.html" data-zh="Agent 下载" data-en="Agents">Agent 下载</a>
+      <a data-page="podcast.html" href="podcast.html" data-zh="播客" data-en="Podcast">播客</a>
+      <a data-page="partners.html" href="partners.html" data-zh="合作" data-en="Partners">合作</a>
+      <a data-page="contact.html" href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a>
+      <a data-page="booking.html" href="booking.html" data-zh="预约会议" data-en="Book a Meeting">预约会议</a>
+      <button class="lang-btn">EN</button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding:72px 20px 64px">
+  <div class="hero-inner">
+    <h1 data-zh="预约商业洞察会议" data-en="Book a Business Insight Meeting">预约商业洞察会议</h1>
+    <p class="lead" data-zh="选个方便的时间，跟我们聊聊出海、产品或合作——45 分钟，免费。"
+       data-en="Pick a time that suits you to talk exports, products or partnerships — 45 minutes, free.">选个方便的时间，跟我们聊聊出海、产品或合作——45 分钟，免费。</p>
+  </div>
+</section>
+
+<section class="section">
+  <form class="form" id="booking-form" style="max-width:720px" novalidate>
+    <h2 class="step-title"><span class="n">1</span><span data-zh="会议类型" data-en="Meeting Type">会议类型</span></h2>
+    <div class="type-cards">
+      <label class="type-card">
+        <input type="radio" name="mtype" value="insight" checked>
+        <strong data-zh="商业洞察咨询" data-en="Business Insight Consultation">商业洞察咨询</strong>
+        <p data-zh="市场机会、选品方向、渠道策略，一对一拆解。" data-en="Market opportunities, sourcing direction, channel strategy — one-on-one.">市场机会、选品方向、渠道策略，一对一拆解。</p>
+      </label>
+      <label class="type-card">
+        <input type="radio" name="mtype" value="demo">
+        <strong data-zh="产品演示" data-en="Product Demo">产品演示</strong>
+        <p data-zh="看 Agent 和工作台真实跑一遍，现场答疑。" data-en="Watch our agents and workbenches in action, with live Q&A.">看 Agent 和工作台真实跑一遍，现场答疑。</p>
+      </label>
+      <label class="type-card">
+        <input type="radio" name="mtype" value="partner">
+        <strong data-zh="合作洽谈" data-en="Partnership Talk">合作洽谈</strong>
+        <p data-zh="工厂入驻、品牌代理、渠道合作，聊合作模式。" data-en="Factory onboarding, brand agency, channel partnerships.">工厂入驻、品牌代理、渠道合作，聊合作模式。</p>
+      </label>
+    </div>
+
+    <h2 class="step-title"><span class="n">2</span><span data-zh="选择日期" data-en="Pick a Date">选择日期</span></h2>
+    <div id="date-grid" class="date-grid"></div>
+
+    <h2 class="step-title"><span class="n">3</span><span data-zh="选择时间" data-en="Pick a Time">选择时间</span></h2>
+    <div id="slot-grid" class="slot-grid"></div>
+    <p id="slot-note" class="slot-note"></p>
+
+    <h2 class="step-title"><span class="n">4</span><span data-zh="联系信息" data-en="Your Details">联系信息</span></h2>
+    <div class="two-field">
+      <div class="field">
+        <label data-zh="姓名 *" data-en="Name *">姓名 *</label>
+        <input type="text" name="name" data-zh-ph="您的姓名" data-en-ph="Your name" placeholder="您的姓名">
+      </div>
+      <div class="field">
+        <label data-zh="公司" data-en="Company">公司</label>
+        <input type="text" name="company" data-zh-ph="公司名称（选填）" data-en-ph="Company (optional)" placeholder="公司名称（选填）">
+      </div>
+    </div>
+    <div class="two-field">
+      <div class="field">
+        <label data-zh="邮箱 *" data-en="Email *">邮箱 *</label>
+        <input type="email" name="email" placeholder="you@company.com">
+      </div>
+      <div class="field">
+        <label data-zh="电话 *" data-en="Phone *">电话 *</label>
+        <input type="tel" name="phone" data-zh-ph="手机 / 座机" data-en-ph="Mobile / landline" placeholder="手机 / 座机">
+      </div>
+    </div>
+
+    <h2 class="step-title"><span class="n">5</span><span data-zh="需求描述" data-en="What Do You Need?">需求描述</span></h2>
+    <div class="field">
+      <textarea name="req" data-zh-ph="简单说说你想聊什么（选填）…" data-en-ph="Briefly tell us what you'd like to discuss (optional)…" placeholder="简单说说你想聊什么（选填）…"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-dark" style="width:100%; margin-top:10px" data-zh="确认预约" data-en="Confirm Booking">确认预约</button>
+    <p id="booking-tip" class="form-note" style="display:none"></p>
+  </form>
+
+  <div id="booking-confirm" class="confirm-box" style="display:none">
+    <div class="ok-icon">✅</div>
+    <h2 style="color:var(--navy)" data-zh="预约成功" data-en="Booked">预约成功</h2>
+    <p id="confirm-ok" class="form-note"></p>
+    <div class="confirm-no" id="confirm-no"></div>
+    <p class="form-note" data-zh="预约确认号（请保存）" data-en="Booking reference (please save it)">预约确认号（请保存）</p>
+    <div class="confirm-detail" id="confirm-detail"></div>
+    <button type="button" id="book-again" class="btn btn-ghost" style="color:var(--navy); border:1px solid var(--line)" data-zh="再约一场" data-en="Book Another">再约一场</button>
+  </div>
+
+  <div id="my-bookings" style="max-width:720px; margin:40px auto 0"></div>
+  <p id="my-tip" class="form-note" style="display:none"></p>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <h4 data-zh="嘉兴砥石科技" data-en="Adventure Retail">嘉兴砥石科技</h4>
+      <p style="font-size:14px" data-zh="工业品出海服务公司：外贸、AI Agent、渠道分销。" data-en="Industrial export services: foreign trade, AI agents, channel distribution.">工业品出海服务公司：外贸、AI Agent、渠道分销。</p>
+    </div>
+    <div>
+      <h4 data-zh="导航" data-en="Navigate">导航</h4>
+      <a href="about.html" data-zh="关于我们" data-en="About">关于我们</a>
+      <a href="business.html" data-zh="业务领域" data-en="Business">业务领域</a>
+      <a href="business-platform.html" data-zh="业务平台" data-en="Platform">业务平台</a>
+      <a href="agents.html" data-zh="Agent 下载" data-en="Agents">Agent 下载</a>
+      <a href="podcast.html" data-zh="播客" data-en="Podcast">播客</a>
+      <a href="partners.html" data-zh="合作" data-en="Partners">合作</a>
+      <a href="booking.html" data-zh="预约会议" data-en="Book a Meeting">预约会议</a>
+    </div>
+    <div>
+      <h4 data-zh="联系" data-en="Contact">联系</h4>
+      <a href="mailto:contact@adventureretail.com">contact@adventureretail.com</a>
+      <a href="contact.html" data-zh="联系表单" data-en="Contact form">联系表单</a>
+    </div>
+  </div>
+  <div class="footer-bottom" data-zh="© 2026 嘉兴砥石科技 · adventureretail.ai" data-en="© 2026 Jiaxing Dishi Technology · adventureretail.ai">© 2026 嘉兴砥石科技 · adventureretail.ai</div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/booking.js"></script>
+<script src="assets/customer-service.js"></script>
+</body>
+</html>

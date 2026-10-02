@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>influencer-studio Client — The Creator Command Center</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;background:#0f0f1a;color:#e8e8f0;line-height:1.7}
+.hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);padding:80px 20px;text-align:center}
+.hero h1{font-size:2.5em;margin-bottom:16px;background:linear-gradient(90deg,#ff6b6b,#ffa502,#2ed573);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.2em;color:#a0a0b8;max-width:640px;margin:0 auto 32px}
+.cta{display:inline-block;background:#ff6b6b;color:#fff;padding:14px 40px;border-radius:30px;text-decoration:none;font-size:1.1em;font-weight:700;transition:.3s}
+.cta:hover{background:#ff5252;transform:translateY(-2px)}
+.route-strip{text-align:center;padding:18px 20px;background:#141428;border-bottom:1px solid #2a2a4a}
+.route-badge{display:inline-block;border:1px solid #4da6ff;color:#4da6ff;font-size:.85em;padding:6px 18px;border-radius:20px;letter-spacing:.5px}
+.section{max-width:900px;margin:0 auto;padding:60px 20px}
+.section h2{font-size:1.8em;margin-bottom:24px;text-align:center}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:32px}
+.card{background:#1a1a2e;border-radius:12px;padding:28px;border:1px solid #2a2a4a}
+.card h3{font-size:1.2em;margin-bottom:12px;color:#ffa502}
+.card p{color:#a0a0b8;font-size:.95em}
+.steps{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:32px}
+.step{background:#1a1a2e;border-radius:12px;padding:24px;flex:1;min-width:220px;text-align:center;border:1px solid #2a2a4a}
+.step .num{font-size:2.5em;font-weight:800;color:#ff6b6b}
+.step h3{margin:12px 0 8px}
+.step p{color:#a0a0b8;font-size:.9em}
+.demo{background:#1a1a2e;border-radius:12px;padding:32px;margin-top:32px;border:1px solid #2a2a4a}
+.demo h3{color:#2ed573;margin-bottom:16px}
+.demo table{width:100%;border-collapse:collapse;font-size:.9em}
+.demo th,.demo td{padding:10px;text-align:left;border-bottom:1px solid #2a2a4a}
+.demo th{color:#ffa502}
+.demo td{color:#c0c0d8}
+.demo a{color:#2ed573}
+.demo ul{color:#c0c0d8;font-size:.95em;padding-left:20px}
+.demo li{margin:8px 0}
+.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:32px}
+.price-card{background:#1a1a2e;border-radius:12px;padding:32px;text-align:center;border:1px solid #2a2a4a}
+.price-card.hot{border-color:#ff6b6b;transform:scale(1.03)}
+.price-card h3{font-size:1.3em;margin-bottom:8px}
+.price-card .price{font-size:2em;font-weight:800;color:#ffa502;margin:12px 0}
+.price-card ul{list-style:none;text-align:left;margin-top:16px}
+.price-card li{padding:6px 0;color:#a0a0b8;font-size:.9em}
+.price-card li::before{content:"✓ ";color:#2ed573}
+.footer{text-align:center;padding:40px 20px;color:#606078;font-size:.85em}
+.footer a{color:#2ed573}
+.badge{display:inline-block;background:#ff6b6b;color:#fff;font-size:.75em;padding:4px 12px;border-radius:12px;margin-bottom:16px}
+.note{color:#a0a0b8;max-width:640px;margin:0 auto;text-align:center}</style>
+</head>
+<body>
+<div class="hero">
+<div class="badge">Creator Client</div>
+<h1>influencer-studio</h1>
+<p>Subscriptions. Samples. Scheduling. Content production. AI short dramas.<br>One client for everything a creator does in a day.</p>
+<a class="cta" href="#start">See how it works</a>
+</div>
+<div class="route-strip"><span class="route-badge">PI Route · pi-mono client</span></div>
+<div class="section">
+<h2>From brief to publish, all in one flow</h2>
+<div class="cards"><div class="card"><h3>Five-stream subscriptions</h3><p>Brand, content, product, factory, and sample subscriptions — five inbound feeds in one place. Never miss an opportunity.</p></div>
+<div class="card"><h3>Sample management</h3><p>Log every sample you receive: brand, specs, deadline, deliverables. All visible at a glance.</p></div>
+<div class="card"><h3>Scheduling</h3><p>Weekly calendar with deadline alerts. Know exactly how many orders are in and when each is due.</p></div>
+<div class="card"><h3>Content production</h3><p>Topic bank + AI short-copy assistant (rules-based). A clear path from idea to finished video.</p></div>
+<div class="card"><h3>AI short-drama pipeline</h3><p>Drama promo assembly line: topic, outline, storyboard in one go. Sample drama "The Welding Tycoon" included.</p></div>
+<div class="card"><h3>IP &amp; content analytics</h3><p>Analyze your own content data, find what makes hits, and replicate success.</p></div></div>
+</div>
+<div class="section" id="start">
+<h2>Get started in 3 steps</h2>
+<div class="steps"><div class="step"><div class="num">1</div><h3>Subscribe to sources</h3><p>Add the brands, products, and factories you follow. Info flows in automatically.</p></div>
+<div class="step"><div class="num">2</div><h3>Manage samples &amp; schedule</h3><p>Log samples, then schedule shoots and publish dates on the calendar.</p></div>
+<div class="step"><div class="num">3</div><h3>Produce &amp; publish</h3><p>Write copy and shoot in Content; run dramas through the AI pipeline.</p></div></div>
+<div class="demo"><h3>Feature tour (7 pages)</h3>
+<table><tr><th>Page</th><th>Feature</th><th>Notes</th></tr>
+<tr><td>Overview</td><td>Dashboard</td><td>Today's tasks, todos, content stats at a glance</td></tr>
+<tr><td>Subscriptions</td><td>Five-stream feeds</td><td>Brand / content / product / factory / sample</td></tr>
+<tr><td>Samples</td><td>Sample ledger</td><td>Log, track, expiry alerts</td></tr>
+<tr><td>Schedule</td><td>Weekly calendar + deadlines</td><td>Planning, reminders</td></tr>
+<tr><td>Content</td><td>Topics + AI short copy</td><td>Rules-based copy assistant</td></tr>
+<tr><td>IP analytics</td><td>Data analysis</td><td>Find your hit patterns</td></tr>
+<tr><td>AI short dramas</td><td>Drama pipeline</td><td>Sample "The Welding Tycoon" included</td></tr></table></div>
+</div>
+<div class="section">
+<h2>Who it's for</h2>
+<div class="cards"><div class="card"><h3>Creators / streamers</h3><p>Orders, shoots, publishing — one client handles the whole day.</p></div>
+<div class="card"><h3>MCNs</h3><p>Equip every creator with the same client. Samples, schedules, and content managed centrally.</p></div>
+<div class="card"><h3>Brands</h3><p>See how creators use your samples and what they produce. Smoother collabs.</p></div></div>
+</div>
+<div class="section">
+<h2>Pricing</h2>
+<div class="pricing"><div class="price-card"><h3>Free</h3><div class="price">$0</div>
+<ul><li>Core features</li><li>Personal use</li></ul></div>
+<div class="price-card hot"><h3>Pro</h3><div class="price">Coming soon</div>
+<ul><li>All features</li><li>AI copy upgrade</li></ul></div>
+<div class="price-card"><h3>Team</h3><div class="price">Coming soon</div>
+<ul><li>Multi-creator management</li><li>Data dashboard</li></ul></div></div>
+</div>
+<div class="section" style="text-align:center">
+<h2>Tech notes</h2>
+<p class="note">Built on the pi-mono architecture. Runs locally. Current version is rules-based (AI short copy is a local rules engine; digital-human video is a placeholder until an LLM key is connected).<br><br>Dual-route strategy: this product ships on the PI route (pi-mono). DSH route (desktop + web UI) versions are developed separately.<br><br>Source code is private; the finished client is distributed via this page.</p>
+</div>
+<div class="footer">
+<p>insightmarketplac-promo · Public distribution repo | Source code private<br>
+<a href="https://github.com/Hdhaidong/insightmarketplac-promo">GitHub</a> · <a href="/">Home</a> · <a href="influencer-studio.html">中文版 | Chinese version</a></p>
+</div>
+</body>
+</html>

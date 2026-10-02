@@ -3,347 +3,132 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>insightmarketplac — 已上线业务 Agent 总览 · 跨境电商 AI 数字员工团队</title>
-<meta name="description" content="insightmarketplac 宣传总览：11 个已上线跨境电商业务 Agent——市场调研、选品分析、竞品监控、广告优化、打单、Listing、上架、图片、运营、客服、培训。成品公开下载，源码闭源私有，隶属关系一目了然。">
-<link rel="canonical" href="https://hdhaidong.github.io/insightmarketplac-promo/">
-<style>
-  :root {
-    --bg: #0a0b0e;
-    --bg-soft: #101318;
-    --card: #12151b;
-    --ink: #f2f4f8;
-    --ink-dim: #9aa3b2;
-    --ink-faint: #5c6472;
-    --accent: #4f8dff;
-    --accent-soft: rgba(79,141,255,.12);
-    --green: #3ddc97;
-    --line: rgba(255,255,255,.08);
-    --font: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", system-ui, sans-serif;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--font);
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-  ::selection { background: var(--accent); color: #fff; }
-  a { color: var(--accent); text-decoration: none; }
-
-  /* ── Nav ── */
-  nav {
-    position: sticky; top: 0; z-index: 50;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 16px 48px;
-    background: rgba(10,11,14,.88);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-brand { font-size: 17px; font-weight: 700; letter-spacing: -.02em; color: var(--ink); }
-  .nav-brand b { color: var(--accent); font-weight: 700; }
-  .nav-links { display: flex; gap: 22px; font-size: 13.5px; }
-  .nav-links a { color: var(--ink-dim); transition: color .2s; }
-  .nav-links a:hover { color: var(--ink); }
-
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
-
-  /* ── Hero ── */
-  .hero { padding: 100px 0 80px; background: radial-gradient(1200px 500px at 50% -10%, rgba(79,141,255,.14), transparent 70%); }
-  .badge {
-    display: inline-block; font-size: 12px; font-weight: 600;
-    letter-spacing: .18em; text-transform: uppercase;
-    color: var(--accent); border: 1px solid rgba(79,141,255,.35);
-    border-radius: 999px; padding: 6px 16px; margin-bottom: 26px;
-  }
-  .hero h1 { font-size: clamp(34px, 5.4vw, 62px); font-weight: 800; letter-spacing: -.04em; line-height: 1.08; }
-  .hero h1 .dot { color: var(--accent); }
-  .hero .sub { margin-top: 24px; font-size: 17px; color: var(--ink-dim); line-height: 1.8; max-width: 640px; }
-  .hero .sub b { color: var(--ink); font-weight: 600; }
-  .hero-actions { margin-top: 38px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: var(--accent); color: #fff; font-size: 15px; font-weight: 600;
-    padding: 14px 32px; border-radius: 999px;
-    transition: transform .25s, box-shadow .25s;
-  }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px -8px rgba(79,141,255,.55); }
-  .btn-ghost {
-    display: inline-flex; align-items: center;
-    font-size: 15px; color: var(--ink);
-    border: 1px solid var(--line); border-radius: 999px; padding: 14px 32px;
-    transition: border-color .25s;
-  }
-  .btn-ghost:hover { border-color: var(--accent); }
-  .hero-note { font-size: 13px; color: var(--ink-faint); }
-
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: 56px; }
-  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; text-align: center; }
-  .stat b { display: block; font-size: 28px; font-weight: 800; color: var(--accent); }
-  .stat span { font-size: 12.5px; color: var(--ink-dim); }
-
-  /* ── Sections ── */
-  section { padding: 88px 0; }
-  section + section { border-top: 1px solid var(--line); }
-  .sec-label { font-size: 12px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
-  .sec-title { margin-top: 14px; font-size: clamp(26px, 3.6vw, 40px); font-weight: 700; letter-spacing: -.03em; line-height: 1.18; }
-  .sec-sub { margin-top: 14px; font-size: 15px; color: var(--ink-dim); line-height: 1.8; max-width: 720px; }
-
-  /* ── Product cards ── */
-  .grid { margin-top: 52px; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
-  .card {
-    background: var(--card); border: 1px solid var(--line); border-radius: 18px;
-    padding: 26px; display: flex; flex-direction: column;
-    transition: border-color .25s, transform .25s;
-  }
-  .card:hover { border-color: rgba(79,141,255,.5); transform: translateY(-3px); }
-  .card .crow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
-  .tag { font-size: 11px; font-weight: 700; letter-spacing: .08em; border-radius: 6px; padding: 3px 10px; }
-  .tag.main { color: var(--accent); background: var(--accent-soft); }
-  .tag.pub { color: var(--green); background: rgba(61,220,151,.1); }
-  .tag.priv { color: #ffb454; background: rgba(255,180,84,.1); }
-  .card h3 { font-size: 19px; font-weight: 700; letter-spacing: -.01em; }
-  .card h3 small { display: block; margin-top: 4px; font-size: 12px; font-weight: 500; color: var(--ink-faint); letter-spacing: .04em; }
-  .card p { margin-top: 12px; font-size: 14px; color: var(--ink-dim); line-height: 1.75; flex: 1; }
-  .card .belong {
-    margin-top: 16px; padding: 12px 14px;
-    background: rgba(255,255,255,.025); border: 1px dashed var(--line); border-radius: 10px;
-    font-size: 12.5px; color: var(--ink-dim); line-height: 1.7;
-  }
-  .card .belong b { color: var(--ink); font-weight: 600; }
-  .card .go { margin-top: 18px; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--accent); }
-  .card .go:hover { text-decoration: underline; }
-
-  /* ── Structure tree ── */
-  .tree { margin-top: 52px; border: 1px solid var(--line); border-radius: 18px; background: var(--bg-soft); padding: 36px; overflow-x: auto; }
-  .t-root { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-  .t-root .tag { font-size: 10.5px; }
-  .t-children { margin-top: 18px; border-left: 1px solid var(--line); padding-left: 26px; display: flex; flex-direction: column; gap: 12px; }
-  .t-node { position: relative; }
-  .t-node::before { content: ""; position: absolute; left: -26px; top: 15px; width: 18px; height: 1px; background: var(--line); }
-  .t-node .row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 14.5px; }
-  .t-node .row b { font-weight: 650; }
-  .t-node .row .role { font-size: 12px; color: var(--ink-dim); }
-  .t-node .sub { margin-top: 6px; font-size: 12.5px; color: var(--ink-faint); line-height: 1.7; padding-left: 2px; }
-  .t-node .sub b { color: var(--ink-dim); font-weight: 600; }
-  .legend { margin-top: 26px; display: flex; gap: 22px; flex-wrap: wrap; font-size: 12.5px; color: var(--ink-dim); }
-
-  /* ── Download ── */
-  .dl { text-align: center; background: radial-gradient(800px 400px at 50% 0%, rgba(79,141,255,.1), transparent 70%); }
-  .dl .sec-title { max-width: 620px; margin-left: auto; margin-right: auto; }
-  .dl .sec-sub { max-width: 460px; margin-left: auto; margin-right: auto; }
-  .dl .btn-primary { margin-top: 40px; }
-  .dl-meta { margin-top: 18px; font-size: 13px; color: var(--ink-faint); }
-
-  footer { border-top: 1px solid var(--line); padding: 36px 48px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--ink-faint); }
-  footer .f-brand { font-weight: 700; color: var(--ink-dim); }
-  footer a { color: var(--ink-dim); border-bottom: 1px solid var(--line); }
-  footer a:hover { color: var(--accent); border-color: currentColor; }
-
-  @media (max-width: 860px) {
-    nav { padding: 14px 24px; }
-    .nav-links { gap: 14px; }
-    .wrap { padding: 0 24px; }
-    .hero { padding: 72px 0 56px; }
-    section { padding: 64px 0; }
-    .tree { padding: 22px; }
-    footer { padding: 28px 24px; }
-  }
-</style>
+<title>Adventure Retail — 工业品出海 · AI 商业解决方案</title>
+<meta name="description" content="Adventure Retail：工业品外贸、AI Agent 解决方案、北美渠道服务。">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="assets/customer-service.css">
 </head>
 <body>
 
-<nav>
-  <a class="nav-brand" href="./">insightmarketplac<b>.</b></a>
-  <div class="nav-links">
-    <a href="#products">已上线 Agent</a>
-    <a href="wayfair-assistant.html">Wayfair 助手</a>
-    <a href="coach-assistant.html">教练助手</a>
-    <a href="adventure-market.html">能力市场</a>
-    <a href="adventure-data.html">数据平台</a>
-    <a href="adventure-agent.html">桌面客户端</a>
-    <a href="#structure">仓库隶属</a>
-    <a href="#download">下载客户端</a>
-    <a href="https://github.com/Hdhaidong/insightmarketplac-promo" target="_blank" rel="noopener">GitHub ↗</a>
-  </div>
-</nav>
-
-<!-- Hero -->
-<header class="hero">
-  <div class="wrap">
-    <div class="badge">AI Digital Employees · 宣传总览</div>
-    <h1>insightmarketplac<span class="dot">.</span><br>给跨境生意，配一支 AI 数字员工团队。</h1>
-    <p class="sub"><b>11 个业务 Agent 已全部上线</b>：市场调研、选品分析、竞品监控、广告优化、打单、Listing、上架、图片、运营、客服、培训——一个工作台调度，写操作人工审批，全程可追溯。成品公开下载，源码闭源私有。</p>
-    <div class="hero-actions">
-      <a class="btn-primary" href="https://github.com/Hdhaidong/insightmarketplac-promo/releases/download/insightmarketplac-v1.0.0/insightmarketplac-Setup-1.0.0-client01.exe">
-        下载 Windows 客户端
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v14m0 0l-5.5-5.5M12 17l5.5-5.5M4 21h16"/></svg>
-      </a>
-      <a class="btn-ghost" href="#products">浏览已上线 Agent</a>
-      <span class="hero-note">Windows 10 / 11 · 约 75 MB · 安装即用</span>
-    </div>
-    <div class="stats">
-      <div class="stat"><b>11</b><span>已上线业务 Agent</span></div>
-      <div class="stat"><b>41</b><span>全球零售平台</span></div>
-      <div class="stat"><b>7</b><span>平台深度支持</span></div>
-      <div class="stat"><b>6</b><span>条发布通道</span></div>
-    </div>
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">AR</span><span data-zh="嘉兴砥石科技" data-en="Adventure Retail">嘉兴砥石科技</span></a>
+    <button class="burger" aria-label="菜单">☰</button>
+    <nav class="nav">
+      <a data-page="index.html" href="index.html" data-zh="首页" data-en="Home">首页</a>
+      <a data-page="about.html" href="about.html" data-zh="关于我们" data-en="About">关于我们</a>
+      <a data-page="business.html" href="business.html" data-zh="业务领域" data-en="Business">业务领域</a>
+      <a data-page="business-platform.html" href="business-platform.html" data-zh="业务平台" data-en="Platform">业务平台</a>
+      <a data-page="agents.html" href="agents.html" data-zh="Agent 下载" data-en="Agents">Agent 下载</a>
+      <a data-page="podcast.html" href="podcast.html" data-zh="播客" data-en="Podcast">播客</a>
+      <a data-page="partners.html" href="partners.html" data-zh="合作" data-en="Partners">合作</a>
+      <a data-page="contact.html" href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a>
+      <a data-page="booking.html" href="booking.html" data-zh="预约会议" data-en="Book a Meeting">预约会议</a>
+      <button class="lang-btn">EN</button>
+    </nav>
   </div>
 </header>
 
-<!-- Live business agent lineup -->
-<section id="products">
-  <div class="wrap">
-    <p class="sec-label">Live Business Agents</p>
-    <h2 class="sec-title">11 个已上线业务 Agent，每个都有独立页面。</h2>
-    <p class="sec-sub">与 agent.html 的 Agent 阵容保持一致，并收录平台主站 research/ 已上架的广告优化师——全部已上线、可直接使用。Agent 详情页隶属平台主站（隶属关系不变），成品与页面对外公开，源码闭源私有。</p>
-
-    <div class="grid">
-      <article class="card">
-        <div class="crow"><span class="tag main">选品调研</span><span class="tag pub">已上线</span></div>
-        <h3>🔬 市场调研员<small>01 · RESEARCH AGENT</small></h3>
-        <p>一句话调出市场容量、竞品全景与需求缺口，5 分钟出报告，五平台横向对比。</p>
-        <a class="go" href="research/agents/product-research.html">查看介绍 →</a>
-      </article>
-
-      <article class="card">
-        <div class="crow"><span class="tag main">选品调研</span><span class="tag pub">已上线</span></div>
-        <h3>🎯 选品分析师<small>02 · PRODUCT SCOUT AGENT</small></h3>
-        <p>按价格、销量、潜力指标筛选商品池，输出可追溯的 Go/No-Go 结论。</p>
-        <a class="go" href="research/agents/product-research.html">查看介绍 →</a>
-      </article>
-
-      <article class="card">
-        <div class="crow"><span class="tag main">选品调研</span><span class="tag pub">已上线</span></div>
-        <h3>📡 竞品监控哨兵<small>03 · MONITOR AGENT</small></h3>
-        <p>竞品、关键词、价格异动 7×24 盯守，自动推送企业 IM协同 IM。</p>
-        <a class="go" href="research/agents/product-research.html">查看介绍 →</a>
-      </article>
-
-      <article class="card">
-        <div class="crow"><span class="tag main">店铺运营</span><span class="tag pub">已上线</span></div>
-        <h3>📈 广告优化师<small>04 · ADS AGENT</small></h3>
-        <p>竞品广告拆解、关键词分层、盈亏模型与 45 天推进路线。</p>
-        <a class="go" href="research/client.html">打开控制台 →</a>
-      </article>
-
-      <article class="card">
-        <div class="crow"><span class="tag main">店铺运营</span><span class="tag pub">已上线</span></div>
-        <h3>📄 打单专员<small>05 · DOCUMENT AGENT</small></h3>
-        <p>报关单自动制作：多货代模板匹配 + 批量生成，L2 审批。</p>
-        <a class="go" href="research/agents/logistics.html">查看介绍 →</a>
-      </article>
-
-      <article class="card">
-        <div class="crow"><span class="tag main">文案视觉</span><span class="tag pub">已上线</span></div>
-        <h3>✍️ Listing 工程师<small>06 · LISTING AGENT</small></h3>
-        <p>75 字符标题、五点、富内容 文案与生图提示词，合规校验一步到位。</p>
-        <a class="go" href="research/agents/listing-optimization.html">查看介绍 →</a>
-      </article>
-
-      <article class="card">
-        <div class="crow"><span class="tag main">店铺运营</span><span class="tag pub">已上线</span></div>
-        <h3>🚀 上架专员<small>07 · PUBLISHING AGENT</small></h3>
-        <p>北美连锁零售 / 俄语区平台 / 俄语区平台 B批量产品发布，发布记录回写 ERP。</p>
-        <a class="go" href="research/agents/store-onboarding.html">查看介绍 →</a>
-      </article>
-
-      <article class="card">
-        <div class="crow"><span class="tag main">文案视觉</span><span class="tag pub">已上线</span></div>
-        <h3>🎨 图片设计师<small>08 · IMAGE FACTORY AGENT</small></h3>
-        <p>白底主图、场景图、富内容 长图、信息图批量制造流水线。</p>
-        <a class="go" href="research/agents/listing-optimization.html">查看介绍 →</a>
-      </article>
-
-      <article class="card">
-        <div class="crow"><span class="tag main">店铺运营</span><span class="tag pub">已上线</span></div>
-        <h3>📊 运营总监<small>09 · OPERATIONS AGENT</small></h3>
-        <p>多店铺日报、异动归因、补货计划、利润健康度体检。</p>
-        <a class="go" href="research/agents/ad-management.html">查看介绍 →</a>
-      </article>
-
-      <article class="card">
-        <div class="crow"><span class="tag main">店铺运营</span><span class="tag pub">已上线</span></div>
-        <h3>💬 客服专员<small>10 · CUSTOMER SERVICE AGENT</small></h3>
-        <p>邮件分类应答、差评挽回、退货纠纷方案，多语言回复。</p>
-        <a class="go" href="research/agents/cs-outsourcing.html">查看介绍 →</a>
-      </article>
-
-      <article class="card">
-        <div class="crow"><span class="tag main">店铺运营</span><span class="tag pub">已上线</span></div>
-        <h3>🎓 培训教练<small>11 · TRAINING AGENT</small></h3>
-        <p>SOP 课程化、考核题库、新人 7 天上岗手册、政策周报。</p>
-        <a class="go" href="research/agents/training-courses.html">查看介绍 →</a>
-      </article>
-    </div>
-
-    <p class="sec-sub" style="margin-top:34px">在 <a href="agent.html">agent.html</a> 查看多智能体工作台全景：平台覆盖、执行引擎与四步上手。</p>
+<section class="hero">
+  <div class="hero-inner">
+    <h1 data-zh="把中国工业品，卖到全世界" data-en="Bringing Chinese industrial products to the world">把中国工业品，卖到全世界</h1>
+    <p class="lead" data-zh="嘉兴砥石科技是一家工业品出海服务公司（商业品牌 Adventure Retail）：十五年工厂与外贸一线经验，叠加 AI Agent 技术，为工厂、品牌和渠道伙伴提供从选品、营销到分销的全链路支持。"
+       data-en="Jiaxing Dishi Technology is an industrial export services company (trading as Adventure Retail): 15 years of hands-on factory and foreign-trade experience, combined with AI agent technology, supporting factories, brands and channel partners across sourcing, marketing and distribution.">嘉兴砥石科技是一家工业品出海服务公司（商业品牌 Adventure Retail）：十五年工厂与外贸一线经验，叠加 AI Agent 技术，为工厂、品牌和渠道伙伴提供从选品、营销到分销的全链路支持。</p>
+    <a class="btn btn-primary" href="contact.html" data-zh="联系我们" data-en="Contact Us">联系我们</a>
+    <a class="btn btn-ghost" href="business.html" data-zh="了解业务" data-en="Our Business">了解业务</a>
   </div>
 </section>
 
-<!-- Repo structure -->
-<section id="structure">
-  <div class="wrap">
-    <p class="sec-label">Repository Structure</p>
-    <h2 class="sec-title">成品仓与源码仓分离，隶属关系一致。</h2>
-    <p class="sec-sub">本仓（insightmarketplac-promo）是 insightmarketplac 项目的<b style="color:var(--ink)">成品分发与宣传总仓</b>：仅含页面与成品客户端，不含任何源码；全部源码仓保持私有。</p>
+<section class="section">
+  <h2 class="section-title" data-zh="五大业务板块" data-en="Five Business Pillars">五大业务板块</h2>
+  <p class="section-sub" data-zh="数据 + 技术双驱，围绕工业品出海这一件事，做深做透。" data-en="Data + technology, dual-driven — one mission, industrial exports, done deeply and well.">数据 + 技术双驱，围绕工业品出海这一件事，做深做透。</p>
+  <div class="cards">
+    <div class="card">
+      <div class="icon">🏭</div>
+      <h3 data-zh="运营服务" data-en="Operation Services">运营服务</h3>
+      <p data-zh="工厂招募与运营：主动筛选、拜访、审核工厂，入驻申请 → 资质审核 → 代理协议，全程跟进。"
+         data-en="Factory recruitment & operations: proactively screening, visiting and auditing factories — application, audit, agency agreement, tracked end to end.">工厂招募与运营：主动筛选、拜访、审核工厂，入驻申请 → 资质审核 → 代理协议，全程跟进。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🚚</div>
+      <h3 data-zh="渠道管理" data-en="Channel Management">渠道管理</h3>
+      <p data-zh="Insight 分销：16 个 SKU 货盘，131 个平台渠道网络，选品上架、铺货、结算月报。"
+         data-en="Insight distribution: a 16-SKU catalog across 131 platform channels, with listing, rollout and monthly settlement.">Insight 分销：16 个 SKU 货盘，131 个平台渠道网络，选品上架、铺货、结算月报。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🌱</div>
+      <h3 data-zh="品牌孵化" data-en="Brand Incubation">品牌孵化</h3>
+      <p data-zh="供应商按 ODM / OEM / OBM 入驻，每个供应商生成专属 Agent 机器人，把制造能力变成品牌能力。"
+         data-en="Suppliers onboard as ODM / OEM / OBM, each getting a dedicated agent bot — turning manufacturing into brand capability.">供应商按 ODM / OEM / OBM 入驻，每个供应商生成专属 Agent 机器人，把制造能力变成品牌能力。</p>
+    </div>
+    <div class="card">
+      <div class="icon">📊</div>
+      <h3 data-zh="数智解决方案" data-en="Data & Intelligence Solutions">数智解决方案</h3>
+      <p data-zh="data-intel 选品情报（711 条）+ 133 个能力 Skill，统一进入能力市场，按权限分级调用。"
+         data-en="data-intel sourcing intelligence (711 records) + 133 capability skills in one capability market, tiered by access.">data-intel 选品情报（711 条）+ 133 个能力 Skill，统一进入能力市场，按权限分级调用。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🌍</div>
+      <h3 data-zh="跨境电商" data-en="Cross-border E-commerce">跨境电商</h3>
+      <p data-zh="分行业分市场的 trade agent：房屋、园林等覆盖美、加、澳、中东，CRM 需求分发、Agent 认领回传。"
+         data-en="Industry- and market-specific trade agents — home, garden and more across the US, Canada, Australia and the Middle East — with CRM-driven requirement distribution.">分行业分市场的 trade agent：房屋、园林等覆盖美、加、澳、中东，CRM 需求分发、Agent 认领回传。</p>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top:36px"><a class="btn btn-dark" href="business.html" data-zh="查看业务详情" data-en="See Details">查看业务详情</a></p>
+</section>
 
-    <div class="tree">
-      <div class="t-root">insightmarketplac 项目生态 <span class="tag pub">成品仓公开 · 本站</span></div>
-      <div class="t-children">
-        <div class="t-node">
-          <div class="row"><b>insightmarketplac-promo</b><span class="role">成品分发与宣传总仓（本仓 · 公开）</span></div>
-          <div class="sub">总览页 + Agent 产品页与各宣传页 + 客户端安装包 Release——页面成品公开，<b>不含源码</b></div>
-        </div>
-        <div class="t-node">
-          <div class="row"><b>insightmarketplac</b><span class="tag priv">源码仓 · 私有</span><span class="role">主平台</span></div>
-          <div class="sub">AI 数字员工平台源码（CRM 底座 × 记忆引擎 × 多智能体编排 × 本地交付）</div>
-        </div>
-        <div class="t-node">
-          <div class="row"><b>PI 内核系列</b><span class="tag priv">源码仓 · 私有</span><span class="role">标准独立项目</span></div>
-          <div class="sub">自研微内核（pi-kernel / pi-core / pi-browser）——insightmarketplac 平台 CRM 底座的构建基座，独立演进</div>
-        </div>
-        <div class="t-node">
-          <div class="row"><b>insightmarketplac-agent</b><span class="tag priv">源码仓 · 私有</span><span class="role">智能体层</span></div>
-          <div class="sub">多智能体工作台源码，页面成品收录于本仓 <b>agent.html</b></div>
-        </div>
-        <div class="t-node">
-          <div class="row"><b>agent-client</b><span class="tag priv">源码仓 · 私有</span><span class="role">客户端源码</span></div>
-          <div class="sub">Windows 客户端源码——成品安装包在本仓 Release 公开下载，源码不公开</div>
-        </div>
-        <div class="t-node">
-          <div class="row"><b>research-hub</b><span class="tag priv">源码仓 · 私有</span><span class="role">总仓</span></div>
-          <div class="sub">数字员工团队总仓——营销页面收录于本仓 <b>research/</b>（含 19 个智能体页、Skill 市场、案例与 Hub），应用源码不公开</div>
-        </div>
-      </div>
-      <div class="legend">
-        <span><span class="tag pub">公开</span>&nbsp; 成品分发与宣传：页面可访问、安装包可下载</span>
-        <span><span class="tag priv">私有</span>&nbsp; 源码仓：闭源，仅项目内维护</span>
-      </div>
+<section class="section soft">
+  <h2 class="section-title" data-zh="为什么选择我们" data-en="Why Choose Us">为什么选择我们</h2>
+  <p class="section-sub" data-zh="工厂里干过，外贸一线跑过，代码也写过。" data-en="We've worked the factory floor, run foreign-trade front lines, and written the code.">工厂里干过，外贸一线跑过，代码也写过。</p>
+  <div class="two-col">
+    <div>
+      <ul class="check-list">
+        <li data-zh="15 年工厂与制造经验：懂工艺、懂设备、懂验厂" data-en="15 years of factory & manufacturing experience: process, equipment and audits">15 年工厂与制造经验：懂工艺、懂设备、懂验厂</li>
+        <li data-zh="精通北美零售渠道：知道货架长什么样、买手关心什么" data-en="Deep North American retail channel know-how: what shelves look like, what buyers care about">精通北美零售渠道：知道货架长什么样、买手关心什么</li>
+        <li data-zh="AI 技术自研：把外贸 know-how 做成 agent，而不是纸上谈兵" data-en="In-house AI: trade know-how built into agents, not slideware">AI 技术自研：把外贸 know-how 做成 agent，而不是纸上谈兵</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="check-list">
+        <li data-zh="主动招募 + 代理分销：我们找工厂，而不是等工厂找我们" data-en="Proactive recruiting + agency distribution: we find factories, not the other way round">主动招募 + 代理分销：我们找工厂，而不是等工厂找我们</li>
+        <li data-zh="覆盖美 / 加 / 澳 / 中东四大市场" data-en="Coverage across the US, Canada, Australia and the Middle East">覆盖美 / 加 / 澳 / 中东四大市场</li>
+        <li data-zh="房屋、园林、机械、机器人多行业沉淀" data-en="Cross-industry depth: home, garden, machinery, robotics">房屋、园林、机械、机器人多行业沉淀</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- Download -->
-<section class="dl" id="download">
-  <div class="wrap">
-    <p class="sec-label">Get Started</p>
-    <h2 class="sec-title">现在开始，让市场调研自己跑起来。</h2>
-    <p class="sec-sub">下载安装包，双击安装，打开即用——账号、模型、数据均已预置妥当。</p>
-    <a class="btn-primary" href="https://github.com/Hdhaidong/insightmarketplac-promo/releases/download/insightmarketplac-v1.0.0/insightmarketplac-Setup-1.0.0-client01.exe">
-      下载 Windows 客户端
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v14m0 0l-5.5-5.5M12 17l5.5-5.5M4 21h16"/></svg>
-    </a>
-    <p class="dl-meta">insightmarketplac 客户端 v1.0.0 · Windows 10 / 11（64 位）· 约 75 MB · 安装包公开 · 源码私有</p>
-  </div>
+<section class="cta">
+  <h2 data-zh="有产品想出海？有渠道想合作？" data-en="Products to take global? Channels to partner on?">有产品想出海？有渠道想合作？</h2>
+  <p data-zh="发一封邮件，剩下的我们来聊。" data-en="Send one email — let's take it from there.">发一封邮件，剩下的我们来聊。</p>
+  <a class="btn btn-primary" href="contact.html" data-zh="开始合作" data-en="Start Cooperating">开始合作</a>
 </section>
 
-<footer>
-  <span class="f-brand">insightmarketplac</span>
-  <span>联系方式：<a href="mailto:haidong.zhou@outlook.com">haidong.zhou@outlook.com</a></span>
-  <span>© 2026 insightmarketplac · 成品公开 · 源码私有 · All rights reserved.</span>
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <h4 data-zh="嘉兴砥石科技" data-en="Adventure Retail">嘉兴砥石科技</h4>
+      <p style="font-size:14px" data-zh="工业品出海服务公司：外贸、AI Agent、渠道分销。" data-en="Industrial export services: foreign trade, AI agents, channel distribution.">工业品出海服务公司：外贸、AI Agent、渠道分销。</p>
+    </div>
+    <div>
+      <h4 data-zh="导航" data-en="Navigate">导航</h4>
+      <a href="about.html" data-zh="关于我们" data-en="About">关于我们</a>
+      <a href="business.html" data-zh="业务领域" data-en="Business">业务领域</a>
+      <a href="business-platform.html" data-zh="业务平台" data-en="Platform">业务平台</a>
+      <a href="agents.html" data-zh="Agent 下载" data-en="Agents">Agent 下载</a>
+      <a href="podcast.html" data-zh="播客" data-en="Podcast">播客</a>
+      <a href="partners.html" data-zh="合作" data-en="Partners">合作</a>
+    </div>
+    <div>
+      <h4 data-zh="联系" data-en="Contact">联系</h4>
+      <a href="mailto:contact@adventureretail.com">contact@adventureretail.com</a>
+      <a href="contact.html" data-zh="联系表单" data-en="Contact form">联系表单</a>
+    </div>
+  </div>
+  <div class="footer-bottom" data-zh="© 2026 嘉兴砥石科技 · adventureretail.ai" data-en="© 2026 Jiaxing Dishi Technology · adventureretail.ai">© 2026 嘉兴砥石科技 · adventureretail.ai</div>
 </footer>
 
+<script src="js/i18n.js"></script>
+<script src="assets/customer-service.js"></script>
 </body>
 </html>

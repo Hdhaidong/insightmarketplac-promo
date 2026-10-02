@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent 下载中心 — 嘉兴砥石科技</title>
+<meta name="description" content="免费下载 AI 外贸 Agent：房屋、园林、医疗、建筑、设备、储能、工厂等多行业，覆盖美加澳中东及全球市场。">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="assets/customer-service.css">
+<style>
+.dl-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 15px; }
+.dl-table th, .dl-table td { border: 1px solid #dbe4ef; padding: 12px 14px; text-align: left; }
+.dl-table th { background: #0a2540; color: #fff; }
+.dl-table tr:nth-child(even) td { background: #f4f7fb; }
+.dl-table .dl-btn { display: inline-block; background: #0a2540; color: #fff; padding: 8px 18px; border-radius: 6px; font-size: 14px; }
+.dl-table .dl-btn:hover { background: #14365e; color: #fff; text-decoration: none; }
+.status-pending { color: #b7791f; font-weight: 600; }
+.status-ready { color: #2f9e63; font-weight: 600; }
+.mx-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+.mx-table th, .mx-table td { border: 1px solid #dbe4ef; padding: 10px 12px; text-align: center; }
+.mx-table th { background: #0a2540; color: #fff; }
+.mx-table td:first-child, .mx-table th:first-child { text-align: left; font-weight: 600; }
+.mx-table tr:nth-child(even) td { background: #f4f7fb; }
+.steps { counter-reset: step; list-style: none; max-width: 720px; margin: 0 auto; }
+.steps li { counter-increment: step; padding: 14px 0 14px 56px; position: relative; border-bottom: 1px solid #e6ecf4; }
+.steps li::before { content: counter(step); position: absolute; left: 0; top: 12px; width: 36px; height: 36px; border-radius: 50%; background: #0a2540; color: #fff; text-align: center; line-height: 36px; font-weight: 700; }
+.steps code { background: #eef2f7; padding: 2px 8px; border-radius: 4px; font-size: 14px; }
+.agent-meta { font-size: 13px; color: #6b7a90; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">AR</span><span data-zh="嘉兴砥石科技" data-en="Adventure Retail">嘉兴砥石科技</span></a>
+    <button class="burger" aria-label="菜单">☰</button>
+    <nav class="nav">
+      <a data-page="index.html" href="index.html" data-zh="首页" data-en="Home">首页</a>
+      <a data-page="about.html" href="about.html" data-zh="关于我们" data-en="About">关于我们</a>
+      <a data-page="business.html" href="business.html" data-zh="业务领域" data-en="Business">业务领域</a>
+      <a data-page="business-platform.html" href="business-platform.html" data-zh="业务平台" data-en="Platform">业务平台</a>
+      <a data-page="agents.html" href="agents.html" data-zh="Agent 下载" data-en="Agents">Agent 下载</a>
+      <a data-page="podcast.html" href="podcast.html" data-zh="播客" data-en="Podcast">播客</a>
+      <a data-page="partners.html" href="partners.html" data-zh="合作" data-en="Partners">合作</a>
+      <a data-page="contact.html" href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a>
+      <a data-page="booking.html" href="booking.html" data-zh="预约会议" data-en="Book a Meeting">预约会议</a>
+      <button class="lang-btn">EN</button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1 data-zh="AI Agent 下载中心" data-en="AI Agent Download Center">AI Agent 下载中心</h1>
+    <p class="lead" data-zh="把外贸 know-how 做成开箱即用的 agent：市场档案、开发信话术、买家画像、CRM 握手，全中文界面。免费下载，本地部署。"
+       data-en="Trade know-how packaged as ready-to-run agents: market profiles, outreach scripts, buyer personas and CRM handshake — all in Chinese UI. Free download, self-hosted.">把外贸 know-how 做成开箱即用的 agent：市场档案、开发信话术、买家画像、CRM 握手，全中文界面。免费下载，本地部署。</p>
+    <a class="btn btn-primary" href="#download" data-zh="去下载" data-en="Download">去下载</a>
+    <a class="btn btn-ghost" href="#install" data-zh="安装说明" data-en="Install Guide">安装说明</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title" data-zh="外贸 Trade Agent（旗舰）" data-en="Flagship Trade Agents">外贸 Trade Agent（旗舰）</h2>
+  <p class="section-sub" data-zh="每个 agent 包含：四市场档案（认证 / 渠道 / 采购习惯 / 关税）、开发信与话术库、买家画像、CRM 需求握手（拉取 → 认领 → 回传进度）。纯 Node.js，无外部依赖。" data-en="Each agent ships with: four-market profiles (certifications / channels / buying habits / tariffs), outreach scripts, buyer personas, and CRM handshake (fetch → claim → report). Pure Node.js, zero dependencies.">每个 agent 包含：四市场档案（认证 / 渠道 / 采购习惯 / 关税）、开发信与话术库、买家画像、CRM 需求握手（拉取 → 认领 → 回传进度）。纯 Node.js，无外部依赖。</p>
+  <div class="cards">
+    <div class="card">
+      <div class="icon">🏠</div>
+      <h3 data-zh="房屋外贸 agent" data-en="Home Trade Agent">房屋外贸 agent</h3>
+      <p data-zh="建材 / 家装 / 五金 / 卫浴 / 门窗 / 地板。覆盖美国、加拿大、澳洲、中东四市场。" data-en="Building materials / home improvement / hardware / sanitary ware / doors & windows / flooring. Covers the US, Canada, Australia and the Middle East.">建材 / 家装 / 五金 / 卫浴 / 门窗 / 地板。覆盖美国、加拿大、澳洲、中东四市场。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🌳</div>
+      <h3 data-zh="园林外贸 agent" data-en="Garden Trade Agent">园林外贸 agent</h3>
+      <p data-zh="户外家具 / 园艺工具 / 割草机 / 灌溉 / 户外灯饰。含季节性备货 SOP 与割草机 demo 流程。" data-en="Outdoor furniture / garden tools / mowers / irrigation / outdoor lighting. Seasonal stocking SOP and mower demo flow included.">户外家具 / 园艺工具 / 割草机 / 灌溉 / 户外灯饰。含季节性备货 SOP 与割草机 demo 流程。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🏥</div>
+      <h3 data-zh="医疗外贸 agent" data-en="Medical Trade Agent">医疗外贸 agent</h3>
+      <p data-zh="医疗器械与耗材出海，覆盖美 / 加 / 澳 / 中东，中东为重点市场。" data-en="Medical devices and consumables export; covers the US, Canada, Australia and the Middle East, with the Middle East as focus.">医疗器械与耗材出海，覆盖美 / 加 / 澳 / 中东，中东为重点市场。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🏗️</div>
+      <h3 data-zh="建筑外贸 agent" data-en="Construction Trade Agent">建筑外贸 agent</h3>
+      <p data-zh="建筑设备与建材出海，覆盖美 / 加 / 澳 / 中东，中东为重点市场。" data-en="Construction equipment and materials export; covers the US, Canada, Australia and the Middle East, with the Middle East as focus.">建筑设备与建材出海，覆盖美 / 加 / 澳 / 中东，中东为重点市场。</p>
+    </div>
+    <div class="card">
+      <div class="icon">⚙️</div>
+      <h3 data-zh="设备外贸 agent" data-en="Equipment Trade Agent">设备外贸 agent</h3>
+      <p data-zh="工业设备出海，覆盖美 / 加 / 澳 / 中东，中东为重点市场。" data-en="Industrial equipment export; covers the US, Canada, Australia and the Middle East, with the Middle East as focus.">工业设备出海，覆盖美 / 加 / 澳 / 中东，中东为重点市场。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔋</div>
+      <h3 data-zh="储能外贸 agent" data-en="Energy Storage Trade Agent">储能外贸 agent</h3>
+      <p data-zh="储能产品出海，覆盖美 / 加 / 澳 / 中东，中东为重点市场。" data-en="Energy storage export; covers the US, Canada, Australia and the Middle East, with the Middle East as focus.">储能产品出海，覆盖美 / 加 / 澳 / 中东，中东为重点市场。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🏭</div>
+      <h3 data-zh="工厂外贸 agent" data-en="Factory Trade Agent">工厂外贸 agent</h3>
+      <p data-zh="面向工厂的综合出海助手，覆盖美 / 加 / 澳 / 中东，中东为重点市场。" data-en="All-round export assistant for factories; covers the US, Canada, Australia and the Middle East, with the Middle East as focus.">面向工厂的综合出海助手，覆盖美 / 加 / 澳 / 中东，中东为重点市场。</p>
+    </div>
+  </div>
+</section>
+<section class="section soft">
+  <h2 class="section-title" data-zh="区域扩展：行业 × 市场矩阵" data-en="Regional Expansion: Industry × Market Matrix">区域扩展：行业 × 市场矩阵</h2>
+  <p class="section-sub" data-zh="服装 / 电子 / 机械 / 设备四个行业，针对欧洲、非洲、埃塞俄比亚、索马里、孟加拉·印度、东南亚六个区域做了本地化 agent（含认证、展会、付款与本地话术）。" data-en="Garment / electronics / machinery / equipment agents localized for six regions: Europe, Africa, Ethiopia, Somalia, Bangladesh & India, and Southeast Asia — with certifications, trade shows, payment terms and local scripts.">服装 / 电子 / 机械 / 设备四个行业，针对欧洲、非洲、埃塞俄比亚、索马里、孟加拉·印度、东南亚六个区域做了本地化 agent（含认证、展会、付款与本地话术）。</p>
+  <div style="overflow-x:auto">
+  <table class="mx-table">
+    <tr>
+      <th data-zh="行业 ＼ 市场" data-en="Industry ＼ Market">行业 ＼ 市场</th>
+      <th data-zh="欧洲" data-en="Europe">欧洲</th>
+      <th data-zh="非洲" data-en="Africa">非洲</th>
+      <th data-zh="埃塞俄比亚" data-en="Ethiopia">埃塞俄比亚</th>
+      <th data-zh="索马里" data-en="Somalia">索马里</th>
+      <th data-zh="孟加拉 · 印度" data-en="Bangladesh · India">孟加拉 · 印度</th>
+      <th data-zh="东南亚" data-en="SE Asia">东南亚</th>
+    </tr>
+    <tr>
+      <td data-zh="服装" data-en="Garment">服装</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+    </tr>
+    <tr>
+      <td data-zh="电子" data-en="Electronics">电子</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+    </tr>
+    <tr>
+      <td data-zh="机械" data-en="Machinery">机械</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+    </tr>
+    <tr>
+      <td data-zh="设备" data-en="Equipment">设备</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+    </tr>
+  </table>
+  </div>
+  <p class="agent-meta" style="text-align:center" data-zh="区域要点：欧洲（CE 认证准入）· 非洲（SONCAP / PVoC，迪拜中转）· 埃塞俄比亚（东方工业园）· 索马里（摩加迪沙，迪拜中转）· 东南亚（印尼 / 菲律宾 / 马来西亚 / 越南）" data-en="Regional notes: Europe (CE certification) · Africa (SONCAP / PVoC, Dubai transit) · Ethiopia (Eastern Industrial Zone) · Somalia (Mogadishu, Dubai transit) · SE Asia (Indonesia / Philippines / Malaysia / Vietnam)">区域要点：欧洲（CE 认证准入）· 非洲（SONCAP / PVoC，迪拜中转）· 埃塞俄比亚（东方工业园）· 索马里（摩加迪沙，迪拜中转）· 东南亚（印尼 / 菲律宾 / 马来西亚 / 越南）</p>
+</section>
+
+<section class="section">
+  <h2 class="section-title" data-zh="客服 Service Agent" data-en="Customer Service Agents">客服 Service Agent</h2>
+  <p class="section-sub" data-zh="售前售后客服工作台：智能回复 + 知识库 + 工单管理，减轻人工客服压力。" data-en="Pre- and post-sales service desks: smart replies, knowledge base and ticket management — taking load off human agents.">售前售后客服工作台：智能回复 + 知识库 + 工单管理，减轻人工客服压力。</p>
+  <div class="cards">
+    <div class="card">
+      <div class="icon">🛋️</div>
+      <h3 data-zh="房屋客服 agent" data-en="Home Service Agent">房屋客服 agent</h3>
+      <p data-zh="建材 / 家装 / 五金 / 卫浴客服：智能回复 + 知识库 + 工单管理。重点场景：色差与破损投诉、安装指导、尺寸确认、补货补件。" data-en="Home-category service desk: smart replies, knowledge base and tickets. Key scenarios: color/shipping damage complaints, installation guidance, size confirmation, replacements.">建材 / 家装 / 五金 / 卫浴客服：智能回复 + 知识库 + 工单管理。重点场景：色差与破损投诉、安装指导、尺寸确认、补货补件。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🌿</div>
+      <h3 data-zh="园林客服 agent" data-en="Garden Service Agent">园林客服 agent</h3>
+      <p data-zh="户外家具 / 园艺工具 / 灌溉 / 户外灯饰客服：智能回复 + 工单系统，知识库中英双语，覆盖季节性问题与户外耐候、组装指导、配件补购。" data-en="Garden-category service desk: smart replies and tickets, bilingual EN/CN knowledge base covering seasonal issues, weatherproofing, assembly and spare parts.">户外家具 / 园艺工具 / 灌溉 / 户外灯饰客服：智能回复 + 工单系统，知识库中英双语，覆盖季节性问题与户外耐候、组装指导、配件补购。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <h2 class="section-title" data-zh="机械工业 agent" data-en="Machinery Industry Agent">机械工业 agent</h2>
+  <p class="section-sub" data-zh="工业品 / 机械领域的智能问答 agent，对接统一能力平台。" data-en="Smart Q&A agent for industrial / machinery domains, wired into the unified capability platform.">工业品 / 机械领域的智能问答 agent，对接统一能力平台。</p>
+  <div class="two-col">
+    <div>
+      <ul class="check-list">
+        <li data-zh="对话查询：输入自然语言问题，自动路由到对应 skill" data-en="Conversational query: ask in natural language, auto-routed to the right skill">对话查询：输入自然语言问题，自动路由到对应 skill</li>
+        <li data-zh="手动指定 skill：顶部可指定使用哪个 skill" data-en="Manual skill selection from the top bar">手动指定 skill：顶部可指定使用哪个 skill</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="check-list">
+        <li data-zh="拉取能力平台卡片元数据，保持能力同步" data-en="Pulls card metadata from the capability platform to stay in sync">拉取能力平台卡片元数据，保持能力同步</li>
+        <li data-zh="可拉实时情报增强回答" data-en="Can pull live intelligence to enrich answers">可拉实时情报增强回答</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="section" id="download">
+  <h2 class="section-title" data-zh="免费下载" data-en="Free Download">免费下载</h2>
+  <p class="section-sub" data-zh="安装包统一托管于 GitHub Releases，点击即跳转下载。Agent 安装包正式发布后，会在下表中出现下载链接。" data-en="Packages are hosted on GitHub Releases — click to jump to the download. Agent packages will get download links in the table below once officially released.">安装包统一托管于 GitHub Releases，点击即跳转下载。Agent 安装包正式发布后，会在下表中出现下载链接。</p>
+  <div style="overflow-x:auto">
+  <table class="dl-table">
+    <tr>
+      <th data-zh="Agent" data-en="Agent">Agent</th>
+      <th data-zh="版本" data-en="Version">版本</th>
+      <th data-zh="状态" data-en="Status">状态</th>
+      <th data-zh="下载" data-en="Download">下载</th>
+    </tr>
+    <tr>
+      <td data-zh="房屋外贸 agent" data-en="Home Trade Agent">房屋外贸 agent</td><td>v1.0.0</td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+    </tr>
+    <tr>
+      <td data-zh="园林外贸 agent" data-en="Garden Trade Agent">园林外贸 agent</td><td>v1.0.0</td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+    </tr>
+    <tr>
+      <td data-zh="医疗外贸 agent" data-en="Medical Trade Agent">医疗外贸 agent</td><td>v1.0.0</td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+    </tr>
+    <tr>
+      <td data-zh="建筑外贸 agent" data-en="Construction Trade Agent">建筑外贸 agent</td><td>v1.0.0</td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+    </tr>
+    <tr>
+      <td data-zh="设备外贸 agent" data-en="Equipment Trade Agent">设备外贸 agent</td><td>v1.0.0</td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+    </tr>
+    <tr>
+      <td data-zh="储能外贸 agent" data-en="Energy Storage Trade Agent">储能外贸 agent</td><td>v1.0.0</td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+    </tr>
+    <tr>
+      <td data-zh="工厂外贸 agent" data-en="Factory Trade Agent">工厂外贸 agent</td><td>v1.0.0</td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+    </tr>
+    <tr>
+      <td data-zh="房屋客服 agent" data-en="Home Service Agent">房屋客服 agent</td><td>v1.0.0</td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+    </tr>
+    <tr>
+      <td data-zh="园林客服 agent" data-en="Garden Service Agent">园林客服 agent</td><td>v1.0.0</td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+    </tr>
+    <tr>
+      <td data-zh="机械工业 agent" data-en="Machinery Agent">机械工业 agent</td><td>v1.0.0</td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+      <td><span class="status-pending" data-zh="即将发布" data-en="Coming soon">即将发布</span></td>
+    </tr>
+  </table>
+  </div>
+</section>
+
+<section class="section soft" id="released">
+  <h2 class="section-title" data-zh="已发布版本" data-en="Released Versions">已发布版本</h2>
+  <p class="section-sub" data-zh="以下客户端已在 GitHub Releases 正式发布，点击直接下载安装包。" data-en="These clients are officially released on GitHub Releases — click to download the installer.">以下客户端已在 GitHub Releases 正式发布，点击直接下载安装包。</p>
+  <div style="overflow-x:auto">
+  <table class="dl-table">
+    <tr>
+      <th data-zh="产品" data-en="Product">产品</th>
+      <th data-zh="版本" data-en="Version">版本</th>
+      <th data-zh="状态" data-en="Status">状态</th>
+      <th data-zh="下载" data-en="Download">下载</th>
+    </tr>
+    <tr>
+      <td data-zh="Adventure Retail 桌面客户端" data-en="Adventure Retail Desktop">Adventure Retail 桌面客户端</td><td>v0.1.6-alpha.3</td>
+      <td><span class="status-ready" data-zh="已发布" data-en="Released">已发布</span></td>
+      <td><a class="dl-btn" href="https://github.com/Hdhaidong/insightmarketplac-promo/releases/download/adventure-retail-v0.1.6-alpha.3/adventure-retail-0.1.6-alpha.3-r11.AppImage" data-zh="下载 AppImage" data-en="Download AppImage">下载 AppImage</a></td>
+    </tr>
+    <tr>
+      <td data-zh="Insight 调研客户端" data-en="Insight Research Client">Insight 调研客户端</td><td>v1.0.0</td>
+      <td><span class="status-ready" data-zh="已发布" data-en="Released">已发布</span></td>
+      <td><a class="dl-btn" href="https://github.com/Hdhaidong/insightmarketplac-promo/releases/download/insightmarketplac-v1.0.0/insightmarketplac-Setup-1.0.0-client01.exe" data-zh="下载 Windows 版" data-en="Download for Windows">下载 Windows 版</a></td>
+    </tr>
+    <tr>
+      <td data-zh="Wayfair 学习教练" data-en="Wayfair Coach">Wayfair 学习教练</td><td>v1.0.0</td>
+      <td><span class="status-ready" data-zh="已发布" data-en="Released">已发布</span></td>
+      <td><a class="dl-btn" href="https://github.com/Hdhaidong/insightmarketplac-promo/releases/tag/wayfair-coach-v1.0.0" data-zh="查看发布页" data-en="View release">查看发布页</a></td>
+    </tr>
+  </table>
+  </div>
+  <p class="agent-meta" style="text-align:center"><a href="https://github.com/Hdhaidong/insightmarketplac-promo/releases" data-zh="查看全部 Releases" data-en="View all releases">查看全部 Releases</a></p>
+</section>
+
+<section class="section soft" id="install">
+  <h2 class="section-title" data-zh="安装说明" data-en="Installation Guide">安装说明</h2>
+  <p class="section-sub" data-zh="所有 agent 均为纯 Node.js 应用，无外部依赖，本地一键运行。" data-en="All agents are pure Node.js apps with zero external dependencies — run locally in one step.">所有 agent 均为纯 Node.js 应用，无外部依赖，本地一键运行。</p>
+  <ol class="steps">
+    <li data-zh="从上方 GitHub Releases 下载安装包到本地。" data-en="Download the installer from GitHub Releases above to your machine.">从上方 GitHub Releases 下载安装包到本地。</li>
+    <li data-zh="解压到任意目录。" data-en="Extract it to any folder.">解压到任意目录。</li>
+    <li data-zh="安装 Node.js（推荐 LTS 版本）。" data-en="Install Node.js (LTS recommended).">安装 Node.js（推荐 LTS 版本）。</li>
+    <li><span data-zh="命令行进入解压目录，运行：" data-en="Open a terminal in the extracted folder and run:">命令行进入解压目录，运行：</span> <code>node server.js</code></li>
+    <li data-zh="浏览器打开 README 中标注的本地地址，即可使用中文 Web 界面。" data-en="Open the local address noted in the README in your browser to use the Chinese web UI.">浏览器打开 README 中标注的本地地址，即可使用中文 Web 界面。</li>
+  </ol>
+</section>
+
+<section class="cta">
+  <h2 data-zh="需要定制行业或市场？" data-en="Need a custom industry or market?">需要定制行业或市场？</h2>
+  <p data-zh="发一封邮件，告诉我们你的产品和目标市场。" data-en="Send one email — tell us your products and target markets.">发一封邮件，告诉我们你的产品和目标市场。</p>
+  <a class="btn btn-primary" href="contact.html" data-zh="联系我们" data-en="Contact Us">联系我们</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <h4 data-zh="嘉兴砥石科技" data-en="Adventure Retail">嘉兴砥石科技</h4>
+      <p style="font-size:14px" data-zh="工业品出海服务公司：外贸、AI Agent、渠道分销。" data-en="Industrial export services: foreign trade, AI agents, channel distribution.">工业品出海服务公司：外贸、AI Agent、渠道分销。</p>
+    </div>
+    <div>
+      <h4 data-zh="导航" data-en="Navigate">导航</h4>
+      <a href="about.html" data-zh="关于我们" data-en="About">关于我们</a>
+      <a href="business.html" data-zh="业务领域" data-en="Business">业务领域</a>
+      <a href="business-platform.html" data-zh="业务平台" data-en="Platform">业务平台</a>
+      <a href="agents.html" data-zh="Agent 下载" data-en="Agents">Agent 下载</a>
+      <a href="podcast.html" data-zh="播客" data-en="Podcast">播客</a>
+      <a href="partners.html" data-zh="合作" data-en="Partners">合作</a>
+    </div>
+    <div>
+      <h4 data-zh="联系" data-en="Contact">联系</h4>
+      <a href="mailto:contact@adventureretail.com">contact@adventureretail.com</a>
+      <a href="contact.html" data-zh="联系表单" data-en="Contact form">联系表单</a>
+    </div>
+  </div>
+  <div class="footer-bottom" data-zh="© 2026 嘉兴砥石科技 · adventureretail.ai" data-en="© 2026 Jiaxing Dishi Technology · adventureretail.ai">© 2026 嘉兴砥石科技 · adventureretail.ai</div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="assets/customer-service.js"></script>
+</body>
+</html>
